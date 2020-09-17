@@ -1,0 +1,26 @@
+.about {
+    &__wrapper {
+        display: flex;
+    }
+
+    &__info , &__img {
+        flex:1;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__header {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 25px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+
+}

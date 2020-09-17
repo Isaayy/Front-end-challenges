@@ -1,0 +1,49 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.container{
+    margin: 0 auto;
+    width:100%;
+    
+    @include respond(mobile){
+        width: 100%;
+    }
+
+    @include respond(tab-small){
+        max-width:540px;
+        
+    }
+
+    @include respond(tab-big){
+        max-width:720px;
+        padding: 30px 20px;
+    }
+
+    @include respond(desktop-small){
+        max-width:960px;
+    }
+
+    @include respond(desktop){
+        max-width:1140px;
+    }
+
+    @include respond(desktop-big){
+        max-width:1440px;
+    }
+}
+
+section , footer{
+    padding:$section-padding-desktop 0;
+}

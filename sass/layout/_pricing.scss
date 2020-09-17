@@ -1,0 +1,41 @@
+.pricing {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__card {
+        background-color: $bgc-color-1;
+        width:360px;
+        height: 390px;
+        color:white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 6px 7px rgba(black,.25);
+    }
+
+    &__header {
+        font-weight: normal;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__money {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+ 
+    .section-description {
+        margin-bottom: 10px;
+    }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+}

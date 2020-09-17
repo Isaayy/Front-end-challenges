@@ -1,0 +1,79 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color:white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    &__name {
+        margin-left: 10px;
+    }
+}
+
+.hero {
+    background-color: $bgc-color-1;
+    height: 100vh;
+    position: relative;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 80vh;
+    }
+
+    &__info , &__img{
+        flex: 1;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__main-header {
+        font-size: 40px;
+        color:#FFFFFF;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    &__desc {
+        font-weight: 300;
+        color:#FFFFFF;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }   
+
+    &__button {
+        color:#FFFFFF;
+        font-size: 20px;
+        border:3px solid $color-primary;
+        padding:10px 50px;
+        border-radius: 10px;
+        transition: all .3s;
+    
+        &:hover {
+            background-color:$color-primary ;
+            color:black;
+        }
+    }
+
+    &__socials {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        & img:last-child{
+            margin-left: 50px;
+        }
+    }
+}
+
