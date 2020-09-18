@@ -301,6 +301,8 @@ section, footer {
 .button--green {
   background-color: #A5FFD6;
   margin-left: 30px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 @media (max-width: 576px) {
@@ -311,6 +313,8 @@ section, footer {
 
 .button--border {
   border: 1px solid black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .button:hover {
@@ -319,8 +323,8 @@ section, footer {
 }
 
 .button:active {
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .header {
