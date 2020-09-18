@@ -8,7 +8,7 @@
     }
       
       &__nav {
-        width:100%;
+        width:30px;
         height:4px;
         background-color:$color-primary;
         position:absolute;
@@ -16,6 +16,7 @@
         top:50%;
         transform:translatey(-50%);
         transition:all .3s;
+        z-index: 200;
         
         &::before {
           top:-8px;
@@ -35,4 +36,66 @@
           transition:all .3s;
         }
     }
+
+    &__menu-box {
+        background-color:$bgc-color-2;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        left:0;
+        top:0;
+        z-index: 100;
+        transition: transform .5s;
+        transform: translateX(100%);
+        overflow-y: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        ul {
+          list-style: none;
+        }
+
+        a {
+          font-size: 35px;
+          color:white;
+          padding: 10px 0;
+          display: inline-block;
+          transition: all .5s;
+        }
+
+        li{
+          text-align: center;
+          border-bottom:2px solid white;
+          transition: all .3s;
+          &:not(:last-child){
+            margin-bottom: 30px;
+          }
+
+          &:hover{
+            border-bottom:2px solid $color-primary;
+          }
+
+          &:hover a {
+            color:$color-primary;
+          }
+        }
+    }
+
+    
+    &--active &__nav::before {
+      transform:translatey(8px) rotate(45deg) ;
+    }
+    
+    &--active &__nav::after {
+      transform:translatey(-8px) rotate(-45deg)
+    }
+    
+    &--active &__nav {
+      background:transparent;
+    }
+
+    &--active ~ &__menu-box {
+      transform: translateX(0);
+    }
 }
+
