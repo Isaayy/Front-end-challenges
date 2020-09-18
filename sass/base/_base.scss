@@ -16,6 +16,7 @@ html {
 .container{
     margin: 0 auto;
     width:100%;
+    overflow-x: hidden;
     
     @include respond(mobile){
         width: 100%;
@@ -23,12 +24,11 @@ html {
 
     @include respond(tab-small){
         max-width:540px;
-        
     }
 
     @include respond(tab-big){
         max-width:720px;
-        padding: 30px 20px;
+        padding: 0 20px;
     }
 
     @include respond(desktop-small){
@@ -46,4 +46,11 @@ html {
 
 section , footer{
     padding:$section-padding-desktop 0;
+
+    @include respond(tab-big){
+        padding:$section-padding-tablet 0;
+    }
+    @include respond(mobile){
+        padding:$section-padding-mobile 0;
+    }
 }

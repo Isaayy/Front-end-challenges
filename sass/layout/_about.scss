@@ -1,6 +1,10 @@
 .about {
     &__wrapper {
         display: flex;
+        @include respond(tab-big){
+            flex-direction: column;
+            text-align: center;
+        }
     }
 
     &__info , &__img {
@@ -10,6 +14,20 @@
     &__img {
         display: flex;
         justify-content: flex-end;
+        @include respond(tab-big){
+            justify-content: center;
+            margin-top: 20px;
+        }
+        img {
+            @include respond(tab-small){
+                width:70%;
+            }
+
+            @include respond(mobile){
+                width:90%;
+            }
+        }
+
     }
 
     &__header {
