@@ -1,0 +1,65 @@
+.hero{
+    &__wrapper {
+        height: 86vh;
+        display: flex;
+        @include respond(tab-big){
+            height: 93vh;
+            flex-direction: column;
+            padding:50px 0 0;
+        }
+    }
+
+    &__info,&__img {
+        flex:1;
+    }
+
+    &__info {
+        position: relative;
+    }
+
+    &__info-box {
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
+        @include respond(tab-big){
+            text-align: center;
+            top:0;
+            transform: translateY(0);
+        }
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        @include respond(tab-big){
+            justify-content: center;
+        }
+
+        img {
+            @include respond(desktop-small){
+                width: 350px;
+            }
+            @include respond(mobile){
+                width: 310px;
+            }
+        }
+
+    }
+
+    &__socials {
+        height: 7vh;
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        @include respond(tab-big){
+            display: none;
+        }
+        a {
+            &:not(:first-child){
+                margin-left: 35px;
+            }
+        }
+
+    }
+}
