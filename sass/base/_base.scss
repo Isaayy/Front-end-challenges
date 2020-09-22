@@ -12,6 +12,12 @@ html{
     background-color: $background-color-1;
     scroll-behavior: smooth;
     overflow-x: hidden;
+
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
 }
 
 .container{

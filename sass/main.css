@@ -16,6 +16,11 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -253,8 +258,8 @@ html {
 }
 
 .hero__button {
-  border: 3px solid #F8AF32;
-  color: white;
+  background-color: #F8AF32;
+  color: black;
   font-size: 20px;
   font-weight: 500;
   margin-top: 50px;
@@ -264,6 +269,10 @@ html {
   position: relative;
   z-index: 20;
   overflow: hidden;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 
 @media (max-width: 992px) {
@@ -279,28 +288,16 @@ html {
   }
 }
 
-.hero__button::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #F8AF32;
-  top: 0;
-  left: -100%;
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
-  z-index: -10;
-}
-
 .hero__button:hover {
   color: black;
+  background-color: #fba005;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
 }
 
-.hero__button:hover::after {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+.hero__button:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .header {
@@ -425,7 +422,7 @@ html {
 
 @media (max-width: 576px) {
   .hero__img img {
-    width: 310px;
+    width: 275px;
   }
 }
 

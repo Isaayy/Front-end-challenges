@@ -1,6 +1,6 @@
 .hero__button {
-    border:3px solid $color-main;
-    color:white;
+    background-color: $color-main;
+    color:black;
     font-size: 20px;
     font-weight: 500;
     margin-top: 50px;
@@ -10,7 +10,7 @@
     position: relative;
     z-index: 20;
     overflow: hidden;
-
+    transition: transform .2s; 
     @include respond(tab-big){
         margin-top: 30px;
     }
@@ -20,23 +20,13 @@
         font-size: 16px;
     }
 
-    &::after{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: $color-main;
-        top:0;
-        left:-100%; 
-        transition: transform .5s; 
-        z-index: -10;  
-    }
-
     &:hover{
         color:black;
+        background-color:$color-main-darker;
+        transform: translateY(-2px);
     }
 
-    &:hover::after{
-        transform: translateX(100%);
+    &:active {
+        transform: translateY(0);
     }
 }
