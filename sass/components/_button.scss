@@ -15,6 +15,11 @@
         margin-top: 30px;
     }
 
+    @include respond(mobile){
+        padding:10px 25px;
+        font-size: 16px;
+    }
+
     &::after{
         content: '';
         position: absolute;

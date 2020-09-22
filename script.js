@@ -8,6 +8,12 @@ nav_outside.addEventListener('click',function(){
 });
 
 
+let links = document.getElementsByClassName('header__link');
 
+for ( let i = 0 ; i < links.length ; i++){
 
+    links[i].addEventListener('click',function(){
+        nav_box.classList.toggle('header--active');
+    });
+};
 
