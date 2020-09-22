@@ -1,0 +1,60 @@
+.header {
+    &__nav-box-scroll {
+        background-color: $color-main;
+        display: inline-block;
+        padding:15px;
+        border-radius: 50%;
+        position: fixed;
+        transition: all .2s;
+    }
+
+    &__nav-outside {
+        display: inline-block;
+        padding:  10px 15px;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__nav {
+        width:30px;
+        height:4px;
+        background-color:$color-main;
+        position: absolute;
+        left:0;
+        transition: transform .3s;
+
+        &::before , &::after {
+            content: '';
+            width:100%;
+            height: 4px;
+            background-color:inherit;
+            position: absolute;
+            transition: transform .3s;
+            left:0;
+        }
+
+        &::before {
+            bottom:100%;
+            margin-bottom: 5px;
+        }
+
+        &::after {
+            top:100%;
+            margin-top: 5px;
+        }
+    }
+
+    &--active &__nav::before {
+        background-color: $color-main;
+        transform: translateY(9px) rotate(45deg) ;
+    }
+      
+    &--active &__nav::after {
+        transform: translateY(-9px)  rotate(-45deg) ;
+        background-color: $color-main;
+    }
+      
+    &--active &__nav {
+        background:transparent ;
+    } 
+}

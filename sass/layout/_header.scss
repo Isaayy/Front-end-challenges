@@ -1,0 +1,31 @@
+.header {
+    border:1px solid black;
+    padding:20px 0;
+    &__wrapper {
+        // border:2px solid gold;
+        display: flex;
+    }
+
+    &__logo-box , &__menu-box {
+        flex:1;
+    }
+
+    &__logo-box {
+        a {
+        display: flex;
+        align-items: center;
+        }
+
+        span {
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color:white;
+        }
+    }
+
+    &__menu-box {
+        display: flex;
+        justify-content: flex-end;  
+    }
+}
