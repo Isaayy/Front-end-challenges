@@ -13,3 +13,14 @@
     text-align: center;
 }
 
+
+.u-margin-top{
+    margin-top:$content-padding-desktop ;
+
+    @include respond(desktop-small){
+        margin-top:$content-padding-tablet ;
+    }
+    @include respond(mobile){
+        margin-top:$content-padding-mobile ;
+    }
+}

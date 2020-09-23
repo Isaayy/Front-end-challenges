@@ -1,6 +1,7 @@
 .footer {
     background-color: $background-color-footer;
     position: relative;
+    
 
     &__form {
         width:570px;
@@ -28,12 +29,17 @@
         border: none;
         background-color:$background-color-1;
         border-radius: 5px;
+
+        &::placeholder {
+            color:$background-color-footer;
+        }
     }
 
     &__input {
         width:50%;
         height: 40px;
         padding: 5px 15px;
+        
         &--margin{
             margin-left: 10px;
             @include respond(mobile){
@@ -52,4 +58,23 @@
         padding: 10px 15px; 
         resize: none;  
     }
+
+    &__socials {
+        text-align: center;
+        a {
+
+            display: inline-block;
+            &:not(:first-child){
+                margin-left: 35px;
+            }
+        }
+    }
+
+    &__copy {
+        width: 100%;
+        background-color: $background-color-1;
+        padding:15px 0;
+    }
 }
+
+
