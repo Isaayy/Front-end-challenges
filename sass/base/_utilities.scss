@@ -1,0 +1,15 @@
+.u-margin-bottom{
+    margin-bottom:$content-padding-desktop ;
+
+    @include respond(desktop-small){
+        margin-bottom:$content-padding-tablet ;
+    }
+    @include respond(mobile){
+        margin-bottom:$content-padding-mobile ;
+    }
+}
+
+.u-text-align-center{
+    text-align: center;
+}
+
