@@ -35,7 +35,7 @@ body {
 
     @include respond(tab-big){
         max-width:720px;
-        padding: 0 20px;
+        padding: 0 35px;
     }
 
     @include respond(desktop-small){

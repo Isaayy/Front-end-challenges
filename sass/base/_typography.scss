@@ -5,6 +5,8 @@
     font-size: $headers-font-size;
     font-weight: 500;
     margin-bottom:$content-padding-desktop ;
+    color:white;
+    text-align: center;
     @include respond(desktop-small){
         margin-bottom:$content-padding-tablet ;
     }
@@ -49,6 +51,22 @@
 
         @include respond(mobile){
             font-size: 16px;
+        }
+    }
+}
+
+.description {
+    color:white;
+    font-weight: 300;
+    font-size: $content-font-size;
+
+    &--mb{
+        margin-bottom: 10px;
+    }
+
+    &--display-none {
+        @include respond(mobile){
+            display: none;
         }
     }
 }

@@ -1,0 +1,15 @@
+.skill {
+    background-color: $background-color-1;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    &__header {
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+}

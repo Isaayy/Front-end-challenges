@@ -11,7 +11,7 @@
 }
 
 html {
-  background-color: #282828;
+  background-color: #1E1D1D;
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -41,7 +41,7 @@ body {
 @media (max-width: 992px) {
   .container {
     max-width: 720px;
-    padding: 0 20px;
+    padding: 0 35px;
   }
 }
 
@@ -83,6 +83,8 @@ body {
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 50px;
+  color: white;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -139,6 +141,22 @@ body {
 @media (max-width: 576px) {
   .hero__desc {
     font-size: 16px;
+  }
+}
+
+.description {
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.description--mb {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 576px) {
+  .description--display-none {
+    display: none;
   }
 }
 
@@ -217,7 +235,7 @@ body {
 }
 
 .header__menu {
-  background-color: #1D1B1B;
+  background-color: #252525;
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -298,6 +316,31 @@ body {
 .hero__button:active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.skill {
+  background-color: #1E1D1D;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.skill__header {
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
 .header {
@@ -445,5 +488,55 @@ body {
 
 .hero__socials a:not(:first-child) {
   margin-left: 35px;
+}
+
+.about {
+  background-color: #252525;
+}
+
+.about__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 992px) {
+  .about__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.about__content {
+  margin-left: 30px;
+}
+
+@media (max-width: 992px) {
+  .about__content {
+    margin-bottom: 40px;
+    margin-left: 0;
+  }
+}
+
+.about__header {
+  color: white;
+  margin-bottom: 16px;
+}
+
+.skills {
+  background-color: #252525;
+}
+
+.skills__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 50px 50px;
 }
 /*# sourceMappingURL=main.css.map */
