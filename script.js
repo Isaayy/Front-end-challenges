@@ -17,3 +17,32 @@ for ( let i = 0 ; i < links.length ; i++){
     });
 };
 
+
+
+new Glider(document.querySelector('.glider'),{
+    slidesToShow: 1.2,
+    draggable : true,
+    duration: 1.5,
+    arrows:{
+        prev: '.glider-prev',
+        next : '.glider-next'
+    },
+
+    responsive: [
+        {
+          // screens greater than >= 775px
+          breakpoint: 1000,
+          settings: {
+            slidesToShow: 2.5,
+            draggable : false
+          }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1.5,
+            } 
+        }
+
+    ]
+});

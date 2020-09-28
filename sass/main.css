@@ -394,6 +394,7 @@ body {
           align-items: center;
   color: white;
   border-radius: 7px;
+  padding: 0 10px;
 }
 
 .skill__header {
@@ -703,5 +704,39 @@ body {
   width: 100%;
   background-color: #1E1D1D;
   padding: 15px 0;
+}
+
+.glider {
+  width: 100%;
+}
+
+.glider-slide:not(:first-child) {
+  margin-left: 10px;
+}
+
+.glider-contain {
+  width: 100%;
+}
+
+.glider-prev {
+  margin-right: 450px;
+}
+
+.arrow-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .arrow-wrapper {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,27 @@
+.glider {
+    width: 100%;
+}
+
+.glider-slide{
+    &:not(:first-child){
+        margin-left: 10px;
+    }
+}
+
+.glider-contain{
+    width: 100%;
+}
+
+.glider-prev {
+    margin-right: 450px;
+}
+
+.arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(desktop-small){
+        display: none;
+    }
+}

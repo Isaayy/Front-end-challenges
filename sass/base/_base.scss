@@ -29,8 +29,7 @@ body {
     }
 
     @include respond(tab-small){
-        max-width:540px;
-        
+        max-width:540px; 
     }
 
     @include respond(tab-big){
