@@ -30,7 +30,6 @@ new Glider(document.querySelector('.glider'),{
 
     responsive: [
         {
-          // screens greater than >= 775px
           breakpoint: 1000,
           settings: {
             slidesToShow: 2.5,
