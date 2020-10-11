@@ -17,7 +17,7 @@
 
     &--bisque {
         margin-top: 20px;
-        background-color:$color-secondary ;
+        background-color:$color-primary ;
         @include respond(mobile){
             width: 200px;
             height: 40px;
