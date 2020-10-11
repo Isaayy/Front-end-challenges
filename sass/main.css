@@ -15,6 +15,11 @@ html {
   overflow-x: hidden;
 }
 
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -778,6 +783,12 @@ section, footer {
   font-size: 20px;
   font-weight: bold;
   color: white;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.footer__link:hover {
+  color: #A5FFD6;
 }
 
 .footer__link:not(:last-child) {
@@ -820,25 +831,25 @@ section, footer {
 }
 
 .footer__newsletter input::-webkit-input-placeholder {
-  color: white;
+  color: #aca5a5;
   font-size: 15px;
   font-weight: 300;
 }
 
 .footer__newsletter input:-ms-input-placeholder {
-  color: white;
+  color: #aca5a5;
   font-size: 15px;
   font-weight: 300;
 }
 
 .footer__newsletter input::-ms-input-placeholder {
-  color: white;
+  color: #aca5a5;
   font-size: 15px;
   font-weight: 300;
 }
 
 .footer__newsletter input::placeholder {
-  color: white;
+  color: #aca5a5;
   font-size: 15px;
   font-weight: 300;
 }
