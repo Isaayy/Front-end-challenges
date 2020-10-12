@@ -13,24 +13,24 @@
                 flex-wrap: wrap;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
-                row-gap: 15px;
+                row-gap: 1.5rem;
             }
         }
 
         &:not(:last-child) {
-            margin-bottom: 50px;
+            margin-bottom: 5rem;
         }
         
         p{
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-right: 10px;
+            letter-spacing: .1rem;
+            margin-right: 1rem;
             color:white;
         }
     }
 
     &__link {
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: bold;
         color:white;
         transition: all .3s;
@@ -39,9 +39,9 @@
         }
 
         &:not(:last-child) {
-            margin-right: 40px;
+            margin-right: 4rem;
             @include respond(tab-small){
-                margin-right: 0px;
+                margin-right: 0;
             }
         }
 
@@ -51,16 +51,16 @@
     }
 
     &__newsletter {
-        border:3px solid white;
+        border:.3rem solid white;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0px 5px;
+        padding: 0 .5rem;
 
         input {
             outline: none;
-            padding: 7px 5px;
-            margin-right: 10px;
+            padding: .7rem .5rem;
+            margin-right: 1rem;
 
             background:none;
             border:none;
@@ -76,7 +76,7 @@
 
     &__social-icon {
         &:not(:last-child){
-            margin-right: 40px;
+            margin-right: 4rem;
         }
     }
 }

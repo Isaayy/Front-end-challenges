@@ -8,12 +8,12 @@
         display: flex;
         align-items: center;
         color:white;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: bold;
     }
 
     &__name {
-        margin-left: 10px;
+        margin-left: 1rem;
     }
 }
 
@@ -58,33 +58,33 @@
     }
 
     &__main-header {
-        font-size: 40px;
+        font-size: 4rem;
         color:#FFFFFF;
         font-weight: 500;
-        margin-bottom: 15px;
+        margin-bottom: 1.5rem;
 
         @include respond(desktop-small){
-            font-size: 30px;
+            font-size: 3rem;
         }
 
         @include respond(mobile){
-            font-size: 25px;
+            font-size: 2.5rem;
         }
     }
 
     &__desc {
         font-weight: 300;
         color:#FFFFFF;
-        font-size: 18px;
-        margin-bottom: 50px;
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
     }   
 
     &__button {
         color:#FFFFFF;
-        font-size: 20px;
+        font-size: 2rem;
         border:3px solid $color-primary;
-        padding:10px 50px;
-        border-radius: 10px;
+        padding:1rem 5rem;
+        border-radius: 1rem;
         transition: all .3s;
     
         &:hover {
@@ -104,12 +104,12 @@
         }
 
         & img:last-child{
-            margin-left: 50px;
+            margin-left: 5rem;
             @include respond(tab-small){
-                margin-left: 30px;
+                margin-left: 3rem;
             }
             @include respond(mobile){
-                margin-left: 15px;
+                margin-left: 1.5rem;
             }
         }
     }
