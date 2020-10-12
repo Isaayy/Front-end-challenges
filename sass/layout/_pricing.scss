@@ -4,7 +4,7 @@
         grid-template-columns: repeat(auto-fit,minmax(36rem,1fr));
         grid-gap: 2.5rem;
         justify-content:center;
-        border:2px solid red;
+
         @include respond(desktop-big){
             grid-gap: 5rem;
             grid-template-columns: repeat(3,36rem);

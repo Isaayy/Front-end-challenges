@@ -13,6 +13,11 @@ html {
     overflow-x: hidden;
     
     font-size: 62.5%; // 1 rem = 10px ; 10px/16px  62.5%
+    
+    @include respond(tab-small){
+        font-size: 60%;
+    }
+
 }
 
 body{

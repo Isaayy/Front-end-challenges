@@ -1,22 +1,22 @@
 @mixin respond($breakpoint) {
     @if $breakpoint == mobile {
-        @media (max-width:576px){ @content };
+        @media (max-width:36em){ @content };
     }
 
     @if $breakpoint == tab-small {
-        @media (max-width:768px){ @content };
+        @media (max-width:48em){ @content };
     }
 
     @if $breakpoint == tab-big {
-        @media (max-width:992px){ @content };
+        @media (max-width:62em){ @content };
     }
 
     @if $breakpoint == desktop-small {
-        @media (max-width:1200px){ @content }; 
+        @media (max-width:75em){ @content }; 
     }
 
     @if $breakpoint == desktop {
-        @media (min-width:1200px){ @content }; 
+        @media (min-width:75em){ @content }; 
     }
 
     @if $breakpoint == desktop-big {
