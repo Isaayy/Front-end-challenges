@@ -29,6 +29,26 @@
     &__wrapper {
         display: grid;
         grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-        grid-gap:50px 50px;
+        grid-gap:30px 30px;
+        
+        @include respond(desktop-big) {
+            grid-gap:50px 50px;
+        }
+
+        @include respond(tab-big) {
+            grid-template-columns: 1fr;
+            margin:0 150px;
+        }
+
+        
+        @include respond(tab-small) {
+            grid-template-columns: 1fr;
+            margin:0 50px;
+        }
+
+        @include respond(mobile) {
+            grid-template-columns: 1fr;
+            margin:0;
+        }
     }
 }

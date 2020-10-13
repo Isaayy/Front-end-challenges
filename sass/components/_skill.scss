@@ -1,6 +1,6 @@
 .skill {
     background-color: $background-color-1;
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,9 +8,19 @@
     color: white;
     border-radius: 7px;
     padding: 0 10px;
+
+    &:last-child{
+        @include respond(desktop-small) {
+            display: none;
+        }
+        @include respond(tab-big) {
+            display: flex;
+        }
+    }
+
     &__header {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 15px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 }
