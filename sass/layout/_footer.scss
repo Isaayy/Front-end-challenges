@@ -17,7 +17,7 @@
     &__wrapper {
         margin-bottom: 12px;
         display: flex;
-
+        position: relative;
         @include respond(mobile){
             flex-direction: column;
         }
@@ -33,6 +33,40 @@
         &::placeholder {
             color:$background-color-footer;
         }
+    }
+
+    label {
+        font-weight: 500;
+        font-size: 14px;
+        transition: all .3s;
+        display: block;
+        position: absolute;
+        top:13px;
+        transform: translateY(-35px);
+
+        @include respond(mobile) {
+            display: none !important;
+        }
+    }
+
+    &__name-label {
+        left:15px;
+    }
+
+    &__email-label {
+        left:53%;
+    }
+
+    &__name:placeholder-shown ~ &__name-label {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    &__email:placeholder-shown ~ &__email-label {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(0);
     }
 
     &__input {

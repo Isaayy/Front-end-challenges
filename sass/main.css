@@ -624,6 +624,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 @media (max-width: 576px) {
@@ -657,6 +658,46 @@ body {
 
 .footer__input::placeholder, .footer textarea::placeholder {
   color: #E8E8E8;
+}
+
+.footer label {
+  font-weight: 500;
+  font-size: 14px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: block;
+  position: absolute;
+  top: 13px;
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
+}
+
+@media (max-width: 576px) {
+  .footer label {
+    display: none !important;
+  }
+}
+
+.footer__name-label {
+  left: 15px;
+}
+
+.footer__email-label {
+  left: 53%;
+}
+
+.footer__name:placeholder-shown ~ .footer__name-label {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.footer__email:placeholder-shown ~ .footer__email-label {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .footer__input {
@@ -704,5 +745,25 @@ body {
   width: 100%;
   background-color: #1E1D1D;
   padding: 15px 0;
+}
+
+.projects__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 35px;
+}
+
+@media (max-width: 576px) {
+  .projects__wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.projects__img {
+  width: 100%;
+  background-size: cover;
 }
 /*# sourceMappingURL=main.css.map */

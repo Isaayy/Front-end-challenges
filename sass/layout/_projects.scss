@@ -1,0 +1,16 @@
+.projects {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 35px;
+
+        @include respond(mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        background-size: cover;
+    }
+}

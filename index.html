@@ -127,6 +127,12 @@
     <section class="projects section-padding" id='projects'>
         <div class="container">
             <h2 class="section-header">My projects</h2>
+            <div class="projects__wrapper">
+                <img src="img/p1.png" alt="project 1" class="projects__img">
+                <img src="img/p2.png" alt="project 2" class="projects__img">
+                <img src="img/p3.png" alt="project 3" class="projects__img">
+                <img src="img/p4.png" alt="projecr 4" class="projects__img">
+            </div>
         </div>
     </section>
 
@@ -137,9 +143,11 @@
                 consectetur adipiscing elit.</p>
             <form class="footer__form">
                 <div class="footer__wrapper">
-                    <input type="text" name="name" class='footer__input' placeholder="Name" required>
-                    <input type="text" name="email" id="" class='footer__input footer__input--margin'
+                    <input type="text" name="name" class='footer__input footer__name' placeholder="Name" required>
+                    <label for="name" class="footer__name-label">Name</label>
+                    <input type="text" name="email" id="" class='footer__input footer__input--margin footer__email'
                         placeholder="E-mail" required>
+                    <label for="email" class="footer__email-label">Email</label>
                 </div>
                 <textarea name="message" cols="30" rows="10" placeholder="Message" required></textarea>
                 <button class="footer__button">Send</button>
