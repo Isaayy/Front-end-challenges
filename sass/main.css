@@ -71,7 +71,7 @@ body {
 }
 
 section, footer {
-  padding: 8rem 0;
+  padding: 8.5rem 0;
 }
 
 @media (max-width: 62em) {
@@ -91,7 +91,7 @@ section, footer {
   font-size: 3rem;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
 }
 
 @media (max-width: 62em) {
@@ -262,7 +262,7 @@ section, footer {
 }
 
 .sub-section {
-  margin-top: 5rem;
+  margin-top: 7rem;
   text-align: center;
 }
 
