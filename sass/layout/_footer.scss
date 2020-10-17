@@ -4,7 +4,7 @@
     
 
     &__form {
-        width:570px;
+        width:57rem;
         position: relative;
         left:50%;
         transform: translateX(-50%);
@@ -15,7 +15,7 @@
     }
 
     &__wrapper {
-        margin-bottom: 12px;
+        margin-bottom: 1.2rem;
         display: flex;
         position: relative;
         @include respond(mobile){
@@ -28,7 +28,7 @@
         outline: none;
         border: none;
         background-color:$background-color-1;
-        border-radius: 5px;
+        border-radius: .5rem;
 
         &::placeholder {
             color:$background-color-footer;
@@ -37,12 +37,12 @@
 
     label {
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
         transition: all .3s;
         display: block;
         position: absolute;
-        top:13px;
-        transform: translateY(-35px);
+        top:1.3rem;
+        transform: translateY(-3.5rem);
 
         @include respond(mobile) {
             display: none !important;
@@ -50,7 +50,7 @@
     }
 
     &__name-label {
-        left:15px;
+        left:1.5rem;
     }
 
     &__email-label {
@@ -71,14 +71,14 @@
 
     &__input {
         width:50%;
-        height: 40px;
-        padding: 5px 15px;
+        height: 4rem;
+        padding: .5rem 1.5rem;
         
         &--margin{
-            margin-left: 10px;
+            margin-left: 1rem;
             @include respond(mobile){
                 margin-left: 0;
-                margin-top: 12px;
+                margin-top: 1.2rem;
             }
         }
 
@@ -89,7 +89,7 @@
 
     textarea{
         width: 100%;
-        padding: 10px 15px; 
+        padding: 1rem 1.5rem; 
         resize: none;  
     }
 
@@ -99,7 +99,7 @@
 
             display: inline-block;
             &:not(:first-child){
-                margin-left: 35px;
+                margin-left: 3.5rem;
             }
         }
     }
@@ -107,7 +107,7 @@
     &__copy {
         width: 100%;
         background-color: $background-color-1;
-        padding:15px 0;
+        padding:1.5rem 0;
     }
 }
 

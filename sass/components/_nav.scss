@@ -2,7 +2,7 @@
     &__nav-box-scroll {
         background-color: $color-main;
         display: inline-block;
-        padding:15px;
+        padding:1.5rem;
         border-radius: 50%;
         position: fixed;
         transition: all .2s;
@@ -10,15 +10,15 @@
 
     &__nav-outside {
         display: inline-block;
-        padding:  10px 15px;
+        padding:  1rem 1.5rem;
         position: relative;
         cursor: pointer;
         z-index: 200;
     }
 
     &__nav {
-        width:30px;
-        height:4px;
+        width:3rem;
+        height:.4rem;
         background-color:$color-main;
         position: absolute;
         left:0;
@@ -27,7 +27,7 @@
         &::before , &::after {
             content: '';
             width:100%;
-            height: 4px;
+            height: .4rem;
             background-color:inherit;
             position: absolute;
             transition: transform .3s;
@@ -36,22 +36,22 @@
 
         &::before {
             bottom:100%;
-            margin-bottom: 5px;
+            margin-bottom: .5rem;
         }
 
         &::after {
             top:100%;
-            margin-top: 5px;
+            margin-top: .5rem;
         }
     }
 
     &--active &__nav::before {
         background-color: $color-main;
-        transform: translateY(9px) rotate(45deg) ;
+        transform: translateY(.9rem) rotate(45deg) ;
     }
       
     &--active &__nav::after {
-        transform: translateY(-9px)  rotate(-45deg) ;
+        transform: translateY(-.9rem)  rotate(-45deg) ;
         background-color: $color-main;
     }
       
@@ -82,15 +82,15 @@
 
         li {
             text-align: center;
-            padding: 5px 0;
+            padding: .5rem 0;
             &:not(:first-child){
-                margin-top: 20px;
+                margin-top: 2rem;
             }
         }
 
         a {
             color:white;
-            font-size: 30px;
+            font-size: 3rem;
             font-weight: 500;
             &:hover {
                 color:$color-main;

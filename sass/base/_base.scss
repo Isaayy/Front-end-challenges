@@ -12,7 +12,7 @@ html{
     background-color: $background-color-1;
     scroll-behavior: smooth;
     overflow-x: hidden;
-
+    font-size: 62.5%;
 }
 
 body {
@@ -29,34 +29,34 @@ body {
     }
 
     @include respond(tab-small){
-        max-width:540px; 
+        max-width:54rem; 
     }
 
     @include respond(tab-big){
-        max-width:720px;
-        padding: 0 35px;
+        max-width:72rem;
     }
 
     @include respond(desktop-small){
-        max-width:960px;
+        max-width:96rem;
+        padding: 0 3.5rem ;
     }
 
     @include respond(desktop){
-        max-width:1140px;
+        max-width:114rem;
     }
 
     @include respond(desktop-big){
-        max-width:1440px;
+        max-width:144rem;
     }
 }
 
 
 .section-padding {
-    padding: 80px 0;
+    padding: 8rem 0;
     @include respond(desktop-small){
-        padding: 60px 0;
+        padding: 6rem 0;
     }
     @include respond(mobile){
-        padding: 40px 0;
+        padding: 4rem 0;
     }
 }

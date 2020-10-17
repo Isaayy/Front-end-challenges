@@ -2,7 +2,7 @@
     &__wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 35px;
+        grid-gap: 3.5rem;
 
         @include respond(mobile) {
             grid-template-columns: 1fr;

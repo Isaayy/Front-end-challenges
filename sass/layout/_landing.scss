@@ -5,7 +5,7 @@
         @include respond(tab-big){
             height: 93vh;
             flex-direction: column;
-            padding:50px 0 0;
+            padding:5rem 0 0;
         }
     }
 
@@ -38,10 +38,10 @@
 
         img {
             @include respond(desktop-small){
-                width: 350px;
+                width: 35rem;
             }
             @include respond(mobile){
-                width: 275px;
+                width: 27.5rem;
             }
         }
 
@@ -51,13 +51,13 @@
         height: 7vh;
         display: flex;
         align-items: center;
-        padding: 10px 0;
+        padding: 1rem 0;
         @include respond(tab-big){
             display: none;
         }
         a {
             &:not(:first-child){
-                margin-left: 35px;
+                margin-left: 3.5rem;
             }
         }
     }
