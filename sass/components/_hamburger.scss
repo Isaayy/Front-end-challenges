@@ -2,9 +2,13 @@
     &__menu{
         width:3rem;
         height:2.5rem;
-        display:inline-block;
         position:relative;
         cursor:pointer;
+        display: none;
+        @include respond(desktop-small){
+          display:inline-block;
+        }
+
     }
       
       &__nav {
@@ -38,26 +42,31 @@
     }
 
     &__menu-box {
-        background-color:$bgc-color-2;
+        background-color: #fff;
         position: absolute;
         width: 100%;
-        height: 100vh;
+        height: 100% !important;
         left:0;
         top:0;
         z-index: 100;
         transition: transform .5s;
         transform:translateX(100%) ;
         overflow-y: hidden;
-        display: flex;
         align-items: center;
         justify-content: center;
+        display: none;
+
+        @include respond(desktop-small){
+          display: flex;
+        }
+
         ul {
           list-style: none;
         }
 
         a {
           font-size: 3.5rem;
-          color:white;
+          color:black;
           padding: 1rem 0;
           display: inline-block;
           transition: all .5s;
@@ -65,7 +74,7 @@
 
         li{
           text-align: center;
-          border-bottom:.2rem solid white;
+          border-bottom:.2rem solid black;
           transition: all .3s;
           &:not(:last-child){
             margin-bottom: 3rem;
@@ -79,15 +88,15 @@
             color:$color-primary;
           }
         }
-    }
-
-    
+    } 
     &--active &__nav::before {
       transform:translatey(.8rem) rotate(45deg) ;
+      background-color:black;
     }
     
     &--active &__nav::after {
-      transform:translatey(-.8rem) rotate(-45deg)
+      transform:translatey(-.8rem) rotate(-45deg);
+      background-color:black;
     }
     
     &--active &__nav {
@@ -97,5 +106,9 @@
     &--active ~ &__menu-box {
       transform:translateX(0) ;
     }
+}
+
+.hidden{
+  overflow: hidden;
 }
 
