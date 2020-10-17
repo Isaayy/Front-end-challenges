@@ -429,7 +429,7 @@ section, footer {
 }
 
 .hero__main-header {
-  font-size: 4rem;
+  font-size: 5.5rem;
   color: #FFFFFF;
   font-weight: 500;
   margin-bottom: 1.5rem;
@@ -450,16 +450,16 @@ section, footer {
 .hero__desc {
   font-weight: 300;
   color: #FFFFFF;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 5rem;
 }
 
 .hero__button {
   color: black;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.5rem;
   background-color: #A5FFD6;
-  padding: 1rem 5rem;
+  padding: 1.5rem 6rem;
   border-radius: 1rem;
   -webkit-transition: all .3s;
   transition: all .3s;

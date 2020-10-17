@@ -58,7 +58,7 @@
     }
 
     &__main-header {
-        font-size: 4rem;
+        font-size: 5.5rem;
         color:#FFFFFF;
         font-weight: 500;
         margin-bottom: 1.5rem;
@@ -75,16 +75,16 @@
     &__desc {
         font-weight: 300;
         color:#FFFFFF;
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         margin-bottom: 5rem;
     }   
 
     &__button {
         color:black;
         font-weight: 500;
-        font-size: 2rem;
+        font-size: 2.5rem;
         background-color:$color-primary;
-        padding:1rem 5rem;
+        padding:1.5rem 6rem;
         border-radius: 1rem;
         transition: all .3s;
         border:none;
