@@ -27,7 +27,7 @@
 
 .hero{
     &__header{
-        font-size: 4rem;
+        font-size: 5rem;
         font-weight: bold;
         color:$color-main;
         position: relative;
@@ -39,7 +39,7 @@
 
         &::after{
             content:'Developer';
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: 300;
             color:white;
             position: absolute;
@@ -54,7 +54,7 @@
 
     &__desc {
         margin-top: 5rem;
-        font-size: 2rem;
+        font-size: 2.3rem;
         font-weight: 300;
         color:white;
 
