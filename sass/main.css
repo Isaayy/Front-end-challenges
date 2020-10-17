@@ -83,7 +83,7 @@ body {
 .section-header {
   font-size: 2.6rem;
   font-weight: 500;
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
   color: white;
   text-align: center;
 }
@@ -124,7 +124,7 @@ body {
 }
 
 .hero__header::after {
-  content: 'Developer';
+  content: 'Developer & Designer';
   font-size: 2rem;
   font-weight: 300;
   color: white;
@@ -175,7 +175,7 @@ body {
 }
 
 .u-margin-bottom {
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
 }
 
 @media (max-width: 75em) {
@@ -195,7 +195,7 @@ body {
 }
 
 .u-margin-top {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
 @media (max-width: 75em) {
@@ -210,6 +210,10 @@ body {
   }
 }
 
+.u-hidden {
+  overflow: hidden;
+}
+
 .header__nav-box-scroll {
   background-color: #F8AF32;
   display: inline-block;
@@ -218,6 +222,16 @@ body {
   position: fixed;
   -webkit-transition: all .2s;
   transition: all .2s;
+}
+
+.header__nav-box {
+  display: none;
+}
+
+@media (max-width: 75em) {
+  .header__nav-box {
+    display: block;
+  }
 }
 
 .header__nav-outside {
@@ -285,13 +299,13 @@ body {
 }
 
 .header__menu {
-  background-color: #252525;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
   left: 100%;
   top: 0;
   z-index: 100;
+  background-color: #252525;
+  width: 100vw;
+  height: 100vh;
   -webkit-transition: -webkit-transform .5s;
   transition: -webkit-transform .5s;
   transition: transform .5s;
@@ -300,6 +314,7 @@ body {
 
 .header__menu ul {
   list-style: none;
+  display: block;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -307,8 +322,8 @@ body {
 }
 
 .header__menu li {
-  text-align: center;
   padding: .5rem 0;
+  text-align: center;
 }
 
 .header__menu li:not(:first-child) {
@@ -322,6 +337,32 @@ body {
 }
 
 .header__menu a:hover {
+  color: #F8AF32;
+}
+
+@media (max-width: 75em) {
+  .header__menu-2 {
+    display: none;
+  }
+}
+
+.header__menu-2 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.header__menu-2 li:not(:first-child) {
+  margin-left: 4rem;
+}
+
+.header__menu-2 a {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.header__menu-2 a:hover {
   color: #F8AF32;
 }
 
@@ -600,6 +641,7 @@ body {
 
 .about__header {
   color: white;
+  font-size: 2.2rem;
   margin-bottom: 1.6rem;
 }
 
