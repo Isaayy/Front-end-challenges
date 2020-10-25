@@ -115,6 +115,7 @@ body {
   color: #F8AF32;
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 @media (max-width: 36em) {
@@ -125,12 +126,13 @@ body {
 
 .hero__header::after {
   content: 'Developer & Designer';
-  font-size: 2rem;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 500;
   color: white;
   position: absolute;
   top: 100%;
   left: 0;
+  width: 100%;
 }
 
 @media (max-width: 62em) {
@@ -143,9 +145,9 @@ body {
 
 .hero__desc {
   margin-top: 5rem;
-  font-size: 2.3rem;
+  font-size: 1.7rem;
   font-weight: 300;
-  color: white;
+  color: #D3D3D3;
 }
 
 @media (max-width: 36em) {
@@ -158,6 +160,10 @@ body {
   color: #D3D3D3;
   font-weight: 300;
   font-size: 1.6rem;
+}
+
+.description--ln {
+  line-height: 1.7;
 }
 
 .description--mb {
