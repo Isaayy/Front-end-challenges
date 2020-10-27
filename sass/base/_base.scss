@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  font-size: 62.5%; // 1 rem = 10px ; 10px/16px  62.5%
+
+  @include respond(tab-small) {
+    font-size: 60%;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
+
+  @include respond(mobile) {
+    width: 100%;
+  }
+
+  @include respond(tab-small) {
+    max-width: 540px;
+  }
+
+  @include respond(tab-big) {
+    max-width: 720px;
+    padding: 0 20px;
+  }
+
+  @include respond(desktop-small) {
+    max-width: 960px;
+  }
+
+  @include respond(desktop) {
+    max-width: 1140px;
+  }
+
+  @include respond(desktop-big) {
+    max-width: 1440px;
+  }
+}

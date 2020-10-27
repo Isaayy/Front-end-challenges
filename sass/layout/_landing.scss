@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+
+  &__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    span {
+      font-size: 2rem;
+      color: $font-color;
+      font-weight: bold;
+      display: block;
+      transform: translateY(-0.2rem);
+    }
+    img {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &__nav {
+    flex: 1;
+    @include respond(desktop-small) {
+      flex: 2;
+    }
+
+    @include respond(tab-big) {
+      display: none;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+    li {
+      &:not(:first-child) {
+        margin-left: 4rem;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  &__socials {
+    @include respond(tab-big) {
+      display: none;
+    }
+    img:not(:first-child) {
+      margin-left: 3rem;
+    }
+  }
+}
+
+.landing {
+  height: 100vh;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  &__wrapper {
+    border: 2px solid red;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  // TODO
+  // create git repo
+  &__header {
+    color: red;
+  }
+
+  &__description {
+    color: green;
+  }
+
+  &__cta {
+    color: gold;
+  }
+}
