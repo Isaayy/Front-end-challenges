@@ -1,0 +1,42 @@
+.about {
+  &__wrapper {
+    margin-top: $padding-content-desktop;
+    display: flex;
+    align-items: center;
+    background-color: $color-grey-light;
+
+    img {
+      width: 50%;
+    }
+  }
+
+  &__content {
+    width: 25%;
+    margin: 0 auto;
+  }
+
+  &__quote {
+    margin-top: 5rem;
+    font-size: 1.6rem;
+    font-family: "Gochi Hand", cursive;
+    position: relative;
+
+    &:after {
+      content: "~Michael Jordan";
+      font-size: 1.2rem;
+      position: absolute;
+      top: 110%;
+      left: 0;
+    }
+  }
+}
+
+.why-us {
+  &__wrapper {
+    border: 2px solid green;
+  }
+
+  &__card {
+    border: 2px solid salmon;
+  }
+}

@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-
+  background-color: $color-grey-dark;
   font-size: 62.5%; // 1 rem = 10px ; 10px/16px  62.5%
 
   @include respond(tab-small) {
@@ -47,4 +47,8 @@ html {
   @include respond(desktop-big) {
     max-width: 1440px;
   }
+}
+
+.section-padding {
+  padding-top: $padding-main-desktop;
 }

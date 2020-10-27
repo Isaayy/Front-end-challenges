@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 *,
 *::after,
 *::before {
@@ -12,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #f6f6f6;
   font-size: 62.5%;
 }
 
@@ -62,6 +64,59 @@ html {
   .container {
     max-width: 1440px;
   }
+}
+
+.section-padding {
+  padding-top: 12rem;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.sub-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 1.7rem;
+}
+
+.header__link {
+  color: #0d56db;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.landing {
+  color: #202223;
+}
+
+.landing__header {
+  font-size: 5.5rem;
+  font-weight: bold;
+}
+
+.landing__description {
+  font-size: 2rem;
+}
+
+.landing__cta {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: white;
+}
+
+.u-margin-b {
+  margin-bottom: 2.5rem;
+}
+
+.u-align-center {
+  text-align: center;
 }
 
 .header {
@@ -135,12 +190,6 @@ html {
   margin-left: 4rem;
 }
 
-.header__link {
-  color: #0d56db;
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
 @media (max-width: 62em) {
   .header__socials {
     display: none;
@@ -155,11 +204,10 @@ html {
   height: 100vh;
   background-image: url(../img/background.png);
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: right 0 top 120%;
 }
 
 .landing__wrapper {
-  border: 2px solid red;
   margin-top: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,14 +225,62 @@ html {
 }
 
 .landing__header {
-  color: red;
-}
-
-.landing__description {
-  color: green;
+  margin-bottom: 1.5rem;
 }
 
 .landing__cta {
-  color: gold;
+  margin-top: 4rem;
+  background-color: #0d56db;
+  padding: 1.3rem 3.7rem;
+  border-radius: 1rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.landing__cta:hover {
+  background-color: #0340ae;
+}
+
+.about__wrapper {
+  margin-top: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fefefe;
+}
+
+.about__wrapper img {
+  width: 50%;
+}
+
+.about__content {
+  width: 25%;
+  margin: 0 auto;
+}
+
+.about__quote {
+  margin-top: 5rem;
+  font-size: 1.6rem;
+  font-family: "Gochi Hand", cursive;
+  position: relative;
+}
+
+.about__quote:after {
+  content: "~Michael Jordan";
+  font-size: 1.2rem;
+  position: absolute;
+  top: 110%;
+  left: 0;
+}
+
+.why-us__wrapper {
+  border: 2px solid green;
+}
+
+.why-us__card {
+  border: 2px solid salmon;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,1 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+
+.heading {
+  font-size: $heading-font-desktop;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.6rem;
+}
+
+.sub-heading {
+  font-size: $sub-heading-desktop;
+  font-weight: 600;
+}
+
+.description {
+  font-size: $description-desktop;
+}
+
+.header__link {
+  color: $color-primary;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.landing {
+  color: $color-grey;
+  &__header {
+    font-size: 5.5rem;
+    font-weight: bold;
+  }
+
+  &__description {
+    font-size: 2rem;
+  }
+
+  &__cta {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: white;
+  }
+}
