@@ -475,6 +475,13 @@ html {
   grid-row-gap: 5rem;
 }
 
+@media (max-width: 75em) {
+  .why-us__wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 62em) {
   .why-us__wrapper {
     margin-top: 6rem;
