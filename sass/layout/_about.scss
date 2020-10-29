@@ -4,15 +4,68 @@
     display: flex;
     align-items: center;
     background-color: $color-grey-light;
+    position: relative;
+    z-index: -2;
+    flex-direction: row-reverse;
+    @include respond(desktop-small) {
+      background-color: transparent;
+    }
+
+    @include respond(tab-big) {
+      margin-top: $padding-content-tablet;
+    }
+  
+    @include respond(mobile) {
+      margin-top: $padding-content-mobile;
+    }
 
     img {
       width: 50%;
+      position: relative;
+      z-index: -1;
+      @include respond(desktop-small) {
+        width: 65%;
+      }
+      @include respond(tab-big) {
+        width: 75%;
+      }
+      @include respond(tab-small) {
+        display: none;
+      }
     }
   }
 
   &__content {
+    background-color: $color-grey-light;
     width: 25%;
     margin: 0 auto;
+    @include respond(desktop-small) {
+      position: absolute;
+      z-index: 2;
+      left:0;
+      width: 50%;
+      padding: 2rem 3rem 4rem;
+    }
+    @include respond(tab-big) {
+      width: 70%;
+    }
+    @include respond(tab-small) {
+      position: relative;
+      width: 100%;
+      padding: 6rem 2rem 7rem;
+    }
+  }
+
+  &__description {
+  font-size: $description-desktop;
+  
+  @include respond(tab-big) {
+    font-size: $description-tablet;
+  }
+
+  @include respond(mobile) {
+    font-size: $description-mobile;
+  }
   }
 
   &__quote {
@@ -34,10 +87,28 @@
 .why-us {
   &__wrapper {
     margin-top: $padding-content-desktop;
-    border: 2px solid green;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(35rem , 1fr));
+    grid-row-gap: 5rem;
+
+    @include respond(tab-big) {
+      margin-top: $padding-content-tablet;
+    }
+  
+    @include respond(mobile) {
+      margin-top: $padding-content-mobile;
+    }
   }
 
   &__card {
-    border: 2px solid salmon;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    }
   }
 }

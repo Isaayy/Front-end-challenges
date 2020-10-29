@@ -6,15 +6,47 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.6rem;
+
+  @include respond(tab-big) {
+    font-size: $heading-font-tablet;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include respond(mobile) {
+    font-size: $heading-font-mobile;
+  }
 }
 
 .sub-heading {
   font-size: $sub-heading-desktop;
   font-weight: 600;
+
+  @include respond(tab-big) {
+    font-size: $sub-heading-tablet;
+  }
+
+  @include respond(mobile) {
+    font-size: $sub-heading-mobile;
+  }
 }
 
 .description {
   font-size: $description-desktop;
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+  
+  @include respond(tab-big) {
+    font-size: $description-tablet;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include respond(mobile) {
+    font-size: $description-mobile;
+    width: 100%;
+  }
 }
 
 .header__link {
@@ -28,10 +60,20 @@
   &__header {
     font-size: 5.5rem;
     font-weight: bold;
+    @include respond(tab-big) {
+      font-size: 4.5rem;
+    }
+    @include respond(mobile) {
+      font-size: 2.8rem;
+    }
   }
 
   &__description {
     font-size: 2rem;
+    text-align: center;
+    @include respond(mobile) {
+      font-size: 1.6rem;
+    }
   }
 
   &__cta {
