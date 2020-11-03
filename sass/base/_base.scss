@@ -51,7 +51,7 @@ html {
 
 .section-padding {
   padding-top: $padding-main-desktop;
-
+  
   @include respond(tab-big) {
     padding-top: $padding-main-tablet;
   }
@@ -60,3 +60,7 @@ html {
     padding-top: $padding-main-mobile;
   }
 }
+
+// *.__wrapper {
+//   border:2px solid gold;
+// }

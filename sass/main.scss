@@ -5,6 +5,10 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import 'components/idea';
+
 @import "layout/landing";
 @import "layout/about";
+@import "layout/ideas";
 @import "layout/projects";
+@import 'layout/footer';

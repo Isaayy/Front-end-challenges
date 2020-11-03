@@ -1,0 +1,79 @@
+.footer {
+    padding-top: $footer-padding-desktop;
+    margin-top: $padding-main-desktop;
+    background-image: url(../img/footer-background.png);
+    color:#F6F6F6;
+    text-align: center;
+
+    padding-bottom: 5rem;
+    @include respond(tab-big) {
+        padding-top: $footer-padding-tablet;
+        margin-top: $padding-main-tablet;
+    }
+
+    @include respond(mobile) {
+        padding-top: $footer-padding-mobile;
+        margin-top: $padding-main-mobile;
+    }
+
+    &__subscribe {
+        font-weight: bold;
+        font-size: 1.9rem;
+        text-transform: uppercase;
+        letter-spacing: .6rem;
+
+        margin-top: $padding-content-desktop;
+        margin-bottom: 2rem;
+        @include respond(tab-big) {
+          margin-top: $padding-content-tablet;
+        }
+      
+        @include respond(mobile) {
+          margin-top: $padding-content-mobile;
+        }
+    }
+
+    &__newsletter {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        input {
+            width: 60rem;
+            color:black;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            border:none;
+            outline: none;
+            display: inline-block;
+            z-index: 1;
+            position: relative;
+
+            &::placeholder{
+                color:black;
+                font-weight: bold;
+            }
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        z-index: 2;
+        background-color: $color-primary;
+        padding: 1rem 2rem;
+        border-top-right-radius: 3rem;
+        border-bottom-right-radius: 3rem;
+        right: 0;
+        top:0;
+        width: 10rem;
+        height: 100%;
+        outline: none;
+        border: none;
+        transition: all .3s;
+
+        &:hover{
+            background-color: $color-primary-dark;
+        }
+    }
+}
+

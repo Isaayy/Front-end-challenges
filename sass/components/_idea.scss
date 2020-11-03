@@ -1,0 +1,46 @@
+.idea {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+    
+    &__bulb {
+        background-color: $color-primary;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1rem;
+        position: absolute;
+        top:0;
+    }
+
+    &__content {
+        position: relative;
+        left:7rem;
+        @include respond(desktop-small) {
+            width: 90%;
+        }
+
+        @include respond(tab-small) {
+            width: 80%;
+        }
+        
+    }
+
+    &__header {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: .3rem;
+    }
+
+    &__description {
+        font-size: 1.4rem;
+        font-weight: 300;
+        line-height: 2;
+    }
+}

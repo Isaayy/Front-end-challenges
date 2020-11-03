@@ -1,0 +1,70 @@
+.ideas {
+
+    &__wrapper {
+        background-color: $color-grey-light;
+        margin-top: $padding-content-desktop;
+
+        @include respond(desktop-small) {
+            background-color: transparent;
+            flex-direction: row;
+        }
+    
+        @include respond(tab-big) {
+          margin-top: $padding-content-tablet;
+        }
+      
+        @include respond(mobile) {
+          margin-top: $padding-content-mobile;
+        }
+
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        position: relative;
+    }
+
+    &__img{
+        width: 50%;
+        position: relative;
+        z-index: 1;
+        @include respond(desktop-small) {
+          width: 65%;
+        }
+        @include respond(tab-big) {
+          width: 75%;
+        }
+        @include respond(tab-small) {
+          display: none;
+        }
+    }
+
+    &__content {
+        background-color: $color-grey-light;
+        width: 35%;
+        margin: 0 auto;
+        padding: 2rem 3rem 4rem;
+
+        @include respond(desktop-small) {
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            width: 50%;
+            padding: 2rem 3rem 4rem;
+          }
+          @include respond(tab-big) {
+            width: 70%;
+          }
+          @include respond(tab-small) {
+            position: relative;
+            width: 100%;
+            padding: 6rem 2rem 7rem;
+          }
+
+        .sub-heading{
+            display: none;
+        }
+
+
+    }
+}
+
