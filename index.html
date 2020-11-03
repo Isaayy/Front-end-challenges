@@ -7,6 +7,15 @@
     <title>Energy</title>
 </head>
 <body>
+    <!-- todo -->
+        <!-- 
+            links hover animation
+            hamburger menu links show
+            nice styled 100% width and height menu on mobile devices
+            footer nav inside of another container
+            footer media queries
+            energy todo file
+         -->
     <section class="landing">
         <div class="container">
             <header class="header">
@@ -15,13 +24,20 @@
                     <span>Energy</span>
                 </div>
                 <nav class="header__nav">
-                    <ul>
-                        <li><a href="#about" class="header__link">about</a></li>
-                        <li><a href="#why-us" class="header__link">why us</a></li>
-                        <li><a href="#ideas" class="header__link">ideas</a></li>
-                        <li><a href="#projects" class="header__link">projects</a></li>
-                        <li><a href="#contact" class="header__link">contact</a></li>
-                    </ul>
+                    <div class="hamburger">
+                        <span class="hamburger__outline">
+                            <span class="hamburger__bar"></span>
+                        </span>
+                    </div>
+                    <div class="header__menu">
+                        <ul>
+                            <li><a href="#about" class="header__link">about</a></li>
+                            <li><a href="#why-us" class="header__link">why us</a></li>
+                            <li><a href="#ideas" class="header__link">ideas</a></li>
+                            <li><a href="#projects" class="header__link">projects</a></li>
+                            <li><a href="#contact" class="header__link">contact</a></li>
+                        </ul>
+                    </div>
                 </nav>
                 <div class="header__socials">
                     <a href="#"><img src="img/ig.svg" alt="instagram"></a>
@@ -136,6 +152,9 @@
                     </a>
                 </div>
             </div>
+
+            <h2 class="footer__background-text u-margin-top-big">Live Smart</h2>
+            <h2 class="footer__background-text">Dare When Others Don’t.</h2>
         </div>
     </footer>
 
