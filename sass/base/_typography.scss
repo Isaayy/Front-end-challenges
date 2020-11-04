@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
 
 .heading {
   font-size: $heading-font-desktop;
   font-weight: bold;
   text-align: center;
   margin-bottom: 0.6rem;
+  color:$font-color;
 
   @include respond(tab-big) {
     font-size: $heading-font-tablet;
@@ -20,6 +20,7 @@
 
 .sub-heading {
   font-size: $sub-heading-desktop;
+  color:$font-color;
   font-weight: 600;
 
   @include respond(tab-big) {
@@ -55,6 +56,7 @@
   font-size: 1.8rem;
   font-weight: bold;
 }
+
 
 .landing {
   color: $color-grey;

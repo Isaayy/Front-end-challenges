@@ -1,0 +1,32 @@
+.why-us {
+  &__wrapper {
+    margin-top: $padding-content-desktop;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(35rem , 1fr));
+    grid-row-gap: 5rem;
+
+    @include respond(desktop-small) {
+      grid-template-columns:1fr;
+    }
+
+    @include respond(tab-big) {
+      margin-top: $padding-content-tablet;
+    }
+  
+    @include respond(mobile) {
+      margin-top: $padding-content-mobile;
+    }
+  }
+
+  &__card {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, .1);
+    }
+  }
+}
