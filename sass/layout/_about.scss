@@ -6,12 +6,25 @@
     align-items: center;
     background-color: $color-grey-light;
     position: relative;
-    z-index: -2;
+    z-index: 15;
     flex-direction: row-reverse;
-    @include respond(desktop-small) {
-      background-color: transparent;
-    }
+    
+    &::after{
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      position: absolute;
+      opacity: .7;
+      z-index: -10;
+      top:0;
+      left:0;
 
+      @include respond(desktop) {
+        display: none;
+      }
+    }
+    
     @include respond(tab-big) {
       margin-top: $padding-content-tablet;
     }
@@ -23,14 +36,12 @@
     img {
       width: 50%;
       position: relative;
-      z-index: -1;
+      z-index: -10;
       @include respond(desktop-small) {
-        width: 65%;
+        width: 100%;
       }
-      @include respond(tab-big) {
-        width: 75%;
-      }
-      @include respond(tab-small) {
+
+      @include respond(mobile) {
         display: none;
       }
     }
@@ -38,27 +49,37 @@
 
   &__content {
     background-color: $color-grey-light;
-    width: 25%;
+    width: 50%;
     margin: 0 auto;
+    padding: 1rem 4rem ;
+
     @include respond(desktop-small) {
       position: absolute;
-      z-index: 2;
-      left:0;
-      width: 50%;
-      padding: 2rem 3rem 4rem;
+      left:50%;
+      transform: translateX(-50%);
+      width: 75%;
+      padding: 5rem 3rem 6rem;
+      background: transparent;
+      color:$color-grey-light;
     }
-    @include respond(tab-big) {
-      width: 70%;
-    }
-    @include respond(tab-small) {
+    // @include respond(tab-big) {
+    //   width: 70%;
+    // }
+    @include respond(mobile) {
       position: relative;
       width: 100%;
-      padding: 6rem 2rem 7rem;
+      background-color: $color-grey-light;
+      color:$font-color;
     }
   }
 
   &__description {
   font-size: $description-desktop;
+  line-height: 1.5;
+
+  @include respond(desktop-small) {
+    color:$color-grey-dark;
+  }
   
   @include respond(tab-big) {
     font-size: $description-tablet;
@@ -66,6 +87,7 @@
 
   @include respond(mobile) {
     font-size: $description-mobile;
+    color:$font-color-light;
   }
   }
 
