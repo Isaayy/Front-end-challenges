@@ -1,0 +1,38 @@
+.features {
+    margin-bottom: 15rem;
+    &__content {
+        // border:2px solid black;
+        display: flex;
+        align-items: center;
+        margin-top:15rem ;
+
+        &--swap{
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__text {
+        // border:2px solid salmon;
+        margin-left: 17rem;
+        &--right{
+            margin: 0 17rem 0 auto;
+            display:flex;
+            align-items: flex-end;
+            flex-direction: column;
+            h2{
+                width: 75%;
+            }
+        }
+        p{
+            margin: 0;
+            width:75% ;
+            margin-top: 2rem;
+            line-height: 2;
+        }
+
+        h2,
+        p{
+            text-align: left;
+        }
+    }
+}

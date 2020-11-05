@@ -1,6 +1,7 @@
 .hamburger{
     display: none;
-
+    position: relative;
+    z-index: 100;
     @include respond(tab-big){
         display: inline-block;
     }

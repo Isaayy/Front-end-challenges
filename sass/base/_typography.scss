@@ -73,6 +73,8 @@
 
   &__description {
     font-size: 2rem;
+    color:$font-color-light;
+    font-weight: 300;
     text-align: center;
     @include respond(mobile) {
       font-size: 1.6rem;
