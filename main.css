@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right bottom ,#F39A9D, #E73651);
+}
+
+form {
+  padding: 5rem 10rem;
+  background-color: #fff;
+  border-radius: .5rem;
+}
+
+h2{
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+input,textarea{
+  border:2px solid #E73651;
+  border-radius: .4rem; 
+  outline: none;
+  color:black;
+}
+
+input{
+  padding: 0 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  padding: 1rem 1rem;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:black;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 2.5rem 2.5rem 7rem 2.5rem;
+  grid-row-gap:2rem;
+  grid-column-gap: 1rem;
+}
+
+.wrapper p {
+  font-size: .85rem;
+  margin-top: .2rem;
+  font-weight: 500;
+  padding: 0 1rem;
+  color:#F8BE12;
+}
+
+.p-hidden{
+  visibility: hidden;
+}
+
+
+.input-message{
+  grid-column: 1/-1;
+}
+
+.btn{
+  cursor: pointer;
+  grid-column: 1/-1;
+  background-color:#E73651;
+  border:none;
+  border-radius: .4rem;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.btn:hover{
+  background-color:#DB1A37;
+}
