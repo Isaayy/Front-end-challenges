@@ -10,16 +10,20 @@ const phone = document.querySelector('.input-phone');
 const items = document.querySelectorAll('#input');
 
 
-const isValid = function(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].value){
-      let error = document.getElementById(`${array[i].className}-p`);
+
+const isValid = function(item) {
+  for (let i = 0; i < item.length; i++) {
+    if (item[i].value){
+
+      let error = document.getElementById(`${item[i].className}-p`);
       const letters = /^[A-Za-z]+$/;
-      let inputLength = array[i].value.length;
-      switch (array[i].className){
+      const numbers = /^\d+$/;
+      let inputLength = item[i].value.length;
+
+      switch (item[i].className){
         case 'input-name':
         case 'input-surname':   
-          if(!letters.test(array[i].value)){ // invalid input
+          if(!letters.test(item[i].value)){ // invalid input
             error.textContent = 'Invalid data';
             error.classList.remove('p-hidden');
           }else
@@ -27,7 +31,14 @@ const isValid = function(array) {
           break;
 
         case 'input-email':
-          if(!array[i].value.includes('.') || !array[i].value.includes('@') || !letters.test(array[i].value[0]) || !letters.test(array[i].value[inputLength-1])  ){ // check if includes @ or . and check if first/last index is a letter
+          if(!item[i].value.includes('.') || !item[i].value.includes('@') || !letters.test(item[i].value[inputLength-1])  ){ // check if includes (@ or .) and check if the last index is a letter
+            error.textContent = 'Invalid data';
+            error.classList.remove('p-hidden');
+          }else
+          error.classList.add('p-hidden');
+          break;
+        case 'input-phone':
+          if(!numbers.test(item[i].value) ||  inputLength<5){
             error.textContent = 'Invalid data';
             error.classList.remove('p-hidden');
           }else
