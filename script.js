@@ -1,19 +1,16 @@
 'use strict';
 
 const submit = document.querySelector('.btn');
-
 const name = document.querySelector('.input-name');
 const surname = document.querySelector('.input-surname');
 const email = document.querySelector('.input-email');
 const phone = document.querySelector('.input-phone');
-
 const items = document.querySelectorAll('#input');
-
 
 
 const isValid = function(item) {
   for (let i = 0; i < item.length; i++) {
-    if (item[i].value){
+    if (item[i].value){ // Check if contains value
 
       let error = document.getElementById(`${item[i].className}-p`);
       const letters = /^[A-Za-z]+$/;
@@ -23,7 +20,7 @@ const isValid = function(item) {
       switch (item[i].className){
         case 'input-name':
         case 'input-surname':   
-          if(!letters.test(item[i].value)){ // invalid input
+          if(!letters.test(item[i].value)){ // Invalid input 
             error.textContent = 'Invalid data';
             error.classList.remove('p-hidden');
           }else
@@ -38,7 +35,7 @@ const isValid = function(item) {
           error.classList.add('p-hidden');
           break;
         case 'input-phone':
-          if(!numbers.test(item[i].value) ||  inputLength<5){
+          if(!numbers.test(item[i].value) ||  inputLength<5){  // Invalid input 
             error.textContent = 'Invalid data';
             error.classList.remove('p-hidden');
           }else
@@ -50,33 +47,9 @@ const isValid = function(item) {
   }
 }
 
-
 for (let i = 0; i < items.length; i++) {
     items[i].addEventListener('click',function(){
       // Check if the input is valid
       isValid(items);
-
     });
 }
-
-
-
-
-submit.addEventListener('click',function() {
-
-});
-
-
-// if(items[i].value){
-//   console.log(this.className);
-//   alert('aa');
-//   switch (className){
-    
-//     case 'input-name input':
-//       alert('o tak');
-//       break;
-//     case 'input-surname input':
-//       alert('oooo tak');
-//       break;
-//   }
-// }
