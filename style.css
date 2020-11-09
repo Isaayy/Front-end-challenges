@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Goldman', cursive;
+}
+
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #151515;
+}
+
+main {
+  width: 65%;
+  height: 70%;
+  background-color: #151515;
+  border: 3px solid #F5F5F5;
+  padding: 2.5rem 0;
+  color: #F5F5F5;
+}
+
+main h1 {
+  text-align: center;
+  font-size: 3.3rem;
+  -webkit-animation: 1s ease-in .1s forwards slidein;
+          animation: 1s ease-in .1s forwards slidein;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+}
+
+main p {
+  color: #D6D6D6;
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto 0;
+  font-size: 1.2rem;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-animation: 1s ease-in .5s forwards slidein;
+          animation: 1s ease-in .5s forwards slidein;
+}
+
+main .keyword {
+  font-size: 2rem;
+  margin: 4rem auto 0;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .keyword .word {
+  border-bottom: 2px solid #F5F5F5;
+  height: 2.5rem;
+  width: 2rem;
+}
+
+main .keyword .word:not(:first-child) {
+  margin-left: .7rem;
+}
+
+main .cta {
+  color: #F5F5F5;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  border: 2px solid #8F0045;
+  padding: .7rem 1.5rem;
+  border-radius: 5px;
+}
+
+main .cta:hover {
+  background-color: #8F0045;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
