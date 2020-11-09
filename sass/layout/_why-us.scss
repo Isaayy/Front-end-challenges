@@ -1,6 +1,7 @@
 .why-us {
   &__wrapper {
     margin-top: $padding-content-desktop;
+    margin-bottom: $padding-content-desktop;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(35rem , 1fr));
     grid-row-gap: 5rem;
