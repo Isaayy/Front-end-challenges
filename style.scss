@@ -3,6 +3,13 @@
 $color-primary-white :  #F5F5F5;
 $color-primary-white-dark : #D6D6D6;
 $color-primary-dark : #151515;
+$color-primary-dark-light : #333333;
+
+@mixin animation {
+    // animation: 1s ease-in .1s forwards slidein;
+    // transform: translateY(100%);
+    // opacity: 0;
+}
 
 *,
 *::after,
@@ -33,37 +40,54 @@ main {
     flex-direction: column;
     align-items: center;
 
-    h1 {
-        text-align: center;
-        font-size: 3.3rem;
+    .header{
+        display: flex;
+        align-items: center;
+        position: relative;
+        &__heading {
+            text-align: center;
+            font-size: 3.3rem;
+            @include animation();
+        }
+    
+        &__lifes{
+            display: flex;
+            position: absolute;
+            left:100%;
+            transform: translateX(100%);
+            transition: all 2.5s;
+            opacity: 0; 
+        }
 
-        // animation: 1s ease-in .1s forwards slidein;
-        // transform: translateY(100%);
-        // opacity: 0;
+        &__icon {
+            width: 2rem;
+            height: 2rem;
+            fill:red;
+            &:not(:first-child){
+                margin-left: .5rem;
+            }
+        }
     }
 
-    p{
+    .description{
         color:$color-primary-white-dark;
         text-align: center;
         width: 70%;
         margin: 1rem auto 0 ;
         font-size: 1.2rem;
-
-        // transform: translateY(100%);
-        // opacity: 0;
-        // animation: 1s ease-in .5s forwards slidein;
-
+        @include animation();
     }
 
     .keyword {
         font-size: 2rem;
         margin: 4rem auto 0 ;
         text-align: center;
-        
+    
         display: flex;
         justify-content: center;
+        @include animation();
 
-        .word { 
+        &__letter { 
             border-bottom: 2px solid $color-primary-white;
             height: 2.5rem;
             width: 2rem;
@@ -71,10 +95,6 @@ main {
                 margin-left: .7rem;
             }
         }
-
-        // transform: translateY(100%);
-        // opacity: 0;
-        // animation: 1s ease-in .7s forwards slidein;
     }
 
     .cta {
@@ -84,24 +104,45 @@ main {
         position: relative;
         margin-top: 5rem;
         font-size: 1.5rem;
-        border:2px solid #8F0045; // B80059
+        border:2px solid #8F0045;
         padding: .7rem 1.5rem;
         border-radius: 5px;
 
-        // transform: translateY(100%);
-        // opacity: 0;
-        // animation: 1s ease-in .9s forwards slidein;
+        @include animation();
 
         &:hover{
             background-color: #8F0045;
         }
     }
-}
 
-.icon {
-    width: 1rem;
-    height: 1rem;
-    fill:red;
+    .menu{
+        padding: 1rem;
+        margin-top: 5rem;        
+        &__input {
+            background-color: $color-primary-dark-light;
+            border:none;
+            padding: 1rem 1.5rem;
+            color:$color-primary-white-dark;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            outline: none;
+            transition: all 2.5s;
+            opacity: 0; 
+        }
+
+        &__btn {
+            padding: 1rem 1.5rem;
+            border:none;
+            background-color: #8F0045;
+            color:$color-primary-white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-left: 1rem;
+            cursor: pointer;
+            transition: all 2.5s;
+            opacity: 0; 
+        }
+    }
 }
 
 @keyframes slidein {

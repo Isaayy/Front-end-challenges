@@ -42,12 +42,45 @@ main {
           align-items: center;
 }
 
-main h1 {
+main .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main .header__heading {
   text-align: center;
   font-size: 3.3rem;
 }
 
-main p {
+main .header__lifes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 100%;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  opacity: 0;
+}
+
+main .header__icon {
+  width: 2rem;
+  height: 2rem;
+  fill: red;
+}
+
+main .header__icon:not(:first-child) {
+  margin-left: .5rem;
+}
+
+main .description {
   color: #D6D6D6;
   text-align: center;
   width: 70%;
@@ -67,13 +100,13 @@ main .keyword {
           justify-content: center;
 }
 
-main .keyword .word {
+main .keyword__letter {
   border-bottom: 2px solid #F5F5F5;
   height: 2.5rem;
   width: 2rem;
 }
 
-main .keyword .word:not(:first-child) {
+main .keyword__letter:not(:first-child) {
   margin-left: .7rem;
 }
 
@@ -93,10 +126,36 @@ main .cta:hover {
   background-color: #8F0045;
 }
 
-.icon {
-  width: 1rem;
-  height: 1rem;
-  fill: red;
+main .menu {
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+main .menu__input {
+  background-color: #333333;
+  border: none;
+  padding: 1rem 1.5rem;
+  color: #D6D6D6;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  outline: none;
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  opacity: 0;
+}
+
+main .menu__btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: #8F0045;
+  color: #F5F5F5;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-left: 1rem;
+  cursor: pointer;
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  opacity: 0;
 }
 
 @-webkit-keyframes slidein {

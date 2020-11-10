@@ -8,19 +8,37 @@
 </head>
 <body>
     <main>
-        <h1>Hangman</h1>
-        <div class="lifes">
-            <svg class="icon">
-                <use xlink:href='img/sprite.svg#icon-heart'></use>
-            </svg>
+        <div class='header'>
+            <h1 class='header__heading'>Hangman</h1>
+            <div class="header__lifes">
+                <svg class="header__icon icon-1">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-2">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-3">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-4">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-5">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+            </div>
         </div>
         <p class='description'>This is version of the classic letter guessing game called Hangman. You are shown a set of blank letters that match a word or phrase and you have to guess what these letters are to reveal the hidden word.</p>
         <div class="keyword">
-            <div class="word"></div>
-            <div class="word"></div>
-            <div class="word"></div>
-            <div class="word"></div>
-            <div class="word"></div>
+            <div class="keyword__letter"></div>
+            <div class="keyword__letter"></div>
+            <div class="keyword__letter"></div>
+            <div class="keyword__letter"></div>
+            <div class="keyword__letter"></div>
+        </div>
+        <div class="menu">
+            <input type="text" class='menu__input'>
+            <button class="menu__btn">Try!</button>
         </div>
         <a href="#" class="cta">Start!</a>
     </main>
