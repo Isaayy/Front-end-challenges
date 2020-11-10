@@ -9,8 +9,12 @@
 <body>
     <main>
         <h1>Hangman</h1>
-        <p>This is version of the classic letter guessing game called Hangman. You are shown a set of blank letters that match a word or phrase and you have to guess what these letters are to reveal the hidden word.</p>
-        <!-- words from random list or from input -->
+        <div class="lifes">
+            <svg class="icon">
+                <use xlink:href='img/sprite.svg#icon-heart'></use>
+            </svg>
+        </div>
+        <p class='description'>This is version of the classic letter guessing game called Hangman. You are shown a set of blank letters that match a word or phrase and you have to guess what these letters are to reveal the hidden word.</p>
         <div class="keyword">
             <div class="word"></div>
             <div class="word"></div>
@@ -20,5 +24,6 @@
         </div>
         <a href="#" class="cta">Start!</a>
     </main>
+    <script src='script.js'></script>
 </body>
 </html>
