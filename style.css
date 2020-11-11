@@ -73,7 +73,7 @@ main .header__lifes {
 main .header__icon {
   width: 2rem;
   height: 2rem;
-  fill: red;
+  fill: #8F0045;
 }
 
 main .header__icon:not(:first-child) {
@@ -100,13 +100,13 @@ main .keyword {
           justify-content: center;
 }
 
-main .keyword__letter {
+main .keyword div {
   border-bottom: 2px solid #F5F5F5;
   height: 2.5rem;
   width: 2rem;
 }
 
-main .keyword__letter:not(:first-child) {
+main .keyword div:not(:first-child) {
   margin-left: .7rem;
 }
 
@@ -129,6 +129,12 @@ main .cta:hover {
 main .menu {
   padding: 1rem;
   margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main .menu__input {
@@ -153,9 +159,24 @@ main .menu__btn {
   border-radius: 5px;
   margin-left: 1rem;
   cursor: pointer;
-  -webkit-transition: all 2.5s;
-  transition: all 2.5s;
+  -webkit-transition: opacity 2.5s , translate 1s;
+  transition: opacity 2.5s , translate 1s;
   opacity: 0;
+  outline: none;
+}
+
+main .menu__btn:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+main .menu__btn:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+main .menu__message {
+  font-size: 2rem;
 }
 
 @-webkit-keyframes slidein {
@@ -182,5 +203,9 @@ main .menu__btn {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

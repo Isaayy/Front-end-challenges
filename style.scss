@@ -4,6 +4,7 @@ $color-primary-white :  #F5F5F5;
 $color-primary-white-dark : #D6D6D6;
 $color-primary-dark : #151515;
 $color-primary-dark-light : #333333;
+$color-red-pink : #8F0045 ;
 
 @mixin animation {
     // animation: 1s ease-in .1s forwards slidein;
@@ -62,7 +63,7 @@ main {
         &__icon {
             width: 2rem;
             height: 2rem;
-            fill:red;
+            fill:$color-red-pink;
             &:not(:first-child){
                 margin-left: .5rem;
             }
@@ -87,7 +88,7 @@ main {
         justify-content: center;
         @include animation();
 
-        &__letter { 
+        div{ 
             border-bottom: 2px solid $color-primary-white;
             height: 2.5rem;
             width: 2rem;
@@ -104,20 +105,24 @@ main {
         position: relative;
         margin-top: 5rem;
         font-size: 1.5rem;
-        border:2px solid #8F0045;
+        border:2px solid $color-red-pink;
         padding: .7rem 1.5rem;
         border-radius: 5px;
 
         @include animation();
 
         &:hover{
-            background-color: #8F0045;
+            background-color: $color-red-pink;
         }
     }
 
     .menu{
         padding: 1rem;
-        margin-top: 5rem;        
+        margin-top: 5rem;  
+        
+        display: flex;
+        align-items: center;
+
         &__input {
             background-color: $color-primary-dark-light;
             border:none;
@@ -139,8 +144,21 @@ main {
             border-radius: 5px;
             margin-left: 1rem;
             cursor: pointer;
-            transition: all 2.5s;
+            transition: opacity 2.5s , translate 1s;
             opacity: 0; 
+            outline: none;
+
+            &:hover{
+                transform: translateY(-2px);
+            }
+    
+            &:active{
+                transform: translateY(0);
+            }
+        }
+
+        &__message {
+            font-size: 2rem;
         }
     }
 }
@@ -155,4 +173,8 @@ main {
         opacity: 1;
         transform: translateY(0);
     }
-  }
+}
+
+.hidden {
+    display: none;
+}
