@@ -2,7 +2,8 @@
     padding-top: $footer-padding-desktop;
     margin-top: $padding-main-desktop;
     background-image: url(../img/footer-background.png);
-    color:#F6F6F6;
+    background-size: cover;
+    color:$color-grey-dark;
     
 
     padding-bottom: 5rem;
@@ -54,6 +55,19 @@
             z-index: 1;
             position: relative;
 
+    
+            @include respond(tab-big){
+                width: 50rem;
+            }
+    
+            @include respond(tab-small){
+                width: 40rem;
+            }
+    
+            @include respond(mobile){
+                width: 30rem;
+            }
+
             &::placeholder{
                 color:black;
                 font-weight: bold;
@@ -76,6 +90,14 @@
         border: none;
         transition: all .3s;
 
+        @include respond(tab-small){
+            width: 8rem;
+        }
+
+        @include respond(mobile){
+            width: 7rem;
+        }
+
         &:hover{
             background-color: $color-primary-dark;
         }
@@ -85,6 +107,86 @@
         font-weight: 700;
         font-size: 10rem;
         opacity: .25;
+
+        @include respond(desktop-small){
+            font-size: 7rem;
+        }
+
+        @include respond(tab-big){
+            font-size: 6rem;
+        }
+
+        @include respond(tab-small){
+            font-size: 4.5rem;
+        }
+
+        @include respond(mobile){
+            font-size: 3rem;
+        }
     }
 }
 
+.footer-nav{
+    background-color: $color-grey-2;
+    color:$color-grey-dark;
+    padding: 2rem 0 ;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+        
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      display: block;
+      transform: translateY(-0.2rem);
+
+      @include respond(mobile){
+        font-size: 1.6rem;
+      }
+    }
+    img {
+      transform: translateY(-0.5rem);
+    }
+    }
+
+    &__menu {
+        flex:1;
+
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+
+        @include respond(tab-big){
+            display: none;
+        }
+    }
+    
+    &__link {
+        color:$color-grey-dark;
+        font-weight: bold;
+        font-size: 1.7rem;
+    }
+
+    &__copyright {
+        flex:1;
+
+        display: flex;
+        justify-content: flex-end;
+
+        font-size: 1.5rem;
+        font-weight: 300;
+
+        @include respond(mobile){
+            font-size: 1.4rem;
+        }
+    }
+}
