@@ -27,7 +27,7 @@ cta.addEventListener('click', () =>{
 // ###############################
 // keyword generator
 
-const keyword = 'key';
+const keyword = 'apple';
 let wordsLeft = keyword.length;
 
 const keywordBox = document.querySelector('.keyword');
@@ -68,16 +68,31 @@ const endGame = winOrLose => {
     game = false;
 }
 
+// ###############################
+// index finder
+
+const allIndexes = (letter) => { // for keywords with more than 1 letter ex. apple 
+    let arr = [];
+    for(let i = 0 ; i < keyword.length ; i ++){
+        if (keyword[i] == letter){
+            arr.push(i);
+        }
+    }
+    return arr;
+}
 
 // ###############################
 // game
 
 guess.addEventListener('click',() =>{
     if (inputValidation(input.value) && game){
-        if (input.value.length <= 1){;
+        if (input.value.length <= 1){ // single letter input 
             if (keyword.includes(input.value)){
-                const index = keyword.indexOf(input.value);
-                document.querySelector(`.keyword__letter-${index}`).textContent = input.value;
+                const indexArray = allIndexes(input.value);
+                console.log(indexArray);
+                for (let i = 0; i < indexArray.length; i++) {
+                    document.querySelector(`.keyword__letter-${indexArray[i]}`).textContent = input.value;
+                }
                 input.value = '';
                 wordsLeft--;
 
@@ -94,13 +109,34 @@ guess.addEventListener('click',() =>{
                 life.style.fill = "#333333";
             }
         }
-        else { // TODO : WHOLE WORDS INPUT
-            alert('b');
+        else { // word input
+            if (input.value == keyword){
+                for (let i = 0 ; i < keyword.length ; i++){
+                    document.querySelector(`.keyword__letter-${i}`).textContent = keyword[i];
+                }
+                endGame('win');
+            }
+            else {
+                lifes--;
+                let life = document.querySelector(`.icon-${lifes+1}`);
+                life.style.fill = "#333333";
+            }
         }    
+    }
+    else if (!game) { // Play again
+        guess.textContent = 'Try!'
+        game = true;
+        input.value = '';
+        input.classList.toggle('hidden');
+        input.nextElementSibling.classList.toggle('hidden');
+        lifes = 5 ;
+        for (let i = 0; i < lifes; i++) {
+            let life = document.querySelector(`.icon-${i+1}`);
+            life.style.fill = "#8F0045";
+        }
+        // TODO : generate new keyword
     }
 })
 
-
 // TODO :
-// ? play again button ( reset settings )
 // ? generating random number then index of array containing keywords from file? 
