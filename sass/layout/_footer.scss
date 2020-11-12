@@ -1,7 +1,11 @@
 .footer {
     padding-top: $footer-padding-desktop;
     margin-top: $padding-main-desktop;
-    background-image: url(../img/footer-background.png);
+    background-image: linear-gradient(
+        rgba(#000, .70)
+      ),
+      url(../img/footer-background.jpg);
+    background-position: top;
     background-size: cover;
     color:$color-grey-dark;
     
