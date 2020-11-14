@@ -27,13 +27,37 @@ cta.addEventListener('click', () =>{
 // ###############################
 // keyword generator
 
-const keyword = 'apple';
-let wordsLeft = keyword.length;
-
+let keyword;
+let wordsLeft ;
 const keywordBox = document.querySelector('.keyword');
-for(let i = 0 ; i<keyword.length ; i++){
-    keywordBox.innerHTML += `<div class=keyword__letter-${i}></div>`;
+
+const generateKeyword = () => {
+  // TODO in future add more keywords in a better way
+  const keywords = [
+    'ability',
+    'able',
+    'about',
+    'above',
+    'accept',
+    'according',
+    'account',
+    'across',
+    'act',
+    'action',
+    'activity',
+    'actually',
+  ];
+
+  const randomNumber = Math.floor(Math.random() * keywords.length);
+
+  keyword = keywords[randomNumber];
+  wordsLeft = keyword.length;
+
+  for(let i = 0 ; i<keyword.length ; i++){
+      keywordBox.innerHTML += `<div class=keyword__letter-${i}></div>`;
+  }
 }
+generateKeyword();
 
 // ###############################
 // game starts
@@ -84,17 +108,19 @@ const allIndexes = (letter) => { // for keywords with more than 1 letter ex. app
 // ###############################
 // game
 
+let usedLetters = [];
+
 guess.addEventListener('click',() =>{
-    if (inputValidation(input.value) && game){
+    if (inputValidation(input.value) && game && !usedLetters.includes(input.value)){
         if (input.value.length <= 1){ // single letter input 
             if (keyword.includes(input.value)){
                 const indexArray = allIndexes(input.value);
-                console.log(indexArray);
                 for (let i = 0; i < indexArray.length; i++) {
                     document.querySelector(`.keyword__letter-${indexArray[i]}`).textContent = input.value;
                 }
+                usedLetters.push(input.value);
                 input.value = '';
-                wordsLeft--;
+                wordsLeft-=indexArray.length;
 
                 if (wordsLeft == 0){ // Winning game
                     endGame('win');
@@ -134,9 +160,7 @@ guess.addEventListener('click',() =>{
             let life = document.querySelector(`.icon-${i+1}`);
             life.style.fill = "#8F0045";
         }
-        // TODO : generate new keyword
+        keywordBox.textContent = '';
+        generateKeyword();
     }
 })
-
-// TODO :
-// ? generating random number then index of array containing keywords from file? 

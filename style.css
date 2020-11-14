@@ -27,9 +27,9 @@ main {
   width: 65%;
   height: 70%;
   background-color: #151515;
-  border: 3px solid #F5F5F5;
+  border: 3px solid #f5f5f5;
   padding: 2.5rem 0;
-  color: #F5F5F5;
+  color: #f5f5f5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,6 +55,11 @@ main .header {
 main .header__heading {
   text-align: center;
   font-size: 3.3rem;
+  -webkit-animation: 1s ease-in .1s forwards slidein;
+          animation: 1s ease-in .1s forwards slidein;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
 }
 
 main .header__lifes {
@@ -73,19 +78,24 @@ main .header__lifes {
 main .header__icon {
   width: 2rem;
   height: 2rem;
-  fill: #8F0045;
+  fill: #8f0045;
 }
 
 main .header__icon:not(:first-child) {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 main .description {
-  color: #D6D6D6;
+  color: #d6d6d6;
   text-align: center;
   width: 70%;
   margin: 1rem auto 0;
   font-size: 1.2rem;
+  -webkit-animation: 1s ease-in .1s forwards slidein;
+          animation: 1s ease-in .1s forwards slidein;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
 }
 
 main .keyword {
@@ -98,32 +108,42 @@ main .keyword {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-animation: 1s ease-in .1s forwards slidein;
+          animation: 1s ease-in .1s forwards slidein;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
 }
 
 main .keyword div {
-  border-bottom: 2px solid #F5F5F5;
+  border-bottom: 2px solid #f5f5f5;
   height: 2.5rem;
   width: 2rem;
 }
 
 main .keyword div:not(:first-child) {
-  margin-left: .7rem;
+  margin-left: 0.7rem;
 }
 
 main .cta {
-  color: #F5F5F5;
+  color: #f5f5f5;
   text-decoration: none;
   display: inline-block;
   position: relative;
   margin-top: 5rem;
   font-size: 1.5rem;
-  border: 2px solid #8F0045;
-  padding: .7rem 1.5rem;
+  border: 2px solid #8f0045;
+  padding: 0.7rem 1.5rem;
   border-radius: 5px;
+  -webkit-animation: 1s ease-in .1s forwards slidein;
+          animation: 1s ease-in .1s forwards slidein;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
 }
 
 main .cta:hover {
-  background-color: #8F0045;
+  background-color: #8f0045;
 }
 
 main .menu {
@@ -141,7 +161,7 @@ main .menu__input {
   background-color: #333333;
   border: none;
   padding: 1rem 1.5rem;
-  color: #D6D6D6;
+  color: #d6d6d6;
   font-size: 1.2rem;
   border-radius: 5px;
   outline: none;
@@ -153,14 +173,14 @@ main .menu__input {
 main .menu__btn {
   padding: 1rem 1.5rem;
   border: none;
-  background-color: #8F0045;
-  color: #F5F5F5;
+  background-color: #8f0045;
+  color: #f5f5f5;
   font-size: 1.2rem;
   border-radius: 5px;
   margin-left: 1rem;
   cursor: pointer;
-  -webkit-transition: opacity 2.5s , translate 1s;
-  transition: opacity 2.5s , translate 1s;
+  -webkit-transition: opacity 2.5s, translate 1s;
+  transition: opacity 2.5s, translate 1s;
   opacity: 0;
   outline: none;
 }
