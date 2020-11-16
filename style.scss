@@ -6,12 +6,6 @@ $color-primary-dark: #151515;
 $color-primary-dark-light: #333333;
 $color-red-pink: #8f0045;
 
-@mixin animation {
-  animation: 1s ease-in .1s forwards slidein;
-  transform: translateY(100%);
-  opacity: 0;
-}
-
 *,
 *::after,
 *::before {
@@ -41,6 +35,8 @@ main {
   flex-direction: column;
   align-items: center;
 
+
+
   .header {
     display: flex;
     align-items: center;
@@ -48,7 +44,6 @@ main {
     &__heading {
       text-align: center;
       font-size: 3.3rem;
-      @include animation();
     }
 
     &__lifes {
@@ -76,7 +71,6 @@ main {
     width: 70%;
     margin: 1rem auto 0;
     font-size: 1.2rem;
-    @include animation();
   }
 
   .keyword {
@@ -86,7 +80,6 @@ main {
 
     display: flex;
     justify-content: center;
-    @include animation();
 
     div {
       border-bottom: 2px solid $color-primary-white;
@@ -103,13 +96,11 @@ main {
     text-decoration: none;
     display: inline-block;
     position: relative;
-    margin-top: 5rem;
+    // margin-top: 5rem;
     font-size: 1.5rem;
     border: 2px solid $color-red-pink;
     padding: 0.7rem 1.5rem;
     border-radius: 5px;
-
-    @include animation();
 
     &:hover {
       background-color: $color-red-pink;
@@ -161,20 +152,31 @@ main {
       font-size: 2rem;
     }
   }
-}
 
-@keyframes slidein {
-  from {
+  .letters-used{
+    font-size: 1.2rem;
+    transform :translateX(-25rem);
+    margin-top: 5rem;
+    transition: all 1s;
     opacity: 0;
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
 .hidden {
   display: none;
+}
+
+
+.started .header__heading{
+  transition: all 1s;
+  transform :translateX(-150%)
+}
+
+.started .description{
+  transition : all 1s;
+  opacity : 0;
+}
+
+.started .header__lifes, .started .menu__input, .started .menu__btn , .started .letters-used{
+  opacity: 1;
 }

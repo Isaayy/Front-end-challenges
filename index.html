@@ -33,11 +33,12 @@
 
         </div>
         <div class="menu">
-            <input type="text" class='menu__input' value="" id='test'>
+            <input type="text" class='menu__input' value="" id='test' pattern="[A-Za-z]" maxlength="1">
             <p class='menu__message hidden'></p> 
             <button class="menu__btn">Try!</button>
         </div>
         <a href="#" class="cta">Start!</a>
+        <p id="letters-used" class='letters-used'>Previous guesses: </p>
     </main>
     <script src='script.js'></script>
 </body>
