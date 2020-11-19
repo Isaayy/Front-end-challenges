@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/base';
+@import 'base/typography';
+
+@import 'components/hamburger';
+@import 'components/sub-section';
+@import 'components/button';
+
+@import 'layout/hero';
+@import 'layout/about';
+@import 'layout/features';
+@import 'layout/pricing';
+@import 'layout/footer';
+=======
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'components/nav';
+@import 'components/button';
+@import 'components/skill';
+
+@import 'layout/header';
+@import 'layout/landing';
+@import 'layout/about';
+@import 'layout/footer';
+@import 'layout/projects';
+
+
+
+>>>>>>> Simple-portfolio/master

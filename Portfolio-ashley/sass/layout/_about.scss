@@ -1,0 +1,97 @@
+.about {
+<<<<<<< HEAD
+    &__wrapper {
+        display: flex;
+        @include respond(tab-big){
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__info , &__img {
+        flex:1;
+    }
+
+    &__img {
+        display: flex;
+        justify-content: flex-end;
+        @include respond(tab-big){
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        img {
+            @include respond(tab-small){
+                width:70%;
+            }
+
+            @include respond(mobile){
+                width:90%;
+            }
+        }
+
+    }
+
+    &__header {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+=======
+    background-color: $background-color-2;
+    &__wrapper {
+        display:flex;
+        align-items: center;
+        @include respond(tab-big){
+            flex-direction: column-reverse;
+        }
+    }
+
+    &__content {
+        margin-left: 3rem;
+        @include respond(tab-big){
+            margin-bottom: 4rem;
+            margin-left: 0;
+        }
+       
+    }
+
+    &__header {
+        color:white;
+        font-size: 2.2rem;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.skills {
+    background-color: $background-color-2;
+    
+    &__wrapper {
+        display: grid;
+        grid-template-columns:repeat(auto-fill,minmax(20rem,1fr));
+        grid-gap:3rem;
+        
+        @include respond(desktop-big) {
+            grid-gap:5rem;
+        }
+
+        @include respond(tab-big) {
+            grid-template-columns: 1fr;
+            margin:0 15rem;
+        }
+
+        
+        @include respond(tab-small) {
+            grid-template-columns: 1fr;
+            margin:0 5rem;
+        }
+
+        @include respond(mobile) {
+            grid-template-columns: 1fr;
+            margin:0;
+        }
+>>>>>>> Simple-portfolio/master
+    }
+}

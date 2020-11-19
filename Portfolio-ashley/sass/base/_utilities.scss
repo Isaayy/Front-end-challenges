@@ -1,0 +1,31 @@
+.u-margin-bottom{
+    margin-bottom:$content-padding-desktop ;
+
+    @include respond(desktop-small){
+        margin-bottom:$content-padding-tablet ;
+    }
+    @include respond(mobile){
+        margin-bottom:$content-padding-mobile ;
+    }
+}
+
+.u-text-align-center{
+    text-align: center;
+}
+
+
+.u-margin-top{
+    margin-top:$content-padding-desktop ;
+
+    @include respond(desktop-small){
+        margin-top:$content-padding-tablet ;
+    }
+    @include respond(mobile){
+        margin-top:$content-padding-mobile ;
+    }
+}
+
+
+.u-hidden {
+    overflow: hidden;
+}
