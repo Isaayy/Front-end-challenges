@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <main>
+        <div class='header'>
+            <h1 class='header__heading'>Hangman</h1>
+            <div class="header__lifes">
+                <svg class="header__icon icon-1">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-2">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-3">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-4">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+                <svg class="header__icon icon-5">
+                    <use xlink:href='img/sprite.svg#icon-heart'></use>
+                </svg>
+            </div>
+        </div>
+        <p class='description'>This is version of the classic letter guessing game called Hangman. You are shown a set of blank letters that match a word or phrase and you have to guess what these letters are to reveal the hidden word.</p>
+        <div class="keyword">
+
+        </div>
+        <div class="menu">
+            <input type="text" class='menu__input' value="" id='test' pattern="[A-Za-z]" maxlength="1">
+            <p class='menu__message hidden'></p> 
+            <button class="menu__btn">Try!</button>
+        </div>
+        <a href="#" class="cta">Start!</a>
+        <p id="letters-used" class='letters-used'>Previous guesses: </p>
+    </main>
+    <script src='script.js'></script>
+</body>
+</html>
