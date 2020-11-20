@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+
+.heading {
+  font-size: $heading-font-desktop;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.6rem;
+  color:$font-color;
+
+  @include respond(tab-big) {
+    font-size: $heading-font-tablet;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include respond(mobile) {
+    font-size: $heading-font-mobile;
+  }
+}
+
+.sub-heading {
+  font-size: $sub-heading-desktop;
+  color:$font-color;
+  font-weight: 600;
+
+  @include respond(tab-big) {
+    font-size: $sub-heading-tablet;
+  }
+
+  @include respond(mobile) {
+    font-size: $sub-heading-mobile;
+  }
+}
+
+.description {
+  color:$font-color-light;
+  font-size: $description-desktop;
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+  
+  @include respond(tab-big) {
+    font-size: $description-tablet;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include respond(mobile) {
+    font-size: $description-mobile;
+    width: 100%;
+  }
+}
+
+.header__link {
+  color:$font-color-light-2;
+  font-size: 1.6rem;
+  &:hover{
+    color:$font-color;
+  }
+  @include respond(tab-big) {
+    font-weight: bold;
+    font-size: 4rem;
+    color:black;
+  }
+
+  @include respond(tab-small) {
+    font-size: 3rem;
+  }
+
+  @include respond(mobile) {
+    font-size: 2.5rem;
+  }
+}
+
+
+.landing {
+  color: $color-grey;
+  &__header {
+    font-size: 5.5rem;
+    font-weight: bold;
+    @include respond(tab-big) {
+      font-size: 4.5rem;
+    }
+    @include respond(mobile) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__description {
+    font-size: 2rem;
+    color:$font-color-light;
+    font-weight: 300;
+    text-align: center;
+    @include respond(mobile) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__cta {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: white;
+  }
+}
