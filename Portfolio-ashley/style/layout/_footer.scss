@@ -1,77 +1,4 @@
 .footer {
-<<<<<<< HEAD
-    background-color: $bgc-color-1;
-
-    &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-
-        &:first-child {
-            
-            @include respond(tab-small){
-                flex-wrap: wrap;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                row-gap: 1.5rem;
-            }
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 5rem;
-        }
-        
-        p{
-            text-transform: uppercase;
-            letter-spacing: .1rem;
-            margin-right: 1rem;
-            color:white;
-        }
-    }
-
-    &__link {
-        font-size: 2rem;
-        font-weight: bold;
-        color:white;
-        transition: all .3s;
-        &:hover{
-            color:$color-primary;
-        }
-
-        &:not(:last-child) {
-            margin-right: 4rem;
-            @include respond(tab-small){
-                margin-right: 0;
-            }
-        }
-
-        @include respond(tab-small){
-            margin: 0 auto !important;
-        }
-    }
-
-    &__newsletter {
-        border:.3rem solid white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 .5rem;
-
-        input {
-            outline: none;
-            padding: .7rem .5rem;
-            margin-right: 1rem;
-
-            background:none;
-            border:none;
-            color:white;
-
-            &::placeholder {
-                color:rgb(172, 165, 165);
-                font-size: $font-small;
-                font-weight: 300;
-=======
     background-color: $background-color-footer;
     position: relative;
     
@@ -173,19 +100,10 @@
             display: inline-block;
             &:not(:first-child){
                 margin-left: 3.5rem;
->>>>>>> Simple-portfolio/master
             }
         }
     }
 
-<<<<<<< HEAD
-    &__social-icon {
-        &:not(:last-child){
-            margin-right: 4rem;
-        }
-    }
-}
-=======
     &__copy {
         width: 100%;
         background-color: $background-color-1;
@@ -194,4 +112,3 @@
 }
 
 
->>>>>>> Simple-portfolio/master
