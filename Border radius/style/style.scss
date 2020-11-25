@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #343434;
+}
+
+main {
+  background-color: white;
+  width: 50%;
+  height: 30rem;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+}
+
+.header {
+  background-color: rgb(241, 241, 241);
+  text-align: center;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+  h2 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  a {
+    color: rgb(218, 68, 83);
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-weight: 500;
+  }
+}
+
+.container {
+  flex: 1;
+  padding: 2rem 0;
+  .inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      padding: 0.5rem 0.5rem;
+      text-align: center;
+      width: 5rem;
+
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .shape {
+    background: linear-gradient(
+      to bottom right,
+      rgb(188, 78, 156),
+      rgb(248, 7, 89)
+    );
+    width: 15rem;
+    height: 7rem;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.copyBtn {
+  margin-left: 1rem;
+  transition: all 0.3s;
+  img {
+    width: 2rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.resetBtn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: none;
+  transition: all 1s;
+  cursor: pointer;
+  img {
+    width: 1.2rem;
+  }
+  &:hover img {
+    width: 1.4rem;
+  }
+}
