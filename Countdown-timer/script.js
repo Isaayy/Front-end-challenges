@@ -6,13 +6,20 @@ const startBtn = document.querySelector('.start-btn');
 const resetBtn = document.querySelector('.reset-btn');
 const eventName = document.querySelector('#event-name');
 const eventDate = document.querySelector('#event-date');
+const eventTime = document.querySelector('#event-time');
 const until = document.querySelector('.until');
 
 let isStartClicked = false;
 
 startBtn.addEventListener('click', () => {
   const today = new Date();
-  const eventDay = new Date(eventDate.value);
+  let eventDay = new Date(eventDate.value);
+  console.log('before ' + eventDay);
+  if (isValid('time')) {
+    const timeSplit = eventTime.value.split(':');
+    eventDay.setHours(timeSplit[0]);
+    eventDay.setMinutes(timeSplit[1]);
+  }
 
   //date in the past
   if (eventDay.getTime() < today.getTime()) {
@@ -35,13 +42,15 @@ startBtn.addEventListener('click', () => {
     const daysLeft = Math.floor(difference / (1000 * 3600 * 24));
     difference -= daysLeft * 1000 * 3600 * 24;
 
-    const hoursLeft = Math.floor(difference / (1000 * 3600));
+    let hoursLeft, minutesLeft, secondsLeft;
+
+    hoursLeft = Math.floor(difference / (1000 * 3600));
     difference -= hoursLeft * 1000 * 3600;
 
-    const minutesLeft = Math.floor(difference / (1000 * 60));
+    minutesLeft = Math.floor(difference / (1000 * 60));
     difference -= minutesLeft * 1000 * 60;
 
-    const secondsLeft = Math.floor(difference / 1000);
+    secondsLeft = Math.floor(difference / 1000);
     difference -= secondsLeft * 1000;
 
     startTimer({ daysLeft, hoursLeft, minutesLeft, secondsLeft });
@@ -66,6 +75,10 @@ const isValid = (type) => {
   if (type === 'name') {
     if (eventName.value) return true;
     return false;
+  } else if (type === 'time') {
+    const timePattern = /^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/;
+    if (!timePattern.test(eventTime.value)) return false;
+    else return true;
   } else {
     const datePattern = /^(((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))[-/]?[0-9]{4}|02[-/]?29[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
     if (!datePattern.test(eventDate.value)) return false;
@@ -83,6 +96,12 @@ eventDate.addEventListener('blur', () => {
   if (!isValid('date'))
     document.querySelector('#date-invalid').classList.remove('hidden');
   else document.querySelector('#date-invalid').classList.add('hidden');
+});
+
+eventTime.addEventListener('blur', () => {
+  if (!isValid('time'))
+    document.querySelector('#time-invalid').classList.remove('hidden');
+  else document.querySelector('#time-invalid').classList.add('hidden');
 });
 
 // #####################################################################
@@ -138,5 +157,3 @@ const insertTime = (time) => {
 
 // TODO:
 // ? Improve notation of timer
-// ? event time functionality
-// ? reset functionality
