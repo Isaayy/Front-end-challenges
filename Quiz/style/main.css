@@ -25,12 +25,16 @@ body {
 
 main {
   background-color: #fffbfc;
-  padding: 3rem 10rem;
+  padding: 10rem 20rem;
   border-radius: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
 main .menu {
   text-align: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 main .menu h2 {
@@ -87,5 +91,71 @@ main .menu .quiz-type__js {
 
 main .menu .quiz-type__js:hover {
   background-color: #fba823;
+}
+
+main .questions-box {
+  padding: 3rem 10rem;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(200%) translateY(-50%);
+          transform: translateX(200%) translateY(-50%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  text-align: center;
+}
+
+main .questions-box h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: black;
+}
+
+main .questions-box .question {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1b1b1b;
+  margin-bottom: 1.3rem;
+  margin-top: 2.5rem;
+}
+
+main .questions-box .question-number {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+main .questions-box .questions-box__answers p {
+  color: White;
+  font-weight: 300;
+  border-radius: 5px;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+main .questions-box .questions-box__answers p:not(:first-child) {
+  margin-top: 0.7rem;
+}
+
+.swipeLeft {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+}
+
+.swipeRight {
+  -webkit-transform: translateX(-50%) translateY(-50%) !important;
+          transform: translateX(-50%) translateY(-50%) !important;
+}
+
+.pinkRed {
+  background-color: #d81159;
+}
+
+.pinkRed:hover {
+  background-color: #bd0f4f;
 }
 /*# sourceMappingURL=main.css.map */
