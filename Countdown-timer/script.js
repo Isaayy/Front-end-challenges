@@ -7,18 +7,18 @@ const resetBtn = document.querySelector('.reset-btn');
 const eventName = document.querySelector('#event-name');
 const eventDate = document.querySelector('#event-date');
 const eventTime = document.querySelector('#event-time');
-const until = document.querySelector('.until');
+const untilParagraph = document.querySelector('.until');
 
 let isStartClicked = false;
 
 startBtn.addEventListener('click', () => {
   const today = new Date();
   let eventDay = new Date(eventDate.value);
-  console.log('before ' + eventDay);
+
   if (isValid('time')) {
-    const timeSplit = eventTime.value.split(':');
-    eventDay.setHours(timeSplit[0]);
-    eventDay.setMinutes(timeSplit[1]);
+    const splitedTime = eventTime.value.split(':');
+    eventDay.setHours(splitedTime[0]);
+    eventDay.setMinutes(splitedTime[1]);
   }
 
   //date in the past
@@ -35,7 +35,7 @@ startBtn.addEventListener('click', () => {
   }
 
   if (isValid('name') && isValid() && !isStartClicked) {
-    until.innerHTML = `<span class='until--until'>until</span> ${eventName.value}`;
+    untilParagraph.innerHTML = `<span class='until--until'>until</span> ${eventName.value}`;
 
     let difference = eventDay - today; //in ms
 
@@ -80,6 +80,7 @@ const isValid = (type) => {
     if (!timePattern.test(eventTime.value)) return false;
     else return true;
   } else {
+    // date
     const datePattern = /^(((0[13-9]|1[012])[-/]?(0[1-9]|[12][0-9]|30)|(0[13578]|1[02])[-/]?31|02[-/]?(0[1-9]|1[0-9]|2[0-8]))[-/]?[0-9]{4}|02[-/]?29[-/]?([0-9]{2}(([2468][048]|[02468][48])|[13579][26])|([13579][26]|[02468][048]|0[0-9]|1[0-6])00))$/;
     if (!datePattern.test(eventDate.value)) return false;
     else return true;
@@ -151,9 +152,4 @@ const insertTime = (time) => {
 };
 
 // TODO:
-// ? DRY code
-// ? check in feedback notes if everything is fine so far
-// ################################################################
-
-// TODO:
-// ? Improve notation of timer
+// ? Improve algorythmic notation of timer
