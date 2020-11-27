@@ -151,11 +151,27 @@ main .questions-box .questions-box__answers p:not(:first-child) {
           transform: translateX(-50%) translateY(-50%) !important;
 }
 
-.pinkRed {
+.pink-red {
   background-color: #d81159;
 }
 
-.pinkRed:hover {
+.pink-red:hover {
   background-color: #bd0f4f;
+}
+
+.teal {
+  background-color: #008f8f;
+}
+
+.teal:hover {
+  background-color: teal;
+}
+
+.orange {
+  background-color: #fbb13c;
+}
+
+.orange:hover {
+  background-color: #fba823;
 }
 /*# sourceMappingURL=main.css.map */

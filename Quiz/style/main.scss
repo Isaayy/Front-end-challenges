@@ -130,9 +130,23 @@ main {
   transform: translateX(-50%) translateY(-50%) !important;
 }
 
-.pinkRed {
+.pink-red {
   background-color: #d81159;
   &:hover {
     background-color: #bd0f4f;
+  }
+}
+
+.teal {
+  background-color: #008f8f;
+  &:hover {
+    background-color: teal;
+  }
+}
+
+.orange {
+  background-color: #fbb13c;
+  &:hover {
+    background-color: #fba823;
   }
 }
