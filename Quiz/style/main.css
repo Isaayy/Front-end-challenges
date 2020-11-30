@@ -57,6 +57,10 @@ main .menu .quiz-type {
 }
 
 main .menu .quiz-type div {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   padding: 1rem 2rem;
   border-radius: 5px;
   cursor: pointer;
@@ -107,10 +111,11 @@ main .questions-box {
   text-align: center;
 }
 
-main .questions-box h3 {
+main .questions-box .quiz-title {
   font-size: 1.7rem;
   font-weight: 600;
   color: black;
+  text-transform: uppercase;
 }
 
 main .questions-box .question {
@@ -129,7 +134,13 @@ main .questions-box .question-number {
   font-size: 1.2rem;
 }
 
-main .questions-box .questions-box__answers p {
+main .questions-box__answer {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  display: block;
   color: White;
   font-weight: 300;
   border-radius: 5px;
@@ -137,7 +148,7 @@ main .questions-box .questions-box__answers p {
   cursor: pointer;
 }
 
-main .questions-box .questions-box__answers p:not(:first-child) {
+main .questions-box__answer:not(:first-child) {
   margin-top: 0.7rem;
 }
 
@@ -148,7 +159,6 @@ main .result-box {
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid gold;
   text-align: center;
 }
 
@@ -158,12 +168,16 @@ main .result-box h3 {
   color: black;
 }
 
+main .result-box .correct-answers {
+  margin-top: 2.5rem;
+}
+
 .swipeLeft {
   -webkit-transform: translateX(-200%);
           transform: translateX(-200%);
 }
 
-.swipeRight {
+.swipeFromRight {
   -webkit-transform: translateX(-50%) translateY(-50%) !important;
           transform: translateX(-50%) translateY(-50%) !important;
 }
@@ -185,11 +199,11 @@ main .result-box h3 {
 }
 
 .orange {
-  background-color: #fbb13c;
+  background-color: #faa00f;
 }
 
 .orange:hover {
-  background-color: #fba823;
+  background-color: #dc8904;
 }
 
 .display-none {
