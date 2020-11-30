@@ -45,18 +45,18 @@ main {
   border-radius: 10px;
 }
 
-.header h2 {
+.header__heading {
   font-weight: 500;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-.header .description {
+.header__description {
   font-size: 0.9rem;
   font-weight: 300;
 }
 
-.header a {
+.header__link {
   color: #da4453;
   text-decoration: none;
   font-size: 0.8rem;
@@ -72,7 +72,7 @@ main {
   padding: 2rem 0;
 }
 
-.container .inputs {
+.container__inputs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,13 +84,13 @@ main {
           align-items: center;
 }
 
-.container .inputs input {
+.container__inputs input {
   padding: 0.5rem 0.5rem;
   text-align: center;
   width: 5rem;
 }
 
-.container .inputs input:not(:first-child) {
+.container__inputs input:not(:first-child) {
   margin-left: 1rem;
 }
 

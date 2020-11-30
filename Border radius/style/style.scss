@@ -30,23 +30,27 @@ main {
   position: relative;
 }
 
+// ##################################################################
+// ##################################################################
+// header
+
 .header {
   background-color: rgb(241, 241, 241);
   text-align: center;
   padding: 2rem 2rem;
   border-radius: 10px;
-  h2 {
+  &__heading {
     font-weight: 500;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
   }
 
-  .description {
+  &__description {
     font-size: 0.9rem;
     font-weight: 300;
   }
 
-  a {
+  &__link {
     color: rgb(218, 68, 83);
     text-decoration: none;
     font-size: 0.8rem;
@@ -56,10 +60,15 @@ main {
   }
 }
 
+// ##################################################################
+// ##################################################################
+// content container
+
 .container {
   flex: 1;
   padding: 2rem 0;
-  .inputs {
+
+  &__inputs {
     display: flex;
     justify-content: center;
     align-items: center;

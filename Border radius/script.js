@@ -18,7 +18,7 @@ const isUnit = (inputValue) => {
 };
 
 const setRadius = (direction, value) => {
-  if (!isUnit(value)) value = value + 'px'; // set px if input is without unit
+  if (!isUnit(value)) value = value + 'px';
 
   switch (direction) {
     case 'TL':
