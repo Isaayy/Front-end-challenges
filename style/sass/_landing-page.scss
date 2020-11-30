@@ -1,0 +1,114 @@
+.landing-page {
+  height: 100vh;
+  background-image: url(../../img/background.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+
+  &__logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $font-color-black;
+  }
+
+  &__nav {
+    ul {
+      list-style: none;
+      display: flex;
+
+      li {
+        &:not(:first-child) {
+          margin-left: 3.5rem;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $font-color-black-light;
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 300;
+    transition: all 0.5s;
+    position: relative;
+    &--active {
+      font-weight: 600;
+      pointer-events: none;
+      cursor: default;
+      color: $font-color-black;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $font-color-black;
+      width: 100%;
+      height: 0.2rem;
+      top: 100%;
+      left: 0;
+      transform: scale(0);
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      color: $font-color-black;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.hero {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 25%;
+  position: relative;
+
+  &__heading {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    width: 60%;
+    color: #f4f4f4;
+  }
+
+  &__cta {
+    background-color: white;
+    display: inline-block;
+    color: $font-color-black;
+    padding: 1.5rem 4rem;
+    border-radius: 7px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    &:hover {
+      transform: translateY(-3px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.socials {
+  border: 2px solid gold;
+  // position: relative;
+  // top: 65%;
+}
