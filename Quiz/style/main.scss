@@ -120,13 +120,30 @@ main {
       }
     }
   }
+
+  .result-box {
+    padding: 3rem 10rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid gold;
+    text-align: center;
+
+    h3 {
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: black;
+    }
+  }
 }
 
 .swipeLeft {
   transform: translateX(-200%);
 }
 
-.swipeRight {
+.swipeFromRight {
   transform: translateX(-50%) translateY(-50%) !important;
 }
 
@@ -149,4 +166,8 @@ main {
   &:hover {
     background-color: #fba823;
   }
+}
+
+.display-none {
+  display: none;
 }
