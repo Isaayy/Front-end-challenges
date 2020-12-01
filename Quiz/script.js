@@ -88,7 +88,7 @@ const endGame = () => {
   if (goodAnswers >= 3)
     resultScore.textContent = `Well done you answered ${goodAnswers}/5 correctly`;
   else
-    resultScore.textContent = `You need to work a little because you answered ${goodAnswers}/5 correctly`;
+    resultScore.textContent = `You need to work a little because you answered ${goodAnswers}/5 questions correctly`;
 };
 
 // ########################################################
