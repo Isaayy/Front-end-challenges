@@ -1,2 +1,6 @@
-@import 'sass/base';
-@import 'sass/landing-page';
+@import 'sass/abstracts/variables';
+
+@import 'sass/base/base';
+@import 'sass/base/typography';
+
+@import 'sass/layout/landing-page';
