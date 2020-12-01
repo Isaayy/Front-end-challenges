@@ -18,20 +18,21 @@ body {
 }
 
 main {
-  padding: 10rem 15rem;
+  padding: 5rem 15rem;
   background-color: #23b5d3;
   border-radius: 5px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  position: relative;
   h2 {
     color: white;
     font-size: 3rem;
     font-weight: bold;
   }
-  p {
+  .description {
     font-size: 1.2rem;
     font-weight: 500;
     margin-top: 3rem;
     margin-bottom: 2rem;
+    color: #151414;
   }
 
   .menu {
@@ -55,5 +56,50 @@ main {
         background-color: #e63757;
       }
     }
+  }
+}
+
+.results {
+  padding: 2rem 15rem;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  table {
+    border: 2px solid black;
+    width: 100%;
+    margin: 0 auto;
+
+    thead {
+      font-weight: bold;
+      color: #151414;
+      font-size: 1.1rem;
+    }
+
+    tbody {
+      font-weight: 300;
+      color: #151414;
+    }
+
+    td {
+      padding: 0.5rem 2rem;
+      text-align: center;
+    }
+  }
+}
+
+.show-more {
+  font-size: 0.8rem;
+  color: #e94967;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem;
+
+  &:hover {
+    color: #e63757;
   }
 }

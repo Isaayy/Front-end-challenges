@@ -24,11 +24,10 @@ body {
 }
 
 main {
-  padding: 10rem 15rem;
+  padding: 5rem 15rem;
   background-color: #23b5d3;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 main h2 {
@@ -37,11 +36,12 @@ main h2 {
   font-weight: bold;
 }
 
-main p {
+main .description {
   font-size: 1.2rem;
   font-weight: 500;
   margin-top: 3rem;
   margin-bottom: 2rem;
+  color: #151414;
 }
 
 main .menu {
@@ -71,5 +71,50 @@ main .menu .btn {
 
 main .menu .btn:hover {
   background-color: #e63757;
+}
+
+.results {
+  padding: 2rem 15rem;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.results table {
+  border: 2px solid black;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.results table thead {
+  font-weight: bold;
+  color: #151414;
+  font-size: 1.1rem;
+}
+
+.results table tbody {
+  font-weight: 300;
+  color: #151414;
+}
+
+.results table td {
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+.show-more {
+  font-size: 0.8rem;
+  color: #e94967;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.show-more:hover {
+  color: #e63757;
 }
 /*# sourceMappingURL=style.css.map */
