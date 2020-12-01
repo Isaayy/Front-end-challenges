@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+.header {
+  &__logo {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: $font-color-black;
+  }
+
+  &__link {
+    color: $font-color-black-light;
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    &--active {
+      font-weight: 600;
+      color: $font-color-black;
+    }
+  }
+}
+
+.hero {
+  &__heading {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #f4f4f4;
+  }
+
+  &__cta {
+    color: $font-color-black;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}

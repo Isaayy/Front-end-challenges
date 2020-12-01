@@ -11,12 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 3rem;
-
-  &__logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: $font-color-black;
-  }
+  width: 100%;
 
   &__nav {
     ul {
@@ -32,17 +27,12 @@
   }
 
   &__link {
-    color: $font-color-black-light;
     display: inline-block;
-    font-size: 1.8rem;
-    font-weight: 300;
     transition: all 0.5s;
     position: relative;
     &--active {
-      font-weight: 600;
       pointer-events: none;
       cursor: default;
-      color: $font-color-black;
     }
 
     &::after {
@@ -76,27 +66,19 @@
   position: relative;
 
   &__heading {
-    font-size: 4rem;
-    font-weight: 600;
     margin-bottom: 1rem;
   }
 
   &__desc {
-    font-size: 2rem;
-    font-weight: 300;
     margin-bottom: 2rem;
     width: 60%;
-    color: #f4f4f4;
   }
 
   &__cta {
     background-color: white;
     display: inline-block;
-    color: $font-color-black;
     padding: 1.5rem 4rem;
     border-radius: 7px;
-    font-size: 1.6rem;
-    font-weight: 500;
     transition: all 0.3s;
     &:hover {
       transform: translateY(-3px);
@@ -108,7 +90,16 @@
 }
 
 .socials {
-  border: 2px solid gold;
-  // position: relative;
-  // top: 65%;
+  position: fixed;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  top: 100%;
+  left: 50%;
+  transform: translateY(-100%) translateX(-50%);
+
+  img {
+    &:not(:first-child) {
+      margin-left: 2.5rem;
+    }
+  }
 }

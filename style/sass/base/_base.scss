@@ -1,10 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
-
-$color-primary: #ff0054;
-$color-primary-dark: #038a61;
-$font-color-black-light: #797979;
-$font-color-black: #1d1b1b;
-
 *,
 *::before,
 *::after {
@@ -22,4 +15,5 @@ html {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  width: 100%;
 }
