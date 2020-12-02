@@ -32,3 +32,13 @@ html {
     padding: 0 3rem;
   }
 }
+
+section {
+  margin-top: $section-margin-top-desktop;
+  @include respond(tab-big) {
+    margin-top: $section-margin-top-tablet;
+  }
+  @include respond(mobile) {
+    margin-top: $section-margin-top-mobile;
+  }
+}

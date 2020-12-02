@@ -1,0 +1,21 @@
+.tech {
+  &__content {
+    margin-top: $content-margin-top-desktop;
+    @include respond(tab-big) {
+      margin-top: $content-margin-top-tablet;
+    }
+    @include respond(mobile) {
+      margin-top: $content-margin-top-mobile;
+    }
+    margin-bottom: $content-margin-top-desktop;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-gap: 3.5rem;
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      grid-gap: 2.5rem;
+    }
+  }
+}

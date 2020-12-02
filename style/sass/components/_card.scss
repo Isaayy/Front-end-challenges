@@ -1,0 +1,19 @@
+.card {
+  background-color: $color-dark;
+  border-radius: 10px;
+
+  text-align: center;
+  padding: 5rem 0;
+  &__heading {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 1.8rem;
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+    color: #d3d3d3;
+    font-weight: 300;
+  }
+}
