@@ -29,6 +29,11 @@
     @include respond(tab-big) {
       font-size: 1.6rem;
     }
+    @include respond(tab-small) {
+      font-size: 4rem;
+      font-weight: 300;
+      color: $font-color-black;
+    }
   }
 }
 
