@@ -47,7 +47,7 @@ const table = document.querySelector('.results-table');
 const resultsBox = document.querySelector('.results');
 
 const generateResult = () => {
-  resultsBox.classList.toggle('hidden');
+  resultsBox.classList.remove('hidden');
   for (let i = 0; i < results.length; i++) {
     table.innerHTML += `<tr><td>${i + 1}</td><td>${results[i].word}</td><td>${
       results[i].frequency
@@ -61,6 +61,9 @@ const showMoreBtn = document.querySelector('.show-more');
 
 showMoreBtn.addEventListener('click', () => {
   table.classList.toggle('showMore');
+  if (showMoreBtn.textContent === `Show less`)
+    showMoreBtn.innerHTML = `Show more`;
+  else showMoreBtn.innerHTML = `Show less`;
 });
 
 // ############################################################

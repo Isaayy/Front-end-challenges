@@ -113,6 +113,7 @@ main .menu .btn:hover {
   cursor: pointer;
   display: inline-block;
   margin-top: 1rem;
+  text-decoration: underline;
 }
 
 .show-more:hover {
