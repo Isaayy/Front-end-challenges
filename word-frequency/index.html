@@ -10,10 +10,11 @@
     <main>
         <h2>Word Frequency</h2>
         <p class='description'>Paste or type text in which you want to count the frequency of words</p>
-        <div class="menu">
-            <input type="text" class="input">
+        <form action="#" class="menu">
+            <input type="text" class="input" required>
             <button class="btn">Count</button>
-        </div>
+        </form>
+
         <div class="results">
             <table>
                 <thead>
@@ -24,15 +25,11 @@
                     </tr>
                 </thead>
                 <tbody class='results-table'>
-                    <tr>
-                        <td>1</td>
-                        <td>see</td>
-                        <td>57</td>
-                    </tr>
                 </tbody>
             </table>
             <p class="show-more">Show more &rarr;</p>
         </div>
+
     </main>
     <script src="script.js"></script>
 </body>
