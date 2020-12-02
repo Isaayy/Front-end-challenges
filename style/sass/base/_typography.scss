@@ -2,9 +2,18 @@
 
 .header {
   &__logo {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: $font-color-black;
+    @include respond(desktop-big) {
+      font-size: 3.5rem;
+    }
+    @include respond(tab-big) {
+      font-size: 2rem;
+    }
+    @include respond(mobile) {
+      font-size: 1.8rem;
+    }
   }
 
   &__link {
@@ -16,24 +25,50 @@
       font-weight: 600;
       color: $font-color-black;
     }
+
+    @include respond(tab-big) {
+      font-size: 1.6rem;
+    }
   }
 }
 
 .hero {
   &__heading {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
+    @include respond(desktop-big) {
+      font-size: 4rem;
+    }
+    @include respond(desktop-small) {
+      font-size: 3rem;
+    }
+    @include respond(tab-small) {
+      font-size: 2.8rem;
+    }
+    @include respond(mobile) {
+      font-size: 2.6rem;
+    }
   }
 
   &__desc {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 300;
     color: #f4f4f4;
+    @include respond(desktop-big) {
+      font-size: 2rem;
+    }
+    @include respond(tab-small) {
+      font-size: 1.6rem;
+    }
   }
 
   &__cta {
     color: $font-color-black;
     font-size: 1.6rem;
-    font-weight: 500;
+    font-weight: 600;
+
+    @include respond(mobile) {
+      font-size: 1.4rem;
+    }
   }
 }

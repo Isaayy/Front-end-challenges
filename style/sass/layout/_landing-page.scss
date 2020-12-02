@@ -12,18 +12,30 @@
   align-items: center;
   padding-top: 3rem;
   width: 100%;
+  @include respond(desktop-small) {
+    padding-top: 1.5rem;
+  }
+  @include respond(mobile) {
+    padding-top: 3rem;
+  }
 
-  &__nav {
-    ul {
-      list-style: none;
-      display: flex;
+  &__links {
+    list-style: none;
+    display: flex;
+    @include respond(tab-small) {
+      display: none;
+    }
 
-      li {
-        &:not(:first-child) {
-          margin-left: 3.5rem;
-        }
+    li {
+      &:not(:first-child) {
+        margin-left: 3.5rem;
       }
     }
+  }
+
+  nav {
+    display: flex;
+    align-items: flex-end;
   }
 
   &__link {
@@ -55,6 +67,45 @@
       transform: scale(1);
     }
   }
+
+  &__hamburger-outline {
+    position: relative;
+    display: none;
+    cursor: pointer;
+    height: 14px;
+    width: 33px;
+    @include respond(tab-small) {
+      display: inline-block;
+    }
+  }
+
+  &__hamburger--bar {
+    width: 30px;
+    background-color: $font-color-black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: $font-color-black;
+      transition: all 0.3s;
+    }
+
+    &::before {
+      bottom: 100%;
+      margin-bottom: 2px;
+    }
+
+    &::after {
+      top: 100%;
+      margin-top: 2px;
+    }
+  }
 }
 
 .hero {
@@ -62,8 +113,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 25%;
+  top: 20%;
   position: relative;
+  @include respond(desktop-big) {
+    top: 15%;
+  }
+
+  @include respond(desktop-small) {
+    top: 20%;
+    flex-direction: column;
+    text-align: center;
+  }
+  @include respond(mobile) {
+    top: 10%;
+  }
 
   &__heading {
     margin-bottom: 1rem;
@@ -71,7 +134,17 @@
 
   &__desc {
     margin-bottom: 2rem;
-    width: 60%;
+    width: 80%;
+    @include respond(desktop-big) {
+      width: 75%;
+    }
+    @include respond(desktop-small) {
+      width: 80%;
+      margin: 0 auto 2rem;
+    }
+    @include respond(tab-big) {
+      width: 100%;
+    }
   }
 
   &__cta {
@@ -86,6 +159,28 @@
     &:active {
       transform: translateY(0);
     }
+
+    @include respond(desktop-small) {
+      margin-bottom: 5rem;
+    }
+    @include respond(mobile) {
+      margin-bottom: 0;
+      padding: 1rem 3rem;
+      border-radius: 25px;
+    }
+  }
+
+  img {
+    width: 40rem;
+    @include respond(desktop-big) {
+      width: 80rem;
+    }
+    @include respond(desktop-small) {
+      width: 50rem;
+    }
+    @include respond(mobile) {
+      width: 30rem;
+    }
   }
 }
 
@@ -97,9 +192,30 @@
   left: 50%;
   transform: translateY(-100%) translateX(-50%);
 
-  img {
+  @include respond(desktop-small) {
+    padding-bottom: 1.5rem;
+  }
+
+  @include respond(tab-small) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include respond(mobile) {
+    padding-bottom: 3rem;
+  }
+
+  a {
     &:not(:first-child) {
       margin-left: 2.5rem;
     }
   }
+}
+
+.rotate::before {
+  transform: rotate(45deg) translatey(0.6rem);
+}
+
+.rotate::after {
+  transform: rotate(-45deg) translatey(-0.6rem);
 }

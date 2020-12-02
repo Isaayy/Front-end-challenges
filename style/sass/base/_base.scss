@@ -16,4 +16,19 @@ html {
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
+  padding: 0 10rem;
+
+  @include respond(desktop-big) {
+    padding: 0;
+  }
+
+  @include respond(tab-big) {
+    padding: 0 7rem;
+  }
+  @include respond(tab-small) {
+    padding: 0 6rem;
+  }
+  @include respond(mobile) {
+    padding: 0 3rem;
+  }
 }
