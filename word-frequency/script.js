@@ -5,11 +5,13 @@ const input = document.querySelector('.input');
 
 countBtn.addEventListener('click', () => {
   if (input.value) {
+    reset();
     generateArray(input.value);
   }
 });
 
 // ############################################################
+let results = [];
 
 const generateArray = (str) => {
   // create array of words from string
@@ -19,7 +21,6 @@ const generateArray = (str) => {
 
   // Word frequency in array of words
   let count = 1;
-  let results = [];
   let found;
 
   for (let i = 0; i < words.length; i++) {
@@ -37,7 +38,7 @@ const generateArray = (str) => {
   // sort words by frequency
   results.sort((a, b) => (a.frequency < b.frequency ? 1 : -1));
 
-  generateResult(results);
+  generateResult();
 };
 
 // ############################################################
@@ -45,11 +46,11 @@ const generateArray = (str) => {
 const table = document.querySelector('.results-table');
 const resultsBox = document.querySelector('.results');
 
-const generateResult = (result) => {
+const generateResult = () => {
   resultsBox.classList.toggle('hidden');
-  for (let i = 0; i < result.length; i++) {
-    table.innerHTML += `<tr><td>${i + 1}</td><td>${result[i].word}</td><td>${
-      result[i].frequency
+  for (let i = 0; i < results.length; i++) {
+    table.innerHTML += `<tr><td>${i + 1}</td><td>${results[i].word}</td><td>${
+      results[i].frequency
     }</td></tr>`;
   }
 };
@@ -61,3 +62,10 @@ const showMoreBtn = document.querySelector('.show-more');
 showMoreBtn.addEventListener('click', () => {
   table.classList.toggle('showMore');
 });
+
+// ############################################################
+
+const reset = () => {
+  results = [];
+  table.innerHTML = '';
+};
