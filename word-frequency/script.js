@@ -9,6 +9,8 @@ countBtn.addEventListener('click', () => {
   }
 });
 
+// ############################################################
+
 const generateArray = (str) => {
   // create array of words from string
   str = str.replace(/\s\s+|\s+$/g, ' ');
@@ -38,13 +40,24 @@ const generateArray = (str) => {
   generateResult(results);
 };
 
+// ############################################################
+
 const table = document.querySelector('.results-table');
+const resultsBox = document.querySelector('.results');
 
 const generateResult = (result) => {
-  console.log(result);
+  resultsBox.classList.toggle('hidden');
   for (let i = 0; i < result.length; i++) {
     table.innerHTML += `<tr><td>${i + 1}</td><td>${result[i].word}</td><td>${
       result[i].frequency
     }</td></tr>`;
   }
 };
+
+// ############################################################
+
+const showMoreBtn = document.querySelector('.show-more');
+
+showMoreBtn.addEventListener('click', () => {
+  table.classList.toggle('showMore');
+});

@@ -104,3 +104,11 @@ main {
     color: #e63757;
   }
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.showMore tr:not(:first-child) {
+  display: none;
+}
