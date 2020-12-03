@@ -1,6 +1,6 @@
 .landing-page {
   height: 100vh;
-  background-image: url(../../img/background2.svg);
+  background-image: url(../img/background2.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -8,7 +8,7 @@
   overflow: hidden;
 
   @include respond(desktop-small) {
-    background-image: url(../../img/background.svg);
+    background-image: url(../img/background.svg);
   }
 }
 

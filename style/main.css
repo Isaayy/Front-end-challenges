@@ -299,7 +299,7 @@ footer {
 
 .landing-page {
   height: 100vh;
-  background-image: url(../../img/background2.svg);
+  background-image: url(../img/background2.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -309,7 +309,7 @@ footer {
 
 @media (max-width: 75em) {
   .landing-page {
-    background-image: url(../../img/background.svg);
+    background-image: url(../img/background.svg);
   }
 }
 
