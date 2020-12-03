@@ -33,14 +33,9 @@
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     grid-gap: 5rem;
 
-    &__project {
-      border: 2px solid gold;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    @include respond(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      grid-gap: 4rem;
     }
   }
 }
