@@ -45,6 +45,18 @@ body {
   overflow: hidden;
   background-color: white;
   color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .words p:not(:first-child) {
+  margin-left: 0.2rem;
 }
 
 .main .menu {
@@ -85,5 +97,17 @@ body {
 
 .main .restart img {
   width: 1.5rem;
+}
+
+.highlight {
+  background-color: #4ecdc4;
+}
+
+.mark-green {
+  color: #02cc02;
+}
+
+.mark-red {
+  color: red;
 }
 /*# sourceMappingURL=main.css.map */

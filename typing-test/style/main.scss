@@ -35,10 +35,17 @@ body {
     margin-top: 3rem;
     margin-bottom: 3.5rem;
     width: 50rem;
-    // height: 4.5rem;
     overflow: hidden;
     background-color: white;
     color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p {
+      &:not(:first-child) {
+        margin-left: 0.2rem;
+      }
+    }
   }
 
   .menu {
@@ -73,4 +80,16 @@ body {
       width: 1.5rem;
     }
   }
+}
+
+.highlight {
+  background-color: #4ecdc4;
+}
+
+.mark-green {
+  color: rgb(2, 204, 2);
+}
+
+.mark-red {
+  color: red;
 }
