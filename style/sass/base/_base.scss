@@ -10,6 +10,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -33,7 +34,8 @@ html {
   }
 }
 
-section {
+section,
+footer {
   margin-top: $section-margin-top-desktop;
   @include respond(tab-big) {
     margin-top: $section-margin-top-tablet;

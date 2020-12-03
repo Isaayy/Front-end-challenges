@@ -7,7 +7,6 @@
     @include respond(mobile) {
       margin-top: $content-margin-top-mobile;
     }
-    margin-bottom: $content-margin-top-desktop;
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
@@ -16,6 +15,32 @@
     @include respond(mobile) {
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
       grid-gap: 2.5rem;
+    }
+  }
+}
+
+.projects {
+  &__content {
+    margin-top: $content-margin-top-desktop;
+    @include respond(tab-big) {
+      margin-top: $content-margin-top-tablet;
+    }
+    @include respond(mobile) {
+      margin-top: $content-margin-top-mobile;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 5rem;
+
+    &__project {
+      border: 2px solid gold;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
