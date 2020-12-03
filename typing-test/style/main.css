@@ -102,6 +102,25 @@ body {
   width: 1.5rem;
 }
 
+.results {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3rem 10rem;
+  text-align: center;
+  font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 300;
+}
+
+.results span {
+  font-weight: bold;
+}
+
 .highlight {
   background-color: #4ecdc4;
   padding: 0.1rem 0.2rem;
@@ -113,5 +132,9 @@ body {
 
 .mark-red {
   color: red;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */
