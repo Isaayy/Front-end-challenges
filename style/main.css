@@ -65,6 +65,10 @@ footer {
   }
 }
 
+.u-margin-bottom {
+  margin-bottom: 3rem;
+}
+
 .section-heading {
   font-weight: 600;
   font-size: 3rem;
@@ -697,6 +701,23 @@ footer {
     -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 4rem;
+  }
+}
+
+.projects__javascript {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+@media (max-width: 62em) {
+  .projects__javascript {
+    margin-top: 8rem;
+  }
+}
+
+@media (max-width: 36em) {
+  .projects__javascript {
+    margin-top: 6rem;
   }
 }
 

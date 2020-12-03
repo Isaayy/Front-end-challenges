@@ -38,4 +38,15 @@
       grid-gap: 4rem;
     }
   }
+
+  &__javascript {
+    text-align: center;
+    margin-top: $content-margin-top-desktop;
+    @include respond(tab-big) {
+      margin-top: $content-margin-top-tablet;
+    }
+    @include respond(mobile) {
+      margin-top: $content-margin-top-mobile;
+    }
+  }
 }
