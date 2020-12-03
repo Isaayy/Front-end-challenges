@@ -217,6 +217,7 @@ const reset = (type) => {
   if (type === 'complete') {
     wpm = 1;
     accuracy = 1;
+    // TODO TIMER RESET
   }
   block.textContent = '';
   wordsBlock = [];
@@ -247,3 +248,14 @@ inputBox.addEventListener('keyup', (event) => {
     }
   }
 });
+
+// ######################################################################
+// Restart
+
+const restartBtn = document.querySelector('.restart');
+
+restartBtn.addEventListener('click', () => {
+  reset('complete');
+});
+
+// TODO TIMER
