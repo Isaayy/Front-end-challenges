@@ -37,5 +37,12 @@ h1 {
   padding: 2rem 4rem;
   -webkit-box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  border-radius: 5px;
+}
+
+.projects__project:hover {
+  background-color: #ffe74c;
 }
 /*# sourceMappingURL=main.css.map */

@@ -34,5 +34,11 @@ h1 {
     font-weight: 400;
     padding: 2rem 4rem;
     box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #ffe74c;
+    }
   }
 }
