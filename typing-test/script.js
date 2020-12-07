@@ -6,8 +6,8 @@ const inputBox = document.querySelector('.input');
 let wordIds;
 let wordsBlock = [];
 let currentWord;
-let wpm = 1;
-let accuracy = 1;
+let wpm = 0;
+let accuracy = 0;
 const wordsInBlock = 25;
 
 const keywords = [
@@ -217,7 +217,10 @@ const reset = (type) => {
   if (type === 'complete') {
     wpm = 1;
     accuracy = 1;
-    // TODO TIMER RESET
+    secondsLeft = 59;
+    inputBox.disabled = false;
+    clearInterval(timer);
+    results.classList.add('hidden');
   }
   block.textContent = '';
   wordsBlock = [];
@@ -230,9 +233,8 @@ const reset = (type) => {
 
 inputBox.addEventListener('keyup', (event) => {
   if (event.code === 'Space') {
+    if (secondsLeft === 59) setInterval(timer, 1000);
     if (currentWord === wordsInBlock - 1) {
-      console.log(accuracy);
-      console.log(wpm);
       reset();
     } else {
       if (inputBox.value.trim() === wordsBlock[currentWord]) {
@@ -258,4 +260,28 @@ restartBtn.addEventListener('click', () => {
   reset('complete');
 });
 
-// TODO TIMER
+// ######################################################################
+// Timer
+
+const timerBox = document.querySelector('.timer');
+
+const results = document.querySelector('.results');
+const wpmBox = document.querySelector('.wpm');
+const accuracyBox = document.querySelector('.accuracy');
+
+let interval;
+let secondsLeft = 59;
+
+const timer = () => {
+  if (secondsLeft > 0) {
+    if (secondsLeft >= 10) timerBox.textContent = `0:${secondsLeft}`;
+    else timerBox.textContent = `0:0${secondsLeft}`;
+    secondsLeft--;
+  } else {
+    clearInterval((secondsLeft = 0));
+    wpmBox.textContent = wpm;
+    accuracyBox.textContent = `${parseInt((accuracy / wpm) * 100)}%`;
+    inputBox.disabled = true;
+    results.classList.remove('hidden');
+  }
+};

@@ -115,6 +115,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-weight: 300;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .results span {
@@ -135,6 +137,6 @@ body {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */

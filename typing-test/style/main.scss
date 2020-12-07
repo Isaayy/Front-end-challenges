@@ -92,6 +92,7 @@ body {
   display: flex;
   justify-content: space-between;
   font-weight: 300;
+  transition: all 0.5s;
   span {
     font-weight: bold;
   }
@@ -111,5 +112,5 @@ body {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
