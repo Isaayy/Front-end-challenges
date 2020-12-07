@@ -14,6 +14,8 @@
 
 ## Typing test
 
+![](/projects/typing.png)
+
 ## Christmas Lights
 
 ![](/projects/christmas.png)
