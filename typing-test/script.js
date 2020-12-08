@@ -232,7 +232,8 @@ const reset = (type) => {
 // Game
 
 inputBox.addEventListener('keyup', (event) => {
-  if (event.code === 'Space') {
+  inputBox.value = inputBox.value.trim();
+  if (event.code === 'Space' && inputBox.value) {
     if (secondsLeft === 59) setInterval(timer, 1000);
     if (currentWord === wordsInBlock - 1) {
       reset();
@@ -248,7 +249,7 @@ inputBox.addEventListener('keyup', (event) => {
       inputBox.value = '';
       wpm++;
     }
-  }
+  } else console.log('a');
 });
 
 // ######################################################################
