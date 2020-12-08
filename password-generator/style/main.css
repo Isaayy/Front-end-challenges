@@ -24,6 +24,26 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #323434;
+}
+
+.main {
+  padding: 3rem 7rem;
+  border-radius: 5px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .main h2 {
@@ -73,7 +93,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: gray;
+  background-color: #e0e0e0;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   border-radius: 30px;
@@ -82,10 +102,10 @@ body {
 .slider::before {
   content: '';
   position: absolute;
-  background-color: tomato;
+  background-color: #fe9d0b;
   height: 15px;
   width: 15px;
-  left: 3px;
+  right: 3px;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -99,11 +119,73 @@ body {
 }
 
 input:checked + .slider {
-  background-color: teal;
+  background-color: #ffcd82;
 }
 
 input:checked + .slider::before {
-  -webkit-transform: translateY(-50%) translateX(20px);
-          transform: translateY(-50%) translateX(20px);
+  -webkit-transform: translateY(-50%) translateX(-20px);
+          transform: translateY(-50%) translateX(-20px);
+}
+
+.generate-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  font-weight: 500;
+  width: 70%;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background-color: #fe9d0b;
+  border-radius: 3px;
+  border: none;
+  color: White;
+}
+
+.generate-btn:hover {
+  background-color: #fb9700;
+}
+
+.results {
+  width: 70%;
+  margin: 2rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.results .result {
+  border: 1px solid black;
+  padding: 0.8rem 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 0.8rem;
+  font-weight: 300;
+  border-radius: 3px;
+}
+
+.results .copy {
+  border: 2px solid #fe9d0b;
+  margin-left: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 3px;
+}
+
+.results .copy:hover {
+  background-color: #fe9d0b;
+  color: White;
 }
 /*# sourceMappingURL=main.css.map */
