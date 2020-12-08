@@ -1,0 +1,39 @@
+.landing-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.4)),
+    url('../img/background-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    display: flex;
+    color: $color-white;
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+    }
+
+    li {
+      &:not(:first-child) {
+        margin-left: 5rem;
+      }
+    }
+  }
+}
+
+.hero {
+  border: 2px solid red;
+}
