@@ -167,6 +167,10 @@ input:checked + .slider::before {
 }
 
 .results .result {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 10rem;
+  white-space: nowrap;
   border: 1px solid black;
   padding: 0.8rem 1.5rem;
   -webkit-box-flex: 1;
