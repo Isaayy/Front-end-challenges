@@ -148,4 +148,11 @@ generateBtn.addEventListener('click', () => {
   }
 });
 
-// todo copy to clipboard
+copyBtn.addEventListener('click', () => {
+  const el = document.createElement('textarea');
+  el.textContent = password;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+});
