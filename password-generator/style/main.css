@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
 *,
 *::after,
 *::before {
@@ -67,6 +68,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .option:not(:first-child) {
@@ -78,8 +80,16 @@ body {
   font-weight: 300;
 }
 
-.option input {
+.option .pass-length {
   width: 3.5rem;
+}
+
+.option .modal {
+  color: red;
+  position: absolute;
+  left: 101%;
+  font-size: 2rem;
+  font-family: 'Yeseva One', cursive;
 }
 
 .switch {
@@ -191,5 +201,9 @@ input:checked + .slider::before {
 .results .copyBtn:hover {
   background-color: #fe9d0b;
   color: White;
+}
+
+.hidden {
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */

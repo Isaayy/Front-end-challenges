@@ -4,6 +4,9 @@ const generateBtn = document.querySelector('.generate-btn');
 const copyBtn = document.querySelector('.copyBtn');
 
 const length = document.querySelector('.pass-length');
+const modal = document.querySelector('.modal');
+
+const output = document.querySelector('.result');
 
 // password components
 
@@ -122,16 +125,27 @@ const generatePassword = () => {
     password += passwordComponents[randomIndex][randomNumber(componentLength)];
     passwordLength--;
   }
-
-  console.log(passwordComponents.length);
-  console.log(password);
+  output.textContent = password;
 };
 
 const randomNumber = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
 };
 
-generateBtn.addEventListener('click', generatePassword);
+let exclamationMarkToggle;
 
-// TODO ADD IF EMPTY SIZE
-// copy to clipboard
+generateBtn.addEventListener('click', () => {
+  if (length.value) {
+    generatePassword();
+    clearInterval(exclamationMarkToggle);
+    modal.classList.add('hidden');
+  } else {
+    if (!exclamationMarkToggle) {
+      exclamationMarkToggle = setInterval(() => {
+        modal.classList.toggle('hidden');
+      }, 500);
+    }
+  }
+});
+
+// todo copy to clipboard
