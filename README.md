@@ -31,3 +31,7 @@
 ## Border Radius Generator
 
 ![](/projects/border.png)
+
+## Password Generator
+
+![](/projects/password-generator.png)
