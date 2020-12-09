@@ -18,6 +18,12 @@
   }
 }
 
+.subheading {
+  font-size: var(--subheading);
+  font-weight: bold;
+  text-align: center;
+}
+
 // #######################
 // Landing page
 
@@ -52,4 +58,23 @@
   color: $color-white;
   font-size: var(--font-size);
   font-weight: 300;
+}
+
+.location {
+  &__heading {
+    font-size: var(--subheading);
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  &__location {
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  &__desc {
+    font-size: var(--font-size);
+    font-weight: 300;
+    color: $font-color-white-dark;
+  }
 }
