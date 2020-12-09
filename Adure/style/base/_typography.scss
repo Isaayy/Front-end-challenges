@@ -2,7 +2,7 @@
 
 :root {
   --font-size: 1.6rem;
-  --heading: calc(var(--font-size) * 4);
+  --heading: calc(var(--font-size) * 3.5);
   --subheading: calc(var(--font-size) * 2);
 }
 
@@ -18,6 +18,9 @@
   }
 }
 
+// #######################
+// Landing page
+
 .header__link {
   font-size: 1.8rem;
   color: $color-white;
@@ -28,5 +31,25 @@
   &__heading {
     color: $color-white;
     font-size: var(--heading);
+    font-weight: bold;
   }
+
+  &__subheading {
+    color: $color-white;
+    font-size: var(--subheading);
+    font-weight: 400;
+  }
+
+  &__cta {
+    color: black;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+}
+
+.copy-right,
+.socials {
+  color: $color-white;
+  font-size: var(--font-size);
+  font-weight: 300;
 }

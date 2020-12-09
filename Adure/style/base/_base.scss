@@ -13,7 +13,9 @@ html {
 }
 
 .container {
-  border: 2px solid gold;
+  width: 100%;
+  // border: 2px solid gold;
   max-width: 144rem;
   margin: 0 auto;
+  padding: 1rem 0;
 }

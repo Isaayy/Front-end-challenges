@@ -1,9 +1,10 @@
 .landing-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5)),
     url('../img/background-hero.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  // clip-path: polygon(100% 0%, 100% 80%, 50% 100%, 0% 80%, 0% 0%);
 }
 
 .header {
@@ -35,5 +36,57 @@
 }
 
 .hero {
-  border: 2px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__subheading {
+    margin-bottom: 2.5rem;
+    margin-top: 5rem;
+  }
+
+  &__cta {
+    position: relative;
+    background: $gradient-green;
+    padding: 1.5rem 5rem;
+    border-radius: 1rem;
+  }
+}
+
+.copy-right,
+.socials {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  top: 50%;
+  line-height: 1px;
+
+  span {
+    display: inline-block;
+    width: 5rem;
+    background-color: $color-white;
+    margin: 0 0.5rem;
+    height: 1px;
+  }
+}
+
+.copy-right {
+  left: -3rem;
+}
+
+.socials {
+  right: -3rem;
+
+  a {
+    transform: rotate(90deg);
+    &:not(:first-child) {
+      margin-right: 1rem;
+    }
+  }
 }
