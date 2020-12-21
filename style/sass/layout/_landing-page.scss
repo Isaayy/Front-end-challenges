@@ -29,7 +29,7 @@
   align-items: center;
   padding-top: 3rem;
   width: 100%;
-
+  
   @include respond(mobile) {
     padding-top: 3rem;
   }
@@ -144,19 +144,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 20%;
-  position: relative;
-  @include respond(desktop-big) {
-    top: 15%;
-  }
+  top:50%;
+  left:50%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
 
   @include respond(desktop-small) {
-    top: 20%;
+    // top: 20%;
     flex-direction: column;
-    text-align: center;
-  }
-  @include respond(mobile) {
-    top: 10%;
+    text-align: center; 
   }
 
   &__heading {
@@ -184,6 +180,7 @@
     padding: 1.5rem 4rem;
     border-radius: 7px;
     transition: all 0.3s;
+    margin-top: 1rem;
     &:hover {
       transform: translateY(-3px);
     }
@@ -195,7 +192,7 @@
       margin-bottom: 5rem;
     }
     @include respond(mobile) {
-      margin-bottom: 0;
+      margin-bottom: 4rem;
       padding: 1rem 3rem;
       border-radius: 25px;
     }

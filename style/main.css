@@ -490,30 +490,20 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 20%;
-  position: relative;
-}
-
-@media (min-width: 112.5em) {
-  .hero {
-    top: 15%;
-  }
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  position: absolute;
 }
 
 @media (max-width: 75em) {
   .hero {
-    top: 20%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
-  }
-}
-
-@media (max-width: 36em) {
-  .hero {
-    top: 10%;
   }
 }
 
@@ -552,6 +542,7 @@ footer {
   border-radius: 7px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  margin-top: 1rem;
 }
 
 .hero__cta:hover {
@@ -572,7 +563,7 @@ footer {
 
 @media (max-width: 36em) {
   .hero__cta {
-    margin-bottom: 0;
+    margin-bottom: 4rem;
     padding: 1rem 3rem;
     border-radius: 25px;
   }
