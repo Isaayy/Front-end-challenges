@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
+$color-black : #121417;
+
 *,
 *::after,
 *::before {
@@ -11,49 +13,93 @@
 
 body {
   height: 100vh;
-  background: url('../img/background.jpg');
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .main {
-  border: 5px solid red;
-  width: 50%;
+  padding: 5rem ;
+  background-color: $color-black;
+  border-radius: 7px 7px 0  0 ;
+  width: 1440px;
   margin: 0 auto;
-  height: 70%;
+  height: 900px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
 
-.dealer-cards {
-  border: 2px solid gold;
-}
-
-.player-cards {
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .cards {
-    border: 2px solid blue;
-    display: inline-block;
+  .dealer-cards,
+  .player-cards {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:2px solid white;
+    width: 20rem;
+    height: 20rem;
+    align-self: center;
+    border-radius: 50%;
 
     & > * {
       width: 7rem;
       object-fit: cover;
       backface-visibility: hidden;
+    }
 
+    &::before{
+      position: absolute;
+      color:white;
+      bottom: 102%;
+      left:50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .dealer-cards{
+
+    &::before{
+      content: 'Dealer';
+    }
+  }
+
+  .player-cards {
+    &::before{
+      content: 'You';
+    }
+
+    & > img {
       animation-duration: 2s;
       animation-name: slidein;
       // animation-iteration-count: infinite;
     }
-  }
 
+    .placed-bet{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top:100%;
+      left:80%;
+      transform: translateY(-50%);
+
+      img{
+        width: 3rem;
+      }
+      p{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color:#F6F7F8;
+        margin-left: .5rem;
+      }
+    }
+  }
 }
+
+
 @keyframes slidein {
   from {
     transform: translateX(300%) translateY(-500%);
@@ -65,12 +111,11 @@ body {
 }
 
 .menu {
-  background-color: white;
-  width: 50%;
-  position: absolute;
-  bottom: 0;
+  border:2px solid $color-black;
+  width: 1440px;
   height: 5rem;
-  border-radius: 10px 10px 0  0;
+  bottom: 0;
+  border-radius: 0  0 7px 7px;
 
   display: flex;
   align-items: center;
@@ -78,7 +123,6 @@ body {
 
   &__balance-p{
     font-weight: 300;
-    // font-size: 2rem;
     margin-right: 3rem;
     span{
       font-weight: 500;
