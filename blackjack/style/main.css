@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url("../img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  border: 5px solid red;
+  width: 50%;
+  margin: 0 auto;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dealer-cards {
+  border: 2px solid gold;
+}
+
+.player-cards {
+  border: 2px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player-cards .cards {
+  border: 2px solid blue;
+  display: inline-block;
+}
+
+.player-cards .cards > * {
+  width: 7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    -webkit-transform: translateX(300%) translateY(-500%);
+            transform: translateX(300%) translateY(-500%);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes slidein {
+  from {
+    -webkit-transform: translateX(300%) translateY(-500%);
+            transform: translateX(300%) translateY(-500%);
+  }
+  to {
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+}
+
+.menu {
+  background-color: white;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  border-radius: 10px 10px 0  0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu__balance-p {
+  font-weight: 300;
+  margin-right: 3rem;
+}
+
+.menu__balance-p span {
+  font-weight: 500;
+}
+
+.menu__bet-amount {
+  margin-left: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__bet-amount input {
+  width: 3rem;
+  padding: .2rem;
+}
+
+.menu__bet-amount a {
+  background-color: #fdbfcd;
+  padding: .2rem 1rem;
+  border-radius: 2px;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+.menu__bet-amount p {
+  font-weight: 300;
+  margin-left: 3rem;
+}
+
+.menu__bet-amount p span {
+  font-weight: 500;
+}
+
+.menu .bet-btn {
+  margin-left: 1rem;
+  padding: .3rem 1.5rem;
+  background-color: #FF3366;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url('../img/background.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  border: 5px solid red;
+  width: 50%;
+  margin: 0 auto;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dealer-cards {
+  border: 2px solid gold;
+}
+
+.player-cards {
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cards {
+    border: 2px solid blue;
+    display: inline-block;
+
+    & > * {
+      width: 7rem;
+      object-fit: cover;
+      backface-visibility: hidden;
+
+      animation-duration: 2s;
+      animation-name: slidein;
+      // animation-iteration-count: infinite;
+    }
+  }
+
+}
+@keyframes slidein {
+  from {
+    transform: translateX(300%) translateY(-500%);
+  }
+
+  to {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.menu {
+  background-color: white;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  border-radius: 10px 10px 0  0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__balance-p{
+    font-weight: 300;
+    // font-size: 2rem;
+    margin-right: 3rem;
+    span{
+      font-weight: 500;
+    }
+  }
+
+  &__bet-amount{
+    margin-left: .5rem;
+    display: flex;
+    align-items: center;
+
+    input{
+      width: 3rem;
+      padding: .2rem ;
+    }
+
+    a{
+      background-color: #fdbfcd;
+      padding: .2rem 1rem;
+      border-radius: 2px;
+      margin-left: .5rem;
+      cursor: pointer;
+    }
+
+    p{
+      font-weight: 300;
+      margin-left: 3rem;
+      span{
+        font-weight: 500;
+      }
+    }
+  }
+
+  .bet-btn{
+    margin-left: 1rem;
+    padding: .3rem 1.5rem;
+    background-color: #FF3366;
+    border:none;
+    color:white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
