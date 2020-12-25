@@ -15,7 +15,7 @@
         <div class="player-cards">
                 <img src="img/5D.png" alt="aa" class="card__one">
                 <img src="img/2S.png" alt="aa" class="card__two">
-                <div class="placed-bet">
+                <div class="placed-bet hidden">
                     <img src="img/chip.png" alt="poker chip">
                     <p class="bet">1230$</p>
                 </div>
@@ -23,19 +23,29 @@
     </div>
 
     <div class="menu">
-        <p class="menu__balance-p">Balance: <span class="balance">500$</span></p>
-        <p class="menu__bet-p">Bet:</p>
-        <div class="menu__bet-amount">
-            <input type="text">
-            <a>100</a>
-            <a>250</a>
-            <a>500</a>
-            <a>1000</a>
-            <a>All in</a>
-            <p>Your bet: <span class="your-bet">123$</span></p>
-            <button class="bet-btn">Bet</button>
+        <div class="menu__side  menu__side--front">
+            <p class="menu__balance-p">Balance: <span class="balance">500$</span></p>
+            <p class="menu__bet-p">Bet:</p>
+            <div class="menu__bet-amount">
+                <input type="text">
+                <a class="bet-amount">100</a>
+                <a class="bet-amount">250</a>
+                <a class="bet-amount">500</a>
+                <a class="bet-amount">1000</a>
+                <a class="bet-amount">All in</a>
+                <a class="clear">Clear</a>
+                <p>Your bet: <span class="player-bet">0$</span></p>
+                <button class="btn bet-btn">Bet</button>
+            </div>
         </div>
-    </div>
+        <div class="menu__side menu__side--back">
+            <button class="hit btn btn--big">Hit</button>
+            <button class="stand btn btn--big">Stand</button>
+            <button class="double btn btn--big">Double</button>
+            <button class="split btn btn--big">Split</button>
+        </div>
 
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

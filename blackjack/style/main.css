@@ -76,6 +76,11 @@ body {
           backface-visibility: hidden;
 }
 
+.main .dealer-cards > *:not(:first-child),
+.main .player-cards > *:not(:first-child) {
+  margin-left: .5rem;
+}
+
 .main .dealer-cards::before,
 .main .player-cards::before {
   position: absolute;
@@ -154,9 +159,20 @@ body {
 .menu {
   border: 2px solid #121417;
   width: 1440px;
-  height: 5rem;
+  height: 7rem;
   bottom: 0;
   border-radius: 0  0 7px 7px;
+  position: relative;
+}
+
+.menu__side {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,6 +182,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.menu__side--back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  background-color: white;
 }
 
 .menu__balance-p {
@@ -209,7 +233,7 @@ body {
   font-weight: 500;
 }
 
-.menu .bet-btn {
+.menu .btn {
   margin-left: 1rem;
   padding: .3rem 1.5rem;
   background-color: #FF3366;
@@ -217,5 +241,39 @@ body {
   color: white;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.menu .btn--big {
+  padding: 1rem 3rem;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  outline: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-size: 16px;
+}
+
+.menu .btn--big:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.menu .btn--big:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.swipe-front {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.swipe-back {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
 }
 /*# sourceMappingURL=main.css.map */
