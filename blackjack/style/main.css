@@ -67,8 +67,8 @@ body {
   border-radius: 50%;
 }
 
-.main .dealer-cards > *,
-.main .player-cards > * {
+.main .dealer-cards > img,
+.main .player-cards > img {
   width: 7rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -76,8 +76,8 @@ body {
           backface-visibility: hidden;
 }
 
-.main .dealer-cards > *:not(:first-child),
-.main .player-cards > *:not(:first-child) {
+.main .dealer-cards > img:not(:first-child),
+.main .player-cards > img:not(:first-child) {
   margin-left: .5rem;
 }
 
@@ -91,19 +91,29 @@ body {
           transform: translateX(-50%);
 }
 
+.main .dealer-cards .score,
+.main .player-cards .score {
+  color: white;
+  z-index: 100;
+  width: auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .main .dealer-cards::before {
   content: 'Dealer';
 }
 
 .main .player-cards::before {
   content: 'You';
-}
-
-.main .player-cards > img {
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-name: slidein;
-          animation-name: slidein;
 }
 
 .main .player-cards .placed-bet {
@@ -132,28 +142,6 @@ body {
   font-weight: bold;
   color: #F6F7F8;
   margin-left: .5rem;
-}
-
-@-webkit-keyframes slidein {
-  from {
-    -webkit-transform: translateX(300%) translateY(-500%);
-            transform: translateX(300%) translateY(-500%);
-  }
-  to {
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
-}
-
-@keyframes slidein {
-  from {
-    -webkit-transform: translateX(300%) translateY(-500%);
-            transform: translateX(300%) translateY(-500%);
-  }
-  to {
-    -webkit-transform: translateX(0) translateY(0);
-            transform: translateX(0) translateY(0);
-  }
 }
 
 .menu {

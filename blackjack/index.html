@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="shortcut icon" href="#">
 </head>
 <body>
     <div class="main">
         <div class="dealer-cards">
-            <img src="img/5D.png" alt="aa" >
-            <img src="img/2S.png" alt="aa" >
+            <p class="score dealer-score"></p>
         </div>
         <div class="player-cards">
-                <img src="img/5D.png" alt="aa" class="card__one">
-                <img src="img/2S.png" alt="aa" class="card__two">
                 <div class="placed-bet hidden">
                     <img src="img/chip.png" alt="poker chip">
                     <p class="bet">1230$</p>
                 </div>
+                <p class="score player-score">11</p>
         </div>
     </div>
 
@@ -27,7 +26,7 @@
             <p class="menu__balance-p">Balance: <span class="balance">500$</span></p>
             <p class="menu__bet-p">Bet:</p>
             <div class="menu__bet-amount">
-                <input type="text">
+                <input type="number" class="custom-bet-amount" >
                 <a class="bet-amount">100</a>
                 <a class="bet-amount">250</a>
                 <a class="bet-amount">500</a>
@@ -44,8 +43,9 @@
             <button class="double btn btn--big">Double</button>
             <button class="split btn btn--big">Split</button>
         </div>
-
     </div>
+
+
     <script src="script.js"></script>
 </body>
 </html>

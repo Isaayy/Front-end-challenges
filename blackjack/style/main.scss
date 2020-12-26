@@ -44,7 +44,7 @@ body {
     align-self: center;
     border-radius: 50%;
 
-    & > * {
+    & > img {
       width: 7rem;
       object-fit: cover;
       backface-visibility: hidden;
@@ -57,6 +57,19 @@ body {
       position: absolute;
       color:white;
       bottom: 102%;
+      left:50%;
+      transform: translateX(-50%);
+    }
+
+    .score{
+      color:white;
+      z-index: 100;
+      width: auto;
+      font-size: 1.2rem;
+      font-weight: 300;
+      display: flex;
+      position: absolute;
+      top:85%;
       left:50%;
       transform: translateX(-50%);
     }
@@ -74,11 +87,12 @@ body {
       content: 'You';
     }
 
-    & > img {
-      animation-duration: 2s;
-      animation-name: slidein;
-      // animation-iteration-count: infinite;
-    }
+    // .card {
+    //   transition: all .5s;
+    //   position: relative;
+    //   bottom:13rem;
+    //   left:20rem;
+    // }
 
     .placed-bet{
       position: absolute;
@@ -103,15 +117,7 @@ body {
 }
 
 
-@keyframes slidein {
-  from {
-    transform: translateX(300%) translateY(-500%);
-  }
 
-  to {
-    transform: translateX(0) translateY(0);
-  }
-}
 
 .menu {
   border:2px solid $color-black;
@@ -211,3 +217,21 @@ body {
 .swipe-back{
   transform: rotateX(0deg);
 }
+
+// .slide-in {
+//   animation-duration: 1s;
+//   animation-name: slidein;
+//   animation-fill-mode: forwards;
+//   animation-iteration-count: 1;
+// }
+
+// @keyframes slidein {
+//   from {
+//     transform: translateX(0) translateY(0);
+    
+//   }
+
+//   to {
+//     transform: translateY(13rem) translateX(-20rem);
+//   }
+// }
