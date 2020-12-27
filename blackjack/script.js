@@ -15,6 +15,8 @@ const sumBetAmountBox = document.querySelector('.player-bet');
 const placeBet = document.querySelector('.bet-btn');
 const betBox = document.querySelector('.bet');
 const customBet = document.querySelector('.custom-bet-amount');
+const balance = document.querySelector('.balance');
+const balanceMenu = document.querySelector('.balance-menu');
 
 for (const betAmount of addBetAmount){
     betAmount.addEventListener('click',() => {
@@ -27,7 +29,7 @@ for (const betAmount of addBetAmount){
                 else 
                     playerBet += Number(betAmount.textContent);
             }
-            sumBetAmountBox.textContent = playerBet;
+            sumBetAmountBox.textContent = `${playerBet}$`;
         }
     })
 }
@@ -44,16 +46,14 @@ placeBet.addEventListener('click',() =>{
         placedBetBox.classList.toggle('hidden');
         let audio = new Audio('img/drop.mp3');
         audio.play();
-
-        playerBet = 0;
-        sumBetAmountBox.textContent = playerBet;
         
         // draw cards
         drawCard('player',playerScore);
-        // drawCard('dealer',dealerScore);
-        // drawCard('player',playerScore);
-        setTimeout(drawCard.bind(null,'dealer',dealerScore),2000);
-        setTimeout(drawCard.bind(null,'player',playerScore),2000);
+        drawCard('dealer',dealerScore);
+        drawCard('player',playerScore);
+        drawCard();
+        // setTimeout(drawCard.bind(null,'dealer',dealerScore),2000);
+        // setTimeout(drawCard.bind(null,'player',playerScore),2000);
 
         // switch menu
         menuFront.classList.add('swipe-front');
@@ -92,10 +92,11 @@ clearBtn.addEventListener('click', () => {
 const playerCardsBox = document.querySelector('.player-cards');
 const dealerCardsBox = document.querySelector('.dealer-cards');
 
-let playerScoreBox = document.querySelector('.player-score');
-let dealerScoreBox = document.querySelector('.dealer-score');
 
 const drawCard = (currentPlayer,score) => {
+    console.log(score);
+    if (!canPlay) return
+
     const values = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
     const suits = ['C','D','H','S'];
 
@@ -108,27 +109,115 @@ const drawCard = (currentPlayer,score) => {
     if (typeof drawnValue == 'number'){
         score += drawnValue;
     }
-
     else {
         // TODO exception 
         score += 10;
     }
-    if (currentPlayer == 'player'){
+
+    if (currentPlayer === 'player'){
         playerCardsBox.innerHTML += `<img src="img/${drawnValue+drawnSuit}.png" alt="card" class="card slide-in">`
-        playerScoreBox.innerHTML = "5";
         playerScore = score;
-       
+        document.querySelector('.player-score').textContent = score; // works now 
+        checkScore("player");
     }
         
-    else{
-        console.log(dealerScoreBox,dealerScoreBox.textContent);
+    else if (currentPlayer === 'dealer'){
         dealerCardsBox.innerHTML += `<img src="img/${drawnValue+drawnSuit}.png" alt="card">`
-        dealerScoreBox.textContent = "5";
         dealerScore = score;
+        document.querySelector('.dealer-score').textContent = score;
+    }
+    else { // backside
+        dealerCardsBox.innerHTML += `<img src="img/gray_back.png" alt="card">"`
+    }
+   
+}
+
+// #######################################
+// #######################################
+// HIT / STAND / DOUBLE / SPLIT / AGAIN
+
+let canPlay = true;
+const optionButtons = document.querySelectorAll('.btn-option');
+const hitBtn = document.querySelector('.hit');
+const standBtn = document.querySelector('.stand');
+const doubleBtn = document.querySelector('.double');
+const splitBtn = document.querySelector('.split');
+const againBtn = document.querySelector('.again');
+
+
+hitBtn.addEventListener('click', () => {
+    drawCard('player',playerScore);
+})
+
+againBtn.addEventListener('click',() => {
+
+    againBtn.classList.toggle('hide');
+    menuFront.classList.remove('swipe-front');
+    menuBack.classList.remove('swipe-back');
+    playerBet = 0
+    sumBetAmountBox.textContent = playerBet ;
+    betBox.textContent = playerBet;
+    placedBetBox.classList.toggle('hidden');
+    balance.textContent = money;
+    customBet.value = ''
+
+    canPlay = true;
+    playerCardsBox.innerHTML = '';
+    dealerCardsBox.innerHTML = '';
+});
+
+
+// #######################################
+// #######################################
+// check score 
+
+const checkScore = (currentPlayer) => {
+    if (playerScore>21){ 
+        canPlay = false;
+        // todo go back to place bet menu
+
+        if (currentPlayer === "player") {
+            money -= Number(betBox.textContent);
+            balanceMenu.textContent = `${money}$`;
+            showModal('lost');
+            againBtn.classList.toggle('hide');
+        }
+        // disable buttons
+        for(const btn of optionButtons)
+            btn.classList.add('blur-bgc');
     }
 }
-console.log(dealerScoreBox,dealerScoreBox.textContent);
+
+// #######################################
+// #######################################
+// modal
+
+const modal = document.querySelector('.modal');
+const resultBox = document.querySelector('.game-result');
+const closeModalBtn = document.querySelector('.close-modal');
+
+const menuBox = document.querySelector('.menu');
+const mainBox = document.querySelector('.main');
+
+const showModal = (result) => {
+    menuBox.classList.toggle('opacity');
+    mainBox.classList.toggle('opacity');
+    if (result === "win"){
+
+    }
+    else {
+        resultBox.innerHTML = `You lost <span class="money-result red">${playerBet}$</span>`
+        modal.classList.toggle('hide');
+    }
+} 
+
+closeModalBtn.addEventListener('click',() => {
+    menuBox.classList.toggle('opacity');
+    mainBox.classList.toggle('opacity');
+    modal.classList.toggle('hide');
+})
+
 // TODO :
 // fix / add slide-in when drawing cards
-// textContent - display value of cards
+// unique cards
 

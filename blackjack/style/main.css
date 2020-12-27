@@ -251,6 +251,27 @@ body {
           transform: translateY(0);
 }
 
+.modal {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 4rem 7rem;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal img {
+  width: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -263,5 +284,25 @@ body {
 .swipe-back {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.opacity {
+  opacity: .6;
+}
+
+.blur-bgc {
+  background-color: #fdbfcd !important;
 }
 /*# sourceMappingURL=main.css.map */

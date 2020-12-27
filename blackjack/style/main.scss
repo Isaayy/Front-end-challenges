@@ -88,10 +88,15 @@ body {
     }
 
     // .card {
-    //   transition: all .5s;
-    //   position: relative;
-    //   bottom:13rem;
-    //   left:20rem;
+    //   // transition: all .5s;
+    //   // position: relative;
+    //   // bottom:13rem;
+    //   // left:50%;
+    //   position: absolute;
+    //   left: 2rem;
+    //   &:not(:last-child){
+    //     // transform: translateX(50%) ;
+    //   }
     // }
 
     .placed-bet{
@@ -206,6 +211,28 @@ body {
   }
 }
 
+
+.modal {
+  background-color: #fff;
+  border:1px solid black;
+  padding: 4rem 7rem;
+  position: absolute;
+  border-radius: 3px;
+  
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  img{
+    width: 2rem;
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+}
+
 .hidden{
   visibility: hidden;
 }
@@ -216,6 +243,26 @@ body {
 
 .swipe-back{
   transform: rotateX(0deg);
+}
+
+.green{
+  color:green;
+}
+
+.red {
+  color:red;
+}
+
+.hide{
+  display: none;
+}
+
+.opacity {
+  opacity: .6;
+}
+
+.blur-bgc{
+  background-color: #fdbfcd !important;
 }
 
 // .slide-in {

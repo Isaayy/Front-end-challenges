@@ -17,7 +17,7 @@
                     <img src="img/chip.png" alt="poker chip">
                     <p class="bet">1230$</p>
                 </div>
-                <p class="score player-score">11</p>
+                <p class="score player-score"></p>
         </div>
     </div>
 
@@ -38,13 +38,21 @@
             </div>
         </div>
         <div class="menu__side menu__side--back">
-            <button class="hit btn btn--big">Hit</button>
-            <button class="stand btn btn--big">Stand</button>
-            <button class="double btn btn--big">Double</button>
-            <button class="split btn btn--big">Split</button>
+            <p class="menu__balance-p">Balance: <span class="balance-menu">500$</span></p>
+            <button class="hit btn btn--big btn-option">Hit</button>
+            <button class="stand btn btn--big btn-option">Stand</button>
+            <button class="double btn btn--big btn-option">Double</button>
+            <button class="split btn btn--big btn-option">Split</button>
+            <button class="again btn btn--big hide">Bet again</button>
         </div>
     </div>
 
+    <div class="modal hide">
+        <p class="game-result"></p>
+        <a href="#" class="close-modal">
+            <img src="img/close-outline.svg" alt="close">
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
