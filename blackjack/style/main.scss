@@ -32,8 +32,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
-  .dealer-cards,
-  .player-cards {
+  .dealer-cards-container,
+  .player-cards-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -44,7 +44,12 @@ body {
     align-self: center;
     border-radius: 50%;
 
-    & > img {
+    .dealer-cards,
+    .player-cards{
+      display:flex;
+    }
+
+    img {
       width: 7rem;
       object-fit: cover;
       backface-visibility: hidden;
@@ -75,14 +80,14 @@ body {
     }
   }
 
-  .dealer-cards{
+  .dealer-cards-container{
 
     &::before{
       content: 'Dealer';
     }
   }
 
-  .player-cards {
+  .player-cards-container {
     &::before{
       content: 'You';
     }

@@ -47,8 +47,8 @@ body {
           justify-content: space-between;
 }
 
-.main .dealer-cards,
-.main .player-cards {
+.main .dealer-cards-container,
+.main .player-cards-container {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -67,8 +67,17 @@ body {
   border-radius: 50%;
 }
 
-.main .dealer-cards > img,
-.main .player-cards > img {
+.main .dealer-cards-container .dealer-cards,
+.main .dealer-cards-container .player-cards,
+.main .player-cards-container .dealer-cards,
+.main .player-cards-container .player-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .dealer-cards-container img,
+.main .player-cards-container img {
   width: 7rem;
   -o-object-fit: cover;
      object-fit: cover;
@@ -76,13 +85,13 @@ body {
           backface-visibility: hidden;
 }
 
-.main .dealer-cards > img:not(:first-child),
-.main .player-cards > img:not(:first-child) {
+.main .dealer-cards-container img:not(:first-child),
+.main .player-cards-container img:not(:first-child) {
   margin-left: .5rem;
 }
 
-.main .dealer-cards::before,
-.main .player-cards::before {
+.main .dealer-cards-container::before,
+.main .player-cards-container::before {
   position: absolute;
   color: white;
   bottom: 102%;
@@ -91,8 +100,8 @@ body {
           transform: translateX(-50%);
 }
 
-.main .dealer-cards .score,
-.main .player-cards .score {
+.main .dealer-cards-container .score,
+.main .player-cards-container .score {
   color: white;
   z-index: 100;
   width: auto;
@@ -108,15 +117,15 @@ body {
           transform: translateX(-50%);
 }
 
-.main .dealer-cards::before {
+.main .dealer-cards-container::before {
   content: 'Dealer';
 }
 
-.main .player-cards::before {
+.main .player-cards-container::before {
   content: 'You';
 }
 
-.main .player-cards .placed-bet {
+.main .player-cards-container .placed-bet {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,11 +142,11 @@ body {
           transform: translateY(-50%);
 }
 
-.main .player-cards .placed-bet img {
+.main .player-cards-container .placed-bet img {
   width: 3rem;
 }
 
-.main .player-cards .placed-bet p {
+.main .player-cards-container .placed-bet p {
   font-size: 1.5rem;
   font-weight: bold;
   color: #F6F7F8;

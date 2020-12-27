@@ -59,7 +59,7 @@ placeBet.addEventListener('click',() =>{
         menuFront.classList.add('swipe-front');
         menuBack.classList.add('swipe-back');
     }
-    else alert('In order to play you have to place a bet')
+    else showModal();
     
 })
 
@@ -94,7 +94,6 @@ const dealerCardsBox = document.querySelector('.dealer-cards');
 
 
 const drawCard = (currentPlayer,score) => {
-    console.log(score);
     if (!canPlay) return
 
     const values = [2,3,4,5,6,7,8,9,10,'J','Q','K','A'];
@@ -164,6 +163,14 @@ againBtn.addEventListener('click',() => {
     canPlay = true;
     playerCardsBox.innerHTML = '';
     dealerCardsBox.innerHTML = '';
+    document.querySelector('.dealer-score').textContent = '';
+    document.querySelector('.player-score').textContent = '';
+    dealerScore = 0;
+    playerScore = 0 ;
+
+    for(const btn of optionButtons)
+    btn.classList.remove('blur-bgc');
+
 });
 
 
@@ -199,15 +206,19 @@ const closeModalBtn = document.querySelector('.close-modal');
 const menuBox = document.querySelector('.menu');
 const mainBox = document.querySelector('.main');
 
-const showModal = (result) => {
+const showModal = (eventName) => {
+    modal.classList.toggle('hide');
     menuBox.classList.toggle('opacity');
     mainBox.classList.toggle('opacity');
-    if (result === "win"){
+    if (eventName === "won"){
 
     }
-    else {
+    else if(eventName === "lost") {
         resultBox.innerHTML = `You lost <span class="money-result red">${playerBet}$</span>`
-        modal.classList.toggle('hide');
+    }
+    else { // not enough money for a bet or no bet at all
+        if (money) resultBox.textContent = `You have to bet some money`;
+        else resultBox.textContent = `Unfortunately you don'y have more money`;
     }
 } 
 
