@@ -271,30 +271,15 @@ footer {
   color: white;
   font-size: 1.3rem;
   display: inline-block;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
   position: relative;
   z-index: 1;
   overflow: hidden;
 }
 
-.project__btn::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #018bff;
-  border-radius: 5px;
-  right: 100%;
-  top: 100%;
-  z-index: -10;
-  -webkit-transition: all 0.7s;
-  transition: all 0.7s;
-}
-
-.project__btn:hover::after {
-  -webkit-transform: scale(4);
-          transform: scale(4);
+.project__btn:hover {
+  background-color: #02b9f1;
 }
 
 .landing-page {
@@ -402,28 +387,12 @@ footer {
 
 .header__link {
   display: inline-block;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   position: relative;
 }
 
 .header__link--active {
   pointer-events: none;
   cursor: default;
-}
-
-.header__link::after {
-  content: '';
-  position: absolute;
-  background-color: #1d1b1b;
-  width: 100%;
-  height: 0.2rem;
-  top: 100%;
-  left: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .header__link:hover {
@@ -540,14 +509,12 @@ footer {
   display: inline-block;
   padding: 1.5rem 4rem;
   border-radius: 7px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
   margin-top: 1rem;
+  overflow: hidden;
 }
 
 .hero__cta:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  background-color: #f8f8f8;
 }
 
 .hero__cta:active {
