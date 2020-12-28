@@ -57,8 +57,12 @@ footer {
 
 .header__link {
   font-size: 1.8rem;
-  color: #fefefe;
+  color: #e7e7e7;
   font-weight: 600;
+}
+
+.header__link:hover {
+  color: #fefefe;
 }
 
 .header__link--black {
@@ -232,7 +236,7 @@ footer {
   left: 0;
   z-index: -9;
   background-color: black;
-  opacity: .1;
+  opacity: 0.1;
 }
 
 .landing-page__bgc {
@@ -240,6 +244,9 @@ footer {
   background: linear-gradient(rgba(0, 0, 0, 0.3)), url("../img/background-hero.jpg");
   position: absolute;
   top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   left: 0;
   width: 100%;
   height: 100%;
@@ -300,21 +307,15 @@ footer {
 }
 
 .hero__cta {
-  position: relative;
-  background: -webkit-gradient(linear, left top, right top, from(#61e786), to(#42ffcb));
-  background: linear-gradient(to right, #61e786, #42ffcb);
+  background: #61e786;
   padding: 1.5rem 5rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .hero__cta:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-}
-
-.hero__cta:active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  background: #3de46c;
 }
 
 .socials {

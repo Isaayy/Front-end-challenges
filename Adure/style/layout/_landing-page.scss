@@ -1,5 +1,4 @@
 .landing-page {
-
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -9,40 +8,42 @@
   justify-content: space-between;
   align-items: center;
 
-  &__blur{
+  &__blur {
     z-index: -1;
     height: 100%;
     width: 40%;
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     backdrop-filter: blur(4px);
 
-    &::before{
-      content : '';
+    &::before {
+      content: '';
       width: 100%;
       height: 100%;
       position: absolute;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       z-index: -9;
       background-color: black;
-      opacity: .1;
+      opacity: 0.1;
     }
   }
 
-  &__bgc{
+  &__bgc {
     background: linear-gradient(rgba(0, 0, 0, 0.3)),
-    url('../img/background-hero.jpg');
+      url('../img/background-hero.jpg');
     position: absolute;
     top: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -2;
   }
 }
-
 
 .header {
   display: flex;
@@ -74,7 +75,7 @@
 }
 
 .hero {
-  border-left: .5rem solid $color-white;
+  border-left: 0.5rem solid $color-white;
   padding: 5.5rem 8rem;
 
   &__subheading {
@@ -83,16 +84,12 @@
   }
 
   &__cta {
-    position: relative;
-    background: $gradient-green;
+    background: $color-primary;
     padding: 1.5rem 5rem;
-    border-radius: .3rem;
-    &:hover{
-      transform: translateY(-3px);
-      
-    }
-    &:active{
-      transform: translateY(0);
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+    &:hover {
+      background: $color-primary-dark;
     }
   }
 }
@@ -100,12 +97,12 @@
 .socials {
   padding: 2rem 0;
 
-  a{
-    &:first-child{
+  a {
+    &:first-child {
       margin-right: 2.5rem;
     }
   }
-  
+
   img {
     width: 3rem;
     height: 3rem;

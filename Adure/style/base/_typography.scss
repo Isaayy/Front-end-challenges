@@ -29,11 +29,15 @@
 
 .header__link {
   font-size: 1.8rem;
-  color: $color-white;
+  color: $color-white-dark;
   font-weight: 600;
 
-  &--black{
-    color:black;
+  &:hover {
+    color: $color-white;
+  }
+
+  &--black {
+    color: black;
   }
 }
 
@@ -84,18 +88,17 @@
   }
 }
 
-
 .review {
   &__feedback {
-      font-size:var(--font-size);
-      font-weight: 300;
-      line-height: 1.5;
+    font-size: var(--font-size);
+    font-weight: 300;
+    line-height: 1.5;
   }
   &__name {
-      font-size: 2rem;
-      font-weight: 500;
+    font-size: 2rem;
+    font-weight: 500;
   }
-  &__date{
+  &__date {
     font-size: 1rem;
     font-weight: 500;
   }
