@@ -11,6 +11,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .container {
@@ -24,4 +25,8 @@ html {
 .subheading {
   margin-top: $margin-main-desktop;
   margin-bottom: $margin-secondary-desktop;
+}
+
+footer{
+  padding-top: $margin-main-desktop;
 }

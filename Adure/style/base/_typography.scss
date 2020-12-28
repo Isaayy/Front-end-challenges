@@ -31,6 +31,10 @@
   font-size: 1.8rem;
   color: $color-white;
   font-weight: 600;
+
+  &--black{
+    color:black;
+  }
 }
 
 .hero {
