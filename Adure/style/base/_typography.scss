@@ -35,10 +35,6 @@
   &:hover {
     color: $color-white;
   }
-
-  &--black {
-    color: black;
-  }
 }
 
 .hero {
@@ -101,5 +97,20 @@
   &__date {
     font-size: 1rem;
     font-weight: 500;
+  }
+}
+
+.booking__heading {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.footer-city {
+  font-size: 1.8rem;
+  color: #ff9baf;
+  font-weight: 300;
+
+  &:hover {
+    color: $color-white;
   }
 }

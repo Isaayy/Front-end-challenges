@@ -27,10 +27,6 @@ html {
   margin-bottom: 6rem;
 }
 
-footer {
-  padding-top: 12rem;
-}
-
 :root {
   --font-size: 1.6rem;
   --heading: calc(var(--font-size) * 3.5);
@@ -63,10 +59,6 @@ footer {
 
 .header__link:hover {
   color: #fefefe;
-}
-
-.header__link--black {
-  color: black;
 }
 
 .hero__heading {
@@ -127,6 +119,21 @@ footer {
 .review__date {
   font-size: 1rem;
   font-weight: 500;
+}
+
+.booking__heading {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.footer-city {
+  font-size: 1.8rem;
+  color: #ff9baf;
+  font-weight: 300;
+}
+
+.footer-city:hover {
+  color: #fefefe;
 }
 
 .benefit {
@@ -195,6 +202,34 @@ footer {
 .book-btn:active {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.nav--header ul {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav--header li:not(:first-child) {
+  margin-left: 5rem;
+}
+
+.nav--footer ul {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nav--footer li:not(:first-child) {
+  margin-top: 1.5rem;
 }
 
 .landing-page {
@@ -280,20 +315,6 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   font-weight: 600;
-}
-
-.header__nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  list-style: none;
-}
-
-.header__nav li:not(:first-child) {
-  margin-left: 5rem;
 }
 
 .hero {
@@ -447,7 +468,7 @@ footer {
   padding: 5rem 8rem;
   -webkit-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
 }
 
 .reviews .review__img {
@@ -498,28 +519,111 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.footer .footer-container {
+.booking {
+  margin-top: 12rem;
+  position: relative;
+  display: inline-block;
+}
+
+.booking .booking-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+}
+
+.booking__cta {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background: #fb4b6e;
+  padding: 1.5rem 5rem;
+  border-radius: 0.3rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.booking__cta:hover {
+  background: #fd345c;
+}
+
+.booking img {
+  position: relative;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.footer {
+  padding: 5rem 0;
+  background-color: #1a1919;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr min-content max-content 1fr 1fr;
+      grid-template-columns: 1fr -webkit-min-content -webkit-max-content 1fr 1fr;
+      grid-template-columns: 1fr min-content max-content 1fr 1fr;
+}
+
+.footer .footer-column {
+  border: 1px solid red;
+  padding: 0 5rem;
+  color: #fff;
+}
+
+.footer .phone-number {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .phone-number img {
+  width: 2.5rem;
+}
+
+.footer .phone-number p {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer .footer-cities {
+  list-style: none;
+}
+
+.footer .footer-cities li:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.footer .footer-socials-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-.footer nav {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+.footer .footer-socials-box p {
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-.footer .footer-socials img:first-child {
-  margin-right: 2rem;
+.footer .footer-socials-box a:first-child {
+  margin-right: 1.5rem;
 }
 /*# sourceMappingURL=main.css.map */

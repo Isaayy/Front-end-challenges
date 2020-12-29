@@ -1,0 +1,28 @@
+.nav {
+  ul {
+    display: flex;
+    list-style: none;
+  }
+
+  &--header {
+    ul {
+      align-items: center;
+    }
+    li {
+      &:not(:first-child) {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  &--footer {
+    ul {
+      flex-direction: column;
+    }
+    li {
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}

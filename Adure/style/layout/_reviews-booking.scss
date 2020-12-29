@@ -1,0 +1,85 @@
+.reviews {
+  .reviews-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 5rem;
+  }
+
+  .review {
+    padding: 5rem 8rem;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.3rem;
+    &__img {
+      margin-right: 1.5rem;
+    }
+
+    &__client {
+      display: grid;
+      grid-template-columns: min-content max-content 1fr;
+      align-items: center;
+    }
+
+    &__stars {
+      margin-left: 1.5rem;
+      justify-self: end;
+      img {
+        width: 2.5rem;
+      }
+    }
+
+    &__feedback {
+      position: relative;
+      &::before {
+        content: "''";
+        font-size: 5rem;
+        position: absolute;
+        top: -2.5rem;
+        left: -2rem;
+        display: inline-block;
+        color: $color-primary;
+        font-weight: 500;
+      }
+    }
+    &__line {
+      margin: 2rem 0;
+      border: 0;
+      height: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.booking {
+  margin-top: $margin-main-desktop;
+  position: relative;
+  display: inline-block;
+  .booking-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+  }
+
+  &__cta {
+    margin-top: 1.5rem;
+    display: inline-block;
+    background: #fb4b6e;
+    padding: 1.5rem 5rem;
+    border-radius: 0.3rem;
+    transition: all 0.3s;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    &:hover {
+      background: #fd345c;
+    }
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+  }
+}
