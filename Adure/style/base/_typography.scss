@@ -57,13 +57,6 @@
   }
 }
 
-.copy-right,
-.socials {
-  color: $color-white;
-  font-size: var(--font-size);
-  font-weight: 300;
-}
-
 .location {
   &__heading {
     font-size: var(--subheading);
@@ -107,10 +100,15 @@
 
 .footer-city {
   font-size: 1.8rem;
-  color: #ff9baf;
+  color: lighten($color-secondary, 5%);
   font-weight: 300;
 
   &:hover {
     color: $color-white;
   }
+}
+
+.copy-right {
+  font-size: 1.2rem;
+  color: $color-white;
 }

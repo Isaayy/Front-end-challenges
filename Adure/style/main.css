@@ -23,8 +23,8 @@ html {
 }
 
 .subheading {
-  margin-top: 12rem;
-  margin-bottom: 6rem;
+  margin-top: 14rem;
+  margin-bottom: 8rem;
 }
 
 :root {
@@ -79,13 +79,6 @@ html {
   font-size: 1.8rem;
 }
 
-.copy-right,
-.socials {
-  color: #fefefe;
-  font-size: var(--font-size);
-  font-weight: 300;
-}
-
 .location__heading {
   font-size: var(--subheading);
   font-weight: 600;
@@ -128,11 +121,16 @@ html {
 
 .footer-city {
   font-size: 1.8rem;
-  color: #ff9baf;
+  color: #fc6482;
   font-weight: 300;
 }
 
 .footer-city:hover {
+  color: #fefefe;
+}
+
+.copy-right {
+  font-size: 1.2rem;
   color: #fefefe;
 }
 
@@ -520,9 +518,11 @@ html {
 }
 
 .booking {
-  margin-top: 12rem;
+  margin-top: 14rem;
   position: relative;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .booking .booking-container {
@@ -548,7 +548,7 @@ html {
 }
 
 .booking__cta:hover {
-  background: #fd345c;
+  background: #fa325a;
 }
 
 .booking img {
@@ -563,32 +563,63 @@ html {
   background-color: #1a1919;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr min-content max-content 1fr 1fr;
-      grid-template-columns: 1fr -webkit-min-content -webkit-max-content 1fr 1fr;
-      grid-template-columns: 1fr min-content max-content 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (max-content)[5];
+      grid-template-columns: repeat(5, -webkit-max-content);
+      grid-template-columns: repeat(5, max-content);
 }
 
 .footer .footer-column {
-  border: 1px solid red;
-  padding: 0 5rem;
+  padding: 0 10rem;
   color: #fff;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.footer .phone-number {
+.footer .footer-column hr {
+  border: 0;
+  height: 100%;
+  width: 1px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.footer .phone-box,
+.footer .email-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 2rem;
 }
 
-.footer .phone-number img {
+.footer .phone-box img,
+.footer .email-box img {
   width: 2.5rem;
 }
 
-.footer .phone-number p {
-  margin-left: 1rem;
+.footer .phone-box p,
+.footer .email-box p {
+  margin-left: 1.5rem;
   font-size: 1.5rem;
 }
 
@@ -625,5 +656,66 @@ html {
 
 .footer .footer-socials-box a:first-child {
   margin-right: 1.5rem;
+}
+
+.footer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer form p {
+  font-size: 1.4rem;
+  margin-bottom: 3rem;
+}
+
+.footer form input {
+  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fefefe;
+  color: #fefefe;
+  padding: 1rem 0;
+}
+
+.footer form input::-webkit-input-placeholder {
+  color: #989898;
+}
+
+.footer form input:-ms-input-placeholder {
+  color: #989898;
+}
+
+.footer form input::-ms-input-placeholder {
+  color: #989898;
+}
+
+.footer form input::placeholder {
+  color: #989898;
+}
+
+.footer form button {
+  padding: 1rem 0;
+  border: 2px solid #fb4b6e;
+  background: none;
+  border-radius: 3px;
+  color: #fefefe;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.footer form button:hover {
+  background: #fb4b6e;
+}
+
+.copy-right {
+  padding: 1rem;
+  text-align: center;
+  background-color: #151414;
 }
 /*# sourceMappingURL=main.css.map */
