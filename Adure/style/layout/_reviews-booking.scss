@@ -9,6 +9,13 @@
     padding: 5rem 8rem;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
     border-radius: 0.3rem;
+
+    @include respond(tab-small) {
+      padding: 4rem 7rem;
+    }
+    @include respond(mobile) {
+      padding: 3rem 4rem;
+    }
     &__img {
       margin-right: 1.5rem;
     }
@@ -17,11 +24,23 @@
       display: grid;
       grid-template-columns: min-content max-content 1fr;
       align-items: center;
+
+      @include respond(mobile) {
+        grid-template-columns: min-content max-content;
+      }
     }
 
     &__stars {
       margin-left: 1.5rem;
       justify-self: end;
+
+      @include respond(mobile) {
+        grid-column: 1/-1;
+        justify-self: start;
+        margin-left: 0;
+        margin-top: 1.5rem;
+      }
+
       img {
         width: 2.5rem;
       }
