@@ -31,7 +31,7 @@ body {
 .main {
   padding: 5rem;
   background-color: #121417;
-  border-radius: 7px 7px 0  0;
+  border-radius: 7px 7px 0 0;
   width: 1440px;
   margin: 0 auto;
   height: 900px;
@@ -87,7 +87,7 @@ body {
 
 .main .dealer-cards-container img:not(:first-child),
 .main .player-cards-container img:not(:first-child) {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 .main .dealer-cards-container::before,
@@ -149,8 +149,8 @@ body {
 .main .player-cards-container .placed-bet p {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #F6F7F8;
-  margin-left: .5rem;
+  color: #f6f7f8;
+  margin-left: 0.5rem;
 }
 
 .menu {
@@ -158,13 +158,13 @@ body {
   width: 1440px;
   height: 7rem;
   bottom: 0;
-  border-radius: 0  0 7px 7px;
+  border-radius: 0 0 7px 7px;
   position: relative;
 }
 
 .menu__side {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
   position: absolute;
   top: 0;
   left: 0;
@@ -198,8 +198,8 @@ body {
   font-weight: 500;
 }
 
-.menu__bet-amount {
-  margin-left: .5rem;
+.menu__bet-menu {
+  margin-left: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,32 +208,32 @@ body {
           align-items: center;
 }
 
-.menu__bet-amount input {
+.menu__bet-menu input {
   width: 3rem;
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
-.menu__bet-amount a {
+.menu__bet-menu a {
   background-color: #fdbfcd;
-  padding: .2rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 2px;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   cursor: pointer;
 }
 
-.menu__bet-amount p {
+.menu__bet-menu p {
   font-weight: 300;
   margin-left: 3rem;
 }
 
-.menu__bet-amount p span {
+.menu__bet-menu p span {
   font-weight: 500;
 }
 
 .menu .btn {
   margin-left: 1rem;
-  padding: .3rem 1.5rem;
-  background-color: #FF3366;
+  padding: 0.3rem 1.5rem;
+  background-color: #ff3366;
   border: none;
   color: white;
   border-radius: 3px;
@@ -242,8 +242,8 @@ body {
 
 .menu .btn--big {
   padding: 1rem 3rem;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   outline: none;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -308,7 +308,7 @@ body {
 }
 
 .opacity {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .blur-bgc {

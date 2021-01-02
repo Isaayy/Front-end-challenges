@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
 
-$color-black : #121417;
+$color-black: #121417;
 
 *,
 *::after,
@@ -22,9 +22,9 @@ body {
 }
 
 .main {
-  padding: 5rem ;
+  padding: 5rem;
   background-color: $color-black;
-  border-radius: 7px 7px 0  0 ;
+  border-radius: 7px 7px 0 0;
   width: 1440px;
   margin: 0 auto;
   height: 900px;
@@ -38,57 +38,56 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:2px solid white;
+    border: 2px solid white;
     width: 20rem;
     height: 20rem;
     align-self: center;
     border-radius: 50%;
 
     .dealer-cards,
-    .player-cards{
-      display:flex;
+    .player-cards {
+      display: flex;
     }
 
     img {
       width: 7rem;
       object-fit: cover;
       backface-visibility: hidden;
-      &:not(:first-child){
-        margin-left: .5rem;
+      &:not(:first-child) {
+        margin-left: 0.5rem;
       }
     }
 
-    &::before{
+    &::before {
       position: absolute;
-      color:white;
+      color: white;
       bottom: 102%;
-      left:50%;
+      left: 50%;
       transform: translateX(-50%);
     }
 
-    .score{
-      color:white;
+    .score {
+      color: white;
       z-index: 100;
       width: auto;
       font-size: 1.2rem;
       font-weight: 300;
       display: flex;
       position: absolute;
-      top:85%;
-      left:50%;
+      top: 85%;
+      left: 50%;
       transform: translateX(-50%);
     }
   }
 
-  .dealer-cards-container{
-
-    &::before{
+  .dealer-cards-container {
+    &::before {
       content: 'Dealer';
     }
   }
 
   .player-cards-container {
-    &::before{
+    &::before {
       content: 'You';
     }
 
@@ -104,44 +103,41 @@ body {
     //   }
     // }
 
-    .placed-bet{
+    .placed-bet {
       position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      top:100%;
-      left:80%;
+      top: 100%;
+      left: 80%;
       transform: translateY(-50%);
 
-      img{
+      img {
         width: 3rem;
       }
-      p{
+      p {
         font-size: 1.5rem;
         font-weight: bold;
-        color:#F6F7F8;
-        margin-left: .5rem;
+        color: #f6f7f8;
+        margin-left: 0.5rem;
       }
     }
   }
 }
 
-
-
-
 .menu {
-  border:2px solid $color-black;
+  border: 2px solid $color-black;
   width: 1440px;
   height: 7rem;
   bottom: 0;
-  border-radius: 0  0 7px 7px;
+  border-radius: 0 0 7px 7px;
   position: relative;
 
   &__side {
-    transition: all .5s ease;
+    transition: all 0.5s ease;
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -149,124 +145,122 @@ body {
     justify-content: center;
     backface-visibility: hidden;
 
-    &--back{
+    &--back {
       transform: rotateX(180deg);
       background-color: white;
     }
   }
 
-
-  &__balance-p{
+  &__balance-p {
     font-weight: 300;
     margin-right: 3rem;
-    span{
+    span {
       font-weight: 500;
     }
   }
 
-  &__bet-amount{
-    margin-left: .5rem;
+  &__bet-menu {
+    margin-left: 0.5rem;
     display: flex;
     align-items: center;
 
-    input{
+    input {
       width: 3rem;
-      padding: .2rem ;
+      padding: 0.2rem;
     }
 
-    a{
+    a {
       background-color: #fdbfcd;
-      padding: .2rem 1rem;
+      padding: 0.2rem 1rem;
       border-radius: 2px;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
       cursor: pointer;
     }
 
-    p{
+    p {
       font-weight: 300;
       margin-left: 3rem;
-      span{
+      span {
         font-weight: 500;
       }
     }
   }
 
-  .btn{
+  .btn {
     margin-left: 1rem;
-    padding: .3rem 1.5rem;
-    background-color: #FF3366;
-    border:none;
-    color:white;
+    padding: 0.3rem 1.5rem;
+    background-color: #ff3366;
+    border: none;
+    color: white;
     border-radius: 3px;
     cursor: pointer;
 
-    &--big{
+    &--big {
       padding: 1rem 3rem;
-      transition: all .3s;
+      transition: all 0.3s;
       outline: none;
       backface-visibility: hidden;
       font-size: 16px;
-      &:hover{
+      &:hover {
         transform: translateY(-3px);
       }
-      &:active{
+      &:active {
         transform: translateY(0);
       }
     }
   }
 }
 
-
 .modal {
   background-color: #fff;
-  border:1px solid black;
+  border: 1px solid black;
   padding: 4rem 7rem;
   position: absolute;
   border-radius: 3px;
-  
+
   p {
     font-size: 1.5rem;
     text-align: center;
   }
 
-  img{
+  img {
     width: 2rem;
     position: absolute;
-    top:1rem;
+    top: 1rem;
     right: 1rem;
     cursor: pointer;
   }
 }
 
-.hidden{
+.hidden {
   visibility: hidden;
 }
 
-.swipe-front{
-    transform: rotateX(-180deg);
+.swipe-front {
+  transform: rotateX(-180deg);
 }
 
-.swipe-back{
+.swipe-back {
   transform: rotateX(0deg);
 }
 
-.green{
-  color:green;
+.green {
+  color: green;
 }
 
 .red {
-  color:red;
+  color: red;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
 .opacity {
-  opacity: .6;
+  opacity: 0.6;
 }
 
-.blur-bgc{
+.blur-bgc {
   background-color: #fdbfcd !important;
 }
 
@@ -280,7 +274,7 @@ body {
 // @keyframes slidein {
 //   from {
 //     transform: translateX(0) translateY(0);
-    
+
 //   }
 
 //   to {
