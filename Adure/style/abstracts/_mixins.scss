@@ -12,6 +12,7 @@
   }
 
   @if $breakpoint == tab-big {
+    // 930px
     @media (max-width: 62em) {
       @content;
     }

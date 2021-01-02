@@ -2,6 +2,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 2rem;
+
+  @include respond(desktop-small) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .locations-container {
@@ -16,7 +24,6 @@
   width: 100%;
   position: relative;
   z-index: 1;
-
 }
 
 .location {

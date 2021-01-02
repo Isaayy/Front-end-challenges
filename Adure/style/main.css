@@ -159,7 +159,7 @@ html {
 }
 
 .benefit__desc {
-  font-size: 1.5rem;
+  font-size: var(--font-size);
   text-align: center;
   width: 70%;
 }
@@ -356,6 +356,20 @@ html {
   -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 2rem;
+}
+
+@media (max-width: 75em) {
+  .benefits-container {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36em) {
+  .benefits-container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .locations-container {

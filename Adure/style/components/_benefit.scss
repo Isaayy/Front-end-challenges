@@ -13,10 +13,8 @@
   }
 
   &__desc {
-    font-size: 1.5rem;
+    font-size: var(--font-size);
     text-align: center;
     width: 70%;
-    // color: #262626;
-    // font-weight: 300;
   }
 }
