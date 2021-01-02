@@ -167,14 +167,7 @@ hitBtn.addEventListener('click', () => {
 
 standBtn.addEventListener('click', () => {
   if (!canPlay) return;
-  dealerCardsBox.removeChild(dealerCardsBox.lastChild);
-  drawCard('dealer', dealerScore);
-
-  while (dealerScore < 17) drawCard('dealer', dealerScore);
-
-  canPlay = false;
-
-  checkScore();
+  stand();
 });
 
 doubleBtn.addEventListener('click', () => {
@@ -186,7 +179,7 @@ doubleBtn.addEventListener('click', () => {
   playerBet *= 2;
   betBox.textContent = playerBet;
   drawCard('player', playerScore);
-  canPlay = false;
+  if (playerScore <= 21) stand();
 });
 
 againBtn.addEventListener('click', () => {
@@ -213,6 +206,15 @@ againBtn.addEventListener('click', () => {
   dealerCardsValues = [];
   playerCardsValues = [];
 });
+
+const stand = () => {
+  dealerCardsBox.removeChild(dealerCardsBox.lastChild);
+  drawCard('dealer', dealerScore);
+
+  while (dealerScore < 17) drawCard('dealer', dealerScore);
+  canPlay = false;
+  checkScore();
+};
 
 // #######################################
 // #######################################
@@ -283,6 +285,3 @@ closeModalBtn.addEventListener('click', () => {
   mainBox.classList.toggle('opacity');
   modal.classList.toggle('hide');
 });
-
-// TODO :
-// fix / add slide-in when drawing cards
