@@ -3,10 +3,24 @@
   background-color: $color-dark;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(5, max-content);
+  grid-template-columns: min-content repeat(3, max-content);
+
+  @include respond(desktop-big) {
+    grid-template-columns: repeat(5, max-content);
+  }
+
+  @include respond(desktop-small) {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  @include respond(tab-big) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 5rem;
+  }
 
   .footer-column {
-    padding: 0 10rem;
+    padding: 0 6rem;
     color: #fff;
     position: relative;
 
@@ -15,7 +29,66 @@
     align-items: flex-start;
     justify-content: center;
 
+    &:nth-child(2) {
+      display: none;
+    }
+
+    @include respond(desktop-big) {
+      padding: 0 10rem;
+      &:nth-child(2) {
+        display: flex;
+      }
+    }
+
+    @include respond(desktop-small) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @include respond(tab-big) {
+      &:nth-child(1) {
+        div {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        display: flex;
+      }
+      &:nth-child(4) {
+        p {
+          display: none;
+        }
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include respond(mobile) {
+      &:nth-child(1) {
+        img {
+          width: 6rem;
+        }
+      }
+      &:nth-child(4) {
+        img {
+          width: 3rem;
+        }
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:last-child {
+        display: flex;
+        grid-row: 2/3;
+      }
+    }
+
     hr {
+      @include respond(tab-big) {
+        display: none;
+      }
       border: 0;
       height: 100%;
       width: 1px;

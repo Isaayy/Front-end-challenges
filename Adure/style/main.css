@@ -116,7 +116,7 @@ html {
 }
 
 .booking__heading {
-  font-size: 4rem;
+  font-size: var(--subheading);
   font-weight: 600;
 }
 
@@ -227,8 +227,24 @@ html {
           flex-direction: column;
 }
 
+@media (max-width: 62em) {
+  .nav--footer ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .nav--footer li:not(:first-child) {
   margin-top: 1.5rem;
+}
+
+@media (max-width: 62em) {
+  .nav--footer li:not(:first-child) {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
 }
 
 .landing-page {
@@ -570,24 +586,44 @@ html {
   display: flex;
 }
 
+@media (max-width: 48em) {
+  .booking {
+    margin-top: 0;
+  }
+}
+
 .booking .booking-container {
+  padding: 0 5rem;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
   text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 62em) {
+  .booking .booking-container {
+    top: 60%;
+  }
+}
+
+@media (max-width: 48em) {
+  .booking .booking-container {
+    display: none;
+  }
 }
 
 .booking__cta {
   margin-top: 1.5rem;
   display: inline-block;
   background: #fb4b6e;
-  padding: 1.5rem 5rem;
+  padding: 1rem 4rem;
   border-radius: 0.3rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: white;
 }
@@ -611,13 +647,38 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (max-content)[5];
-      grid-template-columns: repeat(5, -webkit-max-content);
-      grid-template-columns: repeat(5, max-content);
+  -ms-grid-columns: min-content (max-content)[3];
+      grid-template-columns: -webkit-min-content repeat(3, -webkit-max-content);
+      grid-template-columns: min-content repeat(3, max-content);
+}
+
+@media (min-width: 112.5em) {
+  .footer {
+    -ms-grid-columns: (max-content)[5];
+        grid-template-columns: repeat(5, -webkit-max-content);
+        grid-template-columns: repeat(5, max-content);
+  }
+}
+
+@media (max-width: 75em) {
+  .footer {
+    -ms-grid-columns: (max-content)[3];
+        grid-template-columns: repeat(3, -webkit-max-content);
+        grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@media (max-width: 62em) {
+  .footer {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 5rem;
+  }
 }
 
 .footer .footer-column {
-  padding: 0 10rem;
+  padding: 0 6rem;
   color: #fff;
   position: relative;
   display: -webkit-box;
@@ -635,6 +696,64 @@ html {
           justify-content: center;
 }
 
+.footer .footer-column:nth-child(2) {
+  display: none;
+}
+
+@media (min-width: 112.5em) {
+  .footer .footer-column {
+    padding: 0 10rem;
+  }
+  .footer .footer-column:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 75em) {
+  .footer .footer-column:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 62em) {
+  .footer .footer-column:nth-child(1) div {
+    display: none;
+  }
+  .footer .footer-column:nth-child(2) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .footer .footer-column:nth-child(4) p {
+    display: none;
+  }
+  .footer .footer-column:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 36em) {
+  .footer .footer-column:nth-child(1) img {
+    width: 6rem;
+  }
+  .footer .footer-column:nth-child(4) img {
+    width: 3rem;
+  }
+  .footer .footer-column:nth-child(2) {
+    display: none;
+  }
+  .footer .footer-column:last-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+  }
+}
+
 .footer .footer-column hr {
   border: 0;
   height: 100%;
@@ -644,6 +763,12 @@ html {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media (max-width: 62em) {
+  .footer .footer-column hr {
+    display: none;
+  }
 }
 
 .footer .phone-box,

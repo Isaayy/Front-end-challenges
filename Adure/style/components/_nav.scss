@@ -18,10 +18,17 @@
   &--footer {
     ul {
       flex-direction: column;
+      @include respond(tab-big) {
+        flex-direction: row;
+      }
     }
     li {
       &:not(:first-child) {
         margin-top: 1.5rem;
+        @include respond(tab-big) {
+          margin-top: 0;
+          margin-left: 2rem;
+        }
       }
     }
   }
