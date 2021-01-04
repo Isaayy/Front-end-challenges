@@ -18,7 +18,10 @@ html {
   width: 100%;
   max-width: 144rem;
   margin: 0 auto;
-  padding: 0 5rem;
+  padding: 0 7rem;
+  @include respond(mobile) {
+    padding: 0 3rem;
+  }
 }
 
 .subheading {
