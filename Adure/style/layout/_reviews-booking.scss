@@ -74,8 +74,8 @@
   position: relative;
   display: flex;
 
-  @include respond(tab-small) {
-    margin-top: 0;
+  @include respond(tab-big) {
+    display: none;
   }
 
   .booking-container {
