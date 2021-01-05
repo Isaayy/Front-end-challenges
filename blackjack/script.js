@@ -67,8 +67,6 @@ placeBetBtn.addEventListener('click', () => {
     drawCard('dealer', dealerScore);
     drawCard('player', playerScore);
     drawCard();
-    // setTimeout(drawCard.bind(null,'dealer',dealerScore),2000);
-    // setTimeout(drawCard.bind(null,'player',playerScore),2000);
 
     // switch menu
     menuFront.classList.add('swipe-front');
@@ -126,9 +124,7 @@ const drawCard = (currentPlayer, score) => {
   if (currentPlayer === 'player') {
     if (score > 21 && playerCardsValues.includes('A')) playerScore -= 10;
 
-    playerCardsBox.innerHTML += `<img src="img/${
-      drawnValue + drawnSuit
-    }.png" alt="card" class="card slide-in">`;
+    playerCardsBox.innerHTML += `<img src="img/${drawnValue + drawnSuit}.png" alt="card" class="card slide-in">`;
     playerScore = score;
     document.querySelector('.player-score').textContent = score;
     playerCardsValues.push(drawnValue);
@@ -136,17 +132,18 @@ const drawCard = (currentPlayer, score) => {
       canPlay = false;
       checkScore();
     }
+    if (playerCardsValues.length == 2 && playerCardsValues[0] === playerCardsValues[1]) splitPossible();
   } else if (currentPlayer === 'dealer') {
     if (score > 21 && dealerCardsValues.includes('A')) dealerScore -= 10;
 
-    dealerCardsBox.innerHTML += `<img src="img/${
-      drawnValue + drawnSuit
-    }.png" alt="card">`;
+    dealerCardsBox.innerHTML += `<img src="img/${drawnValue + drawnSuit}.png" alt="card">`;
     dealerScore = score;
     document.querySelector('.dealer-score').textContent = score;
     dealerCardsValues.push(drawnValue);
     if (score > 21) checkScore();
   } else dealerCardsBox.innerHTML += `<img src="img/gray_back.png" alt="card">`;
+  console.log(playerCardsValues, playerCardsValues.length);
+  // split
 };
 
 // #######################################
@@ -181,6 +178,15 @@ doubleBtn.addEventListener('click', () => {
   drawCard('player', playerScore);
   if (playerScore <= 21) stand();
 });
+
+const splitPossible = () => {
+  splitBtn.classList.remove('blur-bgc');
+  splitBtn.addEventListener('click', () => {
+    // new bet equal previous
+    // draw 2 cards for each stack
+    // stack separate options for hitting / staying
+  });
+};
 
 againBtn.addEventListener('click', () => {
   againBtn.classList.toggle('hide');
@@ -266,13 +272,10 @@ const showModal = (eventName) => {
   menuBox.classList.toggle('opacity');
   mainBox.classList.toggle('opacity');
 
-  if (eventName === 'won')
-    resultBox.innerHTML = `Congratulations you won <span class="money-result green">${playerBet}$</span>`;
-  else if (eventName === 'lost')
-    resultBox.innerHTML = `You lost <span class="money-result red">${playerBet}$</span>`;
+  if (eventName === 'won') resultBox.innerHTML = `Congratulations you won <span class="money-result green">${playerBet}$</span>`;
+  else if (eventName === 'lost') resultBox.innerHTML = `You lost <span class="money-result red">${playerBet}$</span>`;
   else if (eventName === 'draw') resultBox.innerHTML = `It's a draw`;
-  else if (eventName === 'not enough money')
-    resultBox.textContent = `Unfortunately you don't have enough money`;
+  else if (eventName === 'not enough money') resultBox.textContent = `Unfortunately you don't have enough money`;
   else {
     // not enough money for a bet or no bet at all
     if (money) resultBox.textContent = `You have to bet some money`;
