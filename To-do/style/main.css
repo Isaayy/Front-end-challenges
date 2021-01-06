@@ -74,7 +74,7 @@ body {
           justify-content: space-between;
 }
 
-.banner .clock .time-box .time {
+.banner .clock .time-box {
   font-size: 5rem;
   font-weight: 300;
 }
