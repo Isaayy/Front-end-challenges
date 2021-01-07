@@ -31,3 +31,22 @@ const setDate = () => {
 };
 
 setDate();
+
+// SWITCH LIST
+
+const lists = document.querySelectorAll('.list');
+let activeList = lists[0];
+
+for (let i = 0; i < lists.length; i++) {
+  lists[i].addEventListener('click', () => {
+    switchList(lists[i]);
+  });
+}
+
+const switchList = (list) => {
+  activeList.classList.toggle('active');
+  document.querySelector(`.${activeList.children[1].textContent}`).classList.toggle('show');
+  activeList = list;
+  activeList.classList.toggle('active');
+  document.querySelector(`.${activeList.children[1].textContent}`).classList.toggle('show');
+};

@@ -28,11 +28,10 @@ body {
 }
 
 .container {
-  border: 2px solid black;
   display: -ms-grid;
   display: grid;
-  width: 1440px;
-  height: 100rem;
+  width: 100%;
+  height: 100%;
       grid-template-areas: 'banner banner banner' 'sidebar main main' 'sidebar main main';
   -ms-grid-columns: 35rem 1fr 1fr;
       grid-template-columns: 35rem 1fr 1fr;
@@ -50,13 +49,15 @@ body {
 
 .banner {
   background-image: url(../img/banner.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-area: banner;
   color: #fff;
   font-size: 2rem;
-  font-weight: 300;
 }
 
 .banner__container {
@@ -75,8 +76,12 @@ body {
 }
 
 .banner .clock .time-box {
-  font-size: 5rem;
+  font-size: 7rem;
   font-weight: 300;
+}
+
+.banner .clock .date-box {
+  font-weight: 500;
 }
 
 .banner h2 {
@@ -146,5 +151,28 @@ body {
 
 .sidebar .list .option:first-child {
   margin-bottom: 0.6rem;
+}
+
+.main {
+  padding: 3rem 5rem;
+}
+
+.todo {
+  font-size: 5rem;
+  display: none;
+}
+
+.active {
+  background-color: #ff3366;
+  pointer-events: none;
+  color: white;
+}
+
+.active .option {
+  background-color: white !important;
+}
+
+.show {
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
