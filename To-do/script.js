@@ -1,5 +1,5 @@
 'use strict';
-
+// #######################################
 // DATE & TIME
 
 const timeBox = document.querySelector('.time-box');
@@ -32,6 +32,7 @@ const setDate = () => {
 
 setDate();
 
+// #######################################
 // SWITCH LIST
 
 const lists = document.querySelectorAll('.list');
@@ -50,3 +51,45 @@ const switchList = (list) => {
   activeList.classList.toggle('active');
   document.querySelector(`.${activeList.children[1].textContent}`).classList.toggle('show');
 };
+
+// #######################################
+// MODAL - DELETE LIST & CHANGE ICON
+
+let parentNode;
+
+const openModal = (parent) => {
+  const modal = document.createElement('div');
+  modal.className = 'list-modal';
+
+  const rename = document.createElement('p');
+  rename.className = 'rename';
+  rename.textContent = 'Rename';
+  modal.appendChild(rename);
+
+  const changeIcon = document.createElement('p');
+  changeIcon.className = 'change-icon';
+  changeIcon.textContent = 'Change icon';
+  modal.appendChild(changeIcon);
+
+  const deleteList = document.createElement('p');
+  deleteList.className = 'delete';
+  deleteList.textContent = 'Delete';
+  modal.appendChild(deleteList);
+
+  parent.appendChild(modal);
+
+  parentNode = parent;
+};
+
+const closeModal = (parent) => {
+  const modal = document.querySelector('.list-modal');
+  console.log(modal);
+  console.log(parent);
+  parent.removeChild(modal);
+  parentNode = false;
+};
+
+window.addEventListener('click', function (e) {
+  if (parentNode) closeModal(parentNode);
+  if (e.target.classList.contains('list__options')) openModal(e.target);
+});

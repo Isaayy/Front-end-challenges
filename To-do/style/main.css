@@ -123,23 +123,38 @@ body {
 .sidebar .list__title {
   font-size: 2rem;
   margin-left: 0.5rem;
-}
-
-.sidebar .list__options {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  justify-self: flex-end;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+}
+
+.sidebar .list__options {
+  position: relative;
+  padding: 0.5rem;
+}
+
+.sidebar .list__options .list-modal {
+  position: absolute;
+  background-color: white;
+  color: black;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 10rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar .list__options .list-modal p {
+  padding: 0.5rem 1rem;
+}
+
+.sidebar .list__options .list-modal p:hover {
+  cursor: pointer;
+  background-color: #ff3366;
+  color: #fff;
 }
 
 .sidebar .list .option {
@@ -164,8 +179,12 @@ body {
 
 .active {
   background-color: #ff3366;
-  pointer-events: none;
   color: white;
+}
+
+.active:hover {
+  background-color: #ff3366 !important;
+  cursor: auto !important;
 }
 
 .active .option {
@@ -174,5 +193,9 @@ body {
 
 .show {
   display: block;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

@@ -106,14 +106,33 @@ $color-primary: #ff3366;
     &__title {
       font-size: $font-size;
       margin-left: 0.5rem;
+      flex: 1;
     }
 
     &__options {
-      flex: 1;
-      justify-self: flex-end;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      position: relative;
+      padding: 0.5rem;
+      .list-modal {
+        position: absolute;
+        background-color: white;
+        color: black;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+        p {
+          padding: 0.5rem 1rem;
+          &:hover {
+            cursor: pointer;
+            background-color: $color-primary;
+            color: #fff;
+          }
+        }
+      }
     }
 
     .option {
@@ -140,8 +159,12 @@ $color-primary: #ff3366;
 
 .active {
   background-color: $color-primary;
-  pointer-events: none;
   color: white;
+
+  &:hover {
+    background-color: $color-primary !important;
+    cursor: auto !important;
+  }
 
   .option {
     background-color: white !important;
@@ -150,4 +173,8 @@ $color-primary: #ff3366;
 
 .show {
   display: block;
+}
+
+.hide {
+  display: none;
 }
