@@ -196,6 +196,6 @@ body {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 /*# sourceMappingURL=main.css.map */

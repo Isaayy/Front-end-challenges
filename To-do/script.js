@@ -53,9 +53,9 @@ const switchList = (list) => {
 };
 
 // #######################################
-// MODAL - DELETE LIST & CHANGE ICON
+// MODAL
 
-let parentNode;
+let OptionsParent;
 
 const openModal = (parent) => {
   const modal = document.createElement('div');
@@ -78,18 +78,31 @@ const openModal = (parent) => {
 
   parent.appendChild(modal);
 
-  parentNode = parent;
+  OptionsParent = parent;
+
+  //  ! @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  activateModalButtons();
 };
 
 const closeModal = (parent) => {
   const modal = document.querySelector('.list-modal');
-  console.log(modal);
-  console.log(parent);
   parent.removeChild(modal);
-  parentNode = false;
+  OptionsParent = false;
 };
 
 window.addEventListener('click', function (e) {
-  if (parentNode) closeModal(parentNode);
+  if (OptionsParent) closeModal(OptionsParent);
   if (e.target.classList.contains('list__options')) openModal(e.target);
 });
+
+// #######################################
+// MODAL - RENAME, CHANGE ICON & DELETE
+
+const activateModalButtons = () => {
+  const deleteBtn = document.querySelector('.delete');
+
+  deleteBtn.addEventListener('click', () => {
+    activeList.classList.add('hide');
+    document.querySelector(`.${activeList.children[1].textContent}`).classList.add('hide');
+  });
+};
