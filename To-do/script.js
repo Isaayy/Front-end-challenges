@@ -34,15 +34,20 @@ setDate();
 
 // #######################################
 // SWITCH LIST
-
-const lists = document.querySelectorAll('.list');
+let lists = document.querySelectorAll('.list');
 let activeList = lists[0];
 
-for (let i = 0; i < lists.length; i++) {
-  lists[i].addEventListener('click', () => {
-    switchList(lists[i]);
-  });
-}
+const setLists = () => {
+  lists = document.querySelectorAll('.list');
+
+  for (let i = 0; i < lists.length; i++) {
+    lists[i].addEventListener('click', () => {
+      switchList(lists[i]);
+    });
+  }
+};
+
+setLists();
 
 const switchList = (list) => {
   activeList.classList.toggle('active');
@@ -103,14 +108,26 @@ const activateModalButtons = () => {
   const deleteBtn = document.querySelector('.delete');
 
   const currentList = activeList.children[1];
-  const tmpName = currentList.value;
 
   renameBtn.addEventListener('click', () => {
-    currentList.readOnly = false;
-    currentList.focus();
-    currentList.select();
+    rename(currentList);
   });
 
+  deleteBtn.addEventListener('click', () => {
+    activeList.classList.add('hide');
+    document.querySelector(`.${activeList.children[1].textContent}`).classList.add('hide');
+  });
+};
+
+const rename = (currentList) => {
+  currentList.readOnly = false;
+  currentList.focus();
+  currentList.select();
+
+  const tmpName = currentList.value;
+  console.log('tmpName inside rename : ', tmpName);
+  console.log('currentList.value inside rename : ', currentList.value);
+  // ! CALL ONE OF THEM - ATM BOTH ARE CALLED
   currentList.addEventListener('blur', () => {
     currentList.readOnly = true;
     document.querySelector(`#${tmpName}`).id = currentList.value;
@@ -122,9 +139,44 @@ const activateModalButtons = () => {
       document.querySelector(`#${tmpName}`).id = currentList.value;
     }
   });
-
-  deleteBtn.addEventListener('click', () => {
-    activeList.classList.add('hide');
-    document.querySelector(`.${activeList.children[1].textContent}`).classList.add('hide');
-  });
 };
+
+// #######################################
+// ADD NEW LIST
+
+const addListBtn = document.querySelector('.add-list');
+const listsContainer = document.querySelector('.lists');
+const main = document.querySelector('.main');
+
+addListBtn.addEventListener('click', () => {
+  // new list
+  const newList = document.createElement('div');
+  newList.className = 'list';
+
+  newList.innerHTML = `
+  <img src="img/alert.svg" alt="alert" class="list__img" />
+  <input class="list__title" value="New" readonly />
+  <div class="list__options">
+    <div class="option"></div>
+    <div class="option"></div>
+  </div>`;
+
+  listsContainer.appendChild(newList);
+  console.log(newList.children[1]);
+  console.log(newList.children[1].value);
+
+  // new todo's for current list
+  const newTodo = document.createElement('div');
+  newTodo.className = 'todo';
+  newTodo.id = newList.children[1].value;
+  newTodo.textContent = 'new list todo';
+
+  main.appendChild(newTodo);
+  console.log(newTodo);
+
+  setLists();
+  rename(newList.children[1]);
+  console.log(newList.children[1].value);
+});
+
+// TODO

@@ -150,6 +150,23 @@ $color-primary: #ff3366;
       }
     }
   }
+
+  .add-list-container {
+    padding: 2rem 5rem;
+    display: flex;
+    font-size: $font-size;
+
+    .add-list {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+
+      img {
+        width: 3rem;
+      }
+    }
+  }
 }
 
 .main {
