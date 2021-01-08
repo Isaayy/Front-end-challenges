@@ -107,6 +107,10 @@ $color-primary: #ff3366;
       font-size: $font-size;
       margin-left: 0.5rem;
       flex: 1;
+      background: none;
+      border: none;
+      color: #000;
+      outline: none;
     }
 
     &__options {
@@ -159,7 +163,9 @@ $color-primary: #ff3366;
 
 .active {
   background-color: $color-primary;
-  color: white;
+  input {
+    color: white !important;
+  }
 
   &:hover {
     background-color: $color-primary !important;

@@ -126,6 +126,10 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  background: none;
+  border: none;
+  color: #000;
+  outline: none;
 }
 
 .sidebar .list__options {
@@ -179,7 +183,10 @@ body {
 
 .active {
   background-color: #ff3366;
-  color: white;
+}
+
+.active input {
+  color: white !important;
 }
 
 .active:hover {

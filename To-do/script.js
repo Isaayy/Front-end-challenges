@@ -46,10 +46,10 @@ for (let i = 0; i < lists.length; i++) {
 
 const switchList = (list) => {
   activeList.classList.toggle('active');
-  document.querySelector(`.${activeList.children[1].textContent}`).classList.toggle('show');
+  document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
   activeList = list;
   activeList.classList.toggle('active');
-  document.querySelector(`.${activeList.children[1].textContent}`).classList.toggle('show');
+  document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
 };
 
 // #######################################
@@ -80,7 +80,6 @@ const openModal = (parent) => {
 
   OptionsParent = parent;
 
-  //  ! @@@@@@@@@@@@@@@@@@@@@@@@@@@@
   activateModalButtons();
 };
 
@@ -93,13 +92,36 @@ const closeModal = (parent) => {
 window.addEventListener('click', function (e) {
   if (OptionsParent) closeModal(OptionsParent);
   if (e.target.classList.contains('list__options')) openModal(e.target);
+  if (e.target.classList.contains('option')) openModal(e.target);
 });
 
 // #######################################
 // MODAL - RENAME, CHANGE ICON & DELETE
 
 const activateModalButtons = () => {
+  const renameBtn = document.querySelector('.rename');
   const deleteBtn = document.querySelector('.delete');
+
+  const currentList = activeList.children[1];
+  const tmpName = currentList.value;
+
+  renameBtn.addEventListener('click', () => {
+    currentList.readOnly = false;
+    currentList.focus();
+    currentList.select();
+  });
+
+  currentList.addEventListener('blur', () => {
+    currentList.readOnly = true;
+    document.querySelector(`#${tmpName}`).id = currentList.value;
+  });
+
+  currentList.addEventListener('keyup', () => {
+    if (event.keyCode === 13) {
+      currentList.readOnly = true;
+      document.querySelector(`#${tmpName}`).id = currentList.value;
+    }
+  });
 
   deleteBtn.addEventListener('click', () => {
     activeList.classList.add('hide');
