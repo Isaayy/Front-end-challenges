@@ -106,11 +106,12 @@ $color-primary: #ff3366;
     &__title {
       font-size: $font-size;
       margin-left: 0.5rem;
-      flex: 1;
       background: none;
       border: none;
       color: #000;
       outline: none;
+      display: inline-block;
+      cursor: pointer;
     }
 
     &__options {
@@ -180,8 +181,9 @@ $color-primary: #ff3366;
 
 .active {
   background-color: $color-primary;
-  input {
+  .list__title {
     color: white !important;
+    cursor: auto;
   }
 
   &:hover {

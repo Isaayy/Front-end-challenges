@@ -123,13 +123,12 @@ body {
 .sidebar .list__title {
   font-size: 2rem;
   margin-left: 0.5rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   background: none;
   border: none;
   color: #000;
   outline: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .sidebar .list__options {
@@ -209,8 +208,9 @@ body {
   background-color: #ff3366;
 }
 
-.active input {
+.active .list__title {
   color: white !important;
+  cursor: auto;
 }
 
 .active:hover {

@@ -34,6 +34,7 @@ setDate();
 
 // #######################################
 // SWITCH LIST
+const listsContainer = document.querySelector('.lists');
 let lists = document.querySelectorAll('.list');
 let activeList = lists[0];
 
@@ -42,7 +43,8 @@ const setLists = () => {
 
   for (let i = 0; i < lists.length; i++) {
     lists[i].addEventListener('click', () => {
-      switchList(lists[i]);
+      if (!lists[i]) return;
+      if (!lists[i].classList.contains('active')) switchList(lists[i]);
     });
   }
 };
@@ -90,6 +92,7 @@ const openModal = (parent) => {
 
 const closeModal = (parent) => {
   const modal = document.querySelector('.list-modal');
+  if (!modal) return;
   parent.removeChild(modal);
   OptionsParent = false;
 };
@@ -113,9 +116,18 @@ const activateModalButtons = () => {
     rename(currentList);
   });
 
-  deleteBtn.addEventListener('click', () => {
-    activeList.classList.add('hide');
-    document.querySelector(`.${activeList.children[1].textContent}`).classList.add('hide');
+  deleteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    listsContainer.removeChild(activeList);
+    document.querySelector(`#${activeList.children[1].value}`).classList.add('hide');
+    lists = document.querySelectorAll('.list');
+
+    activeList = lists[0];
+    if (!activeList) return;
+    activeList.classList.toggle('active');
+    document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
+
+    setLists();
   });
 };
 
@@ -125,16 +137,15 @@ const rename = (currentList) => {
   currentList.select();
 
   const tmpName = currentList.value;
-  console.log('tmpName inside rename : ', tmpName);
-  console.log('currentList.value inside rename : ', currentList.value);
-  // ! CALL ONE OF THEM - ATM BOTH ARE CALLED
   currentList.addEventListener('blur', () => {
+    if (!document.querySelector(`#${tmpName}`)) return;
     currentList.readOnly = true;
     document.querySelector(`#${tmpName}`).id = currentList.value;
   });
 
   currentList.addEventListener('keyup', () => {
     if (event.keyCode === 13) {
+      if (!document.querySelector(`#${tmpName}`)) return;
       currentList.readOnly = true;
       document.querySelector(`#${tmpName}`).id = currentList.value;
     }
@@ -145,7 +156,6 @@ const rename = (currentList) => {
 // ADD NEW LIST
 
 const addListBtn = document.querySelector('.add-list');
-const listsContainer = document.querySelector('.lists');
 const main = document.querySelector('.main');
 
 addListBtn.addEventListener('click', () => {
@@ -180,3 +190,17 @@ addListBtn.addEventListener('click', () => {
 });
 
 // TODO
+
+// ! DOCUMENTATION
+// ! ADDING LISTS WHEN 0
+
+// - change name of rename fucntion for renamelist because fucnction nameTodo? will be v
+
+// - todo items :
+// - 2 default for default lists
+// - 1 default for new list
+
+//! - todo items works as lists with live rename so : 1 div for green if done (radius 50%), input readonly for live nameing it, and when hover trash icon appears in right corner ( delete option )
+// new to-do button which works same as new list
+
+// ? DRY CODE
