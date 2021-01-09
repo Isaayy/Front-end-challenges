@@ -2,8 +2,8 @@
 // #######################################
 // DATE & TIME
 
-const timeBox = document.querySelector('.time-box');
-const dateBox = document.querySelector('.date-box');
+const timeBox = document.querySelector('.timestamp__time');
+const dateBox = document.querySelector('.timestamp__date');
 
 let now, hours, minutes;
 const clock = () => {
@@ -23,6 +23,7 @@ const setDate = () => {
   let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   let months = ['January', 'February', 'March', 'April', 'May', 'Juny', 'July', 'August', 'September', 'October', 'November', 'December'];
 
+  // now.getDay() - returns 0-6
   let weekDay = weekDays[now.getDay()];
   let day = now.getDate();
   let month = months[now.getMonth()];
@@ -33,41 +34,46 @@ const setDate = () => {
 setDate();
 
 // #######################################
-// SWITCH LIST
+// SWITCHING BETWEEN LISTS
 const listsContainer = document.querySelector('.lists');
 let lists = document.querySelectorAll('.list');
 let activeList = lists[0];
 
-const setLists = () => {
+// Add eventListener to lists
+const setUpListsListeners = () => {
   lists = document.querySelectorAll('.list');
 
   for (let i = 0; i < lists.length; i++) {
     lists[i].addEventListener('click', () => {
       if (!lists[i]) return;
-      if (!lists[i].classList.contains('active')) switchList(lists[i]);
+      if (!lists[i].classList.contains('active')) switchList(lists[i]); // listener only for non active lists
     });
   }
 };
-
-setLists();
+// call to setUp 3 primary lists
+setUpListsListeners();
 
 const switchList = (list) => {
   if (typeof activeList !== 'undefined') {
+    // for more than 1 list
+    // 'turn off' active list
     activeList.classList.toggle('active');
     document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
   }
-
+  // switch list by 'turning on' list from param
   activeList = list;
   activeList.classList.toggle('active');
-  document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
+  document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show'); // display to'do items for this list
 };
 
 // #######################################
 // MODAL
 
-let OptionsParent;
+// parent in this case is a list in which we click settings - prevents opening multiple modals
+let optionsParent;
 
 const openModal = (parent) => {
+  // create 3 different elements for each event - icon change, rename, delete
   const modal = document.createElement('div');
   modal.className = 'list-modal';
 
@@ -87,9 +93,7 @@ const openModal = (parent) => {
   modal.appendChild(deleteList);
 
   parent.appendChild(modal);
-
-  OptionsParent = parent;
-
+  optionsParent = parent;
   activateModalButtons();
 };
 
@@ -97,11 +101,14 @@ const closeModal = (parent) => {
   const modal = document.querySelector('.list-modal');
   if (!modal) return;
   parent.removeChild(modal);
-  OptionsParent = false;
+  optionsParent = false;
 };
 
+// function that checks if we click in either option circular icon or it's container
+// if it's already opened and we click outside it - closeModal()
+// if yes then openModal()
 window.addEventListener('click', function (e) {
-  if (OptionsParent) closeModal(OptionsParent);
+  if (optionsParent) closeModal(optionsParent);
   if (e.target.classList.contains('list__options')) openModal(e.target);
   if (e.target.classList.contains('option')) openModal(e.target);
 });
@@ -116,31 +123,38 @@ const activateModalButtons = () => {
   const currentList = activeList.children[1];
 
   renameBtn.addEventListener('click', () => {
-    rename(currentList);
+    renameList(currentList);
   });
 
   deleteBtn.addEventListener('click', (e) => {
     e.stopPropagation();
+
+    // remove lists on which we click delete button
     listsContainer.removeChild(activeList);
     document.querySelector(`#${activeList.children[1].value}`).classList.add('hide');
     lists = document.querySelectorAll('.list');
 
+    // activate first list
     activeList = lists[0];
-    if (!activeList) return;
+    if (!activeList) return; // return when there is no more lists
     activeList.classList.toggle('active');
     document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
 
-    setLists();
+    // refresh listeners for lists
+    setUpListsListeners();
   });
 };
 
-const rename = (currentList) => {
+const renameList = (currentList) => {
+  // place cursor in list name (focus input)
   currentList.readOnly = false;
   currentList.focus();
   currentList.select();
+
+  // rename it on either enter key or blur
   const tmpName = currentList.value;
   currentList.addEventListener('blur', () => {
-    if (!document.querySelector(`#${tmpName}`)) return;
+    if (!document.querySelector(`#${tmpName}`)) return; // prevent executing both events
     currentList.readOnly = true;
     document.querySelector(`#${tmpName}`).id = currentList.value;
   });
@@ -161,7 +175,7 @@ const addListBtn = document.querySelector('.add-list');
 const main = document.querySelector('.main');
 let newListsNumber = 1;
 addListBtn.addEventListener('click', () => {
-  // new list
+  // create new list
   const newList = document.createElement('div');
   newList.className = 'list';
 
@@ -175,7 +189,7 @@ addListBtn.addEventListener('click', () => {
 
   listsContainer.appendChild(newList);
 
-  // new todo's for current list
+  // create new todo for current list
   const newTodo = document.createElement('div');
   newTodo.className = 'todo';
   newTodo.id = newList.children[1].value;
@@ -183,17 +197,12 @@ addListBtn.addEventListener('click', () => {
 
   main.appendChild(newTodo);
 
-  setLists();
-  rename(newList.children[1]);
+  setUpListsListeners();
+  renameList(newList.children[1]);
   newListsNumber++;
 });
 
 // TODO
-
-// ! DOCUMENTATION
-// ! ADDING LISTS WHEN 0
-
-// - change name of rename fucntion for renamelist because fucnction nameTodo? will be v
 
 // - todo items :
 // - 2 default for default lists
@@ -201,5 +210,3 @@ addListBtn.addEventListener('click', () => {
 
 //! - todo items works as lists with live rename so : 1 div for green if done (radius 50%), input readonly for live nameing it, and when hover trash icon appears in right corner ( delete option )
 // new to-do button which works same as new list
-
-// ? DRY CODE

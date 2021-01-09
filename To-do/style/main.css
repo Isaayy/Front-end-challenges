@@ -57,12 +57,7 @@ body {
   -ms-grid-column-span: 3;
   grid-area: banner;
   color: #fff;
-  font-size: 2rem;
-}
-
-.banner__container {
   padding: 3rem 5rem;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,13 +70,14 @@ body {
           justify-content: space-between;
 }
 
-.banner .clock .time-box {
+.banner .timestamp__time {
   font-size: 7rem;
   font-weight: 300;
 }
 
-.banner .clock .date-box {
+.banner .timestamp__date {
   font-weight: 500;
+  font-size: 2rem;
 }
 
 .banner h2 {

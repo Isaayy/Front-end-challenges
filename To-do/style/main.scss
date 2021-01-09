@@ -30,7 +30,7 @@ $font-size-big: 2.5rem;
 $color-primary: #ff3366;
 
 // #########################################
-
+// LAYOUT
 .container {
   display: grid;
   width: 100%;
@@ -48,6 +48,9 @@ $color-primary: #ff3366;
   }
 }
 
+// #########################################
+// BANNER
+
 .banner {
   background-image: url(../img/banner.svg);
   background-repeat: no-repeat;
@@ -55,23 +58,20 @@ $color-primary: #ff3366;
   background-position: bottom;
   grid-area: banner;
   color: #fff;
-  font-size: $font-size;
-  &__container {
-    padding: 3rem 5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  padding: 3rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  .clock {
-    .time-box {
+  .timestamp {
+    &__time {
       font-size: 7rem;
       font-weight: 300;
     }
 
-    .date-box {
+    &__date {
       font-weight: 500;
+      font-size: $font-size;
     }
   }
 
@@ -80,6 +80,9 @@ $color-primary: #ff3366;
     font-weight: 600;
   }
 }
+
+// #########################################
+// SIDEBAR
 
 .sidebar {
   background-color: #f5f5f5;
@@ -151,7 +154,7 @@ $color-primary: #ff3366;
       }
     }
   }
-
+  // adding new list
   .add-list-container {
     padding: 2rem 5rem;
     display: flex;
@@ -170,6 +173,8 @@ $color-primary: #ff3366;
   }
 }
 
+// #########################################
+// MAIN SECTION - TODO'S
 .main {
   padding: 3rem 5rem;
 }
@@ -178,6 +183,9 @@ $color-primary: #ff3366;
   font-size: 5rem;
   display: none;
 }
+
+// #########################################
+// UTILITY FOR JAVASCRIPT
 
 .active {
   background-color: $color-primary;
