@@ -52,8 +52,11 @@ const setLists = () => {
 setLists();
 
 const switchList = (list) => {
-  activeList.classList.toggle('active');
-  document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
+  if (typeof activeList !== 'undefined') {
+    activeList.classList.toggle('active');
+    document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
+  }
+
   activeList = list;
   activeList.classList.toggle('active');
   document.querySelector(`#${activeList.children[1].value}`).classList.toggle('show');
@@ -135,7 +138,6 @@ const rename = (currentList) => {
   currentList.readOnly = false;
   currentList.focus();
   currentList.select();
-
   const tmpName = currentList.value;
   currentList.addEventListener('blur', () => {
     if (!document.querySelector(`#${tmpName}`)) return;
@@ -157,7 +159,7 @@ const rename = (currentList) => {
 
 const addListBtn = document.querySelector('.add-list');
 const main = document.querySelector('.main');
-
+let newListsNumber = 1;
 addListBtn.addEventListener('click', () => {
   // new list
   const newList = document.createElement('div');
@@ -165,15 +167,13 @@ addListBtn.addEventListener('click', () => {
 
   newList.innerHTML = `
   <img src="img/alert.svg" alt="alert" class="list__img" />
-  <input class="list__title" value="New" readonly />
+  <input class="list__title" value="New-${newListsNumber}" readonly />
   <div class="list__options">
     <div class="option"></div>
     <div class="option"></div>
   </div>`;
 
   listsContainer.appendChild(newList);
-  console.log(newList.children[1]);
-  console.log(newList.children[1].value);
 
   // new todo's for current list
   const newTodo = document.createElement('div');
@@ -182,11 +182,10 @@ addListBtn.addEventListener('click', () => {
   newTodo.textContent = 'new list todo';
 
   main.appendChild(newTodo);
-  console.log(newTodo);
 
   setLists();
   rename(newList.children[1]);
-  console.log(newList.children[1].value);
+  newListsNumber++;
 });
 
 // TODO
