@@ -202,11 +202,39 @@ addListBtn.addEventListener('click', () => {
   newListsNumber++;
 });
 
+// #######################################
+// ITEMS - DISPLAY TRASH AND RENAME ICON ON HOVER
+
+const items = document.querySelectorAll('.item');
+let currentItem;
+
+for (const item of items) {
+  item.addEventListener('mouseover', () => {
+    item.children[1].classList.remove('hide');
+    currentItem = item;
+  });
+  item.addEventListener('mouseout', () => {
+    item.children[1].classList.add('hide');
+  });
+}
+
+const deleteItemButtons = document.querySelectorAll('.item-delete');
+
+for (const deleteBtn of deleteItemButtons) {
+  deleteBtn.addEventListener('click', () => {
+    console.log(currentItem);
+    currentItem.classList.toggle('hide');
+  });
+}
+
 // TODO
 
 // - todo items :
 // - 2 default for default lists
 // - 1 default for new list
-
-//! - todo items works as lists with live rename so : 1 div for green if done (radius 50%), input readonly for live nameing it, and when hover trash icon appears in right corner ( delete option )
+//! - todo items works as lists with live rename so : 1 div for green if done (radius 50%), input readonly for live nameing it, and when hover trash icon appears in right corner ( delete option ),
+//!   and pen icon for raneme
 // new to-do button which works same as new list
+
+// - change primary list icons+
+// - list icon change and select when creating

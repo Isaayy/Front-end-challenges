@@ -175,13 +175,67 @@ $color-primary: #ff3366;
 
 // #########################################
 // MAIN SECTION - TODO'S
-.main {
-  padding: 3rem 5rem;
-}
 
 .todo {
   font-size: 5rem;
   display: none;
+}
+
+.item {
+  padding: 3rem 5rem;
+  display: flex;
+  box-shadow: 0 2px 2px -2px gray;
+  align-items: center;
+  justify-content: space-between;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__check {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    &--done {
+      background-color: #40d628;
+      border: none;
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__title {
+    font-size: $font-size;
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    color: #000;
+    outline: none;
+    display: inline-block;
+
+    &--done {
+      text-decoration: line-through;
+    }
+  }
+  &__options {
+    display: flex;
+    img {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+    }
+  }
 }
 
 // #########################################
