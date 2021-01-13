@@ -238,6 +238,18 @@ $color-primary: #ff3366;
   }
 }
 
+.add-item {
+  padding: 3rem 5rem;
+  box-shadow: 0 2px 2px -2px gray;
+  display: flex;
+  align-items: center;
+  font-size: $font-size;
+  cursor: pointer;
+  img {
+    width: 3rem;
+  }
+}
+
 // #########################################
 // UTILITY FOR JAVASCRIPT
 

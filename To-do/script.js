@@ -193,7 +193,7 @@ addListBtn.addEventListener('click', () => {
   const newTodo = document.createElement('div');
   newTodo.className = 'todo';
   newTodo.id = newList.children[1].value;
-  newTodo.textContent = 'new list todo';
+  // newTodo.innerHTML =
 
   main.appendChild(newTodo);
 
@@ -205,35 +205,67 @@ addListBtn.addEventListener('click', () => {
 // #######################################
 // ITEMS - DISPLAY TRASH AND RENAME ICON ON HOVER
 
-const items = document.querySelectorAll('.item');
-let currentItem;
+const setUpItems = () => {
+  const items = document.querySelectorAll('.item');
+  let currentItem;
 
-for (const item of items) {
-  item.addEventListener('mouseover', () => {
-    item.children[1].classList.remove('hide');
-    currentItem = item;
-  });
-  item.addEventListener('mouseout', () => {
-    item.children[1].classList.add('hide');
-  });
-}
+  for (const item of items) {
+    item.addEventListener('mouseover', () => {
+      item.children[1].classList.remove('hide');
+      currentItem = item;
+    });
+    item.addEventListener('mouseout', () => {
+      item.children[1].classList.add('hide');
+    });
+  }
 
-const deleteItemButtons = document.querySelectorAll('.item-delete');
+  const deleteItemButtons = document.querySelectorAll('.item-delete');
 
-for (const deleteBtn of deleteItemButtons) {
-  deleteBtn.addEventListener('click', () => {
-    console.log(currentItem);
-    currentItem.classList.toggle('hide');
-  });
-}
+  for (const deleteBtn of deleteItemButtons) {
+    deleteBtn.addEventListener('click', () => {
+      console.log(currentItem);
+      // currentItem.classList.toggle('hide');
+      currentItem.remove();
+    });
+  }
+};
+
+setUpItems();
+
+// #######################################
+// ADD ITEM
+
+const addItemBtn = document.querySelector('.add-item');
+
+addItemBtn.addEventListener('click', () => {
+  const itemParent = document.querySelector(`#${activeList.children[1].value}`);
+
+  const newItem = document.createElement('div');
+  newItem.className = 'item';
+
+  newItem.innerHTML = `
+  <div class="item__wrapper">
+  <div class="item__check">
+    <img src="img/checkmark.svg" alt="checkmark" />
+  </div>
+  <input class="item__title" value="New item" readonly />
+  </div>
+  <div class="item__options hide">
+    <img src="img/pen.svg" alt="pen" />
+    <img src="img/trash.svg" alt="trash" class="item-delete" />
+  </div>`;
+
+  itemParent.appendChild(newItem);
+
+  setUpItems();
+  // renameList(newList.children[1]);
+});
 
 // TODO
 
 // - todo items :
-// - 2 default for default lists
 // - 1 default for new list
-//! - todo items works as lists with live rename so : 1 div for green if done (radius 50%), input readonly for live nameing it, and when hover trash icon appears in right corner ( delete option ),
-//!   and pen icon for raneme
+// - marking as done
 // new to-do button which works same as new list
 
 // - change primary list icons+
