@@ -1,4 +1,5 @@
 'use strict';
+
 // #######################################
 // DATE & TIME
 
@@ -148,8 +149,7 @@ const activateModalButtons = () => {
 const renameList = (currentList) => {
   // place cursor in list name (focus input)
   currentList.readOnly = false;
-  currentList.focus();
-  currentList.select();
+  setCaretPosition(currentList, currentList.value.length);
 
   // rename it on either enter key or blur
   const tmpName = currentList.value;
@@ -189,11 +189,10 @@ addListBtn.addEventListener('click', () => {
 
   listsContainer.appendChild(newList);
 
-  // create new todo for current list
+  // create new item for current list
   const newTodo = document.createElement('div');
   newTodo.className = 'todo';
   newTodo.id = newList.children[1].value;
-  // newTodo.innerHTML =
 
   main.appendChild(newTodo);
 
@@ -218,12 +217,20 @@ const setUpItems = () => {
     });
   }
 
-  const deleteItemButtons = document.querySelectorAll('.item-delete');
+  // RENAME BUTTONS
+  const renameItemButtons = document.querySelectorAll('.item-rename');
+  for (const renameBtn of renameItemButtons) {
+    renameBtn.addEventListener('click', () => {
+      const itemName = currentItem.children[0].children[1];
+      if (itemName.classList.contains('item__title--done')) return;
+      renameItem(itemName);
+    });
+  }
 
+  // DELETE BUTTONS
+  const deleteItemButtons = document.querySelectorAll('.item-delete');
   for (const deleteBtn of deleteItemButtons) {
     deleteBtn.addEventListener('click', () => {
-      console.log(currentItem);
-      // currentItem.classList.toggle('hide');
       currentItem.remove();
     });
   }
@@ -235,8 +242,8 @@ const setUpItems = () => {
 
   for (const checkBox of checkBoxes) {
     checkBox.addEventListener('click', () => {
-      checkBox.classList.add('item__check--done');
-      currentItem.children[0].children[1].classList.add('item__title--done');
+      checkBox.classList.toggle('item__check--done');
+      currentItem.children[0].children[1].classList.toggle('item__title--done');
     });
   }
 };
@@ -262,21 +269,61 @@ addItemBtn.addEventListener('click', () => {
   <input class="item__title" value="New item" readonly />
   </div>
   <div class="item__options hide">
-    <img src="img/pen.svg" alt="pen" />
+    <img src="img/pen.svg" alt="pen" class="item-rename"/>
     <img src="img/trash.svg" alt="trash" class="item-delete" />
   </div>`;
 
   itemParent.appendChild(newItem);
 
   setUpItems();
-  // renameList(newList.children[1]);
+  renameItem(newItem.children[0].children[1]);
 });
+
+// #######################################
+// RENAME ITEM
+const renameItem = (itemName) => {
+  // place cursor in list name (focus input)
+  itemName.readOnly = false;
+  setCaretPosition(itemName, itemName.value.length);
+
+  // rename it on either enter key or blur
+  const tmpName = itemName.value;
+  itemName.addEventListener('blur', () => {
+    if (!document.querySelector(`#${tmpName}`)) return; // prevent executing both events
+    itemName.readOnly = true;
+    document.querySelector(`#${tmpName}`).id = itemName.value;
+  });
+
+  itemName.addEventListener('keyup', () => {
+    if (event.keyCode === 13) {
+      if (!document.querySelector(`#${tmpName}`)) return;
+      itemName.readOnly = true;
+      document.querySelector(`#${tmpName}`).id = itemName.value;
+    }
+  });
+};
+
+// #######################################
+// SET CURSOR INSIDE INPUT
+function setCaretPosition(ctrl, pos) {
+  // Modern browsers
+  if (ctrl.setSelectionRange) {
+    ctrl.focus();
+    ctrl.setSelectionRange(pos, pos);
+
+    // IE8 and below
+  } else if (ctrl.createTextRange) {
+    var range = ctrl.createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+  }
+}
 
 // TODO
 
-// - todo items :
-// - marking as done
-// new to-do button which works same as new list
+// improve renaming
 
-// - change primary list icons+
+// - change primary list icons +
 // - list icon change and select when creating

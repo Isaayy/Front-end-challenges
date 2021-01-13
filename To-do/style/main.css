@@ -39,7 +39,7 @@ body {
       grid-template-rows: 23rem 1fr 1fr;
 }
 
-.container .main {
+.container .main-section {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
