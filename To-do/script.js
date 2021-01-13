@@ -204,10 +204,9 @@ addListBtn.addEventListener('click', () => {
 
 // #######################################
 // ITEMS - DISPLAY TRASH AND RENAME ICON ON HOVER
-
+let currentItem;
 const setUpItems = () => {
   const items = document.querySelectorAll('.item');
-  let currentItem;
 
   for (const item of items) {
     item.addEventListener('mouseover', () => {
@@ -226,6 +225,18 @@ const setUpItems = () => {
       console.log(currentItem);
       // currentItem.classList.toggle('hide');
       currentItem.remove();
+    });
+  }
+
+  // #######################################
+  // MARK AS DONE
+
+  const checkBoxes = document.querySelectorAll('.item__check');
+
+  for (const checkBox of checkBoxes) {
+    checkBox.addEventListener('click', () => {
+      checkBox.classList.add('item__check--done');
+      currentItem.children[0].children[1].classList.add('item__title--done');
     });
   }
 };
@@ -264,7 +275,6 @@ addItemBtn.addEventListener('click', () => {
 // TODO
 
 // - todo items :
-// - 1 default for new list
 // - marking as done
 // new to-do button which works same as new list
 
