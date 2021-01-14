@@ -180,7 +180,9 @@ addListBtn.addEventListener('click', () => {
   newList.className = 'list';
 
   newList.innerHTML = `
-  <img src="img/alert.svg" alt="alert" class="list__img" />
+  <svg class="list__icon">
+    <use xlink:href="img/icons/sprite.svg#icon-clipboard"></use>
+  </svg>  
   <input class="list__title" value="New-${newListsNumber}" readonly />
   <div class="list__options">
     <div class="option"></div>
@@ -204,6 +206,7 @@ addListBtn.addEventListener('click', () => {
 // #######################################
 // ITEMS - DISPLAY TRASH AND RENAME ICON ON HOVER
 let currentItem;
+
 const setUpItems = () => {
   const items = document.querySelectorAll('.item');
 
@@ -234,18 +237,25 @@ const setUpItems = () => {
       currentItem.remove();
     });
   }
+};
 
-  // #######################################
-  // MARK AS DONE
+// #######################################
+// MARK AS DONE
 
-  const checkBoxes = document.querySelectorAll('.item__check');
+// for default items
+const checkBoxes = document.querySelectorAll('.item__check');
 
-  for (const checkBox of checkBoxes) {
-    checkBox.addEventListener('click', () => {
-      checkBox.classList.toggle('item__check--done');
-      currentItem.children[0].children[1].classList.toggle('item__title--done');
-    });
-  }
+for (const checkBox of checkBoxes) {
+  checkBox.addEventListener('click', () => {
+    checkBox.classList.toggle('item__check--done');
+    currentItem.children[0].children[1].classList.toggle('item__title--done');
+  });
+}
+
+// for new items
+const markAsDoneAddListener = () => {
+  currentItem.children[0].children[0].classList.toggle('item__check--done');
+  currentItem.children[0].children[1].classList.toggle('item__title--done');
 };
 
 setUpItems();
@@ -263,7 +273,7 @@ addItemBtn.addEventListener('click', () => {
 
   newItem.innerHTML = `
   <div class="item__wrapper">
-  <div class="item__check">
+  <div class="item__check" onClick="markAsDoneAddListener()">
     <img src="img/checkmark.svg" alt="checkmark" />
   </div>
   <input class="item__title" value="New item" readonly />
@@ -322,8 +332,9 @@ function setCaretPosition(ctrl, pos) {
 }
 
 // TODO
+// marking new items glich
 
-// improve renaming
+// - change primary list icons  for new list
+// - list icon change + select when creating
 
-// - change primary list icons +
-// - list icon change and select when creating
+// MAKE IMPORTANT NOTES FROM CODE

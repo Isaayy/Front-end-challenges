@@ -102,13 +102,20 @@ body {
 }
 
 .sidebar .list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   padding: 2rem 5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.sidebar .list__icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: currentColor;
 }
 
 .sidebar .list:hover {
@@ -297,11 +304,16 @@ body {
 
 .active {
   background-color: #ff3366;
+  color: #fff;
 }
 
 .active .list__title {
   color: white !important;
   cursor: auto;
+}
+
+.active .list__icon {
+  fill: currentColor;
 }
 
 .active:hover {

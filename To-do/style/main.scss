@@ -97,9 +97,16 @@ $color-primary: #ff3366;
   }
 
   .list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     padding: 2rem 5rem;
     align-items: center;
+
+    &__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      fill: currentColor;
+    }
 
     &:hover {
       background-color: #fff;
@@ -255,9 +262,13 @@ $color-primary: #ff3366;
 
 .active {
   background-color: $color-primary;
+  color: #fff;
   .list__title {
     color: white !important;
     cursor: auto;
+  }
+  .list__icon {
+    fill: currentColor;
   }
 
   &:hover {
