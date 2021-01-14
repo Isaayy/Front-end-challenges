@@ -120,6 +120,7 @@ window.addEventListener('click', function (e) {
 const activateModalButtons = () => {
   const renameBtn = document.querySelector('.rename');
   const deleteBtn = document.querySelector('.delete');
+  const changeIconBtn = document.querySelector('.change-icon');
 
   const currentList = activeList.children[1];
 
@@ -144,6 +145,109 @@ const activateModalButtons = () => {
     // refresh listeners for lists
     setUpListsListeners();
   });
+
+  changeIconBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openIconModal(activeList);
+  });
+};
+
+// icon change
+const openIconModal = (parent) => {
+  const iconModal = document.createElement('div');
+  iconModal.className = 'icon-modal';
+
+  iconModal.innerHTML = `
+  <svg class="list__icon" id="icon-shopping-basket">
+    <use xlink:href="img/icons/sprite.svg#icon-shopping-basket"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-bookmark">
+    <use xlink:href="img/icons/sprite.svg#icon-bookmark"></use>
+  </svg> 
+
+  <svg class="list__icon" id="icon-beamed-note">
+    <use xlink:href="img/icons/sprite.svg#icon-beamed-note"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-bowl">
+    <use xlink:href="img/icons/sprite.svg#icon-bowl"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-clipboard">
+    <use xlink:href="img/icons/sprite.svg#icon-clipboard"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-credit-card">
+    <use xlink:href="img/icons/sprite.svg#icon-credit-card"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-globe">
+    <use xlink:href="img/icons/sprite.svg#icon-globe"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-heart">
+    <use xlink:href="img/icons/sprite.svg#icon-heart"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-home">
+    <use xlink:href="img/icons/sprite.svg#icon-home"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-hour-glass">
+    <use xlink:href="img/icons/sprite.svg#icon-hour-glass"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-laptop">
+    <use xlink:href="img/icons/sprite.svg#icon-laptop"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-light-bulb">
+    <use xlink:href="img/icons/sprite.svg#icon-light-bulb"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-location-pin">
+    <use xlink:href="img/icons/sprite.svg#icon-location-pin"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-thumbs-up">
+    <use xlink:href="img/icons/sprite.svg#icon-thumbs-up"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-suitcase">
+    <use xlink:href="img/icons/sprite.svg#icon-suitcase"></use>
+  </svg>
+
+  <svg class="list__icon" id="icon-mail">
+    <use xlink:href="img/icons/sprite.svg#icon-mail"></use>
+  </svg>
+
+  <img src="img/close.svg" class="icon-modal-close">
+  `;
+
+  parent.appendChild(iconModal);
+
+  const iconModalCloseBtn = document.querySelector('.icon-modal-close');
+  let isModal = true;
+  iconModalCloseBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isModal = false;
+    parent.removeChild(iconModal);
+  });
+
+  window.addEventListener('click', () => {
+    if (isModal) {
+      parent.removeChild(iconModal);
+      isModal = false;
+    }
+  });
+
+  const listIcons = document.querySelectorAll('.list__icon');
+  for (const icon of listIcons) {
+    icon.addEventListener('click', () => {
+      activeList.children[0].children[0].setAttributeNS('http://www.w3.org/1999/xlink', 'href', `img/icons/sprite.svg#${icon.id}`);
+    });
+  }
 };
 
 const renameList = (currentList) => {
@@ -330,11 +434,3 @@ function setCaretPosition(ctrl, pos) {
     range.select();
   }
 }
-
-// TODO
-// marking new items glich
-
-// - change primary list icons  for new list
-// - list icon change + select when creating
-
-// MAKE IMPORTANT NOTES FROM CODE

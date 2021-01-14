@@ -110,6 +110,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .sidebar .list__icon {
@@ -132,6 +133,34 @@ body {
   outline: none;
   display: inline-block;
   cursor: pointer;
+}
+
+.sidebar .list .icon-modal {
+  border-radius: 3px;
+  padding: 3rem;
+  margin-left: 5rem;
+  position: absolute;
+  background-color: #fff;
+  bottom: 100%;
+  width: 100%;
+}
+
+.sidebar .list .icon-modal > * {
+  margin: 0.7rem;
+  fill: black;
+  cursor: pointer;
+}
+
+.sidebar .list .icon-modal::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 100%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid #fff;
 }
 
 .sidebar .list__options {
@@ -161,6 +190,14 @@ body {
   cursor: pointer;
   background-color: #ff3366;
   color: #fff;
+}
+
+.sidebar .list .icon-modal-close {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .sidebar .list .option {

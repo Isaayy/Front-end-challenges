@@ -101,6 +101,7 @@ $color-primary: #ff3366;
     grid-template-columns: repeat(3, 1fr);
     padding: 2rem 5rem;
     align-items: center;
+    position: relative;
 
     &__icon {
       width: 2.2rem;
@@ -122,6 +123,34 @@ $color-primary: #ff3366;
       outline: none;
       display: inline-block;
       cursor: pointer;
+    }
+
+    .icon-modal {
+      border-radius: 3px;
+      padding: 3rem;
+      margin-left: 5rem;
+      position: absolute;
+      background-color: #fff;
+      bottom: 100%;
+      width: 100%;
+      & > * {
+        margin: 0.7rem;
+        fill: black;
+        cursor: pointer;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+
+        border-top: 15px solid #fff;
+      }
     }
 
     &__options {
@@ -148,6 +177,14 @@ $color-primary: #ff3366;
           }
         }
       }
+    }
+
+    .icon-modal-close {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 5px;
+      right: 5px;
     }
 
     .option {
