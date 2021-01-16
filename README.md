@@ -10,6 +10,10 @@ Projects that I have done so far during my web development learning journey.
 
 ![](/img/projects/adure.png)
 
+## To do app
+
+![](/img/projects/todo.png)
+
 ## Energy
 
 ![](/img/projects/energy.png)

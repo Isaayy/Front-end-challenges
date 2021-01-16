@@ -247,6 +247,11 @@ footer {
   }
 }
 
+.project__logo {
+  width: 5rem;
+  height: 5rem;
+}
+
 .project__desc {
   font-size: 1.5rem;
   color: #1d1b1b;
