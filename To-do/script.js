@@ -1,5 +1,41 @@
 'use strict';
 
+// #####################################
+// HAMBURGER MENU
+
+const hamburger = document.querySelector('.hamburger__outline');
+const bar = document.querySelector('.hamburger__bar');
+const sideBar = document.querySelector('.sidebar');
+let listNames = document.querySelectorAll('.list__title');
+
+const menu = (whatToDo) => {
+  hamburger.classList.toggle('hamburger--active');
+  sideBar.classList.toggle('sideBar-moveIn');
+
+  if (whatToDo === 'Open') {
+    bar.classList.add('hamburger__bar--hidden'); // on first click
+  } else {
+    setTimeout(function () {
+      bar.classList.remove('hamburger__bar--hidden');
+    }, 100);
+  }
+};
+
+hamburger.addEventListener('click', function () {
+  if (bar.classList.contains('hamburger__bar--hidden')) {
+    menu('Close');
+  } else {
+    menu('Open');
+  }
+});
+
+for (const list of listNames) {
+  list.addEventListener('click', () => {
+    if (!hamburger.classList.contains('hamburger--active')) return;
+    menu('close');
+  });
+}
+
 // #######################################
 // DATE & TIME
 
@@ -366,7 +402,6 @@ setUpItems();
 
 // #######################################
 // ADD ITEM
-
 const addItemBtn = document.querySelector('.add-item');
 
 addItemBtn.addEventListener('click', () => {

@@ -9,10 +9,19 @@
   <body>
     <div class="container">
       <div class="banner">
-        <h2>Welcome</h2>
-        <div class="timestamp">
-          <div class="timestamp__time">12:20</div>
-          <div class="timestamp__date">Tuesday, 5 January</div>
+        <div class="banner__column-left">
+          <h2>Welcome</h2>
+          <div class="timestamp">
+            <div class="timestamp__time">12:20</div>
+            <div class="timestamp__date">Tuesday, 5 January</div>
+          </div>
+        </div>
+        <div class="banner__column-right">
+          <div class="hamburger">
+            <span class="hamburger__outline">
+              <span class="hamburger__bar"></span>
+            </span>
+          </div>
         </div>
       </div>
       <div class="sidebar">
@@ -51,7 +60,9 @@
         </div>
         <div class="add-list-container">
           <div class="add-list">
-            <img src="img/plus.svg" alt="plus sign" />
+            <svg>
+              <use xlink:href="img/icons/sprite.svg#icon-plus"></use>
+            </svg>
             <p>New list</p>
           </div>
         </div>
@@ -138,7 +149,9 @@
           </div>
         </div>
         <div class="add-item">
-          <img src="img/plus.svg" alt="plus sign" />
+          <svg class="list__icon">
+            <use xlink:href="img/icons/sprite.svg#icon-plus"></use>
+          </svg>
           <p>New item</p>
         </div>
       </main>
