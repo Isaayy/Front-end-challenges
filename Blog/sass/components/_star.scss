@@ -1,0 +1,19 @@
+.star {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+
+  // landing page
+  &--1 {
+    top: 19rem;
+    left: 60%;
+  }
+  &--2 {
+    top: 60%;
+    left: 10rem;
+  }
+  &--3 {
+    top: 90%;
+    left: 64%;
+  }
+}

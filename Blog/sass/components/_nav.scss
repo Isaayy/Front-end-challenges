@@ -1,0 +1,23 @@
+.nav {
+  display: flex;
+  align-items: center;
+  &__list {
+    list-style: none;
+    display: flex;
+
+    li {
+      &:not(:first-child) {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  &__link {
+    font: $base-font-size 'Montserrat', sans-serif;
+    color: black;
+
+    &--active {
+      font-weight: 600;
+    }
+  }
+}

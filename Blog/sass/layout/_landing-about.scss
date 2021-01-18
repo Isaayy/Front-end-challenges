@@ -1,0 +1,104 @@
+.landing-page {
+  background-color: $pastel-orange;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #fff;
+  padding: 2.5rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    color: black;
+    font: bold 2rem 'Montserrat', sans-serif;
+    margin-left: 0.5rem;
+  }
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+
+  .hero {
+    flex: 1;
+  }
+  img {
+    height: 100%;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10rem;
+  position: relative;
+
+  &__subheading {
+    margin-top: $content-padding-big;
+    margin-bottom: $content-padding-big;
+  }
+
+  &__cta {
+    padding: 2rem 7.5rem;
+    background-color: $pastel-red;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 1.5rem;
+    display: inline-block;
+  }
+
+  &__socials {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    & > * {
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      fill: $color-dark;
+      transition: all 0.3s;
+
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        fill: #000;
+      }
+    }
+  }
+
+  &__bookmark {
+    background-color: $pastel-yellow;
+    font-size: $base-font-size;
+    padding: 3rem 1.5rem 3rem 2.5rem;
+    writing-mode: vertical-rl;
+    font-family: $font-Lora;
+    cursor: pointer;
+
+    position: absolute;
+    left: 0;
+    top: 15%;
+    transform: translateX(-1rem);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateX(0);
+    }
+  }
+}

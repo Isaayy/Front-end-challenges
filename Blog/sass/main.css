@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+.hero__heading {
+  font-size: 4.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero__heading--red {
+  color: #e04d4d;
+}
+
+.hero__subheading {
+  font-size: 3.2rem;
+  text-align: center;
+  font-weight: normal;
+}
+
 *,
 *::after,
 *::before {
@@ -8,6 +25,7 @@
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -15,7 +33,198 @@ html {
   scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: 4.8rem;
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__list li:not(:first-child) {
+  margin-left: 5rem;
+}
+
+.nav__link {
+  font: 1.6rem "Montserrat", sans-serif;
+  color: black;
+}
+
+.nav__link--active {
+  font-weight: 600;
+}
+
+.star {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+}
+
+.star--1 {
+  top: 19rem;
+  left: 60%;
+}
+
+.star--2 {
+  top: 60%;
+  left: 10rem;
+}
+
+.star--3 {
+  top: 90%;
+  left: 64%;
+}
+
+.landing-page {
+  background-color: #fbbe9d;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header {
+  background-color: #fff;
+  padding: 2.5rem 0;
+}
+
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__logo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__logo {
+  color: black;
+  font: bold 2rem 'Montserrat', sans-serif;
+  margin-left: 0.5rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main .hero {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.main img {
+  height: 100%;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 10rem;
+  position: relative;
+}
+
+.hero__subheading {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.hero__cta {
+  padding: 2rem 7.5rem;
+  background-color: #e04d4d;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.5rem;
+  display: inline-block;
+}
+
+.hero__socials {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.hero__socials > * {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  fill: #212326;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hero__socials > *:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.hero__socials > *:hover {
+  fill: #000;
+}
+
+.hero__bookmark {
+  background-color: #fce1b1;
+  font-size: 1.6rem;
+  padding: 3rem 1.5rem 3rem 2.5rem;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  font-family: "Lora", serif;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 15%;
+  -webkit-transform: translateX(-1rem);
+          transform: translateX(-1rem);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hero__bookmark:hover {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 /*# sourceMappingURL=main.css.map */

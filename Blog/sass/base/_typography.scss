@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Lora', serif;
+$font-Montserrat: 'Montserrat', sans-serif;
+$font-Lora: 'Lora', serif;
+
+.hero__heading {
+  font-size: $heading-primary-dekstop;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+
+  &--red {
+    color: $pastel-red;
+  }
+}
+
+.hero__subheading {
+  font-size: $heading-desktop;
+  text-align: center;
+  font-weight: normal;
+}

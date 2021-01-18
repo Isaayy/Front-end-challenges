@@ -5,9 +5,16 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+  font-family: $font-Montserrat;
 }
 
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  width: 100%;
 }
