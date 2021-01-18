@@ -59,6 +59,10 @@
     color: #fff;
     font-size: 1.5rem;
     display: inline-block;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #d23838;
+    }
   }
 
   &__socials {
@@ -100,5 +104,39 @@
     &:hover {
       transform: translateX(0);
     }
+  }
+}
+
+// ##########################################
+// About
+
+.about {
+  background-color: $pastel-yellow;
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__content {
+    padding: $section-padding-desktop 0;
+
+    width: 100%;
+    margin-left: 10rem;
+  }
+
+  &__heading {
+    margin-bottom: $content-padding-small;
+    position: relative;
+    &::before {
+      content: 'Hey';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+    }
+  }
+
+  &__desc {
+    margin-top: $content-padding-small;
   }
 }

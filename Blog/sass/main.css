@@ -8,13 +8,28 @@
 }
 
 .hero__heading--red {
-  color: #e04d4d;
+  color: #de4444;
 }
 
 .hero__subheading {
   font-size: 3.2rem;
   text-align: center;
   font-weight: normal;
+}
+
+.about__heading {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.about__heading::before {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+.about__desc {
+  font-size: 1.6rem;
+  font-family: "Lora", serif;
 }
 
 *,
@@ -87,6 +102,13 @@ html {
 .star--3 {
   top: 90%;
   left: 64%;
+}
+
+.waves {
+  position: absolute;
+  top: 100%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .landing-page {
@@ -173,11 +195,17 @@ html {
 
 .hero__cta {
   padding: 2rem 7.5rem;
-  background-color: #e04d4d;
+  background-color: #de4444;
   border-radius: 3px;
   color: #fff;
   font-size: 1.5rem;
   display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.hero__cta:hover {
+  background-color: #d23838;
 }
 
 .hero__socials {
@@ -226,5 +254,41 @@ html {
 .hero__bookmark:hover {
   -webkit-transform: translateX(0);
           transform: translateX(0);
+}
+
+.about {
+  background-color: #fce1b1;
+}
+
+.about .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.about__content {
+  padding: 15rem 0;
+  width: 100%;
+  margin-left: 10rem;
+}
+
+.about__heading {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.about__heading::before {
+  content: 'Hey';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+}
+
+.about__desc {
+  margin-top: 2rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -20,3 +20,17 @@ $font-Lora: 'Lora', serif;
   text-align: center;
   font-weight: normal;
 }
+
+.about__heading {
+  font-size: $heading-desktop;
+  font-weight: 600;
+  &::before {
+    font-size: $base-font-size;
+    font-weight: normal;
+  }
+}
+
+.about__desc {
+  font-size: $base-font-size;
+  font-family: $font-Lora;
+}
