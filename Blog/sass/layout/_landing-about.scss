@@ -112,6 +112,7 @@
 
 .about {
   background-color: $pastel-yellow;
+  position: relative;
   .container {
     display: flex;
     height: 100%;
@@ -133,6 +134,8 @@
       position: absolute;
       bottom: 100%;
       left: 0;
+      font-size: $base-font-size;
+      font-weight: normal;
     }
   }
 
