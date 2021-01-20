@@ -52,19 +52,6 @@
     margin-bottom: $content-padding-big;
   }
 
-  &__cta {
-    padding: 2rem 7.5rem;
-    background-color: $pastel-red;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 1.5rem;
-    display: inline-block;
-    transition: all 0.3s;
-    &:hover {
-      background-color: #d23838;
-    }
-  }
-
   &__socials {
     position: absolute;
     bottom: 5rem;

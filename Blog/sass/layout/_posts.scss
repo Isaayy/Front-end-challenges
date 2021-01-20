@@ -1,0 +1,94 @@
+.posts {
+  .posts-wrapper {
+    margin-top: $content-padding-big;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 65rem);
+  }
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &:hover > .post__slide-in {
+    opacity: 1;
+  }
+
+  p {
+    text-transform: uppercase;
+  }
+
+  &--paris {
+    background: $pastel-pink;
+    & > div {
+      background-image: url(../img/paris.png);
+    }
+  }
+
+  &--croatia {
+    background-image: url(../img/grid-image-center.png);
+  }
+
+  &--rome {
+    background-color: $pastel-orange;
+    & > div {
+      background-image: url(../img/rome.png);
+    }
+  }
+
+  &--usa {
+    background-image: url(../img/grid-image-left.png);
+  }
+
+  &--greece {
+    background-color: $pastel-blue;
+    & > div {
+      background-image: url(../img/greece.png);
+    }
+  }
+
+  &--portugal {
+    background-image: url(../img/grid-image-right.png);
+  }
+
+  &__slide-in {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.5s 0.9s;
+
+    &:hover {
+      transition: all 0.5s 0s;
+    }
+
+    &:hover > .slide-container {
+      opacity: 1;
+    }
+
+    p {
+      margin-bottom: $content-padding-big;
+    }
+
+    .slide-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      transition: all 0.7s 0.5s;
+      opacity: 0;
+    }
+  }
+}

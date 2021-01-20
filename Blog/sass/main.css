@@ -27,6 +27,11 @@ h3 {
   font-family: "Lora", serif;
 }
 
+.post p {
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+
 *,
 *::after,
 *::before {
@@ -48,6 +53,29 @@ html {
   max-width: 144rem;
   margin: 0 auto;
   width: 100%;
+}
+
+.btn {
+  padding: 2rem 7.5rem;
+  border-radius: 3px;
+  font-size: 1.5rem;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn--cta {
+  background-color: #de4444;
+  color: #fff;
+}
+
+.btn--cta:hover {
+  background-color: #d23838;
+}
+
+.btn--post {
+  background-color: #fff;
+  color: black;
 }
 
 .nav {
@@ -210,21 +238,6 @@ html {
 .hero__subheading {
   margin-top: 4rem;
   margin-bottom: 4rem;
-}
-
-.hero__cta {
-  padding: 2rem 7.5rem;
-  background-color: #de4444;
-  border-radius: 3px;
-  color: #fff;
-  font-size: 1.5rem;
-  display: inline-block;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-.hero__cta:hover {
-  background-color: #d23838;
 }
 
 .hero__socials {
@@ -398,5 +411,120 @@ html {
 
 .newsletter__btn:hover {
   background-color: #ffda9b;
+}
+
+.posts .posts-wrapper {
+  margin-top: 4rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (65rem)[2];
+      grid-template-rows: repeat(2, 65rem);
+}
+
+.post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.post:hover > .post__slide-in {
+  opacity: 1;
+}
+
+.post p {
+  text-transform: uppercase;
+}
+
+.post--paris {
+  background: #ffc2c6;
+}
+
+.post--paris > div {
+  background-image: url(../img/paris.png);
+}
+
+.post--croatia {
+  background-image: url(../img/grid-image-center.png);
+}
+
+.post--rome {
+  background-color: #fbbe9d;
+}
+
+.post--rome > div {
+  background-image: url(../img/rome.png);
+}
+
+.post--usa {
+  background-image: url(../img/grid-image-left.png);
+}
+
+.post--greece {
+  background-color: #b5dbe3;
+}
+
+.post--greece > div {
+  background-image: url(../img/greece.png);
+}
+
+.post--portugal {
+  background-image: url(../img/grid-image-right.png);
+}
+
+.post__slide-in {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  opacity: 0;
+  -webkit-transition: all 0.5s 0.9s;
+  transition: all 0.5s 0.9s;
+}
+
+.post__slide-in:hover {
+  -webkit-transition: all 0.5s 0s;
+  transition: all 0.5s 0s;
+}
+
+.post__slide-in:hover > .slide-container {
+  opacity: 1;
+}
+
+.post__slide-in p {
+  margin-bottom: 4rem;
+}
+
+.post__slide-in .slide-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  -webkit-transition: all 0.7s 0.5s;
+  transition: all 0.7s 0.5s;
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */
