@@ -13,10 +13,11 @@ countBtn.addEventListener('click', () => {
 // ############################################################
 let results = [];
 
-const generateArray = (str) => {
-  // create array of words from string
-  str = str.replace(/\s\s+|\s+$/g, ' ');
-  str = str.trim();
+const generateArray = str => {
+  // remove unnecessary spaces
+  str = str.replaceAll('  ', '').trim();
+
+  // create array of words
   const words = str.split(' ');
 
   // Word frequency in array of words
@@ -30,7 +31,7 @@ const generateArray = (str) => {
       }
     }
     // check if the word is not already in results
-    found = results.some((el) => el.word === words[i]);
+    found = results.some(el => el.word === words[i]);
     if (!found) results.push({ word: words[i], frequency: count });
 
     count = 1;
@@ -49,9 +50,7 @@ const resultsBox = document.querySelector('.results');
 const generateResult = () => {
   resultsBox.classList.remove('hidden');
   for (let i = 0; i < results.length; i++) {
-    table.innerHTML += `<tr><td>${i + 1}</td><td>${results[i].word}</td><td>${
-      results[i].frequency
-    }</td></tr>`;
+    table.innerHTML += `<tr><td>${i + 1}</td><td>${results[i].word}</td><td>${results[i].frequency}</td></tr>`;
   }
 };
 
@@ -61,8 +60,7 @@ const showMoreBtn = document.querySelector('.show-more');
 
 showMoreBtn.addEventListener('click', () => {
   table.classList.toggle('showMore');
-  if (showMoreBtn.textContent === `Show less`)
-    showMoreBtn.innerHTML = `Show more`;
+  if (showMoreBtn.textContent === `Show less`) showMoreBtn.innerHTML = `Show more`;
   else showMoreBtn.innerHTML = `Show less`;
 });
 

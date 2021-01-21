@@ -213,7 +213,7 @@ generateOutput();
 // ######################################################################
 // Reset
 
-const reset = (type) => {
+const reset = type => {
   if (type === 'complete') {
     wpm = 1;
     accuracy = 1;
@@ -231,7 +231,7 @@ const reset = (type) => {
 // ######################################################################
 // Game
 
-inputBox.addEventListener('keyup', (event) => {
+inputBox.addEventListener('keyup', event => {
   inputBox.value = inputBox.value.trim();
   if (event.code === 'Space' && inputBox.value) {
     if (secondsLeft === 59) setInterval(timer, 1000);
