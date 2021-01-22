@@ -9,110 +9,30 @@ const modal = document.querySelector('.modal');
 const output = document.querySelector('.result');
 
 // password components
-
-const uppercase = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z',
-];
-
-const lowercase = [
-  'a',
-  'b',
-  'c',
-  'd',
-  'e',
-  'f',
-  'g',
-  'h',
-  'i',
-  'j',
-  'k',
-  'l',
-  'm',
-  'n',
-  'o',
-  'p',
-  'q',
-  'r',
-  's',
-  't',
-  'u',
-  'v',
-  'w',
-  'x',
-  'y',
-  'z',
-];
-
-const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-const symbols = [
-  '!',
-  '@',
-  '#',
-  '$',
-  '%',
-  '^',
-  '&',
-  '*',
-  '(',
-  ')',
-  '[',
-  ']',
-  ',',
-  '.',
-  '/',
-  '?',
-  '+',
-  '=',
-  '-',
-  '_',
-];
-
-let passwordComponents;
+const passwordComponets = new Map([
+  ['upperCase', ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']],
+  ['lowerCase', ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']],
+  ['numbers', ['1', '2', '3', '4', '5', '6', '7', '8', '9']],
+  ['symbols', ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '[', ']', ',', '.', '/', '?', '+', '=', '-', '_']],
+]);
 
 // Generate password
-
 let password;
 let passwordLength = 0;
-let components;
 
+let componentsSelected;
 const whichComponents = () => {
-  passwordComponents = [];
+  componentsSelected = [];
 
   const includeLowercase = document.querySelector('.include-lowercase');
   const includeUppercase = document.querySelector('.include-uppercase');
   const includeNumbers = document.querySelector('.include-numbers');
   const includeSymbols = document.querySelector('.include-symbols');
 
-  if (includeLowercase.checked) passwordComponents.push(lowercase);
-  if (includeUppercase.checked) passwordComponents.push(uppercase);
-  if (includeNumbers.checked) passwordComponents.push(numbers);
-  if (includeSymbols.checked) passwordComponents.push(symbols);
+  if (includeLowercase.checked) componentsSelected.push('lowerCase');
+  if (includeUppercase.checked) componentsSelected.push('upperCase');
+  if (includeNumbers.checked) componentsSelected.push('numbers');
+  if (includeSymbols.checked) componentsSelected.push('symbols');
 };
 
 const generatePassword = () => {
@@ -120,19 +40,20 @@ const generatePassword = () => {
   password = '';
   whichComponents();
   while (passwordLength) {
-    let randomIndex = randomNumber(passwordComponents.length);
-    let componentLength = passwordComponents[randomIndex].length;
-    password += passwordComponents[randomIndex][randomNumber(componentLength)];
+    // get random character
+    let randomIndex = randomNumber(componentsSelected.length); // random index of componentsSelected array
+    let componentName = componentsSelected[randomIndex]; // use random index to get random component name
+    let componentLength = passwordComponets.get(componentName).length; // length of characters inside component
+
+    password += passwordComponets.get(componentName)[randomNumber(componentLength)];
     passwordLength--;
   }
   output.textContent = password;
 };
 
-const randomNumber = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
-};
+const randomNumber = max => Math.floor(Math.random() * Math.floor(max));
 
-let exclamationMarkToggle;
+let exclamationMarkToggle; // if input is invalid
 
 generateBtn.addEventListener('click', () => {
   if (length.value) {
