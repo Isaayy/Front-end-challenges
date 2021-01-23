@@ -34,6 +34,11 @@ h3 {
   font-size: 3.2rem;
 }
 
+.footer {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 *,
 *::after,
 *::before {
@@ -121,6 +126,12 @@ html {
 
 .nav__link--active {
   font-weight: 600;
+}
+
+.nav__link--footer {
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 .star,
@@ -590,5 +601,50 @@ html {
 
 .post__hover-state p {
   margin-bottom: 4rem;
+}
+
+.footer {
+  background-color: #212326;
+  padding: 4rem 0;
+  color: #fff;
+}
+
+.footer .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.footer .column--1 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.footer .column--1 > * {
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  fill: #fff;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.footer .column--1 > *:not(:first-child) {
+  margin-left: 2rem;
+}
+
+.footer .column--1 > *:hover {
+  fill: #fce1b1;
+}
+
+.footer .column--2 {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.footer .column--3 {
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 /*# sourceMappingURL=main.css.map */
