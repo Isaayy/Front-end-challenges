@@ -115,6 +115,7 @@
 
   &__heading {
     margin-bottom: $content-padding-small;
+    text-align: left;
     position: relative;
     &::before {
       content: 'Hey';

@@ -1,7 +1,5 @@
 .posts {
   .posts-wrapper {
-    margin-top: $content-padding-big;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 65rem);

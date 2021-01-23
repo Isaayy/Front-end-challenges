@@ -31,6 +31,16 @@
     top: 40%;
     left: 90%;
   }
+
+  // recent posts
+  &--6 {
+    top: 80%;
+    left: 90%;
+  }
+  &--7 {
+    top: 80%;
+    left: 20%;
+  }
 }
 
 .circle {
@@ -38,6 +48,11 @@
   &--2 {
     top: 30%;
     left: 15%;
+  }
+  // recent
+  &--3 {
+    top: 55%;
+    left: 75%;
   }
 }
 

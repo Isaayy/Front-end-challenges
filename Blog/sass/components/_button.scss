@@ -16,5 +16,17 @@
   &--post {
     background-color: #fff;
     color: black;
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+  }
+
+  &--transparent {
+    border: 1px solid black;
+    color: black;
+    &:hover {
+      background-color: $color-dark;
+      color: #fff;
+    }
   }
 }

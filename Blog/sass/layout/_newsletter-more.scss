@@ -1,7 +1,6 @@
-.newsletter-section {
+.more-information {
   padding: $section-padding-desktop 0;
   position: relative;
-
   .container {
     display: flex;
     align-items: center;
@@ -14,17 +13,17 @@
     left: 0;
     width: 100%;
     z-index: -10;
-  }
 
-  &__heading {
-    text-align: center;
+    &--peach {
+      top: auto;
+      bottom: 0;
+    }
   }
 }
 
 .newsletter {
   border: 1px solid black;
   border-radius: 3px;
-  margin-top: $content-padding-big;
   display: flex;
   align-items: center;
   width: 40rem;

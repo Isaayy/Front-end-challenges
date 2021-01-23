@@ -20,6 +20,8 @@
 h3 {
   font-size: 3.2rem;
   font-weight: 600;
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .about__desc {
@@ -76,6 +78,20 @@ html {
 .btn--post {
   background-color: #fff;
   color: black;
+}
+
+.btn--post:hover {
+  background-color: #f0f0f0;
+}
+
+.btn--transparent {
+  border: 1px solid black;
+  color: black;
+}
+
+.btn--transparent:hover {
+  background-color: #212326;
+  color: #fff;
 }
 
 .nav {
@@ -139,9 +155,24 @@ html {
   left: 90%;
 }
 
+.star--6 {
+  top: 80%;
+  left: 90%;
+}
+
+.star--7 {
+  top: 80%;
+  left: 20%;
+}
+
 .circle--2 {
   top: 30%;
   left: 15%;
+}
+
+.circle--3 {
+  top: 55%;
+  left: 75%;
 }
 
 .twig {
@@ -311,6 +342,7 @@ html {
 
 .about__heading {
   margin-bottom: 2rem;
+  text-align: left;
   position: relative;
 }
 
@@ -327,12 +359,12 @@ html {
   margin-top: 2rem;
 }
 
-.newsletter-section {
+.more-information {
   padding: 15rem 0;
   position: relative;
 }
 
-.newsletter-section .container {
+.more-information .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -345,7 +377,7 @@ html {
           flex-direction: column;
 }
 
-.newsletter-section__bgc {
+.more-information__bgc {
   position: absolute;
   top: -1px;
   left: 0;
@@ -353,14 +385,14 @@ html {
   z-index: -10;
 }
 
-.newsletter-section__heading {
-  text-align: center;
+.more-information__bgc--peach {
+  top: auto;
+  bottom: 0;
 }
 
 .newsletter {
   border: 1px solid black;
   border-radius: 3px;
-  margin-top: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -414,7 +446,6 @@ html {
 }
 
 .posts .posts-wrapper {
-  margin-top: 4rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
