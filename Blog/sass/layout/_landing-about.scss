@@ -31,11 +31,25 @@
   height: 100%;
   overflow: hidden;
 
+  background-image: linear-gradient(to right bottom, rgba($pastel-pink, 0.5), rgba($pastel-pink, 0.1)), url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include respond(mobile) {
+    background-position: 60% 50%;
+  }
+  @include respond(desktop-big) {
+    background: transparent;
+  }
   .hero {
     flex: 1;
   }
   img {
     height: 100%;
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
   }
 }
 
@@ -43,20 +57,63 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  transform: translateY(30%);
   padding: 0 10rem;
-  position: relative;
+
+  @include respond(desktop-big) {
+    justify-content: center;
+    transform: translateY(0);
+  }
+
+  @include respond(desktop-small) {
+    transform: translateY(20%);
+  }
+  @include respond(tab-big) {
+    transform: translateY(15%);
+  }
+  @include respond(tab-small) {
+    padding: 0 5rem;
+  }
+  @include respond(mobile) {
+    padding: 0 2rem;
+    transform: translateY(5%);
+  }
+
+  max-width: 144rem;
+  margin: 0 auto;
+  @include respond(desktop-big) {
+    max-width: none;
+    margin: 0;
+  }
+
+  &__heading {
+    @include respond(mobile) {
+      margin-top: 0;
+      margin-bottom: $content-padding-big;
+    }
+  }
 
   &__subheading {
     margin-top: $content-padding-big;
     margin-bottom: $content-padding-big;
+    @include respond(mobile) {
+      order: -1;
+      margin-top: 0;
+      span {
+        display: none;
+      }
+    }
   }
 
   &__socials {
     position: absolute;
-    bottom: 5rem;
+    bottom: 10rem;
     left: 50%;
     transform: translateX(-50%);
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
     & > * {
       cursor: pointer;
       width: 3rem;
@@ -81,6 +138,10 @@
     writing-mode: vertical-rl;
     font-family: $font-Lora;
     cursor: pointer;
+
+    @include respond(tab-big) {
+      display: none;
+    }
 
     position: absolute;
     left: 0;

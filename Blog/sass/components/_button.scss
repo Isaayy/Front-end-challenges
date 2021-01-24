@@ -8,6 +8,13 @@
   &--cta {
     background-color: $pastel-red;
     color: #fff;
+
+    @include respond(mobile) {
+      width: 100%;
+      text-align: center;
+      order: 3;
+    }
+
     &:hover {
       background-color: #d23838;
     }

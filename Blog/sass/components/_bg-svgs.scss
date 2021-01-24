@@ -3,6 +3,9 @@
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
+  @include respond(mobile) {
+    display: none;
+  }
 }
 
 .star {
@@ -10,14 +13,25 @@
   &--1 {
     top: 19rem;
     left: 60%;
+    @include respond(tab-big) {
+      top: 15rem;
+      left: 90%;
+    }
   }
   &--2 {
     top: 60%;
     left: 10rem;
   }
   &--3 {
-    top: 90%;
-    left: 64%;
+    top: 70%;
+    left: 90%;
+    @include respond(desktop-big) {
+      left: 64%;
+      top: 90%;
+    }
+    @include respond(tab-big) {
+      display: none;
+    }
   }
 
   // about
@@ -67,4 +81,7 @@
   position: absolute;
   top: 100%;
   transform: translateY(-50%);
+  @include respond(tab-big) {
+    display: none;
+  }
 }

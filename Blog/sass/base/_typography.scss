@@ -13,12 +13,30 @@ $font-Lora: 'Lora', serif;
   &--red {
     color: $pastel-red;
   }
+  @include respond(tab-big) {
+    font-size: $heading-primary-tablet;
+    text-transform: none;
+  }
+  @include respond(mobile) {
+    font-size: $heading-mobile;
+    font-weight: normal;
+  }
 }
 
 .hero__subheading {
   font-size: $heading-desktop;
   text-align: center;
   font-weight: normal;
+
+  @include respond(tab-big) {
+    font-size: $heading-tablet;
+  }
+  @include respond(mobile) {
+    font-weight: bold;
+    text-transform: uppercase;
+
+    font-size: $heading-primary-mobile;
+  }
 }
 
 h3 {
@@ -26,6 +44,12 @@ h3 {
   font-weight: 600;
   text-align: center;
   margin-bottom: $content-padding-big;
+  @include respond(tab-big) {
+    font-size: $heading-tablet;
+  }
+  @include respond(mobile) {
+    font-size: $heading-mobile;
+  }
 }
 
 .about__desc {
@@ -36,6 +60,12 @@ h3 {
 .post p {
   font-weight: 600;
   font-size: $heading-desktop;
+  @include respond(tab-big) {
+    font-size: $heading-tablet;
+  }
+  @include respond(mobile) {
+    font-size: $heading-mobile;
+  }
 }
 
 .footer {

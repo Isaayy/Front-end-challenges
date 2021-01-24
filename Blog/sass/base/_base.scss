@@ -18,4 +18,14 @@ html {
   max-width: 144rem;
   margin: 0 auto;
   width: 100%;
+  padding: 0 10rem;
+  @include respond(desktop-big) {
+    padding: 0;
+  }
+  @include respond(tab-small) {
+    padding: 0 5rem;
+  }
+  @include respond(mobile) {
+    padding: 0 2rem;
+  }
 }

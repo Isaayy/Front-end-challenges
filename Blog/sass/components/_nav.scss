@@ -1,6 +1,11 @@
 .nav {
   display: flex;
   align-items: center;
+
+  @include respond(tab-big) {
+    display: none;
+  }
+
   &__list {
     list-style: none;
     display: flex;

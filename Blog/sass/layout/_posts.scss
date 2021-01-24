@@ -2,7 +2,6 @@
   .posts-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 65rem);
   }
 }
 
@@ -14,6 +13,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  // to make square grid children
+  &::before {
+    content: '';
+    padding-bottom: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
 
   &:hover > .post__hover-state {
     opacity: 1;
@@ -38,14 +45,15 @@
   // ################################################################
   // BUTTON move top when hovering posts : paris, rome and greece
   .animate {
-    position: absolute;
-    bottom: 90px;
+    position: relative;
+    top: 3 * $content-padding-big;
+    // bottom: 60%;
     opacity: 0;
     transition: all 0.5s;
   }
 
   &:hover .animate {
-    transform: translateY(-160px);
+    transform: translateY(2 * -$content-padding-big);
     opacity: 1;
   }
 
