@@ -74,6 +74,15 @@
   position: absolute;
   top: 3rem;
   right: 0;
+  @include respond(desktop-small) {
+    top: 0rem;
+  }
+  @include respond(tab-big) {
+    top: -2rem;
+  }
+  @include respond(mobile) {
+    display: none;
+  }
 }
 
 .waves {

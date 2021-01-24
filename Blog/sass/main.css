@@ -306,6 +306,24 @@ html {
   right: 0;
 }
 
+@media (max-width: 75em) {
+  .twig {
+    top: 0rem;
+  }
+}
+
+@media (max-width: 62em) {
+  .twig {
+    top: -2rem;
+  }
+}
+
+@media (max-width: 36em) {
+  .twig {
+    display: none;
+  }
+}
+
 .waves {
   z-index: 10;
   position: absolute;
@@ -566,10 +584,35 @@ html {
           align-items: center;
 }
 
+@media (max-width: 75em) {
+  .about .container img {
+    height: 40rem;
+  }
+}
+
+@media (max-width: 62em) {
+  .about .container img {
+    display: none;
+  }
+}
+
 .about__content {
   padding: 15rem 0;
   width: 100%;
   margin-left: 10rem;
+}
+
+@media (max-width: 75em) {
+  .about__content {
+    margin-left: 5rem;
+  }
+}
+
+@media (max-width: 62em) {
+  .about__content {
+    margin-left: 0;
+    padding: 10rem 0;
+  }
 }
 
 .about__heading {

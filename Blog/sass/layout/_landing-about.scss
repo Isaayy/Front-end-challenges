@@ -161,10 +161,20 @@
 .about {
   background-color: $pastel-yellow;
   position: relative;
+
   .container {
     display: flex;
     height: 100%;
     align-items: center;
+
+    img {
+      @include respond(desktop-small) {
+        height: 40rem;
+      }
+      @include respond(tab-big) {
+        display: none;
+      }
+    }
   }
 
   &__content {
@@ -172,6 +182,13 @@
 
     width: 100%;
     margin-left: 10rem;
+    @include respond(desktop-small) {
+      margin-left: 5rem;
+    }
+    @include respond(tab-big) {
+      margin-left: 0;
+      padding: $section-padding-tablet 0;
+    }
   }
 
   &__heading {
