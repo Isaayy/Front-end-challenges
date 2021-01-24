@@ -76,7 +76,7 @@
   }
   @include respond(mobile) {
     padding: 0 2rem;
-    transform: translateY(5%);
+    transform: translateY(10%);
   }
 
   max-width: 144rem;
