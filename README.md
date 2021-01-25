@@ -18,6 +18,10 @@ Projects that I have done so far during my web development learning journey.
 
 ![](/img/projects/energy.png)
 
+## Blog
+
+![](/img/projects/Blog.png)
+
 ## Future
 
 ![](/img/projects/future.png)
