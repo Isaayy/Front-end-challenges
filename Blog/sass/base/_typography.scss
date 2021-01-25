@@ -60,11 +60,13 @@ h3 {
 .post p {
   font-weight: 600;
   font-size: $heading-desktop;
+  text-align: center;
+  padding: 0;
   @include respond(tab-big) {
-    font-size: $heading-tablet;
+    font-size: $heading-tablet / 1.1;
   }
   @include respond(mobile) {
-    font-size: $heading-mobile;
+    font-size: $heading-mobile * 1.3;
   }
 }
 

@@ -2,6 +2,16 @@
   .posts-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @include respond(desktop-small) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+    @include respond(tab-small) {
+      grid-template-columns: 1fr;
+    }
+  }
+  @include respond(desktop-small) {
+    padding: 1rem;
   }
 }
 
@@ -26,6 +36,10 @@
     opacity: 1;
   }
 
+  @include respond(desktop-small) {
+    pointer-events: none;
+  }
+
   p {
     text-transform: uppercase;
   }
@@ -36,6 +50,10 @@
     position: absolute;
     z-index: 3;
     transition: all 0.5s;
+    @include respond(desktop-small) {
+      position: relative;
+      bottom: $content-padding-big;
+    }
   }
 
   &:hover > &__heading {
@@ -47,9 +65,13 @@
   .animate {
     position: relative;
     top: 3 * $content-padding-big;
-    // bottom: 60%;
     opacity: 0;
     transition: all 0.5s;
+    @include respond(desktop-small) {
+      opacity: 1;
+      position: relative;
+      top: $content-padding-big;
+    }
   }
 
   &:hover .animate {
@@ -73,6 +95,12 @@
     & > div {
       background-image: url(../img/rome.png);
     }
+    @include respond(desktop-small) {
+      grid-column: 2/-1;
+    }
+    @include respond(tab-small) {
+      grid-column: 1/2;
+    }
   }
 
   &--usa {
@@ -88,12 +116,19 @@
 
   &--portugal {
     background-image: url(../img/grid-image-right.png);
+    @include respond(desktop-small) {
+      grid-row: 2/3;
+    }
+    @include respond(tab-small) {
+      grid-column: 1/2;
+    }
   }
 
   // ################################################################
   // DARKER background when hovering deafault posts (those with background img already)
   &--default {
     color: #fff;
+
     &:hover::after {
       opacity: 0.4;
     }
@@ -109,6 +144,9 @@
       opacity: 0;
       transition: all 0.5s;
       z-index: 1;
+      @include respond(desktop-small) {
+        opacity: 0.4;
+      }
     }
   }
 
@@ -128,6 +166,10 @@
     opacity: 0;
 
     transition: all 0.5s;
+
+    @include respond(desktop-small) {
+      opacity: 1;
+    }
 
     p {
       margin-bottom: $content-padding-big;

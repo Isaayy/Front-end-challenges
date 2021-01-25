@@ -26,6 +26,12 @@
     &:hover {
       background-color: rgb(240, 240, 240);
     }
+    @include respond(tab-big) {
+      padding: 1.75rem 7rem;
+    }
+    @include respond(mobile) {
+      border-radius: 3rem;
+    }
   }
 
   &--transparent {
@@ -34,6 +40,9 @@
     &:hover {
       background-color: $color-dark;
       color: #fff;
+    }
+    @include respond(mobile) {
+      border-radius: 3rem;
     }
   }
 }
