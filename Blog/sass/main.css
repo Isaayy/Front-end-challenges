@@ -344,6 +344,16 @@ html {
   }
 }
 
+.waves--bottom {
+  display: none;
+}
+
+@media (min-width: 112.5em) {
+  .waves--bottom {
+    display: block;
+  }
+}
+
 .landing-page {
   background-color: #fbbe9d;
   height: 100vh;
@@ -925,8 +935,23 @@ html {
 .footer .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: max-content 1fr max-content;
+      grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-columns: max-content 1fr max-content;
+}
+
+@media (max-width: 62em) {
+  .footer .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-row-gap: 2rem;
+  }
+}
+
+.footer .column {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .footer .column--1 {
@@ -956,8 +981,21 @@ html {
       justify-self: center;
 }
 
+@media (max-width: 62em) {
+  .footer .column--2 {
+    display: none;
+  }
+}
+
 .footer .column--3 {
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+@media (max-width: 62em) {
+  .footer .column {
+    -ms-grid-column-align: center !important;
+        justify-self: center !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */

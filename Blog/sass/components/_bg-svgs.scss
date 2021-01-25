@@ -96,4 +96,11 @@
   @include respond(tab-big) {
     display: none;
   }
+
+  &--bottom {
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
+  }
 }
