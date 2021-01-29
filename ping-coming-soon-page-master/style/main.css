@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,600;1,700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-rows: max-content 1fr max-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.header {
+  padding: 6rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main {
+  text-align: center;
+}
+
+.main__heading {
+  font: 300 4rem "Libre Franklin", sans-serif;
+  color: #969696;
+}
+
+.main__heading span {
+  font-weight: 700;
+  color: #151f29;
+}
+
+.main__desc {
+  font: 300 2rem "Libre Franklin", sans-serif;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.main__newsletter {
+  margin-bottom: 5rem;
+}
+
+.main__newsletter input {
+  padding: 1.5rem 2.5rem;
+  border-radius: 20rem;
+  width: 40rem;
+  outline: none;
+  border: 1px solid #969696;
+  display: inline-block;
+  font: 300 1.5rem "Libre Franklin", sans-serif;
+}
+
+.main__newsletter::-webkit-input-placeholder {
+  color: #969696;
+}
+
+.main__newsletter:-ms-input-placeholder {
+  color: #969696;
+}
+
+.main__newsletter::-ms-input-placeholder {
+  color: #969696;
+}
+
+.main__newsletter::placeholder {
+  color: #969696;
+}
+
+.main__newsletter a {
+  padding: 1.5rem 2.5rem;
+  background-color: #4f7df3;
+  border-radius: 20rem;
+  font-size: 1.5rem;
+  color: #fff;
+  font: 300 1.5rem "Libre Franklin", sans-serif;
+  display: inline-block;
+  width: 20rem;
+  margin-left: 1.5rem;
+}
+
+.main__newsletter a:hover {
+  background-color: #c2d3ff;
+}
+
+.footer {
+  padding: 3rem 0;
+}
+
+.footer__social-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__social-box div {
+  padding: 1rem;
+  border: 1px solid #4f7df3;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__social-box div:not(:first-child) {
+  margin-left: 1.5rem;
+}
+
+.footer__social-box div:hover {
+  background-color: #4f7df3;
+}
+
+.footer__social-box div:hover > * {
+  fill: #fff;
+}
+
+.footer__social-box div svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: #4f7df3;
+}
+
+.footer__copyright {
+  margin-top: 2rem;
+  font: 300 1.5rem "Libre Franklin", sans-serif;
+  color: #969696;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

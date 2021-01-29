@@ -1,0 +1,108 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  justify-content: center;
+}
+
+.header {
+  padding: 6rem 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  text-align: center;
+  &__heading {
+    font: 300 4rem $libre-franklin;
+    color: $gray;
+
+    span {
+      font-weight: 700;
+      color: $very-dark-blue;
+    }
+  }
+
+  &__desc {
+    font: 300 2rem $libre-franklin;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__newsletter {
+    margin-bottom: 5rem;
+    input {
+      padding: 1.5rem 2.5rem;
+      border-radius: 20rem;
+      width: 40rem;
+      outline: none;
+      border: 1px solid $gray;
+      display: inline-block;
+      font: 300 1.5rem $libre-franklin;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+    a {
+      padding: 1.5rem 2.5rem;
+      background-color: $blue;
+      border-radius: 20rem;
+      font-size: 1.5rem;
+      color: #fff;
+      font: 300 1.5rem $libre-franklin;
+      display: inline-block;
+      width: 20rem;
+      margin-left: 1.5rem;
+
+      &:hover {
+        background-color: $pale-blue;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 3rem 0;
+
+  &__social-box {
+    display: flex;
+    justify-content: center;
+    div {
+      padding: 1rem;
+      border: 1px solid $blue;
+      border-radius: 50%;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:not(:first-child) {
+        margin-left: 1.5rem;
+      }
+
+      &:hover {
+        background-color: $blue;
+      }
+
+      &:hover > * {
+        fill: #fff;
+      }
+
+      svg {
+        width: 1.8rem;
+        height: 1.8rem;
+        fill: $blue;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 2rem;
+    font: 300 1.5rem $libre-franklin;
+    color: $gray;
+    text-align: center;
+  }
+}
