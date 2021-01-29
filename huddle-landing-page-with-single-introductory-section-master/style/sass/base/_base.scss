@@ -18,9 +18,19 @@ $font-poppins: 'Poppins', sans-serif;
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  background-color: $violet;
 }
 
 .container {
   max-width: 140rem;
   margin: 0 auto;
+
+  // 1500 px
+  @media (max-width: 93.75em) {
+    padding: 0 5rem;
+  }
+  // 600 px
+  @media (max-width: 37.5em) {
+    padding: 0 3rem;
+  }
 }
