@@ -60,6 +60,10 @@ html {
   margin-bottom: 5rem;
 }
 
+.main__newsletter div {
+  display: inline-block;
+}
+
 .main__newsletter input {
   padding: 1.5rem 2.5rem;
   border-radius: 20rem;
@@ -154,5 +158,22 @@ html {
   font: 300 1.5rem "Libre Franklin", sans-serif;
   color: #969696;
   text-align: center;
+}
+
+.u-red-border {
+  border: 1px solid red !important;
+}
+
+.u-form-validation-info {
+  color: red;
+  font: 300 1.3rem "Libre Franklin", sans-serif;
+  text-align: left;
+  margin-left: 2.5rem;
+  margin-top: 0.5rem;
+  visibility: hidden;
+}
+
+.u-show {
+  visibility: visible;
 }
 /*# sourceMappingURL=main.css.map */

@@ -32,6 +32,11 @@
 
   &__newsletter {
     margin-bottom: 5rem;
+
+    div {
+      display: inline-block;
+    }
+
     input {
       padding: 1.5rem 2.5rem;
       border-radius: 20rem;
@@ -105,4 +110,23 @@
     color: $gray;
     text-align: center;
   }
+}
+
+// JS utilities
+
+.u-red-border {
+  border: 1px solid red !important;
+}
+
+.u-form-validation-info {
+  color: red;
+  font: 300 1.3rem $libre-franklin;
+  text-align: left;
+  margin-left: 2.5rem;
+  margin-top: 0.5rem;
+  visibility: hidden;
+}
+
+.u-show {
+  visibility: visible;
 }
