@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;600&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Karla', sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: #e5eff5;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 70rem;
+}
+
+.header {
+  background-color: #fff;
+  padding: 4rem;
+}
+
+.header__heading {
+  font-size: 2.56rem;
+  font-weight: 700;
+  color: #2ab2af;
+}
+
+.header__guarantee {
+  color: #c0df34;
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column {
+  padding: 4rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #2ab2af;
+  color: #fff;
+}
+
+.column--light {
+  background-color: #3dd1cf;
+}
+
+.column__heading {
+  font-size: 2.08rem;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.column__cost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e5eff5;
+  font-size: 1.6rem;
+}
+
+.column__cost span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-right: 1rem;
+}
+
+.column__cta {
+  background-color: #c0df34;
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  font-size: 1.6rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.column__list {
+  list-style: none;
+}
+
+.column__list li {
+  color: #e5eff5;
+  font-size: 1.6rem;
+}
+
+.column__list li:not(:first-child) {
+  margin-top: 0.5rem;
+}
+
+.description {
+  font-size: 1.6rem;
+}
+
+.description--gray {
+  color: #98a6bd;
+}
+
+.description:not(:first-child) {
+  margin-top: 0.5rem;
+}
+/*# sourceMappingURL=main.css.map */
