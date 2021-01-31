@@ -2,11 +2,21 @@
   border-radius: 1rem;
   overflow: hidden;
   width: 70rem;
+  @media (max-width: 45em) {
+    width: 100%;
+    padding: 5rem 3rem;
+    border: 2px solid red;
+  }
 }
 
 .header {
   background-color: #fff;
   padding: 4rem;
+
+  @media (max-width: 45em) {
+    padding: 2.5rem;
+  }
+
   &__heading {
     font-size: 1.6rem * 1.6;
     font-weight: 700;
@@ -24,10 +34,17 @@
 
 .main {
   display: flex;
+  @media (max-width: 45em) {
+    flex-direction: column;
+  }
 }
 
 .column {
   padding: 4rem;
+
+  @media (max-width: 45em) {
+    padding: 2.5rem;
+  }
 
   flex: 1;
   background-color: $cyan;

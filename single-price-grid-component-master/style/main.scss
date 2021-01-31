@@ -29,6 +29,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 45em) {
+    display: block;
+  }
 }
 
 @import 'layout';

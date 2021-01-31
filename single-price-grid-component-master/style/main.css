@@ -26,15 +26,35 @@ html {
           justify-content: center;
 }
 
+@media (max-width: 45em) {
+  html {
+    display: block;
+  }
+}
+
 .container {
   border-radius: 1rem;
   overflow: hidden;
   width: 70rem;
 }
 
+@media (max-width: 45em) {
+  .container {
+    width: 100%;
+    padding: 5rem 3rem;
+    border: 2px solid red;
+  }
+}
+
 .header {
   background-color: #fff;
   padding: 4rem;
+}
+
+@media (max-width: 45em) {
+  .header {
+    padding: 2.5rem;
+  }
 }
 
 .header__heading {
@@ -57,6 +77,15 @@ html {
   display: flex;
 }
 
+@media (max-width: 45em) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .column {
   padding: 4rem;
   -webkit-box-flex: 1;
@@ -64,6 +93,12 @@ html {
           flex: 1;
   background-color: #2ab2af;
   color: #fff;
+}
+
+@media (max-width: 45em) {
+  .column {
+    padding: 2.5rem;
+  }
 }
 
 .column--light {
