@@ -3,13 +3,20 @@
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   justify-content: center;
+
+  padding: 0 5rem;
+  @media (max-width: 45em) {
+    padding: 0 3rem;
+  }
 }
 
 .header {
   padding: 6rem 0;
-
   display: flex;
   justify-content: center;
+  @media (max-width: 45em) {
+    padding: 3rem 0;
+  }
 }
 
 .main {
@@ -24,6 +31,10 @@
     }
   }
 
+  img {
+    width: 100%;
+  }
+
   &__desc {
     font: 300 2rem $libre-franklin;
     margin-top: 2rem;
@@ -32,10 +43,6 @@
 
   &__newsletter {
     margin-bottom: 5rem;
-
-    div {
-      display: inline-block;
-    }
 
     input {
       padding: 1.5rem 2.5rem;
@@ -63,6 +70,35 @@
 
       &:hover {
         background-color: $pale-blue;
+      }
+    }
+
+    div {
+      display: inline-block;
+      // 720px
+      @media (max-width: 45em) {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+          width: 100%;
+          margin: 0;
+        }
+
+        p {
+          order: 1;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        input {
+          order: 0;
+          margin-bottom: 1rem;
+        }
+
+        a {
+          order: 2;
+        }
       }
     }
   }
@@ -124,9 +160,9 @@
   text-align: left;
   margin-left: 2.5rem;
   margin-top: 0.5rem;
-  visibility: hidden;
+  display: none;
 }
 
 .u-show {
-  visibility: visible;
+  display: block;
 }

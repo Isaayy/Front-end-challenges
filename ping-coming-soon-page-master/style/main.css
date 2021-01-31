@@ -24,6 +24,13 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0 5rem;
+}
+
+@media (max-width: 45em) {
+  .container {
+    padding: 0 3rem;
+  }
 }
 
 .header {
@@ -34,6 +41,12 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 45em) {
+  .header {
+    padding: 3rem 0;
+  }
 }
 
 .main {
@@ -50,6 +63,10 @@ html {
   color: #151f29;
 }
 
+.main img {
+  width: 100%;
+}
+
 .main__desc {
   font: 300 2rem "Libre Franklin", sans-serif;
   margin-top: 2rem;
@@ -58,10 +75,6 @@ html {
 
 .main__newsletter {
   margin-bottom: 5rem;
-}
-
-.main__newsletter div {
-  display: inline-block;
 }
 
 .main__newsletter input {
@@ -104,6 +117,44 @@ html {
 
 .main__newsletter a:hover {
   background-color: #c2d3ff;
+}
+
+.main__newsletter div {
+  display: inline-block;
+}
+
+@media (max-width: 45em) {
+  .main__newsletter div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__newsletter div > * {
+    width: 100%;
+    margin: 0;
+  }
+  .main__newsletter div p {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .main__newsletter div input {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    margin-bottom: 1rem;
+  }
+  .main__newsletter div a {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .footer {
@@ -170,10 +221,10 @@ html {
   text-align: left;
   margin-left: 2.5rem;
   margin-top: 0.5rem;
-  visibility: hidden;
+  display: none;
 }
 
 .u-show {
-  visibility: visible;
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */
