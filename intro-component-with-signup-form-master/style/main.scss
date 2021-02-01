@@ -36,3 +36,23 @@ html {
 }
 
 @import 'layout';
+
+.u-message {
+  margin-top: 0.3rem;
+  text-align: right;
+  color: $red;
+  display: none;
+}
+
+.u-show {
+  display: block;
+}
+
+.u-border-red {
+  border-color: $red;
+
+  &::placeholder {
+    color: $red;
+    text-transform: lowercase;
+  }
+}

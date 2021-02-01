@@ -125,6 +125,8 @@ html {
 }
 
 .form__btn {
+  display: inline-block;
+  text-align: center;
   background-color: #38cc8c;
   color: #fff;
   border: none;
@@ -147,5 +149,40 @@ html {
 .form__terms span {
   color: #ff7a7a;
   font-weight: 600;
+}
+
+.u-message {
+  margin-top: 0.3rem;
+  text-align: right;
+  color: #ff7a7a;
+  display: none;
+}
+
+.u-show {
+  display: block;
+}
+
+.u-border-red {
+  border-color: #ff7a7a;
+}
+
+.u-border-red::-webkit-input-placeholder {
+  color: #ff7a7a;
+  text-transform: lowercase;
+}
+
+.u-border-red:-ms-input-placeholder {
+  color: #ff7a7a;
+  text-transform: lowercase;
+}
+
+.u-border-red::-ms-input-placeholder {
+  color: #ff7a7a;
+  text-transform: lowercase;
+}
+
+.u-border-red::placeholder {
+  color: #ff7a7a;
+  text-transform: lowercase;
 }
 /*# sourceMappingURL=main.css.map */
