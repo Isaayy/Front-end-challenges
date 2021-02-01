@@ -2,12 +2,23 @@
   display: flex;
   max-width: 111rem;
   align-items: center;
+
+  @media (max-width: 75em) {
+    flex-direction: column;
+    padding: 5rem 3rem;
+  }
 }
 
 .content {
   color: #fff;
   flex: 1;
   margin-right: 3rem;
+
+  @media (max-width: 75em) {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 5rem;
+  }
 
   &__heading {
     font-size: 1.6rem * 2.5;
