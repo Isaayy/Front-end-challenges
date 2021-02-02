@@ -26,6 +26,12 @@ html {
   background-color: #fff;
 }
 
+@media (max-width: 62.5em) {
+  html {
+    display: block;
+  }
+}
+
 .container {
   width: 144rem;
   height: 80rem;
@@ -35,6 +41,27 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 87.5em) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .container {
+    min-height: 100vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .container {
+    padding-bottom: 3rem;
+  }
 }
 
 .main {
@@ -54,6 +81,20 @@ html {
   padding-right: 20rem;
 }
 
+@media (max-width: 87.5em) {
+  .main {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .main {
+    width: 100%;
+    padding: 0;
+  }
+}
+
 .main__heading {
   font-size: 6rem;
   font-weight: 300;
@@ -68,9 +109,34 @@ html {
   color: #413a3a;
 }
 
+@media (max-width: 62.5em) {
+  .main__heading, .main__desc {
+    padding: 0 15%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .main__heading, .main__desc {
+    padding: 0 3rem;
+  }
+}
+
 .main__desc {
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+@media (max-width: 62.5em) {
+  .header {
+    padding: 5rem;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .header {
+    padding: 3rem;
+  }
 }
 
 .form {
@@ -81,12 +147,20 @@ html {
   display: -ms-flexbox;
   display: flex;
   margin-top: 5rem;
-  padding: 1rem 3rem;
   border-radius: 5rem;
   position: relative;
 }
 
+@media (max-width: 62.5em) {
+  .form {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
 .form__input {
+  padding: 1rem 3rem;
   font-size: 1.6rem;
   color: #413a3a;
   font-weight: 600;
@@ -125,15 +199,12 @@ html {
 
 .form__btn {
   background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   font-size: 1.6rem;
   padding: 1rem 3rem;
   border: none;
   border-radius: 5rem;
-  position: absolute;
-  top: -0.1rem;
-  left: 100%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,6 +225,34 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 62.5em) {
+  .bg-img {
+    display: none;
+  }
+}
+
+.bg-mobile {
+  display: none;
+  background: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 50rem;
+}
+
+@media (max-width: 62.5em) {
+  .bg-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 37.5em) {
+  .bg-mobile {
+    height: 25rem;
+  }
 }
 
 .u-red-border {
