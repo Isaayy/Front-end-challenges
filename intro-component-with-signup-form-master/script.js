@@ -12,9 +12,11 @@ const invalidInput = el => {
 const validInput = el => {
   document.querySelector(`#${el.name}-message`).classList.remove('u-show');
   el.classList.remove('u-border-red');
+  el.blur();
 };
 
-const isValid = () => {
+const isValid = e => {
+  e.preventDefault();
   for (const input of inputs) {
     if (!input.value) invalidInput(input);
     else validInput(input);
