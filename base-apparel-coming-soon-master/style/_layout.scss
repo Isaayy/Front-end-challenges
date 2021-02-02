@@ -1,0 +1,93 @@
+.container {
+  width: 144rem;
+  height: 80rem;
+  // background-color: #fff9f9;
+  background: url(../images/bg-pattern-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+
+.main {
+  width: 60%;
+  color: $desaturated-red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20rem;
+  padding-right: 20rem;
+
+  &__heading {
+    font-size: 3.75 * 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    letter-spacing: 1.5rem;
+
+    span {
+      font-weight: 400;
+      color: $dark-grayish-red;
+    }
+  }
+
+  &__desc {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.form {
+  border: 1px solid $desaturated-red;
+  align-self: flex-start;
+
+  display: flex;
+  margin-top: 5rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  position: relative;
+  &__input {
+    font-size: 1.6rem;
+    color: $dark-grayish-red;
+    font-weight: 600;
+    border: none;
+    background: none;
+    outline: none;
+    &::placeholder {
+      font-size: 1.6rem;
+      color: $desaturated-red;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+  }
+
+  &__btn {
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    font-size: 1.6rem;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 5rem;
+    position: absolute;
+    top: -0.1rem;
+    left: 100%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    outline: none;
+
+    &:hover {
+      background: linear-gradient(135deg, hsl(0, 100%, 98%), hsl(0, 80%, 86%));
+      cursor: pointer;
+    }
+  }
+}
+
+.bg-img {
+  width: 40%;
+
+  background: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

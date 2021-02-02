@@ -1,0 +1,65 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+// COLORS
+// Primary
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+
+// Neutral
+$dark-grayish-red: hsl(0, 6%, 24%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  background-color: #fff;
+}
+
+@import 'layout';
+
+.u-red-border {
+  border: 1px solid $soft-red;
+}
+
+.u-form-error-icon {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translateY(-50%);
+  width: 1.8rem;
+  height: 1.8rem;
+
+  visibility: hidden;
+}
+
+.u-form-validation-info {
+  color: $soft-red;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+
+  position: absolute;
+  left: 3rem;
+  top: 100%;
+
+  visibility: hidden;
+}
+
+.u-show {
+  visibility: visible;
+}

@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.container {
+  width: 144rem;
+  height: 80rem;
+  background: url(../images/bg-pattern-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main {
+  width: 60%;
+  color: #ce9797;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+.main__heading {
+  font-size: 6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1.5rem;
+}
+
+.main__heading span {
+  font-weight: 400;
+  color: #413a3a;
+}
+
+.main__desc {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.form {
+  border: 1px solid #ce9797;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 5rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  position: relative;
+}
+
+.form__input {
+  font-size: 1.6rem;
+  color: #413a3a;
+  font-weight: 600;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.form__input::-webkit-input-placeholder {
+  font-size: 1.6rem;
+  color: #ce9797;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.form__input:-ms-input-placeholder {
+  font-size: 1.6rem;
+  color: #ce9797;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.form__input::-ms-input-placeholder {
+  font-size: 1.6rem;
+  color: #ce9797;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.form__input::placeholder {
+  font-size: 1.6rem;
+  color: #ce9797;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.form__btn {
+  background: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  font-size: 1.6rem;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 5rem;
+  position: absolute;
+  top: -0.1rem;
+  left: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: none;
+}
+
+.form__btn:hover {
+  background: linear-gradient(135deg, #fff5f5, #f8bfbf);
+  cursor: pointer;
+}
+
+.bg-img {
+  width: 40%;
+  background: url(../images/hero-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.u-red-border {
+  border: 1px solid #f96262;
+}
+
+.u-form-error-icon {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  visibility: hidden;
+}
+
+.u-form-validation-info {
+  color: #f96262;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  position: absolute;
+  left: 3rem;
+  top: 100%;
+  visibility: hidden;
+}
+
+.u-show {
+  visibility: visible;
+}
+/*# sourceMappingURL=main.css.map */
