@@ -34,13 +34,24 @@ html {
           justify-content: center;
 }
 
+@media (max-width: 53.75em) {
+  .main {
+    padding: 5rem 3rem;
+  }
+}
+
 .main__heading {
   font-size: 3.6rem;
   color: #4c4e61;
   font-weight: 200;
   line-height: 1.4;
   text-align: center;
-  width: 40%;
+}
+
+@media (max-width: 35.625em) {
+  .main__heading {
+    font-size: 2.8rem;
+  }
 }
 
 .main__heading span {
@@ -52,7 +63,6 @@ html {
   font-size: 1.5rem;
   color: #a3a5ae;
   text-align: center;
-  width: 35%;
 }
 
 .cards {
@@ -69,6 +79,20 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 81.25em) {
+  .cards {
+    -ms-grid-columns: (40rem)[2];
+        grid-template-columns: repeat(2, 40rem);
+  }
+}
+
+@media (max-width: 53.75em) {
+  .cards {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .card {
@@ -98,10 +122,30 @@ html {
       align-self: center;
 }
 
+@media (max-width: 53.75em) {
+  .card:first-child, .card:last-child {
+    grid-row: auto;
+  }
+}
+
 .card:last-child {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3/4;
+}
+
+@media (max-width: 81.25em) {
+  .card:last-child {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+}
+
+@media (max-width: 53.75em) {
+  .card:last-child {
+    grid-column: auto;
+  }
 }
 
 .card--cyan {
@@ -136,5 +180,11 @@ html {
 .card__icon {
   -ms-flex-item-align: end;
       align-self: flex-end;
+}
+
+@media (max-width: 35.625em) {
+  .hide {
+    display: none;
+  }
 }
 /*# sourceMappingURL=main.css.map */
