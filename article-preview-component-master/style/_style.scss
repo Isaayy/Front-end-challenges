@@ -6,24 +6,46 @@
 
   &__img {
     width: 40%;
+    @media (max-width: 56.25em) {
+      width: 100%;
+    }
+  }
+
+  // 900px
+  @media (max-width: 56.25em) {
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 35rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    backface-visibility: hidden;
   }
 }
 
 .content {
   width: 60%;
   padding: 4rem;
+  @media (max-width: 56.25em) {
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+  }
 
   &__heading {
     font-size: 2rem;
     font-weight: 700;
     color: $very-dark-grayish-blue;
+    @media (max-width: 56.25em) {
+      font-size: 1.8rem;
+    }
   }
 
   &__desc {
     font-size: 1.3rem;
     font-weight: 500;
     color: $grayish-blue;
-    margin: 1.5rem 0;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   &__person {
@@ -63,6 +85,9 @@
         justify-content: center;
         position: relative;
         cursor: pointer;
+        @media (max-width: 56.25em) {
+          position: static;
+        }
       }
 
       .arrow-icon {
@@ -90,12 +115,22 @@
         left: 50%;
         transform: translateX(-50%);
 
-        // transform: all 0.3s;
+        @media (max-width: 56.25em) {
+          bottom: 0;
+          left: 0;
+          transform: translateX(0);
+          width: 100%;
+          height: 7rem;
+          justify-content: flex-start;
+        }
         visibility: hidden;
 
         img {
           width: 2rem;
           height: 2rem;
+          @media (max-width: 56.25em) {
+            margin-left: 1rem;
+          }
         }
 
         &::after {
