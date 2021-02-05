@@ -1,0 +1,72 @@
+.card {
+  background-color: #fff;
+  max-width: 73rem;
+  max-height: 28rem;
+  display: flex;
+
+  &__img {
+    width: 40%;
+  }
+}
+
+.content {
+  width: 60%;
+  padding: 4rem;
+
+  &__heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $very-dark-grayish-blue;
+  }
+
+  &__desc {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: $desaturated-dark-blue;
+    margin: 2rem 0;
+  }
+
+  &__person {
+    display: flex;
+    align-items: center;
+
+    img {
+      border-radius: 50%;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .name-date-container {
+      font-size: 1.3rem;
+      margin-left: 2rem;
+      .name {
+        font-weight: 700;
+        color: $very-dark-grayish-blue;
+      }
+      .date {
+        font-weight: 500;
+        color: $desaturated-dark-blue;
+      }
+    }
+
+    .share {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+
+      div {
+        border-radius: 50%;
+        background-color: $light-grayish-blue;
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+  }
+}

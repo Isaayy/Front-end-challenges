@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ecf2f8;
+}
+
+.card {
+  background-color: #fff;
+  max-width: 73rem;
+  max-height: 28rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card__img {
+  width: 40%;
+}
+
+.content {
+  width: 60%;
+  padding: 4rem;
+}
+
+.content__heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #48556a;
+}
+
+.content__desc {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #6d7f97;
+  margin: 2rem 0;
+}
+
+.content__person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content__person img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.content__person .name-date-container {
+  font-size: 1.3rem;
+  margin-left: 2rem;
+}
+
+.content__person .name-date-container .name {
+  font-weight: 700;
+  color: #48556a;
+}
+
+.content__person .name-date-container .date {
+  font-weight: 500;
+  color: #6d7f97;
+}
+
+.content__person .share {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.content__person .share div {
+  border-radius: 50%;
+  background-color: #ecf2f8;
+  padding: 0.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content__person .share img {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+/*# sourceMappingURL=main.css.map */
