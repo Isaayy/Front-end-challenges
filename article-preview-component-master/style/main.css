@@ -52,8 +52,8 @@ html {
 .content__desc {
   font-size: 1.3rem;
   font-weight: 500;
-  color: #6d7f97;
-  margin: 2rem 0;
+  color: #9eafc2;
+  margin: 1.5rem 0;
 }
 
 .content__person {
@@ -83,7 +83,7 @@ html {
 
 .content__person .name-date-container .date {
   font-weight: 500;
-  color: #6d7f97;
+  color: #9eafc2;
 }
 
 .content__person .share {
@@ -98,7 +98,7 @@ html {
           justify-content: flex-end;
 }
 
-.content__person .share div {
+.content__person .share .icon {
   border-radius: 50%;
   background-color: #ecf2f8;
   padding: 0.7rem;
@@ -111,10 +111,62 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
+  cursor: pointer;
 }
 
-.content__person .share img {
+.content__person .share .arrow-icon {
   width: 1.7rem;
   height: 1.7rem;
+}
+
+.content__person .share .modal {
+  background-color: #48556a;
+  width: 25rem;
+  height: 5.5rem;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  color: #9eafc2;
+  font-size: 1.3rem;
+  letter-spacing: 0.4rem;
+  padding: 0 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  bottom: 200%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  visibility: hidden;
+}
+
+.content__person .share .modal img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.content__person .share .modal::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+  border-top: 1.4rem solid #48556a;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.u-show {
+  visibility: visible !important;
 }
 /*# sourceMappingURL=main.css.map */
