@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background-color: #19a2ae;
+  border: 2px solid red;
+}
+
+.bubble-top,
+.bubble-bottom {
+  position: absolute;
+  z-index: 0;
+}
+
+@media (max-width: 68.75em) {
+  .bubble-top,
+  .bubble-bottom {
+    width: 100%;
+  }
+}
+
+.bubble-top {
+  top: -40%;
+  left: 0;
+}
+
+@media (max-width: 68.75em) {
+  .bubble-top {
+    top: -30%;
+    left: -50%;
+  }
+}
+
+.bubble-bottom {
+  right: 0;
+  bottom: -40%;
+}
+
+@media (max-width: 68.75em) {
+  .bubble-bottom {
+    bottom: -30%;
+    right: -30%;
+  }
+}
+
+.card {
+  width: 35rem;
+  height: 37.5rem;
+  background: url(../images/bg-pattern-card.svg) top no-repeat, #fff;
+  border-radius: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 1;
+  color: #969696;
+  font-size: 1.4rem;
+}
+
+.card__main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 1.5rem;
+}
+
+.card__stats {
+  padding: 2.5rem 4.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.card__stats div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__stats::before {
+  content: '';
+  position: absolute;
+  background-color: #969696;
+  width: 100%;
+  height: 0.1px;
+  opacity: 0.3;
+  left: 0;
+  top: 0;
+}
+
+.card__picture {
+  border-radius: 50%;
+  border: 0.6rem solid #fff;
+  margin-bottom: 1.5rem;
+}
+
+.card__numbers,
+.card__name span {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #2d3248;
+}
+
+.card__numbers, .card__name {
+  margin-bottom: 0.5rem;
+}
+/*# sourceMappingURL=main.css.map */
