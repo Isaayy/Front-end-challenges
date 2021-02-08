@@ -21,16 +21,16 @@ $dark-gray: hsl(0, 0%, 59%);
 
 html {
   font-size: 62.5%;
+}
+
+.container {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
-
   background-color: $dark-cyan;
-
-  border: 2px solid red;
 }
 
 .bubble-top,
