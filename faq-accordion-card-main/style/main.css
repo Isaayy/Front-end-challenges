@@ -29,16 +29,43 @@ html {
           justify-content: center;
 }
 
+@media (max-width: 31.25em) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
 .main {
   background-color: #e7e7e9;
   border-radius: 2rem;
   padding: 2rem 0;
+  margin: 0 5rem;
   width: 92rem;
   min-height: 51rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 60em) {
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 5rem;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .main {
+    padding: 5rem 2rem;
+    min-width: 100%;
+    margin-top: 10rem;
+  }
 }
 
 .main__box {
@@ -46,6 +73,38 @@ html {
   top: 40%;
   z-index: 5;
   left: -9rem;
+}
+
+.main__box img:last-child {
+  display: none;
+}
+
+@media (max-width: 60em) {
+  .main__box {
+    top: 0;
+    left: 48%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+  }
+  .main__box img:first-child {
+    display: none;
+  }
+  .main__box img:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-45%);
+            transform: translateX(-45%);
+  }
+  .main__box img:last-child {
+    display: block;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .main__box {
+    left: 45%;
+  }
 }
 
 .main__images, .main__faq {
@@ -61,6 +120,12 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom -1rem right 6rem;
+}
+
+@media (max-width: 60em) {
+  .main__images {
+    display: none;
+  }
 }
 
 .main__images img {
@@ -84,11 +149,29 @@ html {
           justify-content: center;
 }
 
+@media (max-width: 60em) {
+  .main__faq {
+    margin-top: 10rem;
+  }
+}
+
+@media (max-width: 31.25em) {
+  .main__faq {
+    margin-top: 8rem;
+  }
+}
+
 .main h2 {
   color: #1d1e35;
   font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 4rem;
+}
+
+@media (max-width: 60em) {
+  .main h2 {
+    text-align: center;
+  }
 }
 
 .question {
@@ -97,6 +180,12 @@ html {
   margin-right: 9rem;
   padding: 2rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 60em) {
+  .question {
+    margin-right: 0;
+  }
 }
 
 .question__title {
