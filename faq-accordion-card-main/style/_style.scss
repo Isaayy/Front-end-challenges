@@ -10,8 +10,9 @@
 .main {
   background-color: $light-grayish-blue;
   border-radius: 2rem;
+  padding: 2rem 0;
   width: 92rem;
-  height: 51rem;
+  min-height: 51rem;
   display: flex;
   position: relative;
 
@@ -70,7 +71,25 @@
     align-items: center;
   }
 
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+  }
+
   img {
     cursor: pointer;
   }
+}
+
+.margin-top-show {
+  margin-top: 1.5rem;
+}
+
+.arrow-flip {
+  transform: scaleY(-1);
+}
+
+.bold-font {
+  font-weight: 700;
 }

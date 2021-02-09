@@ -32,8 +32,9 @@ html {
 .main {
   background-color: #e7e7e9;
   border-radius: 2rem;
+  padding: 2rem 0;
   width: 92rem;
-  height: 51rem;
+  min-height: 51rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +111,27 @@ html {
           align-items: center;
 }
 
+.question__answer {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
 .question img {
   cursor: pointer;
+}
+
+.margin-top-show {
+  margin-top: 1.5rem;
+}
+
+.arrow-flip {
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+.bold-font {
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */
