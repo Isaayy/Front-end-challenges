@@ -33,6 +33,21 @@
     position: relative;
     z-index: 1;
     box-shadow: 1rem 3rem 3rem rgba($dark-blue, 0.2);
+
+    .slider {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+
+      img {
+        transition: all 0.5s;
+      }
+    }
+
+    .john-img {
+      position: absolute;
+      transform: translateX(100%);
+    }
     .bg-pattern {
       position: absolute;
       z-index: -1;
@@ -62,6 +77,15 @@
   .desc {
     font-size: 3.2rem;
     font-weight: 300;
+    transition: all 0.3s;
+
+    &--1 {
+      opacity: 1;
+    }
+
+    &--2 {
+      opacity: 0;
+    }
   }
 
   .name-job {
@@ -69,13 +93,35 @@
     font-weight: 300;
     color: $grayish-blue;
     margin-top: 5rem;
+    transition: all 0.3s;
+
     span {
       color: $dark-blue;
       font-weight: 700;
     }
+
+    &--2 {
+      opacity: 0;
+    }
   }
+}
+
+.move-1 {
+  transform: translateX(-100%);
+}
+
+.move-2 {
+  transform: translateX(0) !important;
 }
 
 .hide {
   display: none;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
 }

@@ -68,6 +68,25 @@ html {
           box-shadow: 1rem 3rem 3rem rgba(32, 32, 70, 0.2);
 }
 
+.main__img .slider {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.main__img .slider img {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.main__img .john-img {
+  position: absolute;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
 .main__img .bg-pattern {
   position: absolute;
   z-index: -1;
@@ -104,6 +123,16 @@ html {
 .main .desc {
   font-size: 3.2rem;
   font-weight: 300;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.main .desc--1 {
+  opacity: 1;
+}
+
+.main .desc--2 {
+  opacity: 0;
 }
 
 .main .name-job {
@@ -111,6 +140,8 @@ html {
   font-weight: 300;
   color: #babacf;
   margin-top: 5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .main .name-job span {
@@ -118,7 +149,29 @@ html {
   font-weight: 700;
 }
 
+.main .name-job--2 {
+  opacity: 0;
+}
+
+.move-1 {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.move-2 {
+  -webkit-transform: translateX(0) !important;
+          transform: translateX(0) !important;
+}
+
 .hide {
   display: none;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-1 {
+  opacity: 1 !important;
 }
 /*# sourceMappingURL=main.css.map */
