@@ -15,7 +15,7 @@ html {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,6 +29,18 @@ html {
   background: url(../images/pattern-curve.svg) no-repeat bottom left;
 }
 
+@media (max-width: 75em) {
+  .container {
+    padding: 10rem 5rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .container {
+    padding: 5rem;
+  }
+}
+
 .main {
   max-width: 144rem;
   width: 100%;
@@ -36,6 +48,19 @@ html {
   display: -ms-flexbox;
   display: flex;
   padding: 0 16rem 0 9rem;
+}
+
+@media (max-width: 75em) {
+  .main {
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .main__content {
@@ -55,10 +80,26 @@ html {
           justify-content: center;
 }
 
+@media (max-width: 75em) {
+  .main__content {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .main__content img {
   position: relative;
   top: 3.5rem;
   left: 10rem;
+}
+
+@media (max-width: 75em) {
+  .main__content img {
+    margin-top: 5rem;
+    width: 8rem;
+    left: 0;
+  }
 }
 
 .main__img {
@@ -76,9 +117,23 @@ html {
   overflow: hidden;
 }
 
+@media (max-width: 75em) {
+  .main__img .slider {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .main__img .slider img {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+@media (max-width: 50em) {
+  .main__img .slider img {
+    width: 100%;
+  }
 }
 
 .main__img .john-img {
@@ -92,6 +147,12 @@ html {
   z-index: -1;
   left: -6.5rem;
   top: -6.5rem;
+}
+
+@media (max-width: 50em) {
+  .main__img .bg-pattern {
+    display: none;
+  }
 }
 
 .main__img .slider-box {
@@ -116,6 +177,14 @@ html {
           transform: translateY(50%);
 }
 
+@media (max-width: 75em) {
+  .main__img .slider-box {
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(50%);
+            transform: translateX(-50%) translateY(50%);
+  }
+}
+
 .main__img .slider-box img {
   cursor: pointer;
 }
@@ -125,6 +194,12 @@ html {
   font-weight: 300;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+@media (max-width: 50em) {
+  .main .desc {
+    font-size: 2rem;
+  }
 }
 
 .main .desc--1 {
@@ -142,6 +217,16 @@ html {
   margin-top: 5rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.main .name-job br {
+  display: none;
+}
+
+@media (max-width: 75em) {
+  .main .name-job br {
+    display: block;
+  }
 }
 
 .main .name-job span {
