@@ -21,11 +21,11 @@ prevBtn.addEventListener('click', () => {
     desc2.classList.remove('hide');
     nameJob1.classList.add('hide');
     nameJob2.classList.remove('hide');
-  }, 350);
+  }, 200);
   setTimeout(() => {
     desc2.classList.add('opacity-1');
     nameJob2.classList.add('opacity-1');
-  }, 550);
+  }, 300);
 });
 
 nextBtn.addEventListener('click', () => {
@@ -39,9 +39,9 @@ nextBtn.addEventListener('click', () => {
     desc1.classList.remove('hide');
     nameJob2.classList.add('hide');
     nameJob1.classList.remove('hide');
-  }, 350);
+  }, 200);
   setTimeout(() => {
-    desc1.classList.add('opacity-1');
-    nameJob1.classList.add('opacity-1');
-  }, 550);
+    desc1.classList.remove('opacity-0');
+    nameJob1.classList.remove('opacity-0');
+  }, 300);
 });
