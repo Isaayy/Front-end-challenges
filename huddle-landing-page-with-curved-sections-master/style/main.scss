@@ -1,0 +1,68 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@700&display=swap');
+// COLORS
+
+// Primary
+$pink: hsl(322, 100%, 66%);
+$light-pink: hsl(321, 100%, 78%);
+$light-red: hsl(0, 100%, 63%);
+
+// Neutral
+$very-dark-cyan: hsl(192, 100%, 9%);
+$very-pale-blue: hsl(207, 100%, 98%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  max-width: 144rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 7rem;
+}
+
+.bg-curve {
+  width: 100%;
+
+  &--top {
+    position: relative;
+    transform: translateY(0.3rem);
+  }
+}
+
+.heading {
+  font: 700 3rem 'Poppins', sans-serif;
+  color: $very-dark-cyan;
+}
+
+.desc {
+  font: 400 1.6rem 'Open Sans', sans-serif;
+}
+
+.cta {
+  background: $pink;
+  padding: 2rem 8rem;
+  display: inline-block;
+  font: 700 1.6rem 'Open Sans', sans-serif;
+  color: $very-pale-blue;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: $light-pink;
+    cursor: pointer;
+  }
+}
+
+@import 'style';
