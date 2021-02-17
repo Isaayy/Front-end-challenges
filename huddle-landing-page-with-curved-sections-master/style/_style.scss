@@ -254,25 +254,30 @@
 
   form {
     margin-top: 4rem;
-
+    position: relative;
     @media (max-width: 75em) {
       display: flex;
       flex-direction: column;
     }
 
-    input,
+    .form-input,
     button {
       height: 5rem;
       border-radius: 0.4rem;
       border: none;
     }
 
-    input {
+    .form-input {
       width: 32rem;
       padding: 0 2rem;
       font: 400 1.6rem 'Open Sans', sans-serif;
+      outline: none;
       @media (max-width: 75em) {
         width: 100%;
+      }
+
+      &--red {
+        border: 2px solid $light-red;
       }
     }
 
@@ -296,4 +301,21 @@
       }
     }
   }
+}
+
+// #############################
+// JAVASCRIPT
+
+.form-valid-message {
+  position: absolute;
+  bottom: -2.5rem;
+  font: 400 1.3rem 'Open Sans', sans-serif;
+  color: $light-red;
+  @media (max-width: 75em) {
+    top: 6rem;
+  }
+}
+
+.hidden {
+  visibility: hidden;
 }

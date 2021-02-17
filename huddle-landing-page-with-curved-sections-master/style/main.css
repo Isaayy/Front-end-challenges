@@ -425,6 +425,7 @@ html {
 
 .column form {
   margin-top: 4rem;
+  position: relative;
 }
 
 @media (max-width: 75em) {
@@ -439,23 +440,28 @@ html {
   }
 }
 
-.column form input,
+.column form .form-input,
 .column form button {
   height: 5rem;
   border-radius: 0.4rem;
   border: none;
 }
 
-.column form input {
+.column form .form-input {
   width: 32rem;
   padding: 0 2rem;
   font: 400 1.6rem 'Open Sans', sans-serif;
+  outline: none;
 }
 
 @media (max-width: 75em) {
-  .column form input {
+  .column form .form-input {
     width: 100%;
   }
+}
+
+.column form .form-input--red {
+  border: 2px solid #ff4242;
 }
 
 .column form button {
@@ -480,5 +486,22 @@ html {
         align-self: flex-end;
     margin-top: 3rem;
   }
+}
+
+.form-valid-message {
+  position: absolute;
+  bottom: -2.5rem;
+  font: 400 1.3rem 'Open Sans', sans-serif;
+  color: #ff4242;
+}
+
+@media (max-width: 75em) {
+  .form-valid-message {
+    top: 6rem;
+  }
+}
+
+.hidden {
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */
