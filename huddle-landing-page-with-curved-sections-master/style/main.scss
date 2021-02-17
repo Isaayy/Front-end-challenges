@@ -29,6 +29,10 @@ html {
   width: 100%;
   margin: 0 auto;
   padding: 0 7rem;
+
+  @media (max-width: 37.5em) {
+    padding: 0 3rem;
+  }
 }
 
 .bg-curve {
@@ -43,10 +47,16 @@ html {
 .heading {
   font: 700 3rem 'Poppins', sans-serif;
   color: $very-dark-cyan;
+  @media (max-width: 37.5em) {
+    font: 700 2.6rem 'Poppins', sans-serif;
+  }
 }
 
 .desc {
   font: 400 1.6rem 'Open Sans', sans-serif;
+  @media (max-width: 37.5em) {
+    font: 400 1.5rem 'Open Sans', sans-serif;
+  }
 }
 
 .cta {
@@ -62,6 +72,11 @@ html {
   &:hover {
     background: $light-pink;
     cursor: pointer;
+  }
+
+  @media (max-width: 37.5em) {
+    padding: 1.5rem 6rem;
+    font: 700 1.5rem 'Open Sans', sans-serif;
   }
 }
 
