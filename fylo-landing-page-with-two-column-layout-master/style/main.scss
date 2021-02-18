@@ -1,0 +1,76 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap');
+// COLORS
+
+// Primary
+$very-dark-blue: hsl(243, 87%, 12%);
+$desaturated-blue: hsl(238, 22%, 44%);
+
+// Accent
+$bright-blue: hsl(224, 93%, 58%);
+$moderate-cyan: hsl(170, 45%, 43%);
+
+// Neutral
+$light-grayish-blue: hsl(240, 75%, 98%);
+$light-gray: hsl(0, 0%, 75%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+.heading {
+  font: 700 3.2rem 'Raleway', sans-serif;
+  &--white {
+    color: #fff;
+  }
+}
+
+.desc {
+  font: 400 1.6rem 'Open Sans', sans-serif;
+  &--white {
+    color: #fff;
+  }
+}
+
+.input,
+.btn {
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.input {
+  border: 1px solid black;
+  outline: none;
+
+  &::placeholder {
+    color: $light-gray;
+  }
+}
+
+.btn {
+  font: 700 1.4rem 'Raleway', sans-serif;
+  background-color: $bright-blue;
+  color: #fff;
+  border: none;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+    background: lighten($bright-blue, 10%);
+  }
+}
+
+@import 'style';
