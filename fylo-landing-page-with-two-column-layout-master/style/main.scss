@@ -30,19 +30,41 @@ html {
 .container {
   max-width: 144rem;
   margin: 0 auto;
+  padding: 0 5rem;
+  @media (max-width: 37.5em) {
+    padding: 0 2rem;
+  }
 }
 
 .heading {
   font: 700 3.2rem 'Raleway', sans-serif;
+
+  @media (max-width: 37.5em) {
+    font: 700 2.6rem 'Raleway', sans-serif;
+  }
+
   &--white {
     color: #fff;
+  }
+
+  &--center {
+    @media (max-width: 75em) {
+      text-align: center;
+    }
   }
 }
 
 .desc {
   font: 400 1.6rem 'Open Sans', sans-serif;
+
   &--white {
     color: #fff;
+  }
+
+  &--center {
+    @media (max-width: 75em) {
+      text-align: center;
+    }
   }
 }
 
@@ -71,6 +93,10 @@ html {
     cursor: pointer;
     background: lighten($bright-blue, 10%);
   }
+}
+
+.u-margin-top {
+  margin-top: 3rem;
 }
 
 @import 'style';
