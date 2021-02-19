@@ -47,6 +47,12 @@ html {
     color: #fff;
   }
 
+  &--small {
+    @media (max-width: 37.5em) {
+      font: 700 2rem 'Raleway', sans-serif;
+    }
+  }
+
   &--center {
     @media (max-width: 75em) {
       text-align: center;
@@ -96,7 +102,9 @@ html {
 }
 
 .u-margin-top {
-  margin-top: 3rem;
+  @media (max-width: 56.25em) {
+    margin-top: 3rem;
+  }
 }
 
 @import 'style';
