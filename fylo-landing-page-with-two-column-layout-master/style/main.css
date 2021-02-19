@@ -92,6 +92,14 @@ html {
   color: #bfbfbf;
 }
 
+.input--border-none {
+  border: none;
+}
+
+.input--border-red {
+  border: 1px solid red;
+}
+
 .btn {
   font: 700 1.4rem 'Raleway', sans-serif;
   background-color: #3065f8;
@@ -221,6 +229,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 @media (max-width: 37.5em) {
@@ -418,6 +427,7 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 @media (max-width: 56.25em) {
@@ -425,10 +435,6 @@ html {
     grid-column: auto;
     grid-row: 3/-1;
   }
-}
-
-.aside .form-input {
-  border: none;
 }
 
 .aside .form-btn {
@@ -563,5 +569,30 @@ html {
 
 .footer .social-box:hover svg {
   fill: #3065f8;
+}
+
+.form-message {
+  position: absolute;
+  bottom: -2.5rem;
+  font: 400 1.3rem 'Open Sans', sans-serif;
+  color: red;
+}
+
+@media (max-width: 37.5em) {
+  .form-message {
+    position: static;
+    margin-top: 0.3rem;
+  }
+}
+
+.form-message--static {
+  position: static;
+  text-align: left;
+  color: #bfbfbf;
+  margin-top: 0.3rem;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

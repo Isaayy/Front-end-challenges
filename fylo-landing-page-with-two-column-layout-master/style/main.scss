@@ -87,6 +87,14 @@ html {
   &::placeholder {
     color: $light-gray;
   }
+
+  &--border-none {
+    border: none;
+  }
+
+  &--border-red {
+    border: 1px solid red;
+  }
 }
 
 .btn {
