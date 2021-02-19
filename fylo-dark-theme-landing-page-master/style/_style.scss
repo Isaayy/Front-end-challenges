@@ -1,0 +1,85 @@
+// #############################
+// HEADER
+.header {
+  padding: 7rem 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    &__list {
+      list-style: none;
+      display: flex;
+
+      li {
+        &:not(:first-child) {
+          margin-left: 4rem;
+        }
+      }
+    }
+    &__link {
+      font: 400 1.4rem 'Raleway', sans-serif;
+      color: $white;
+    }
+  }
+}
+
+// #############################
+// MAIN
+
+.main {
+  padding-bottom: 15rem;
+  background: url(../images/bg-curvy-desktop.svg) no-repeat, $dark-blue;
+  background-position: bottom;
+  background-size: cover;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__heading {
+    margin-top: 5rem;
+    max-width: 60rem;
+  }
+
+  &__desc {
+    max-width: 45rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+// #############################
+// FEATURES
+
+.features {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-gap: 10rem;
+  }
+}
+
+.feature {
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &__heading {
+    font: 700 1.8rem 'Raleway', sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font: 400 1.4rem 'Open Sans', sans-serif;
+    max-width: 38rem;
+  }
+}
