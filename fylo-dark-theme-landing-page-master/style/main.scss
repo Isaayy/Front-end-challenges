@@ -29,6 +29,7 @@ $white: hsl(0, 0%, 100%);
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -44,7 +45,10 @@ html {
   background: $dark-blue;
 }
 
-.features {
+.features,
+.productive,
+.testimonials,
+.aside {
   background: $dark-blue-main-bg;
 }
 
