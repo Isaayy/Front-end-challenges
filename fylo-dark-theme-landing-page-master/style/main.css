@@ -368,15 +368,6 @@ html {
   grid-row-gap: 1rem;
 }
 
-.footer ul a {
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-.footer ul a:hover {
-  font-weight: 700;
-}
-
 .footer .social-box {
   border: 1px solid white;
   display: -webkit-inline-box;
@@ -456,5 +447,14 @@ html {
 .btn:hover::before {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
+}
+
+.link {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.link:hover {
+  font-weight: 700;
 }
 /*# sourceMappingURL=main.css.map */

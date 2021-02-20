@@ -13,11 +13,11 @@
     <header class="header">
       <div class="container">
         <img src="images/logo.svg" alt="logo" />
-        <nav class="nav">
+        <nav class="header-nav nav">
           <ul class="nav__list">
-            <li><a href="#features" class="nav__link">Features</a></li>
-            <li><a href="#" class="nav__link">Team</a></li>
-            <li><a href="#" class="nav__link">Sign In</a></li>
+            <li><a href="#features" class="nav__link link">Features</a></li>
+            <li><a href="#team" class="nav__link link">Team</a></li>
+            <li><a href="#sign-in" class="nav__link link">Sign In</a></li>
           </ul>
         </nav>
       </div>
@@ -96,7 +96,7 @@
     </section>
     <!-- ################################### -->
     <!-- TESTIMONIALS-->
-    <section class="testimonials">
+    <section class="testimonials" id="team">
       <div class="container">
         <img src="images/bg-quotes.png" alt="bg-quotes" class="quote" />
         <div class="testimonial">
@@ -133,7 +133,7 @@
     </section>
     <!-- ################################### -->
     <!-- ASIDE-->
-    <aside class="aside">
+    <aside class="aside" id="sign-in">
       <div class="container">
         <div class="aside__content">
           <h1 class="heading">Get early access today</h1>
@@ -168,15 +168,17 @@
             </div>
           </div>
           <div class="column">
-            <ul>
-              <li><a href="#" class="desc">About Us</a></li>
-              <li><a href="#" class="desc">Contact Us</a></li>
-              <li><a href="#" class="desc">Jobs</a></li>
-              <li><a href="#" class="desc">Terms</a></li>
-              <li><a href="#" class="desc">Press</a></li>
-              <li><a href="#" class="desc">Privacy</a></li>
-              <li><a href="#" class="desc">Blog</a></li>
-            </ul>
+            <nav class="footer-nav nav">
+              <ul>
+                <li><a href="#" class="desc link">About Us</a></li>
+                <li><a href="#" class="desc link">Contact Us</a></li>
+                <li><a href="#" class="desc link">Jobs</a></li>
+                <li><a href="#" class="desc link">Terms</a></li>
+                <li><a href="#" class="desc link">Press</a></li>
+                <li><a href="#" class="desc link">Privacy</a></li>
+                <li><a href="#" class="desc link">Blog</a></li>
+              </ul>
+            </nav>
           </div>
           <div class="column">
             <div class="social-box">
@@ -198,5 +200,6 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

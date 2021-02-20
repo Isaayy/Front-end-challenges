@@ -270,13 +270,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1rem;
-
-    a {
-      transition: all 0.2s;
-      &:hover {
-        font-weight: 700;
-      }
-    }
   }
 
   .social-box {

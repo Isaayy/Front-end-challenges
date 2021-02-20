@@ -98,3 +98,10 @@ html {
     transform: translateX(100%);
   }
 }
+
+.link {
+  transition: all 0.3s;
+  &:hover {
+    font-weight: 700;
+  }
+}
