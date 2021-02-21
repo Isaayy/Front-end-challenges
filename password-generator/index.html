@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style/main.css" />
+  </head>
+  <body>
     <div class="main">
-        <h2>Password Generator</h2>
-        <div class="options">
-            <div class="option">
-                <p>Password length</p>
-                <input type="number" class="pass-length">
-                <div class="modal hidden">!</div>
-            </div>
-    
-            
-            <div class="option">
-                <p>Include lowercase letters</p>
-                <label class="switch">
-                    <input type="checkbox" checked class="include-lowercase">
-                    <span class="slider"></span>
-                </label>
-            </div>
-    
-            <div class="option">
-                <p>Include uppercase letters</p>
-                <label class="switch">
-                    <input type="checkbox" checked class="include-uppercase">
-                    <span class="slider"></span>
-                </label>
-            </div>
-    
-            <div class="option">
-                <p>Include numbers</p>
-                <label class="switch">
-                    <input type="checkbox" class="include-numbers" >
-                    <span class="slider"></span>
-                </label>
-            </div>
-    
-            <div class="option">
-                <p>Include symbols</p>
-                <label class="switch">
-                    <input type="checkbox" class="include-symbols">
-                    <span class="slider"></span>
-                </label>
-            </div>
+      <h2>Password Generator</h2>
+      <div class="options">
+        <div class="option">
+          <p>Password length</p>
+          <input type="number" class="pass-length" />
+          <div class="modal hidden">!</div>
         </div>
-        <button class="generate-btn">Generate password</button>
-        <div class="results">
-            <div class="result">Your password</div>
-            <button class="copyBtn">Copy</button>
+
+        <div class="option">
+          <p>Include lowercase letters</p>
+          <label class="switch">
+            <input type="checkbox" checked class="checkbox include-lowercase" data-type="lowerCase" />
+            <span class="slider"></span>
+          </label>
         </div>
+
+        <div class="option">
+          <p>Include uppercase letters</p>
+          <label class="switch">
+            <input type="checkbox" checked class="checkbox include-uppercase" data-type="upperCase" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="option">
+          <p>Include numbers</p>
+          <label class="switch">
+            <input type="checkbox" class="checkbox include-numbers" data-type="numbers" />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="option">
+          <p>Include symbols</p>
+          <label class="switch">
+            <input type="checkbox" class="checkbox include-symbols" data-type="symbols" />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <button class="generate-btn">Generate password</button>
+      <div class="results">
+        <div class="result">Your password</div>
+        <button class="copyBtn">Copy</button>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
