@@ -1,0 +1,37 @@
+// FONT
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+// COLORS
+
+// ### Primarys
+$strong-cyan: hsl(171, 66%, 44%);
+$light-blue: hsl(233, 100%, 69%);
+
+// ### Neutral
+$dark-grayish-blue: hsl(210, 10%, 33%);
+$grayish-blue: hsl(201, 11%, 66%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+  @media (max-width: 37.5em) {
+    padding: 0 2rem;
+  }
+}
+
+@import 'base';
+@import 'style';
