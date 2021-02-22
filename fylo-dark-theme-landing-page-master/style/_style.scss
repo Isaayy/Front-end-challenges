@@ -2,7 +2,12 @@
 // HEADER
 .header {
   padding: 7rem 0;
-
+  @media (max-width: 37.5em) {
+    padding: 4rem 0;
+    img {
+      width: 10rem;
+    }
+  }
   .container {
     display: flex;
     align-items: center;
@@ -17,6 +22,9 @@
       li {
         &:not(:first-child) {
           margin-left: 4rem;
+          @media (max-width: 37.5em) {
+            margin-left: 2.5rem;
+          }
         }
       }
     }
@@ -36,6 +44,10 @@
   background-position: bottom;
   background-size: cover;
   text-align: center;
+
+  &__img {
+    max-width: 100%;
+  }
 
   .container {
     display: flex;
@@ -61,8 +73,11 @@
 .features {
   .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
     grid-gap: 10rem;
+    @media (max-width: 37.5em) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -94,12 +109,25 @@
     display: flex;
     align-items: center;
     gap: 5rem;
+    @media (max-width: 60em) {
+      flex-direction: column;
+    }
+  }
+
+  img {
+    max-width: 50%;
+    @media (max-width: 60em) {
+      max-width: 100%;
+    }
   }
 
   .content {
     &__heading {
       max-width: 25rem;
       margin-bottom: 2.5rem;
+      @media (max-width: 60em) {
+        max-width: 100%;
+      }
     }
 
     &__desc {
@@ -140,7 +168,7 @@
 .testimonials {
   .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 4rem;
     position: relative;
     .quote {
@@ -191,7 +219,9 @@
 
 .aside {
   padding-top: 10rem;
-
+  @media (max-width: 60em) {
+    padding-top: 0;
+  }
   &__content {
     padding: 5rem 7rem;
     text-align: center;
@@ -203,6 +233,12 @@
     margin: 0 15rem;
     position: relative;
     transform: translateY(50%);
+    @media (max-width: 75em) {
+      margin: 0;
+    }
+    @media (max-width: 37.5em) {
+      padding: 3rem;
+    }
   }
 
   &__desc {
@@ -215,6 +251,10 @@
     display: flex;
     align-self: stretch;
     gap: 3rem;
+    @media (max-width: 60em) {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__input {
@@ -222,7 +262,7 @@
     flex: 4;
     outline: none;
     border: none;
-    padding: 0 4rem;
+    padding: 1.5rem 4rem;
     &::placeholder {
       color: rgb(187, 187, 187);
     }
@@ -270,6 +310,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 1rem;
+
+    @media (max-width: 37.5em) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .social-box {
