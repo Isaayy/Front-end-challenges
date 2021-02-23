@@ -1,0 +1,150 @@
+// ##########################################
+// HEADER
+.header {
+  padding: 7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__link {
+    font: 700 1.8rem 'Barlow Condensed', sans-serif;
+    color: $very_dark-blue;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 0.2rem;
+      background-color: $very_dark-blue;
+      transform: scale(0);
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--gray {
+      color: $grayish-blue;
+      &::after {
+        background-color: $grayish-blue;
+      }
+    }
+  }
+
+  &__circle {
+    background-color: $grayish-blue;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+}
+
+// ##########################################
+// MAIN
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 6rem;
+
+  &__content {
+    margin-top: 3rem;
+  }
+
+  &__pre {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font: 400 1.8rem 'Barlow Condensed', sans-serif;
+    letter-spacing: 2.5px;
+    color: $dark-grayish-blue;
+
+    span {
+      padding: 1.5rem;
+      height: 2.5rem;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 3rem;
+      margin-right: 1.5rem;
+      font: 700 1.8rem 'Barlow Condensed', sans-serif;
+      background-color: $very_dark-blue;
+      color: #fff;
+    }
+  }
+
+  &__heading {
+    font: 700 4.6rem 'Barlow Condensed', sans-serif;
+    max-width: 35rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  &__desc {
+    font: 400 1.8rem 'Barlow', sans-serif;
+    max-width: 28rem;
+    line-height: 1.5;
+    margin-bottom: 6rem;
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    p {
+      margin-left: 2rem;
+      text-transform: uppercase;
+      font: 400 1.8rem 'Barlow Condensed', sans-serif;
+      letter-spacing: 2.5px;
+      color: $dark-grayish-blue;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background-color: $red;
+    color: $light-grayish-blue;
+    font: 700 1.8rem 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: none;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($red, 5%);
+    }
+  }
+  img {
+    position: relative;
+    width: 120%;
+    left: 5rem;
+  }
+}
+
+// ##########################################
+// OTHER CLASSES
+
+.bg-shape {
+  background-color: $light-grayish-blue;
+  width: 100%;
+  height: 42rem;
+  border-bottom-left-radius: 5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: -10;
+}
