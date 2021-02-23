@@ -57,24 +57,7 @@ const generateResult = str => {
   const results = countWords(str);
 
   // Insert data from object into table
-
-  // forEach
-  Object.entries(results).forEach((entry, i) => (table.innerHTML += `<tr><td>${i + 1}</td><td>${entry[0]}</td><td>${entry[1]}</td></tr>`));
-
-  // for in
-  let i = 1;
-  for (const word in results) {
-    table.innerHTML += `<tr><td>${i}</td><td>${word}</td><td>${results[word]}</td></tr>`;
-    i++;
-  }
-
-  // for of
-  let i = 1;
-  for (const entry of Object.entries(results)) {
-    const [value, key] = entry;
-    table.innerHTML += `<tr><td>${i}</td><td>${value}</td><td>${key}</td></tr>`;
-    i++;
-  }
+  Object.entries(results).forEach(([value, key], i) => (table.innerHTML += `<tr><td>${i + 1}</td><td>${value}</td><td>${key}</td></tr>`));
 };
 
 // ############################################################
