@@ -1,0 +1,134 @@
+// #############################
+// HEADER
+header {
+  padding-top: 13rem;
+  padding-bottom: 7rem;
+  text-align: center;
+}
+
+// #############################
+// SNIPPETS
+.snippets {
+  padding: 15rem 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10rem;
+    align-items: center;
+
+    img {
+      grid-row: 1/4;
+      position: relative;
+      width: 125%;
+      left: -25%;
+    }
+  }
+
+  &__snippets {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+  }
+
+  &__snippet {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .desc {
+      max-width: 39rem;
+    }
+  }
+}
+
+// #############################
+// ANYWHERE
+.anywhere {
+  text-align: center;
+}
+
+// #############################
+// WORKFLOW
+
+.workflow {
+  padding: 15rem 0;
+
+  &__features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+
+  &__feature {
+    text-align: center;
+
+    .subheading {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__corporations {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+// #############################
+// FOOTER
+
+.footer {
+  background-color: lighten($grayish-blue, 30%);
+  margin-top: 15rem;
+  padding: 7rem 0;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    align-items: center;
+  }
+
+  &__column {
+    &:last-child {
+      justify-self: end;
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__link {
+    color: $grayish-blue;
+    font-size: 1.7rem;
+    transition: all 0.2s;
+    &:hover {
+      color: $strong-cyan;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1.5rem;
+  }
+
+  img {
+    width: 6rem;
+  }
+
+  svg {
+    fill: $dark-grayish-blue;
+    width: 3rem;
+    height: 3rem;
+    transition: all 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      fill: $strong-cyan;
+    }
+  }
+}

@@ -22,12 +22,17 @@ $grayish-blue: hsl(201, 11%, 66%);
 html {
   font-size: 62.5%;
   font-family: 'Bai Jamjuree', sans-serif;
+  background: url(../images/bg-header-desktop.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .container {
   max-width: 144rem;
   margin: 0 auto;
   padding: 0 5rem;
+
   @media (max-width: 37.5em) {
     padding: 0 2rem;
   }

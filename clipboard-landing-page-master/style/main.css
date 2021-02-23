@@ -12,6 +12,10 @@
 html {
   font-size: 62.5%;
   font-family: 'Bai Jamjuree', sans-serif;
+  background: url(../images/bg-header-desktop.png);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .container {
@@ -24,5 +28,241 @@ html {
   .container {
     padding: 0 2rem;
   }
+}
+
+.heading-primary,
+.heading,
+.subheading {
+  color: #4c545d;
+  font-weight: 600;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+.subheading {
+  font-size: 2rem;
+}
+
+.desc {
+  color: #9fabb2;
+  max-width: 65rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+}
+
+.btn {
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 1.5rem 3.5rem;
+  border-radius: 3rem;
+  border: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--cyan {
+  background-color: #26baa4;
+  -webkit-box-shadow: 0 3px 2px #1d907f;
+          box-shadow: 0 3px 2px #1d907f;
+}
+
+.btn--cyan:hover {
+  background-color: #2acfb7;
+}
+
+.btn--blue {
+  background-color: #6173ff;
+  -webkit-box-shadow: 0 3px 2px #2e46ff;
+          box-shadow: 0 3px 2px #2e46ff;
+}
+
+.btn--blue:hover {
+  background-color: #7a8aff;
+}
+
+.u-text-center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.u-margin-top-bottom {
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+header {
+  padding-top: 13rem;
+  padding-bottom: 7rem;
+  text-align: center;
+}
+
+.snippets {
+  padding: 15rem 0;
+}
+
+.snippets__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-column-gap: 10rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.snippets__wrapper img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1/4;
+  position: relative;
+  width: 125%;
+  left: -25%;
+}
+
+.snippets__snippets {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 7rem;
+}
+
+.snippets__snippet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+}
+
+.snippets__snippet .desc {
+  max-width: 39rem;
+}
+
+.anywhere {
+  text-align: center;
+}
+
+.workflow {
+  padding: 15rem 0;
+}
+
+.workflow__features {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.workflow__feature {
+  text-align: center;
+}
+
+.workflow__feature .subheading {
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.workflow__corporations {
+  padding-top: 10rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer {
+  background-color: #f4f5f6;
+  margin-top: 15rem;
+  padding: 7rem 0;
+}
+
+.footer .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer__column:last-child {
+  justify-self: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.footer__link {
+  color: #9fabb2;
+  font-size: 1.7rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.footer__link:hover {
+  color: #26baa4;
+}
+
+.footer ul {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 1.5rem;
+}
+
+.footer img {
+  width: 6rem;
+}
+
+.footer svg {
+  fill: #4c545d;
+  width: 3rem;
+  height: 3rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.footer svg:hover {
+  cursor: pointer;
+  fill: #26baa4;
 }
 /*# sourceMappingURL=main.css.map */
