@@ -41,13 +41,31 @@ html {
   font-size: 3.6rem;
 }
 
+@media (max-width: 37.5em) {
+  .heading-primary {
+    font-size: 3rem;
+  }
+}
+
 .heading {
   text-align: center;
   font-size: 2.8rem;
 }
 
+@media (max-width: 37.5em) {
+  .heading {
+    font-size: 2.4rem;
+  }
+}
+
 .subheading {
   font-size: 2rem;
+}
+
+@media (max-width: 37.5em) {
+  .subheading {
+    font-size: 1.9rem;
+  }
 }
 
 .desc {
@@ -55,6 +73,12 @@ html {
   max-width: 65rem;
   font-size: 1.7rem;
   line-height: 1.5;
+}
+
+@media (max-width: 37.5em) {
+  .desc {
+    font-size: 1.6rem;
+  }
 }
 
 .buttons {
@@ -65,6 +89,15 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2rem;
+}
+
+@media (max-width: 37.5em) {
+  .buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .btn {
@@ -101,6 +134,12 @@ html {
   background-color: #7a8aff;
 }
 
+@media (max-width: 37.5em) {
+  .btn {
+    font-size: 1.6rem;
+  }
+}
+
 .u-text-center {
   text-align: center;
   margin: 0 auto;
@@ -111,10 +150,23 @@ html {
   margin-bottom: 5rem;
 }
 
+@media (max-width: 37.5em) {
+  .u-margin-top-bottom {
+    margin-bottom: 3.5rem;
+  }
+}
+
 header {
   padding-top: 13rem;
   padding-bottom: 7rem;
   text-align: center;
+}
+
+@media (max-width: 37.5em) {
+  header {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
 }
 
 .snippets {
@@ -134,6 +186,14 @@ header {
           align-items: center;
 }
 
+@media (max-width: 60em) {
+  .snippets__wrapper {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    grid-row-gap: 7rem;
+  }
+}
+
 .snippets__wrapper img {
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
@@ -141,6 +201,13 @@ header {
   position: relative;
   width: 125%;
   left: -25%;
+}
+
+@media (max-width: 60em) {
+  .snippets__wrapper img {
+    width: 100%;
+    position: static;
+  }
 }
 
 .snippets__snippets {
@@ -152,6 +219,15 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 7rem;
+}
+
+@media (max-width: 60em) {
+  .snippets__snippets {
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .snippets__snippet {
@@ -173,6 +249,10 @@ header {
   text-align: center;
 }
 
+.anywhere img {
+  width: 100%;
+}
+
 .workflow {
   padding: 15rem 0;
 }
@@ -182,10 +262,16 @@ header {
   display: grid;
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-column-gap: 4rem;
+  grid-row-gap: 6rem;
 }
 
 .workflow__feature {
   text-align: center;
+}
+
+.workflow__feature img {
+  height: 4rem;
 }
 
 .workflow__feature .subheading {
@@ -199,6 +285,7 @@ header {
   display: grid;
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-row-gap: 6rem;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -214,11 +301,20 @@ header {
 .footer .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  -ms-grid-columns: 1fr 2fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 60em) {
+  .footer .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    grid-row-gap: 5rem;
+  }
 }
 
 .footer__column:last-child {
@@ -227,6 +323,13 @@ header {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+}
+
+@media (max-width: 60em) {
+  .footer__column:last-child {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 
 .footer__link {
@@ -246,7 +349,15 @@ header {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 1.5rem;
+  grid-gap: 1.5rem;
+}
+
+@media (max-width: 60em) {
+  .footer ul {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .footer img {

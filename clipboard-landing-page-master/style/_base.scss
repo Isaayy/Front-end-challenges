@@ -8,15 +8,24 @@
 
 .heading-primary {
   font-size: 3.6rem;
+  @media (max-width: 37.5em) {
+    font-size: 3rem;
+  }
 }
 
 .heading {
   text-align: center;
   font-size: 2.8rem;
+  @media (max-width: 37.5em) {
+    font-size: 2.4rem;
+  }
 }
 
 .subheading {
   font-size: 2rem;
+  @media (max-width: 37.5em) {
+    font-size: 1.9rem;
+  }
 }
 
 // Description
@@ -25,6 +34,9 @@
   max-width: 65rem;
   font-size: 1.7rem;
   line-height: 1.5;
+  @media (max-width: 37.5em) {
+    font-size: 1.6rem;
+  }
 }
 
 // Buttons
@@ -32,6 +44,10 @@
   display: flex;
   justify-content: center;
   gap: 2rem;
+
+  @media (max-width: 37.5em) {
+    flex-direction: column;
+  }
 }
 .btn {
   font-size: 1.8rem;
@@ -59,6 +75,10 @@
       background-color: lighten($light-blue, 5%);
     }
   }
+
+  @media (max-width: 37.5em) {
+    font-size: 1.6rem;
+  }
 }
 
 // Utilities
@@ -70,4 +90,8 @@
 .u-margin-top-bottom {
   margin-top: 2.5rem;
   margin-bottom: 5rem;
+
+  @media (max-width: 37.5em) {
+    margin-bottom: 3.5rem;
+  }
 }

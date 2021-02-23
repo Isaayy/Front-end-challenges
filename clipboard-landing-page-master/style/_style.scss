@@ -4,6 +4,10 @@ header {
   padding-top: 13rem;
   padding-bottom: 7rem;
   text-align: center;
+  @media (max-width: 37.5em) {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
 }
 
 // #############################
@@ -18,11 +22,21 @@ header {
     grid-column-gap: 10rem;
     align-items: center;
 
+    @media (max-width: 60em) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 7rem;
+    }
+
     img {
       grid-row: 1/4;
       position: relative;
       width: 125%;
       left: -25%;
+
+      @media (max-width: 60em) {
+        width: 100%;
+        position: static;
+      }
     }
   }
 
@@ -30,6 +44,10 @@ header {
     display: flex;
     flex-direction: column;
     gap: 7rem;
+    @media (max-width: 60em) {
+      text-align: center;
+      align-items: center;
+    }
   }
 
   &__snippet {
@@ -47,6 +65,9 @@ header {
 // ANYWHERE
 .anywhere {
   text-align: center;
+  img {
+    width: 100%;
+  }
 }
 
 // #############################
@@ -58,10 +79,16 @@ header {
   &__features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-column-gap: 4rem;
+    grid-row-gap: 6rem;
   }
 
   &__feature {
     text-align: center;
+
+    img {
+      height: 4rem;
+    }
 
     .subheading {
       margin-top: 2.5rem;
@@ -73,6 +100,7 @@ header {
     padding-top: 10rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-row-gap: 6rem;
     justify-items: center;
     align-items: center;
   }
@@ -88,8 +116,13 @@ header {
 
   .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
+    @media (max-width: 60em) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      grid-row-gap: 5rem;
+    }
   }
 
   &__column {
@@ -97,6 +130,9 @@ header {
       justify-self: end;
       display: flex;
       gap: 2rem;
+      @media (max-width: 60em) {
+        justify-self: center;
+      }
     }
   }
 
@@ -113,7 +149,11 @@ header {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 1.5rem;
+    grid-gap: 1.5rem;
+    @media (max-width: 60em) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
   }
 
   img {
