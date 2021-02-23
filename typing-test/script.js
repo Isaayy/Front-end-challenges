@@ -3,13 +3,19 @@
 const block = document.querySelector('.words');
 const inputBox = document.querySelector('.input');
 
-let wordIds;
+// ######################################################################
+// Global variables
+
+let words; // array of generated words
 let wordsBlock = [];
 let currentWord;
-let wpm = 0;
-let accuracy = 0;
+let characters = 0; // characters you typed in used to calculate Gross WMP
+let errors = 0; // words you incorrectly typed used to calculate Net WPM
+let correct = 0;
 const wordsInBlock = 25;
+let secondsLeft = 59;
 
+// Array of keywords used in game
 const keywords = [
   'ability',
   'able',
@@ -194,71 +200,86 @@ const keywords = [
 ];
 
 // ######################################################################
-// Generate keywords
+// Generate block of keywords
 
-const generateOutput = () => {
+const generateWords = () => {
   let randomNumber;
   for (let i = 0; i < wordsInBlock; i++) {
+    // Get random number
     randomNumber = Math.floor(Math.random() * keywords.length);
+
+    // Push random keyword into wordsBlock
     wordsBlock.push(keywords[randomNumber]);
-    block.innerHTML += `<p class='word-ids' id='word-id${i}'>${keywords[randomNumber]}</p>`;
+
+    // Display generated keyword
+    block.insertAdjacentHTML('beforeend', `<p class='word-ids' id='word-id${i}'>${keywords[randomNumber]}</p>`);
   }
-  wordIds = document.querySelectorAll('.word-ids');
+  // Highlight current word
+  words = document.querySelectorAll('.word-ids');
   currentWord = 0;
-  wordIds[currentWord].classList.toggle('highlight');
+  words[currentWord].classList.toggle('highlight');
 };
 
-generateOutput();
-
-// ######################################################################
-// Reset
-
-const reset = type => {
-  if (type === 'complete') {
-    wpm = 1;
-    accuracy = 1;
-    secondsLeft = 59;
-    inputBox.disabled = false;
-    clearInterval(timer);
-    results.classList.add('hidden');
-  }
-  block.textContent = '';
-  wordsBlock = [];
-  inputBox.value = '';
-  generateOutput();
-};
+generateWords();
 
 // ######################################################################
 // Game
 
 inputBox.addEventListener('keyup', event => {
+  // Remove whitespace from inputed word
   inputBox.value = inputBox.value.trim();
-  if (event.code === 'Space' && inputBox.value) {
-    if (secondsLeft === 59) setInterval(timer, 1000);
-    if (currentWord === wordsInBlock - 1) {
-      reset();
-    } else {
-      if (inputBox.value.trim() === wordsBlock[currentWord]) {
-        wordIds[currentWord].classList.toggle('mark-green');
-        accuracy++;
-      } else wordIds[currentWord].classList.toggle('mark-red');
 
-      wordIds[currentWord].classList.toggle('highlight');
+  // Check and move to the next word after hitting space
+  if (event.code === 'Space' && inputBox.value) {
+    // Start timer
+    if (secondsLeft === 59) setInterval(timer, 1000);
+
+    // If all words from current block - as block we understand the block of 25(wordsInBlock) keywords to be inputed
+    // have been typed then it's clearing the input and generating new block of keywords
+    if (currentWord === wordsInBlock - 1) {
+      clear();
+    } else {
+      // Correct word has been typed
+      if (inputBox.value === wordsBlock[currentWord]) {
+        words[currentWord].classList.toggle('mark-green');
+        correct++;
+      } else {
+        words[currentWord].classList.toggle('mark-red'); // Incorrect word has been typed
+        errors++;
+      }
+      // Switch current word
+      words[currentWord].classList.toggle('highlight');
       currentWord++;
-      wordIds[currentWord].classList.toggle('highlight');
+      words[currentWord].classList.toggle('highlight');
+
+      characters += inputBox.value.length;
       inputBox.value = '';
-      wpm++;
     }
-  } else console.log('a');
+  }
 });
 
 // ######################################################################
-// Restart
+// Clear
+
+const clear = () => {
+  block.textContent = '';
+  wordsBlock = [];
+  inputBox.value = '';
+  generateWords();
+};
+
+// ######################################################################
+// Restart game
 
 const restartBtn = document.querySelector('.restart');
 
 restartBtn.addEventListener('click', () => {
-  reset('complete');
+  accuracy = 1;
+  secondsLeft = 59;
+  inputBox.disabled = false;
+  clearInterval(timer);
+  results.classList.add('hidden');
+  clear();
 });
 
 // ######################################################################
@@ -271,18 +292,24 @@ const wpmBox = document.querySelector('.wpm');
 const accuracyBox = document.querySelector('.accuracy');
 
 let interval;
-let secondsLeft = 59;
 
 const timer = () => {
   if (secondsLeft > 0) {
-    if (secondsLeft >= 10) timerBox.textContent = `0:${secondsLeft}`;
-    else timerBox.textContent = `0:0${secondsLeft}`;
+    timerBox.textContent = `0:${String(secondsLeft).padStart(2, 0)}`;
     secondsLeft--;
   } else {
+    // Time's over
     clearInterval((secondsLeft = 0));
-    wpmBox.textContent = wpm;
-    accuracyBox.textContent = `${parseInt((accuracy / wpm) * 100)}%`;
+
+    // Calculate and display Net WMP
+    wpmBox.textContent = (characters / 5 - errors) / 1;
+
+    // Calculate and display accuracy
+    accuracyBox.textContent = `${parseInt((correct / (correct + errors)) * 100)}%`;
+
     inputBox.disabled = true;
+
+    // Display wpm and accuracy box
     results.classList.remove('hidden');
   }
 };
