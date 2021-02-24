@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   @media (max-width: 37.5em) {
     padding: 2rem 0;
   }
@@ -15,7 +16,37 @@
     align-items: center;
     gap: 4rem;
     @media (max-width: 37.5em) {
-      display: none;
+      transform: translateX(110%);
+      transition: transform 0.3s ease-in;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #fff;
+      height: 23rem;
+      z-index: 15;
+      gap: 1rem;
+      padding: 2.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(175, 175, 175, 0.4);
+
+      li {
+        &:nth-child(4) {
+          display: none;
+        }
+        &:last-child {
+          width: 100%;
+          text-align: center;
+          padding-top: 2rem;
+          border-top: 1px solid $grayish-blue;
+        }
+      }
+
+      &--active {
+        transform: translateX(0);
+      }
     }
   }
 
@@ -56,6 +87,61 @@
     height: 1rem;
     border-radius: 50%;
     opacity: 0.5;
+  }
+}
+
+// Hamburger menu
+.hamburger {
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+
+  @media (max-width: 37.5em) {
+    display: inline-block;
+  }
+
+  &__box {
+    width: 3.5rem;
+    height: 2rem;
+    display: inline-block;
+    position: relative;
+  }
+
+  &__bar {
+    @include hamburger-bars;
+
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s 0.1s ease-in-out;
+
+    &::before,
+    &::after {
+      @include hamburger-bars;
+
+      content: '';
+      left: 0;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+
+    &--active {
+      background-color: transparent;
+      transition: background-color 0.1s ease-in-out;
+
+      &::before {
+        transform: translatey(0.8rem) rotate(45deg);
+      }
+      &::after {
+        transform: translatey(-0.8rem) rotate(-45deg);
+      }
+    }
   }
 }
 
