@@ -23,20 +23,19 @@ $light-grayish-blue: hsl(207, 33%, 95%);
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
 }
 
 .container {
   max-width: 144rem;
   margin: 0 auto;
   padding: 0 5rem;
-
+  position: relative;
   @media (max-width: 90em) {
     overflow: hidden;
   }
 
   @media (max-width: 37.5em) {
-    padding: 0 2rem;
+    padding: 2rem 2rem;
   }
 }
 

@@ -5,12 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 37.5em) {
+    padding: 2rem 0;
+  }
 
   &__list {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 4rem;
+    @media (max-width: 37.5em) {
+      display: none;
+    }
   }
 
   &__link {
@@ -62,8 +68,17 @@
   align-items: center;
   margin-top: 6rem;
 
+  @media (max-width: 60em) {
+    grid-template-columns: 1fr;
+  }
+
   &__content {
     margin-top: 3rem;
+
+    @media (max-width: 60em) {
+      grid-row: 2/3;
+      margin-top: 10rem;
+    }
   }
 
   &__pre {
@@ -91,6 +106,10 @@
     max-width: 35rem;
     text-transform: uppercase;
     margin-bottom: 3rem;
+    @media (max-width: 37.5em) {
+      margin-bottom: 1rem;
+      font-size: 4rem;
+    }
   }
 
   &__desc {
@@ -98,17 +117,26 @@
     max-width: 28rem;
     line-height: 1.5;
     margin-bottom: 6rem;
+    @media (max-width: 37.5em) {
+      margin-bottom: 3rem;
+      font-size: 1.6rem;
+    }
   }
 
   &__cta {
     display: flex;
     align-items: center;
+
     p {
       margin-left: 2rem;
       text-transform: uppercase;
       font: 400 1.8rem 'Barlow Condensed', sans-serif;
       letter-spacing: 2.5px;
       color: $dark-grayish-blue;
+      @media (max-width: 37.5em) {
+        font-size: 1.6rem;
+        margin-left: 1rem;
+      }
     }
   }
 
@@ -127,11 +155,20 @@
       cursor: pointer;
       background-color: lighten($red, 5%);
     }
+
+    @media (max-width: 37.5em) {
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+    }
   }
+
   img {
     position: relative;
     width: 120%;
     left: 5rem;
+    @media (max-width: 60em) {
+      left: 0;
+    }
   }
 }
 
@@ -141,10 +178,18 @@
 .bg-shape {
   background-color: $light-grayish-blue;
   width: 100%;
-  height: 42rem;
+  height: 75%;
   border-bottom-left-radius: 5rem;
   position: absolute;
   top: 0;
   left: 50%;
   z-index: -10;
+
+  @media (max-width: 60em) {
+    height: 65%;
+  }
+
+  @media (max-width: 37.5em) {
+    height: 55%;
+  }
 }
