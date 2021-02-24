@@ -8,7 +8,8 @@ const guesses = document.querySelector('#letters-used');
 const guess = document.querySelector('.menu__btn');
 
 // ###############################
-// change layout
+// change layout when user press START button
+
 cta.addEventListener('click', () => {
   document.querySelector('main').classList.add('started');
   cta.style.display = 'none';
@@ -23,78 +24,32 @@ const keywordBox = document.querySelector('.keyword');
 
 const generateKeyword = () => {
   // TODO in future add more keywords in a better way
-  const keywords = [
-    'ability',
-    'able',
-    'about',
-    'above',
-    'accept',
-    'according',
-    'account',
-    'across',
-    'act',
-    'action',
-    'activity',
-    'actually',
-  ];
+  // Array of keywords
+  // const keywords = ['ability', 'able', 'about', 'above', 'accept', 'according', 'account', 'across', 'act', 'action', 'activity', 'actually'];
+  const keywords = ['acctually'];
 
+  // Get random number from 0 - keywords length
   const randomNumber = Math.floor(Math.random() * keywords.length);
 
+  // Get random keyword
   keyword = keywords[randomNumber];
   lettersLeft = keyword.length;
 
-  for (let i = 0; i < keyword.length; i++) {
-    keywordBox.innerHTML += `<div class=keyword__letter-${i}></div>`;
-  }
+  // Display letters( as _ ) of keyword
+  for (let i = 0; i < keyword.length; i++) keywordBox.insertAdjacentHTML('beforeend', `<div class=keyword__letter-${i}></div>`);
 };
 generateKeyword();
 
 // ###############################
-// game starts
+// starting conditions
 
 let lifes = 5;
 let game = true;
 
 // ###############################
-// game ends
+// index finder - returns all indexes of inputed - letter for like apple
 
-const endGame = (winOrLose) => {
-  input.classList.toggle('hidden');
-  input.nextElementSibling.classList.toggle('hidden');
-
-  if (winOrLose === 'win') {
-    input.nextElementSibling.textContent = 'You won';
-    input.nextElementSibling.style.color = 'green';
-  } else {
-    input.nextElementSibling.textContent = 'You lost';
-    input.nextElementSibling.style.color = 'red';
-  }
-
-  guess.textContent = 'Play again';
-  game = false;
-};
-
-const resetGame = () => {
-  guess.textContent = 'Try!';
-  game = true;
-  input.value = '';
-  input.classList.toggle('hidden');
-  input.nextElementSibling.classList.toggle('hidden');
-  lifes = 5;
-  for (let i = 0; i < lifes; i++) {
-    let life = document.querySelector(`.icon-${i + 1}`);
-    life.style.fill = '#8F0045';
-  }
-  keywordBox.textContent = '';
-  guesses.textContent = '';
-  generateKeyword();
-};
-
-// ###############################
-// index finder
-
-const allIndexes = (letter) => {
-  // for keywords with more than 1 letter ex. apple
+const allIndexes = letter => {
   let arr = [];
   for (let i = 0; i < keyword.length; i++) {
     if (keyword[i] === letter) {
@@ -109,106 +64,91 @@ const allIndexes = (letter) => {
 
 let usedLetters = [];
 
-guess.addEventListener('click', () => {
+const gameFunctionality = () => {
+  // If empty input
+  if (!input.value) return;
+
+  // Check if user is able to play
   if (!game) {
     resetGame();
     return;
   }
 
+  // Check if inputed letter wasn't guessed before
   if (usedLetters.includes(input.value)) {
     alert('You already tried this letter');
+    input.value = '';
     return;
   }
 
+  // Correct guess
   if (keyword.includes(input.value)) {
-    const indexArray = allIndexes(input.value);
-    for (let i = 0; i < indexArray.length; i++) {
-      document.querySelector(`.keyword__letter-${indexArray[i]}`).textContent =
-        input.value;
-    }
-    guesses.textContent += ` ${input.value},`;
-    usedLetters.push(input.value);
-    input.value = '';
-    lettersLeft -= indexArray.length;
+    // Get all indexes of guessed letter
+    const indexesOfGuessedLetter = allIndexes(input.value);
 
+    // Display guessed letter
+    for (const index of indexesOfGuessedLetter) document.querySelector(`.keyword__letter-${index}`).textContent = input.value;
+
+    lettersLeft -= indexesOfGuessedLetter.length;
+
+    // Winning game
     if (lettersLeft === 0) {
-      // Winning game
-      endGame('win');
+      endGame('You won');
     }
-  } else {
+  }
+
+  // Incorrect guess
+  else {
     lifes--;
-    guesses.textContent += ` ${input.value},`;
+
     if (lifes === 0) {
       // Losing game
-      endGame('lose');
+      endGame('You lost');
     }
     let life = document.querySelector(`.icon-${lifes + 1}`);
     life.style.fill = '#333333';
   }
+
+  // Display and save guessed letter in previous guesses box
+  guesses.textContent += ` ${input.value},`;
+  usedLetters.push(input.value);
+
+  // Clear input
+  input.value = '';
+};
+
+guess.addEventListener('click', gameFunctionality);
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter') gameFunctionality();
 });
 
-// Before :
+// ###############################
+// end game
 
-// Validation in JS
+const endGame = message => {
+  input.classList.toggle('hidden');
+  input.nextElementSibling.classList.toggle('hidden');
 
-// const isInputValid = (str) => {
-//     const lettersOnly = /^[a-z]+$/i;
-//     return lettersOnly.test(str);
-// }
+  input.nextElementSibling.textContent = message;
+  input.nextElementSibling.style.color = message === 'You won' ? 'green' : 'red';
 
-// const isInputValid = (str) => /^[a-z]+$/i.test(str);
+  guess.textContent = 'Play again';
+  game = false;
+};
 
-// guess.addEventListener('click',() =>{
-//     if (isInputValid(input.value) && game && !usedLetters.includes(input.value)){
-//         if (input.value.length <= 1){ // single letter input
-//             if (keyword.includes(input.value)){
-//                 const indexArray = allIndexes(input.value);
-//                 for (let i = 0; i < indexArray.length; i++) {
-//                     document.querySelector(`.keyword__letter-${indexArray[i]}`).textContent = input.value;
-//                 }
-//                 usedLetters.push(input.value);
-//                 input.value = '';
-//                 lettersLeft-=indexArray.length;
+// ###############################
+// reset game
 
-//                 if (lettersLeft == 0){ // Winning game
-//                     endGame('win');
-//                 }
-//             }
-//             else{
-//                 lifes--;
-//                 if (lifes == 0 ){ // Losing game
-//                     endGame('lose');
-//                 }
-//                 let life = document.querySelector(`.icon-${lifes+1}`);
-//                 life.style.fill = "#333333";
-//             }
-//         }
-//         else { // word input
-//             if (input.value == keyword){
-//                 for (let i = 0 ; i < keyword.length ; i++){
-//                     document.querySelector(`.keyword__letter-${i}`).textContent = keyword[i];
-//                 }
-//                 endGame('win');
-//             }
-//             else {
-//                 lifes--;
-//                 let life = document.querySelector(`.icon-${lifes+1}`);
-//                 life.style.fill = "#333333";
-//             }
-//         }
-//     }
-//     else if (!game) { // Play again
-//         guess.textContent = 'Try!'
-//         game = true;
-//         input.value = '';
-//         input.classList.toggle('hidden');
-//         input.nextElementSibling.classList.toggle('hidden');
-//         lifes = 5 ;
-//         for (let i = 0; i < lifes; i++) {
-//             let life = document.querySelector(`.icon-${i+1}`);
-//             life.style.fill = "#8F0045";
-//         }
-//         keywordBox.textContent = '';
-//         generateKeyword();
-//     }
-// })
+const resetGame = () => {
+  guess.textContent = 'Try!';
+  game = true;
+  input.value = '';
+  usedLetters = [];
+  input.classList.toggle('hidden');
+  input.nextElementSibling.classList.toggle('hidden');
+  lifes = 5;
+  document.querySelectorAll('.header__icon').forEach(icon => (icon.style.fill = '#8F0045'));
+  keywordBox.textContent = '';
+  guesses.textContent = 'Previous guesses: ';
+  generateKeyword();
+};
