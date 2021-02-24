@@ -5,76 +5,57 @@ const copyToClipboardBtn = document.querySelector('.copyBtn');
 const resetBtn = document.querySelector('.resetBtn');
 const box = document.querySelector('.shape');
 
-let borderProperty = [];
+let borderProperties = {};
 
-const clearSettings = () => {
-  borderProperty = [];
-};
-
-const isUnit = (inputValue) => {
+// Check if inputed value has an unit
+const isUnit = inputValue => {
   const units = ['px', 'in', 'pc', 'pt', 'em', 'rem', '%'];
-  if (units.some((unit) => inputValue.endsWith(unit))) return true;
+  if (units.some(unit => inputValue.endsWith(unit))) return true;
   return false;
 };
 
 const setRadius = (direction, value) => {
-  if (!isUnit(value)) value = value + 'px';
-
-  switch (direction) {
-    case 'TL':
-      box.style.borderTopLeftRadius = value;
-      borderProperty.push('border-top-left-radius: ' + value + ';');
-      break;
-    case 'TR':
-      box.style.borderTopRightRadius = value;
-      borderProperty.push('border-top-right-radius: ' + value + ';');
-      break;
-    case 'BR':
-      box.style.borderBottomRightRadius = value;
-      borderProperty.push('border-bottom-right-radius: ' + value + ';');
-      break;
-    case 'BL':
-      box.style.borderBottomLeftRadius = value;
-      borderProperty.push('border-bottom-left-radius: ' + value + ';');
-      break;
+  // If no unit or invalid unit use px as default
+  if (!isUnit(value)) {
+    value = Number.parseInt(value);
+    Number.isNaN(value) ? alert('Wrong input') : (value += 'px');
   }
+
+  // Change and save border radius
+  box.style[`border${direction.split('-').join('')}Radius`] = value;
+  borderProperties[`border-${direction.toLowerCase()}-radius`] = `${value};`;
 };
 
-for (let i = 0; i < radiusSettings.length; i++) {
-  radiusSettings[i].addEventListener('blur', () => {
-    if (radiusSettings[i].value) {
-      switch (i) {
-        case 0:
-          setRadius('TL', radiusSettings[i].value);
-          break;
-        case 1:
-          setRadius('TR', radiusSettings[i].value);
-          break;
-        case 2:
-          setRadius('BR', radiusSettings[i].value);
-          break;
-        case 3:
-          setRadius('BL', radiusSettings[i].value);
-          break;
-      }
-    }
-  });
-}
+// Add eventlistener to inputs
+radiusSettings.forEach(setting =>
+  setting.addEventListener('blur', () => {
+    if (!setting.value) return;
 
+    // change border radius for direction from dataset
+    setRadius(setting.dataset.direction, setting.value);
+  })
+);
+
+// Reset
 resetBtn.addEventListener('click', () => {
-  for (let i = 0; i < radiusSettings.length; i++) {
-    radiusSettings[i].value = '';
-    box.style.borderRadius = 0;
-    clearSettings();
-  }
+  // clear input fields
+  radiusSettings.forEach(setting => (setting.value = ''));
+
+  // Reset borders of the preview box
+  box.style.borderRadius = 0;
+
+  // Empty saved properties
+  borderProperties = {};
 });
 
+// Copy to clipboard
 copyToClipboardBtn.addEventListener('click', () => {
   const el = document.createElement('textarea');
 
-  for (let i = 0; i < borderProperty.length; i++) {
-    el.value += `${borderProperty[i]}\n`;
+  for (const [property, value] of Object.entries(borderProperties)) {
+    el.value += `${property}:${value}\n`;
   }
+
   document.body.appendChild(el);
   el.select();
   document.execCommand('copy');
