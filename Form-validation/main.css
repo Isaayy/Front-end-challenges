@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   font-family: 'Rubik', sans-serif;
@@ -10,85 +10,90 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right bottom ,#F39A9D, #E73651);
+  background: #faf9f9;
 }
 
 form {
   padding: 5rem 10rem;
   background-color: #fff;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 
-h2{
+h2 {
   font-weight: 500;
   font-size: 1.2rem;
   margin-bottom: 2rem;
   text-align: center;
 }
 
-input,textarea{
-  border:2px solid #E73651;
-  border-radius: .4rem; 
+.input,
+textarea {
+  border: 2px solid #1b1b1e;
+  border-radius: 0.4rem;
   outline: none;
-  color:black;
+  color: black;
 }
 
-input{
+input {
   padding: 0 1rem;
   width: 100%;
   height: 100%;
 }
 
+.input--invalid {
+  border: 2px solid #f52f57 !important;
+}
+
 textarea {
   padding: 1rem 1rem;
+  height: 100%;
 }
 
-input::placeholder,
-textarea::placeholder{
-  color:black;
+.input::placeholder,
+textarea::placeholder {
+  color: black;
 }
 
-.wrapper{
+.wrapper {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 2.5rem 2.5rem 7rem 2.5rem;
-  grid-row-gap:2rem;
+  grid-row-gap: 2rem;
   grid-column-gap: 1rem;
 }
 
 .wrapper p {
-  font-size: .85rem;
-  margin-top: .2rem;
+  font-size: 0.75rem;
+  margin-top: 0.2rem;
   font-weight: 500;
   padding: 0 1rem;
-  color:#F8BE12;
+  color: #f52f57;
 }
 
-.p-hidden{
+.p-hidden {
   visibility: hidden;
 }
 
-
-.input-message{
+.input-message {
   grid-column: 1/-1;
 }
 
-.btn{
+.btn {
   cursor: pointer;
   grid-column: 1/-1;
-  background-color:#E73651;
-  border:none;
-  border-radius: .4rem;
+  background-color: #f52f57;
+  border: none;
+  border-radius: 0.4rem;
   padding: 1rem 1rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  color:white;
+  color: white;
   font-weight: 700;
   text-decoration: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
-.btn:hover{
-  background-color:#DB1A37;
+.btn:hover {
+  background-color: #db1a37;
 }
