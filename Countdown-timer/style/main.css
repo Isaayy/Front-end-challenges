@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: #111010;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5rem 15rem;
+  border: 2px solid #fffbfc;
+  border-radius: 3px;
+}
+
+main .menu div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #fffbfc;
+  position: relative;
+}
+
+main .menu div:not(:first-child) {
+  margin-left: 3rem;
+}
+
+main .menu div label {
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+main .menu div label span {
+  font-size: 0.7rem;
+  color: #c2c2c2;
+  font-weight: 300;
+}
+
+main .menu div input {
+  padding: 1rem 0.7rem;
+  margin-top: 1rem;
+  background-color: #292727;
+  border: none;
+  border-radius: 5px;
+  color: #fffbfc;
+}
+
+main .menu div input::-webkit-input-placeholder {
+  color: #c2c2c2;
+}
+
+main .menu div input:-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+main .menu div input::-ms-input-placeholder {
+  color: #c2c2c2;
+}
+
+main .menu div input::placeholder {
+  color: #c2c2c2;
+}
+
+main .menu div .valid-info {
+  color: #e94949;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 100%;
+}
+
+main .menu .btn {
+  height: 45px;
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border: 2px solid #fffbfc;
+  color: #fffbfc;
+  text-decoration: none;
+  padding: 0.8rem 1.3rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+}
+
+main .menu .btn:hover {
+  background-color: #fffbfc;
+  color: black;
+}
+
+main .menu .btn--margin-small {
+  margin-left: 1rem;
+}
+
+main .menu .btn--margin-big {
+  margin-left: 3rem;
+}
+
+main .event {
+  padding: 10rem 15rem;
+}
+
+main .event .timer-box {
+  color: white;
+  font-size: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 500;
+}
+
+main .event .timer-box p {
+  font-size: 5rem;
+}
+
+main .event .timer-box .days,
+main .event .timer-box .hours,
+main .event .timer-box .minutes,
+main .event .timer-box .seconds {
+  position: relative;
+}
+
+main .event .timer-box .days::before,
+main .event .timer-box .hours::before,
+main .event .timer-box .minutes::before,
+main .event .timer-box .seconds::before {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #c2c2c2;
+  font-weight: 300;
+}
+
+main .event .timer-box .days::before {
+  content: 'days';
+}
+
+main .event .timer-box .hours::before {
+  content: 'hours';
+}
+
+main .event .timer-box .minutes::before {
+  content: 'minutes';
+}
+
+main .event .timer-box .seconds::before {
+  content: 'seconds';
+}
+
+main .event .until {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #c2c2c2;
+  margin-top: 2rem;
+  text-align: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+main .event .until--until {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  font-weight: 300;
+}
+
+.message {
+  color: black;
+  font-weight: 500;
+  border-radius: 5px;
+  text-align: center;
+  background-color: white;
+  position: absolute;
+  top: 10rem;
+  left: 50%;
+  padding: 2rem 4rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.message__close {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition: scale 0.3s;
+  transition: scale 0.3s;
+}
+
+.message__close:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.hidden {
+  visibility: hidden;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+
+$color-primary-white: #f5f5f5;
+$color-primary-white-dark: #d6d6d6;
+$color-primary-dark: #151515;
+$color-primary-dark-light: #333333;
+$color-red-pink: #8f0045;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Goldman', cursive;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary-dark;
+}
+
+main {
+  width: 65%;
+  height: 70%;
+  background-color: #151515;
+  border: 3px solid $color-primary-white;
+  padding: 2.5rem 0;
+  color: $color-primary-white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+
+  .header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &__heading {
+      text-align: center;
+      font-size: 3.3rem;
+    }
+
+    &__lifes {
+      display: flex;
+      position: absolute;
+      left: 100%;
+      transform: translateX(100%);
+      transition: all 2.5s;
+      opacity: 0;
+    }
+
+    &__icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $color-red-pink;
+      &:not(:first-child) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .description {
+    color: $color-primary-white-dark;
+    text-align: center;
+    width: 70%;
+    margin: 1rem auto 0;
+    font-size: 1.2rem;
+  }
+
+  .keyword {
+    font-size: 2rem;
+    margin: 4rem auto 0;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+
+    div {
+      border-bottom: 2px solid $color-primary-white;
+      height: 2.5rem;
+      width: 2rem;
+      &:not(:first-child) {
+        margin-left: 0.7rem;
+      }
+    }
+  }
+
+  .cta {
+    color: $color-primary-white;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    // margin-top: 5rem;
+    font-size: 1.5rem;
+    border: 2px solid $color-red-pink;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: $color-red-pink;
+    }
+  }
+
+  .menu {
+    padding: 1rem;
+    margin-top: 5rem;
+
+    display: flex;
+    align-items: center;
+
+    &__input {
+      background-color: $color-primary-dark-light;
+      border: none;
+      padding: 1rem 1.5rem;
+      color: $color-primary-white-dark;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      outline: none;
+      transition: all 2.5s;
+      opacity: 0;
+    }
+
+    &__btn {
+      padding: 1rem 1.5rem;
+      border: none;
+      background-color: #8f0045;
+      color: $color-primary-white;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      margin-left: 1rem;
+      cursor: pointer;
+      transition: opacity 2.5s, translate 1s;
+      opacity: 0;
+      outline: none;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    &__message {
+      font-size: 2rem;
+    }
+  }
+
+  .letters-used{
+    font-size: 1.2rem;
+    transform :translateX(-25rem);
+    margin-top: 5rem;
+    transition: all 1s;
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+.started .header__heading{
+  transition: all 1s;
+  transform :translateX(-150%)
+}
+
+.started .description{
+  transition : all 1s;
+  opacity : 0;
+}
+
+.started .header__lifes, .started .menu__input, .started .menu__btn , .started .letters-used{
+  opacity: 1;
+}

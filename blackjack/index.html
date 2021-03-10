@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="dealer-cards-container">
+        <div class="dealer-cards"></div>
+        <p class="score dealer-score"></p>
+      </div>
+      <div class="player-cards-container">
+        <div class="player-cards"></div>
+        <div class="placed-bet hidden">
+          <img src="img/chip.png" alt="poker chip" />
+          <p class="bet">1230$</p>
+        </div>
+        <p class="score player-score"></p>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="menu__side menu__side--front">
+        <p class="menu__balance-p">Balance: <span class="balance">500$</span></p>
+        <p class="menu__bet-p">Bet:</p>
+        <div class="menu__bet-menu">
+          <input type="number" class="custom-bet-amount" />
+          <div class="bet-amount-buttons">
+            <a>100</a>
+            <a>250</a>
+            <a>500</a>
+            <a>1000</a>
+            <a>All in</a>
+          </div>
+          <a class="clear">Clear</a>
+          <p>Your bet: <span class="player-bet">0$</span></p>
+          <button class="btn bet-btn">Bet</button>
+        </div>
+      </div>
+      <div class="menu__side menu__side--back">
+        <p class="menu__balance-p">Balance: <span class="balance-menu">500$</span></p>
+        <button class="hit btn btn--big btn-option">Hit</button>
+        <button class="stand btn btn--big btn-option">Stand</button>
+        <button class="double btn btn--big btn-option">Double</button>
+        <!-- <button class="split btn btn--big blur-bgc">Split</button> -->
+        <button class="again btn btn--big hide">Bet again</button>
+      </div>
+    </div>
+
+    <div class="modal hide">
+      <p class="game-result"></p>
+      <a href="#" class="close-modal">
+        <img src="img/close-outline.svg" alt="close" />
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- TODO in future : -->
+<!-- New design -->
+<!-- add animation when drawing cards -->
+<!-- split button -->

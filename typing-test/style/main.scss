@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap');
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f2bac9;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  background-color: #e887a1;
+  border-radius: 10px;
+  padding: 5rem 10rem;
+  text-align: center;
+
+  h2 {
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .words {
+    border-radius: 3px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    width: 50rem;
+    overflow: hidden;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    p {
+      &:not(:first-child) {
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+  }
+
+  .input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+  }
+
+  .timer,
+  .restart {
+    padding: 1rem 1.5rem;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+  }
+
+  .timer {
+    background-color: #d90368;
+    color: white;
+  }
+
+  .restart {
+    background-color: #4ecdc4;
+    display: flex;
+    cursor: pointer;
+    img {
+      width: 1.5rem;
+    }
+  }
+}
+
+.results {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3rem 10rem;
+  text-align: center;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+  transition: all 0.5s;
+  span {
+    font-weight: bold;
+  }
+}
+
+.highlight {
+  background-color: #4ecdc4;
+  padding: 0.1rem 0.2rem;
+}
+
+.mark-green {
+  color: rgb(2, 204, 2);
+}
+
+.mark-red {
+  color: red;
+}
+
+.hidden {
+  visibility: hidden;
+}

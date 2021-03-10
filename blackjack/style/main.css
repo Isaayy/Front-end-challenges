@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main {
+  padding: 5rem;
+  background-color: #121417;
+  border-radius: 7px 7px 0 0;
+  width: 1440px;
+  margin: 0 auto;
+  height: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .dealer-cards-container,
+.main .player-cards-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid white;
+  width: 20rem;
+  height: 20rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-radius: 50%;
+}
+
+.main .dealer-cards-container .dealer-cards,
+.main .dealer-cards-container .player-cards,
+.main .player-cards-container .dealer-cards,
+.main .player-cards-container .player-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .dealer-cards-container img,
+.main .player-cards-container img {
+  width: 7rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.main .dealer-cards-container img:not(:first-child),
+.main .player-cards-container img:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.main .dealer-cards-container::before,
+.main .player-cards-container::before {
+  position: absolute;
+  color: white;
+  bottom: 102%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main .dealer-cards-container .score,
+.main .player-cards-container .score {
+  color: white;
+  z-index: 100;
+  width: auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.main .dealer-cards-container::before {
+  content: 'Dealer';
+}
+
+.main .player-cards-container::before {
+  content: 'You';
+}
+
+.main .player-cards-container .placed-bet {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 100%;
+  left: 80%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.main .player-cards-container .placed-bet img {
+  width: 3rem;
+}
+
+.main .player-cards-container .placed-bet p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f6f7f8;
+  margin-left: 0.5rem;
+}
+
+.menu {
+  border: 2px solid #121417;
+  width: 1440px;
+  height: 7rem;
+  bottom: 0;
+  border-radius: 0 0 7px 7px;
+  position: relative;
+}
+
+.menu__side {
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.menu__side--back {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  background-color: white;
+}
+
+.menu__balance-p {
+  font-weight: 300;
+  margin-right: 3rem;
+}
+
+.menu__balance-p span {
+  font-weight: 500;
+}
+
+.menu__bet-menu {
+  margin-left: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__bet-menu input {
+  width: 3rem;
+  padding: 0.2rem;
+}
+
+.menu__bet-menu a {
+  background-color: #fdbfcd;
+  padding: 0.2rem 1rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.menu__bet-menu p {
+  font-weight: 300;
+  margin-left: 3rem;
+}
+
+.menu__bet-menu p span {
+  font-weight: 500;
+}
+
+.menu .btn {
+  margin-left: 1rem;
+  padding: 0.3rem 1.5rem;
+  background-color: #ff3366;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.menu .btn--big {
+  padding: 1rem 3rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  outline: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-size: 16px;
+}
+
+.menu .btn--big:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+
+.menu .btn--big:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.modal {
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 4rem 7rem;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.modal img {
+  width: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.swipe-front {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
+}
+
+.swipe-back {
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.opacity {
+  opacity: 0.6;
+}
+
+.blur-bgc {
+  background-color: #fdbfcd !important;
+}
+/*# sourceMappingURL=main.css.map */

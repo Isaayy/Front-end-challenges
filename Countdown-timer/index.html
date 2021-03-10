@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Countdown</title>
+</head>
+<body>
+    <main>
+        <form action="#" class="menu">
+            <div>        
+                <label for="event-name">Event name</label>
+                <input type="text" id='event-name' placeholder="New Year Party" required>
+                <p class='valid-info hidden' id="name-invalid">Invalid name</p>
+            </div>
+            <div>
+                <label for="event-date">Date</label>
+                <input type="text" id='event-date' placeholder="12/31/2020" required>
+                <p class='valid-info hidden' id="date-invalid">Invalid date</p>
+            </div>
+            <div>
+                <label for="event-time">Time <span>(optional)</span></label>
+                <input type="text" id='event-time' placeholder="20:00">
+                <p class='valid-info hidden' id="time-invalid">Invalid time</p>
+            </div>
+            <button class='btn btn--margin-big start-btn'>Start</button>
+            <a href="#" class='btn btn--margin-small reset-btn'>Reset</a>
+        </form>
+
+        <div class="event">
+            <div class="timer-box">
+                <div class="days">00</div>
+                <p>:</p>
+                <div class="hours">00</div>
+                <p>:</p>
+                <div class="minutes">00</div>
+                <p>:</p>
+                <div class="seconds">00</div>
+            </div>
+            <div class="until"> <span class='until--until'>until</span> New Year Party</div>
+        </div>
+        <p class="message hidden">Your event has already happend
+            <a href="#" class="message__close">x</a>
+        </p>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
