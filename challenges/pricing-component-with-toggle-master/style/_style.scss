@@ -1,0 +1,45 @@
+.heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: $grayish-blue;
+}
+
+.main {
+  margin-top: 6rem;
+  border: 2px solid blueviolet;
+  display: flex;
+}
+
+.card {
+  padding: 4rem 7rem;
+  border: 2px solid red;
+  color: $dark-grayish-blue;
+
+  &__type {
+    font-size: 1.5rem;
+  }
+
+  &__price {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    font-size: 5rem;
+    font-weight: 700;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 1.5rem;
+
+    li {
+      border-top: 1px solid $light-grayish-blue;
+      padding: 2rem 8rem;
+      &:last-child {
+        border-bottom: 1px solid $light-grayish-blue;
+      }
+    }
+  }
+
+  &__cta {
+    margin-top: 3rem;
+  }
+}
