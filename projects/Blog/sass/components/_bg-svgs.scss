@@ -1,0 +1,106 @@
+.star,
+.circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  @include respond(mobile) {
+    display: none;
+  }
+}
+
+.star {
+  // landing page
+  &--1 {
+    top: 19rem;
+    left: 60%;
+    @include respond(tab-big) {
+      top: 15rem;
+      left: 90%;
+    }
+  }
+  &--2 {
+    top: 60%;
+    left: 10rem;
+  }
+  &--3 {
+    top: 70%;
+    left: 90%;
+    @include respond(desktop-big) {
+      left: 64%;
+      top: 90%;
+    }
+    @include respond(tab-big) {
+      display: none;
+    }
+  }
+
+  // about
+  &--4 {
+    top: 80%;
+    left: 3%;
+  }
+
+  // newsletter
+  &--5 {
+    top: 40%;
+    left: 90%;
+  }
+
+  // recent posts
+  &--6 {
+    top: 80%;
+    left: 90%;
+  }
+  &--7 {
+    top: 80%;
+    left: 20%;
+  }
+}
+
+.circle {
+  // newsletter
+  &--2 {
+    top: 30%;
+    left: 15%;
+    @include respond(desktop-small) {
+      display: none;
+    }
+  }
+  // recent
+  &--3 {
+    top: 55%;
+    left: 75%;
+  }
+}
+
+.twig {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  @include respond(desktop-small) {
+    top: 0rem;
+  }
+  @include respond(tab-big) {
+    top: -2rem;
+  }
+  @include respond(mobile) {
+    display: none;
+  }
+}
+
+.waves {
+  z-index: 10;
+  position: absolute;
+  top: 100%;
+  transform: translateY(-50%);
+  @include respond(tab-big) {
+    display: none;
+  }
+
+  &--bottom {
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
+  }
+}

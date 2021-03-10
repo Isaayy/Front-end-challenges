@@ -1,0 +1,114 @@
+.footer {
+    background-color: $background-color-footer;
+    position: relative;
+    
+
+    &__form {
+        width:57rem;
+        position: relative;
+        left:50%;
+        transform: translateX(-50%);
+
+        @include respond(tab-small){
+            width:100%;
+        }
+    }
+
+    &__wrapper {
+        margin-bottom: 1.2rem;
+        display: flex;
+        position: relative;
+        @include respond(mobile){
+            flex-direction: column;
+        }
+    }
+
+    &__input , textarea {
+        color:white;
+        outline: none;
+        border: none;
+        background-color:$background-color-1;
+        border-radius: .5rem;
+
+        &::placeholder {
+            color:$background-color-footer;
+        }
+    }
+
+    label {
+        font-weight: 500;
+        font-size: 1.4rem;
+        transition: all .3s;
+        display: block;
+        position: absolute;
+        top:1.3rem;
+        transform: translateY(-3.5rem);
+
+        @include respond(mobile) {
+            display: none !important;
+        }
+    }
+
+    &__name-label {
+        left:1.5rem;
+    }
+
+    &__email-label {
+        left:53%;
+    }
+
+    &__name:placeholder-shown ~ &__name-label {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    &__email:placeholder-shown ~ &__email-label {
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    &__input {
+        width:50%;
+        height: 4rem;
+        padding: .5rem 1.5rem;
+        
+        &--margin{
+            margin-left: 1rem;
+            @include respond(mobile){
+                margin-left: 0;
+                margin-top: 1.2rem;
+            }
+        }
+
+        @include respond(mobile){
+            width: 100%;
+        }
+    }
+
+    textarea{
+        width: 100%;
+        padding: 1rem 1.5rem; 
+        resize: none;  
+    }
+
+    &__socials {
+        text-align: center;
+        a {
+
+            display: inline-block;
+            &:not(:first-child){
+                margin-left: 3.5rem;
+            }
+        }
+    }
+
+    &__copy {
+        width: 100%;
+        background-color: $background-color-1;
+        padding:1.5rem 0;
+    }
+}
+
+

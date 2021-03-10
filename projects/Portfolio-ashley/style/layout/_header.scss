@@ -1,0 +1,32 @@
+.header {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__wrapper {
+        display: flex;
+    }
+
+    &__logo-box , &__menu-box {
+        flex:1;
+    }
+
+    &__logo-box {
+        a {
+        display: flex;
+        align-items: center;
+        }
+
+        span {
+            margin-left: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color:white;
+        }
+    }
+
+    &__menu-box {
+        display: flex;
+        justify-content: flex-end;  
+    }
+}

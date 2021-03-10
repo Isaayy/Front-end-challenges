@@ -1,0 +1,62 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;    
+}
+
+html{
+    background-color: $background-color-1;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container{
+    margin: 0 auto;
+    width:100%;
+    
+    @include respond(mobile){
+        width: 100%;
+    }
+
+    @include respond(tab-small){
+        max-width:54rem; 
+    }
+
+    @include respond(tab-big){
+        max-width:72rem;
+    }
+
+    @include respond(desktop-small){
+        max-width:96rem;
+        padding: 0 3.5rem ;
+    }
+
+    @include respond(desktop){
+        max-width:114rem;
+    }
+
+    @include respond(desktop-big){
+        max-width:144rem;
+    }
+}
+
+
+.section-padding {
+    padding: $section-padding-desktop 0;
+    @include respond(desktop-small){
+        padding: $section-padding-tablet 0;
+    }
+    @include respond(mobile){
+        padding: $section-padding-mobile 0;
+    }
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+.section-heading {
+  font-weight: 600;
+  font-size: $heading-desktop;
+  text-align: center;
+  @include respond(tab-big) {
+    font-size: $heading-tablet;
+  }
+  @include respond(mobile) {
+    font-size: $heading-mobile;
+  }
+}
+
+.section-desc {
+  font-weight: 300;
+  text-align: center;
+  font-size: $desc-desktop;
+  @include respond(mobile) {
+    font-size: $desc-mobile;
+  }
+}
+
+.header {
+  &__logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $color-dark;
+    @include respond(desktop-big) {
+      font-size: 3.5rem;
+    }
+    @include respond(tab-big) {
+      font-size: 2rem;
+    }
+    @include respond(mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__link {
+    color: $color-dark-light;
+    font-size: 1.8rem;
+    font-weight: 300;
+
+    &--active {
+      font-weight: 600;
+      color: $color-dark;
+    }
+
+    @include respond(tab-small) {
+      font-size: 4rem;
+      font-weight: 300;
+      color: $color-dark;
+    }
+  }
+}
+
+.hero {
+  &__heading {
+    font-size: 3.5rem;
+    font-weight: 600;
+    @include respond(desktop-big) {
+      font-size: 4rem;
+    }
+    @include respond(desktop-small) {
+      font-size: 3rem;
+    }
+    @include respond(tab-small) {
+      font-size: 2.8rem;
+    }
+    @include respond(mobile) {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__desc {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #f4f4f4;
+    @include respond(desktop-big) {
+      font-size: 2rem;
+    }
+    @include respond(tab-small) {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__cta {
+    color: $color-dark;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    @include respond(mobile) {
+      font-size: 1.4rem;
+    }
+  }
+}

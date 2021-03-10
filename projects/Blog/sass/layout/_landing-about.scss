@@ -1,0 +1,211 @@
+.landing-page {
+  background-color: $pastel-orange;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #fff;
+  padding: 2.5rem 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    color: black;
+    font: bold 2rem 'Montserrat', sans-serif;
+    margin-left: 0.5rem;
+  }
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+
+  background-image: linear-gradient(to right bottom, rgba($pastel-pink, 0.5), rgba($pastel-pink, 0.1)), url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @include respond(mobile) {
+    background-position: 60% 50%;
+  }
+  @include respond(desktop-big) {
+    background: transparent;
+  }
+  .hero {
+    flex: 1;
+  }
+  img {
+    height: 100%;
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(30%);
+  padding: 0 10rem;
+
+  @include respond(desktop-big) {
+    justify-content: center;
+    transform: translateY(0);
+  }
+
+  @include respond(desktop-small) {
+    transform: translateY(20%);
+  }
+  @include respond(tab-big) {
+    transform: translateY(15%);
+  }
+  @include respond(tab-small) {
+    padding: 0 5rem;
+  }
+  @include respond(mobile) {
+    padding: 0 2rem;
+    transform: translateY(10%);
+  }
+
+  max-width: 144rem;
+  margin: 0 auto;
+  @include respond(desktop-big) {
+    max-width: none;
+    margin: 0;
+  }
+
+  &__heading {
+    @include respond(mobile) {
+      margin-top: 0;
+      margin-bottom: $content-padding-big;
+    }
+  }
+
+  &__subheading {
+    margin-top: $content-padding-big;
+    margin-bottom: $content-padding-big;
+    @include respond(mobile) {
+      order: -1;
+      margin-top: 0;
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__socials {
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    @include respond(desktop-big) {
+      display: block;
+    }
+    & > * {
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+      fill: $color-dark;
+      transition: all 0.3s;
+
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+
+      &:hover {
+        fill: #000;
+      }
+    }
+  }
+
+  &__bookmark {
+    background-color: $pastel-yellow;
+    font-size: $base-font-size;
+    padding: 3rem 1.5rem 3rem 2.5rem;
+    writing-mode: vertical-rl;
+    font-family: $font-Lora;
+    cursor: pointer;
+
+    @include respond(tab-big) {
+      display: none;
+    }
+
+    position: absolute;
+    left: 0;
+    top: 15%;
+    transform: translateX(-1rem);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateX(0);
+    }
+  }
+}
+
+// ##########################################
+// About
+
+.about {
+  background-color: $pastel-yellow;
+  position: relative;
+
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    img {
+      @include respond(desktop-small) {
+        height: 40rem;
+      }
+      @include respond(tab-big) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    padding: $section-padding-desktop 0;
+
+    width: 100%;
+    margin-left: 10rem;
+    @include respond(desktop-small) {
+      margin-left: 5rem;
+    }
+    @include respond(tab-big) {
+      margin-left: 0;
+      padding: $section-padding-tablet 0;
+    }
+  }
+
+  &__heading {
+    margin-bottom: $content-padding-small;
+    text-align: left;
+    position: relative;
+    &::before {
+      content: 'Hey';
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      font-size: $base-font-size;
+      font-weight: normal;
+    }
+  }
+
+  &__desc {
+    margin-top: $content-padding-small;
+  }
+}

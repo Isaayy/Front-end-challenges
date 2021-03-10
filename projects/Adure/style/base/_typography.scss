@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-size: 1.6rem;
+  --heading: calc(var(--font-size) * 3.5);
+  --subheading: calc(var(--font-size) * 2);
+}
+
+@include respond(tab-big) {
+  :root {
+    --font-size: 1.5rem;
+    --heading: calc(var(--font-size) * 3);
+    --subheading: calc(var(--font-size) * 1.8);
+  }
+}
+
+@include respond(mobile) {
+  :root {
+    --font-size: 1.4rem;
+    --heading: calc(var(--font-size) * 2.5);
+    --subheading: calc(var(--font-size) * 1.5);
+  }
+}
+
+.subheading {
+  font-size: var(--subheading);
+  font-weight: bold;
+  text-align: center;
+}
+
+// #######################
+// Landing page
+
+.header__link {
+  font-size: 1.8rem;
+  color: $color-white-dark;
+  font-weight: 600;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.hero {
+  &__heading {
+    color: $color-white;
+    font-size: var(--heading);
+    font-weight: bold;
+  }
+
+  &__subheading {
+    color: $color-white;
+    font-size: var(--subheading);
+    font-weight: 400;
+  }
+
+  &__cta {
+    color: black;
+    font-weight: bold;
+    font-size: var(--font-size);
+  }
+}
+
+.location {
+  &__heading {
+    font-size: var(--subheading);
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  &__location {
+    color: $color-white;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  &__desc {
+    font-size: var(--font-size);
+    font-weight: 300;
+    color: $font-color-white-dark;
+    line-height: 1.5;
+  }
+}
+
+.review {
+  &__feedback {
+    font-size: var(--font-size);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  &__date {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}
+
+.booking__heading {
+  font-size: var(--subheading);
+  font-weight: 600;
+}
+
+.footer-city {
+  font-size: 1.8rem;
+  color: lighten($color-secondary, 5%);
+  font-weight: 300;
+
+  &:hover {
+    color: $color-white;
+  }
+}
+
+.copy-right {
+  font-size: 1.2rem;
+  color: $color-white;
+}

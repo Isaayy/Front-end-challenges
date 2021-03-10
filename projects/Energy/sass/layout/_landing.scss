@@ -1,0 +1,159 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  &__logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 200;
+    span {
+      font-size: 2rem;
+      color: $font-color;
+      font-weight: bold;
+      display: block;
+      transform: translateY(-0.2rem);
+    }
+    img {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &__nav {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-big) {
+      justify-content: flex-end;
+    }
+
+    @include respond(desktop-small) {
+      flex: 2;
+    }
+  }
+
+  &__menu {
+    @include respond(tab-big) {
+      transform: translateX(100%);
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: $color-grey-light;
+      transition: all 0.5s;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+
+      @include respond(tab-big) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    li {
+      @include respond(tab-big) {
+        text-align: center;
+      }
+      &:not(:first-child) {
+        margin-left: 4rem;
+        @include respond(tab-big) {
+          margin-left: 0;
+          margin-top: 1.5rem;
+        }
+      }
+    }
+
+    &--moveIn {
+      transform: translateX(0);
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 0.3rem 0;
+    overflow: hidden;
+
+    @include respond(tab-big) {
+      width: 85vw;
+      padding: 3.5rem 2rem;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    @include respond(tab-big) {
+      display: none;
+    }
+    a:not(:first-child) {
+      margin-left: 3rem;
+    }
+  }
+}
+
+.landing {
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#ffffff, 1),
+      rgba(#ffffff, 0)
+    ),
+    url(../img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-position: bottom;
+  position: relative;
+  overflow-x: hidden;
+
+  @include respond(tab-big) {
+    background-size: 250%;
+  }
+  @include respond(mobile) {
+    background-size: 420%;
+  }
+
+  &__wrapper {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__header {
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    width: 65%;
+    @include respond(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    margin-top: 4rem;
+    background-color: $color-primary;
+    padding: 1.3rem 3.7rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+  }
+}

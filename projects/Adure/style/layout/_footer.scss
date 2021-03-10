@@ -1,0 +1,186 @@
+.footer {
+  padding: 5rem 0;
+  background-color: $color-dark;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: min-content repeat(3, max-content);
+
+  @include respond(desktop-big) {
+    grid-template-columns: repeat(5, max-content);
+  }
+
+  @include respond(desktop-small) {
+    grid-template-columns: repeat(3, max-content);
+  }
+
+  @include respond(tab-big) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 5rem;
+  }
+
+  .footer-column {
+    padding: 0 6rem;
+    color: #fff;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    @include respond(desktop-big) {
+      padding: 0 10rem;
+      &:nth-child(2) {
+        display: flex;
+      }
+    }
+
+    @include respond(desktop-small) {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+    @include respond(tab-big) {
+      &:nth-child(1) {
+        div {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        display: flex;
+      }
+      &:nth-child(4) {
+        p {
+          display: none;
+        }
+      }
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include respond(mobile) {
+      &:nth-child(1) {
+        img {
+          width: 6rem;
+        }
+      }
+      &:nth-child(4) {
+        img {
+          width: 3rem;
+        }
+      }
+      &:nth-child(2) {
+        display: none;
+      }
+      &:last-child {
+        display: flex;
+        grid-row: 2/3;
+      }
+    }
+
+    hr {
+      @include respond(tab-big) {
+        display: none;
+      }
+      border: 0;
+      height: 100%;
+      width: 1px;
+      background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0)
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .phone-box,
+  .email-box {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    img {
+      width: 2.5rem;
+    }
+    p {
+      margin-left: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  .footer-cities {
+    list-style: none;
+    li {
+      &:not(:first-child) {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  .footer-socials-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    p {
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
+    a {
+      &:first-child {
+        margin-right: 1.5rem;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 3rem;
+    }
+    input {
+      margin-bottom: 2rem;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $color-white;
+      color: $color-white;
+      padding: 1rem 0;
+
+      &::placeholder {
+        color: darken($color-white, 40%);
+      }
+    }
+    button {
+      padding: 1rem 0;
+      border: 2px solid $color-secondary;
+      background: none;
+      border-radius: 3px;
+      color: $color-white;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: $color-secondary;
+      }
+    }
+  }
+}
+
+.copy-right {
+  padding: 1rem;
+  text-align: center;
+  background-color: darken($color: $color-dark, $amount: 2%);
+}

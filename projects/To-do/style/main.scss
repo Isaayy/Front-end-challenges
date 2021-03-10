@@ -1,0 +1,543 @@
+// #########################################
+// GENERAL SET UP
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+@import 'mixins';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$font-size: 2rem;
+$font-size-tablet: 1.8rem;
+$font-size-mobile: 1.6rem;
+
+$font-size-big: 2.5rem;
+$font-size-big-tablet: 2.3rem;
+$font-size-big-mobile: 2rem;
+
+$color-primary: #ff3366;
+
+// #########################################
+// LAYOUT
+.container {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-areas:
+    'banner banner banner'
+    'sidebar main main'
+    'sidebar main main';
+
+  grid-template-columns: 35rem 1fr 1fr;
+  grid-template-rows: 23rem 1fr 1fr;
+
+  position: relative;
+  overflow-x: hidden;
+
+  @include respond(desktop-small) {
+    grid-template-columns: 30rem 1fr 1fr;
+    grid-template-rows: 20rem 1fr 1fr;
+  }
+
+  @include respond(tab-big) {
+    grid-template-areas:
+      'banner banner'
+      'main main '
+      'main main';
+    grid-template-columns: 1fr 1fr;
+  }
+  @include respond(mobile) {
+    grid-template-rows: 18rem 1fr 1fr;
+  }
+
+  .main-section {
+    position: relative;
+    grid-area: main;
+  }
+}
+
+// #########################################
+// BANNER
+
+.banner {
+  // background-image: url(../img/banner.jpg);
+  background-image: linear-gradient(to right bottom, rgba(#000, 0.4), rgba(#000, 0.2)), url(../img/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 45%;
+  grid-area: banner;
+  color: #fff;
+  padding: 3rem 5rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(mobile) {
+    padding: 2rem 3rem;
+  }
+
+  &__column-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__column-right {
+    display: flex;
+    align-items: center;
+  }
+  .timestamp {
+    &__time {
+      font-size: 7rem;
+      font-weight: 300;
+      color: white;
+      @include respond(desktop-small) {
+        font-size: 5rem;
+      }
+      @include respond(mobile) {
+        font-size: 4rem;
+      }
+    }
+
+    &__date {
+      font-weight: 500;
+      font-size: $font-size;
+      @include respond(desktop-small) {
+        font-size: $font-size-tablet;
+      }
+      @include respond(mobile) {
+        font-size: $font-size-mobile;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    @include respond(desktop-small) {
+      font-size: 2.5rem;
+    }
+    @include respond(mobile) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  z-index: 100;
+  @include respond(tab-big) {
+    display: inline-block;
+  }
+
+  &__outline {
+    display: inline-block;
+    height: 2.4rem;
+  }
+
+  &__bar {
+    width: 4rem;
+    height: 0.3rem;
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    transition: all 0.5s;
+
+    @include respond(mobile) {
+      width: 3.5rem;
+      height: 0.3rem;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      height: 0.3rem;
+      background-color: #fff;
+      position: absolute;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      top: -0.9rem;
+    }
+
+    &::after {
+      top: 0.9rem;
+    }
+
+    &--hidden {
+      background: transparent;
+      transition: all 0s;
+    }
+  }
+
+  &--active &__bar::before {
+    transform: translatey(0.9rem) rotate(45deg);
+  }
+
+  &--active &__bar::after {
+    transform: translatey(-0.9rem) rotate(-45deg);
+  }
+}
+
+// #########################################
+// SIDEBAR
+
+.sidebar {
+  background-color: #f5f5f5;
+  grid-area: sidebar;
+  transition: all 0.3s;
+
+  @include respond(tab-big) {
+    position: absolute;
+    z-index: 10;
+    top: 20rem;
+    left: 100%;
+    width: 100%;
+    height: calc(100% - 20rem);
+  }
+
+  @include respond(mobile) {
+    top: 18rem;
+    height: calc(100% - 18rem);
+  }
+
+  h3 {
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+    font-size: $font-size-big;
+    font-weight: 600;
+    padding: 0 5rem;
+    @include respond(desktop-small) {
+      font-size: $font-size-big-tablet;
+    }
+    @include respond(mobile) {
+      font-size: $font-size-big-mobile;
+    }
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem 5rem;
+    align-items: center;
+    position: relative;
+
+    @include respond(tab-big) {
+      grid-template-columns: min-content min-content 1fr;
+      justify-items: end;
+    }
+
+    @include respond(mobile) {
+      padding: 2rem 3rem;
+    }
+
+    &__icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      fill: currentColor;
+      @include respond(desktop-small) {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    &__title {
+      font-size: $font-size;
+      margin-left: 0.5rem;
+      background: none;
+      border: none;
+      color: #000;
+      outline: none;
+      display: inline-block;
+      cursor: pointer;
+      @include respond(desktop-small) {
+        font-size: $font-size-tablet;
+      }
+      @include respond(mobile) {
+        font-size: $font-size-mobile;
+      }
+    }
+
+    .icon-modal {
+      border-radius: 3px;
+      padding: 3rem;
+      margin-left: 5rem;
+      position: absolute;
+      background-color: #fff;
+      bottom: 100%;
+      width: 100%;
+      @include respond(tab-big) {
+        width: 70%;
+        left: 0;
+      }
+      & > * {
+        margin: 0.7rem;
+        fill: black;
+        cursor: pointer;
+        @include respond(desktop-small) {
+          width: 2rem;
+          height: 2rem;
+          margin: 0.6rem;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 100%;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 15px solid #fff;
+      }
+    }
+
+    &__options {
+      position: relative;
+      padding: 0.5rem;
+      .list-modal {
+        position: absolute;
+        background-color: white;
+        color: black;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+        p {
+          padding: 0.5rem 1rem;
+          &:hover {
+            cursor: pointer;
+            background-color: $color-primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .icon-modal-close {
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+
+    .option {
+      background-color: black;
+      width: 0.6rem;
+      border-radius: 50%;
+      height: 0.6rem;
+
+      &:first-child {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+
+  // adding new list
+  .add-list-container {
+    padding: 2rem 5rem;
+    display: flex;
+    font-size: $font-size;
+
+    @include respond(mobile) {
+      padding: 2rem 3rem;
+    }
+
+    @include respond(desktop-small) {
+      font-size: $font-size-tablet;
+    }
+
+    @include respond(mobile) {
+      font-size: $font-size-mobile;
+    }
+
+    .add-list {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+
+      svg {
+        width: 2.2rem;
+        height: 2.2rem;
+        fill: $color-primary;
+        @include respond(desktop-small) {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    }
+  }
+}
+
+.sideBar-moveIn {
+  transform: translateX(-100%);
+}
+
+// #########################################
+// MAIN SECTION - TODO'S
+
+.todo {
+  display: none;
+}
+
+.item {
+  padding: 3rem 5rem;
+  display: flex;
+  box-shadow: 0 2px 2px -2px gray;
+  align-items: center;
+  justify-content: space-between;
+
+  @include respond(mobile) {
+    padding: 3rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  &__check {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    cursor: pointer;
+    &--done {
+      background-color: #40d628;
+      border: none;
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__title {
+    font-size: $font-size;
+    margin-left: 1rem;
+    background: none;
+    border: none;
+    color: #000;
+    outline: none;
+    display: inline-block;
+
+    @include respond(desktop-small) {
+      font-size: $font-size-tablet;
+    }
+    @include respond(mobile) {
+      font-size: $font-size-mobile;
+    }
+
+    &--done {
+      text-decoration: line-through;
+    }
+  }
+  &__options {
+    display: flex;
+    img {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+      &:not(:first-child) {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.add-item {
+  padding: 3rem 5rem;
+  box-shadow: 0 2px 2px -2px gray;
+  display: flex;
+  align-items: center;
+  font-size: $font-size;
+  cursor: pointer;
+
+  @include respond(mobile) {
+    padding: 3rem;
+  }
+
+  @include respond(desktop-small) {
+    font-size: $font-size-tablet;
+  }
+  @include respond(mobile) {
+    font-size: $font-size-mobile;
+  }
+  svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: $color-primary;
+    @include respond(desktop-small) {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+// #########################################
+// UTILITY FOR JAVASCRIPT
+
+.active {
+  background-color: $color-primary;
+  color: #fff;
+  .list__title {
+    color: white !important;
+    cursor: auto;
+  }
+  .list__icon {
+    fill: currentColor;
+  }
+
+  &:hover {
+    background-color: $color-primary !important;
+    cursor: auto !important;
+  }
+
+  .option {
+    background-color: white !important;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none !important;
+}

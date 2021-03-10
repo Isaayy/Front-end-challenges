@@ -1,0 +1,67 @@
+.pricing {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(36rem,1fr));
+        grid-gap: 2.5rem;
+        justify-content:center;
+
+        @include respond(desktop-big){
+            grid-gap: 5rem;
+            grid-template-columns: repeat(3,36rem);
+        }
+
+        @include respond(desktop-small){
+            grid-template-columns: 1fr;
+            padding:0 15rem;
+        }
+
+        @include respond(tab-small){
+            grid-template-columns: repeat(auto-fit,minmax(36rem,1fr));
+            padding:0 10rem;
+        }
+
+        @include respond(mobile){
+            grid-template-columns: repeat(auto-fit,minmax(32rem,1fr));
+            padding:0 10rem;
+        }
+    }
+
+    &__card {
+        background-color: $bgc-color-1;
+        height: 39rem;
+        color:white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+        box-shadow: 0 .6rem .7rem rgba(black,.25);
+
+        @include respond(mobile){
+            height: 36rem;
+            padding:2rem 1rem;
+        }
+    }
+
+    &__header {
+        font-weight: normal;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__money {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+    }
+ 
+    .section-description {
+        margin-bottom: 1rem;
+    }
+
+    &__more {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+}

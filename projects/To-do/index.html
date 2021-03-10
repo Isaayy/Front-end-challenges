@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/main.css" />
+    <title>To do app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner">
+        <div class="banner__column-left">
+          <h2>Welcome</h2>
+          <div class="timestamp">
+            <div class="timestamp__time">12:20</div>
+            <div class="timestamp__date">Tuesday, 5 January</div>
+          </div>
+        </div>
+        <div class="banner__column-right">
+          <div class="hamburger">
+            <span class="hamburger__outline">
+              <span class="hamburger__bar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <h3>Your lists</h3>
+        <div class="lists">
+          <div class="list active">
+            <svg class="list__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-bookmark"></use>
+            </svg>
+            <input class="list__title" value="Important" readonly />
+            <div class="list__options">
+              <div class="option"></div>
+              <div class="option"></div>
+            </div>
+          </div>
+          <div class="list">
+            <svg class="list__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-light-bulb"></use>
+            </svg>
+            <input class="list__title" value="Ideas" readonly />
+            <div class="list__options">
+              <div class="option"></div>
+              <div class="option"></div>
+            </div>
+          </div>
+          <div class="list">
+            <svg class="list__icon">
+              <use xlink:href="img/icons/sprite.svg#icon-shopping-basket"></use>
+            </svg>
+            <input class="list__title" value="Groceries" readonly />
+            <div class="list__options">
+              <div class="option"></div>
+              <div class="option"></div>
+            </div>
+          </div>
+        </div>
+        <div class="add-list-container">
+          <div class="add-list">
+            <svg>
+              <use xlink:href="img/icons/sprite.svg#icon-plus"></use>
+            </svg>
+            <p>New list</p>
+          </div>
+        </div>
+      </div>
+      <main class="main-section">
+        <div class="main">
+          <div class="todo show" id="Important">
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check item__check--done">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title item__title--done" value="Walk the dog" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title" value="Finish essay" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+          </div>
+          <div class="todo" id="Ideas">
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title" value="Weight loss tracker" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title" value="Meal planning" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+          </div>
+          <div class="todo" id="Groceries">
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title" value="Milk" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+            <div class="item">
+              <div class="item__wrapper">
+                <div class="item__check">
+                  <img src="img/checkmark.svg" alt="checkmark" />
+                </div>
+                <input class="item__title" value="Broccoli" readonly />
+              </div>
+              <div class="item__options hide">
+                <img src="img/pen.svg" alt="pen" class="item-rename" />
+                <img src="img/trash.svg" alt="trash" class="item-delete" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="add-item">
+          <svg class="list__icon">
+            <use xlink:href="img/icons/sprite.svg#icon-plus"></use>
+          </svg>
+          <p>New item</p>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+.project {
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  padding: 4rem 5rem;
+  border-radius: 5px;
+
+  @include respond(mobile) {
+    padding: 2rem 3rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    color: $color-dark;
+
+    @include respond(mobile) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__logo {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  &__desc {
+    font-size: 1.5rem;
+    color: $color-dark;
+    font-weight: 300;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    @include respond(mobile) {
+      font-size: 1.4rem;
+      margin-top: 0.8rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__btn {
+    background-color: $color-primary;
+    padding: 1.3rem 4rem;
+    border-radius: 5px;
+    font-weight: 500;
+    color: white;
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: all 0.1s;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &:hover {
+      background-color: $color-primary-dark;
+    }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: $color-primary-dark;
+    //   border-radius: 5px;
+    //   right: 100%;
+    //   top: 100%;
+    //   z-index: -10;
+    //   transition: all 0.7s;
+    // }
+
+    // &:hover::after {
+    //   transform: scale(4);
+    // }
+  }
+}

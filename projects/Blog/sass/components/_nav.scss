@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  @include respond(tab-big) {
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+
+    li {
+      &:not(:first-child) {
+        margin-left: 5rem;
+      }
+    }
+  }
+
+  &__link {
+    font: $base-font-size 'Montserrat', sans-serif;
+    color: black;
+
+    &--active {
+      font-weight: 600;
+    }
+
+    &--footer {
+      color: #fff;
+      font-weight: 300;
+      font-size: 1.5rem;
+    }
+  }
+}

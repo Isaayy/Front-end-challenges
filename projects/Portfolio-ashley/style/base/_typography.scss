@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+
+.section-header {
+    font-size: $headers-font-size;
+    font-weight: 500;
+    margin-bottom: $content-padding-desktop;
+    color: white;
+    text-align: center;
+
+    @include respond(desktop-small) {
+        margin-bottom: $content-padding-tablet;
+    }
+
+    @include respond(mobile) {
+        margin-bottom: $content-padding-mobile;
+    }
+
+    &--black {
+        color: black;
+        position: relative;
+    }
+
+    &--no-margin {
+        margin-bottom: 0;
+    }
+}
+
+
+.hero {
+    &__header {
+        font-size: 5rem;
+        font-weight: bold;
+        color: $color-main;
+        position: relative;
+        display: inline-block;
+        width: 100%;
+
+        @include respond(mobile) {
+            font-size: 3.5rem;
+        }
+
+        &::after {
+            content: 'Developer & Designer';
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: white;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+
+            @include respond(tab-big) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__desc {
+        margin-top: 5rem;
+        font-size: 1.7rem;
+        font-weight: 300;
+        color: #D3D3D3;
+        line-height: 1.7;
+
+        @include respond(mobile) {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.description {
+    color: #D3D3D3;
+    font-weight: 300;
+    font-size: $content-font-size;
+
+
+    &--ln {
+        line-height: 1.7;
+    }
+
+    &--mb {
+        margin-bottom: 1rem;
+    }
+
+    &--display-none {
+        @include respond(mobile) {
+            display: none;
+        }
+    }
+
+    &--black {
+        color: black;
+    }
+}

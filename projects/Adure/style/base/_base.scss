@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: 0 7rem;
+  @include respond(mobile) {
+    padding: 0 3rem;
+  }
+}
+
+.subheading {
+  margin-top: $margin-main-desktop;
+  margin-bottom: $margin-secondary-desktop;
+}

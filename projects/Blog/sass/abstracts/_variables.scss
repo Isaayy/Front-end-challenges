@@ -1,0 +1,34 @@
+// ##############################
+// COLORS
+$pastel-red: #de4444;
+$pastel-orange: #fbbe9d;
+$pastel-yellow: #fce1b1;
+$pastel-blue: #b5dbe3;
+$pastel-pink: #ffc2c6;
+$color-dark: #212326;
+
+$pastel-yellow-dark: #ffda9b;
+
+// ##############################
+// FONT-SIZE
+
+$base-font-size: 1.6rem;
+
+$heading-primary-dekstop: 3 * $base-font-size;
+$heading-primary-tablet: 2.75 * $base-font-size;
+$heading-primary-mobile: 2 * $base-font-size;
+
+$heading-desktop: 2 * $base-font-size;
+$heading-tablet: 1.75 * $base-font-size;
+$heading-mobile: 1.25 * $base-font-size;
+
+$button-font-size: 1.5rem;
+
+// ##############################
+// MARGINS & PADDINGS
+
+$section-padding-desktop: 15rem;
+$section-padding-tablet: 10rem;
+
+$content-padding-big: 4rem;
+$content-padding-small: 2rem;

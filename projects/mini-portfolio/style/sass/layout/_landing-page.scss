@@ -1,0 +1,236 @@
+.landing-page {
+  height: 100vh;
+  background-image: url(../img/background2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  position: relative;
+  overflow: hidden;
+
+  @include respond(desktop-small) {
+    background-image: url(../img/background.svg);
+  }
+}
+
+.eclipse {
+  position: absolute;
+  left: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 100%;
+  width: 50rem;
+  @include respond(desktop-small) {
+    display: none;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  width: 100%;
+
+  @include respond(mobile) {
+    padding-top: 3rem;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    @include respond(tab-small) {
+      background-color: white;
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      z-index: 1;
+      padding: 3rem 5rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.5s;
+    }
+
+    li {
+      &:not(:first-child) {
+        margin-left: 3.5rem;
+        @include respond(tab-small) {
+          margin-left: 0;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__link {
+    display: inline-block;
+    // transition: all 0.5s;
+    position: relative;
+    &--active {
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &:hover {
+      color: $color-dark;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__hamburger-outline {
+    z-index: 2;
+    position: relative;
+    display: none;
+    cursor: pointer;
+    height: 14px;
+    width: 33px;
+    @include respond(tab-small) {
+      display: inline-block;
+    }
+  }
+
+  &__hamburger--bar {
+    width: 30px;
+    background-color: $color-dark;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: $color-dark;
+      transition: all 0.3s;
+    }
+
+    &::before {
+      bottom: 100%;
+      margin-bottom: 2px;
+    }
+
+    &::after {
+      top: 100%;
+      margin-top: 2px;
+    }
+  }
+}
+
+.hero {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+
+  @include respond(desktop-small) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+    width: 80%;
+    @include respond(desktop-big) {
+      width: 75%;
+    }
+    @include respond(desktop-small) {
+      width: 80%;
+      margin: 0 auto 2rem;
+    }
+    @include respond(tab-big) {
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    background-color: white;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    border-radius: 7px;
+    margin-top: 1rem;
+    overflow: hidden;
+    &:hover {
+      background-color: rgb(248, 248, 248);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+
+    @include respond(desktop-small) {
+      margin-bottom: 5rem;
+    }
+    @include respond(mobile) {
+      margin-bottom: 4rem;
+      padding: 1rem 3rem;
+      border-radius: 25px;
+    }
+  }
+
+  img {
+    width: 40rem;
+    @include respond(desktop-big) {
+      width: 80rem;
+    }
+    @include respond(desktop-small) {
+      width: 50rem;
+    }
+    @include respond(mobile) {
+      width: 30rem;
+    }
+  }
+}
+
+.socials {
+  position: absolute;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  top: 100%;
+  left: 50%;
+  transform: translateY(-100%) translateX(-50%);
+
+  @include respond(tab-small) {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include respond(mobile) {
+    padding-bottom: 3rem;
+  }
+
+  a {
+    &:not(:first-child) {
+      margin-left: 2.5rem;
+    }
+  }
+}
+
+.rotate::before {
+  transform: rotate(45deg) translatey(0.6rem);
+}
+
+.rotate::after {
+  transform: rotate(-45deg) translatey(-0.6rem);
+}
+
+.slide-in {
+  transform: translateX(-100%);
+}
