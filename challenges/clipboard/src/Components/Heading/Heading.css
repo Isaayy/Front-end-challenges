@@ -1,0 +1,11 @@
+.heading {
+  text-align: center;
+  font-size: 2.8rem;
+  color: hsl(210, 10%, 33%);
+}
+
+@media (max-width: 37.5em) {
+  .heading {
+    font-size: 2.4rem;
+  }
+}

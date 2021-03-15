@@ -12,7 +12,9 @@ const Header = () => {
     <header className="header">
       <img src={logo} alt="logo" />
       <h1 className="heading-primary">A history of everything you copy</h1>
-      <Description margin="true">Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.</Description>
+      <Description margin="true" width="65rem">
+        Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.
+      </Description>
       <div className="buttons">
         <Button color="cyan">Download for iOS</Button>
         <Button color="blue">Download for Mac</Button>
