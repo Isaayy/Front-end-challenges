@@ -1,0 +1,11 @@
+.header img {
+  padding-top: 13rem;
+  padding-bottom: 7rem;
+}
+
+@media (max-width: 37.5em) {
+  .header img {
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+  }
+}

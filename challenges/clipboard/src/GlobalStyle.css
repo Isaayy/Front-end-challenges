@@ -1,0 +1,59 @@
+:root {
+  --strong-cyan: hsl(171, 66%, 44%);
+  --light-blue: hsl(233, 100%, 69%);
+  --dark-grayish-blue: hsl(210, 10%, 33%);
+  --grayish-blue: hsl(201, 11%, 66%);
+}
+
+.heading-primary,
+.heading,
+.subheading {
+  color: var(--dark-grayish-blue);
+  font-weight: 600;
+}
+
+.heading-primary {
+  font-size: 3.6rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.8rem;
+}
+
+.subheading {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.u-margin-top-bottom {
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+@media (max-width: 37.5em) {
+  .heading-primary {
+    font-size: 3rem;
+  }
+
+  .heading {
+    font-size: 2.4rem;
+  }
+
+  .subheading {
+    font-size: 1.9rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .u-margin-top-bottom {
+    margin-bottom: 3.5rem;
+  }
+}

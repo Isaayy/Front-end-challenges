@@ -1,0 +1,36 @@
+.btn {
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 1.5rem 3.5rem;
+  border-radius: 3rem;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--cyan {
+  background-color: var(--strong-cyan);
+  box-shadow: 0 3px 2px hsl(171, 73%, 33%);
+}
+
+.btn--cyan:hover {
+  background-color: hsl(171, 60%, 53%);
+}
+
+.btn--blue {
+  background-color: var(--light-blue);
+  box-shadow: 0 3px 2px hsl(233, 56%, 48%);
+}
+
+.btn--blue:hover {
+  background-color: hsl(233, 79%, 72%);
+}
+
+@media (max-width: 37.5em) {
+  .btn {
+    font-size: 1.6rem;
+  }
+}
