@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Input from './Components/Input/Input'
+import Button from './Components/Button/Button'
+
+class App extends Component {
+
+  state = {
+    countries: [],
+    value: ''
+  }
+
+  addCountry = (e) => {
+    if(!e.target.value) return;
+    this.setState({ value: e.target.value });
+  }
+
+  getCountry = (country) => {
+    fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(response => response.json())
+    .then(data => console.log(data[0].name))
+    .catch(err => alert(err))
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+        <h4>Fetch data about countries</h4>
+        <div className="cta">
+          <Input blur={this.addCountry}>Poland</Input>
+          <Button click={this.getCountry.bind(this,this.state.value)}>Get data</Button>
+        </div>
+      </div>
+    );
+
+  }
 }
 
 export default App;
