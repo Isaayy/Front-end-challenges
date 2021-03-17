@@ -2,9 +2,23 @@
   text-align: center;
 }
 
+h4{
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
 .cta{
   border:1px solid rgb(87, 87, 87);
   display: inline-block;
   border-radius: 5px;
   overflow: hidden;
+}
+
+.container {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4,350px);
+  justify-content: center;
+  grid-gap: 50px;
+  grid-template-rows: 1fr;
 }
