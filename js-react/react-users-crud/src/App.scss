@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 .App {
   text-align: center;
@@ -17,7 +17,7 @@
     thead {
       background-color: #dc0073;
       color: #fff;
-      font-weight: 500;
+      font-weight: 400;
       font-size: 1.1rem;
     }
 
@@ -44,4 +44,8 @@
       padding: 20px 50px;
     }
   }
+}
+
+.background-add {
+  background-color: rgb(230, 230, 230);
 }

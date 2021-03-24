@@ -5,7 +5,7 @@ const TRow = props => {
 
   users = props.users.map(user => {
     return (
-      <tr key={user.id.value}>
+      <tr key={`${user.id.value}${user.login.salt.split(0, -3)}`} onClick={props.click} data-key={`${user.id.value}${user.login.salt.split(0, -3)}`}>
         <th>{user.name.first}</th>
         <th>{user.name.last}</th>
         <th>
