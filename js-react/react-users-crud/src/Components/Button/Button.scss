@@ -1,0 +1,26 @@
+.btn {
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+
+  &--add {
+    background-color: green;
+    margin-right: 20px;
+
+    &:hover {
+      background-color: darken(green, 5%);
+    }
+  }
+
+  &--delete {
+    background-color: rgb(212, 21, 21);
+
+    &:hover {
+      background-color: darken(rgb(212, 21, 21), 5%);
+    }
+  }
+}

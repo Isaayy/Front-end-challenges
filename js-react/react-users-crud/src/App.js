@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 
 import Users from './Components/Users/Users';
+import Button from './Components/Button/Button';
 
 const App = () => {
   const [usersState, addUser] = useState({ users: [] });
@@ -16,14 +17,14 @@ const App = () => {
       });
   };
 
+  const deleteUserHandler = () => {
+    console.log('a');
+  };
+
   return (
     <div className="App">
-      <button onClick={getUserHandler} className="btn btn--add">
-        Add user
-      </button>
-      <button onClick={getUserHandler} className="btn btn--delete">
-        Delete user
-      </button>
+      <Button click={getUserHandler} event="add" />
+      <Button click={deleteUserHandler} event="delete" />
       <table>
         <thead>
           <tr>

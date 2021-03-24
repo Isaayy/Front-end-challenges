@@ -5,41 +5,18 @@
   margin-top: 5rem;
   font-family: 'Roboto', sans-serif;
 
-  .btn {
-    color: #fff;
-    padding: 1rem 3rem;
-    border-radius: 3px;
-    cursor: pointer;
-    border: 1px solid rgb(47, 50, 54);
-    transition: background-color 0.3s;
-
-    &--add {
-      background-color: green;
-      margin-right: 20px;
-
-      &:hover {
-        background-color: darken(green, 5%);
-      }
-    }
-
-    &--delete {
-      background-color: rgb(212, 21, 21);
-
-      &:hover {
-        background-color: darken(rgb(212, 21, 21), 5%);
-      }
-    }
-  }
-
   table {
     border: 2px solid rgb(47, 50, 54);
     border-collapse: collapse;
     border-radius: 10px;
     margin: 0 auto;
     margin-top: 2.5rem;
+    max-width: 1100px;
+    width: 100%;
 
     thead {
-      background: rgb(230, 230, 230);
+      background-color: #dc0073;
+      color: #fff;
       font-weight: 500;
       font-size: 1.1rem;
     }
@@ -48,6 +25,14 @@
       th {
         font-size: 1rem;
         font-weight: 300;
+      }
+
+      tr {
+        cursor: pointer;
+
+        &:hover th {
+          background-color: rgb(230, 230, 230);
+        }
       }
     }
 
