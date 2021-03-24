@@ -4,17 +4,20 @@ import './App.scss';
 import Users from './Components/Users/Users';
 import Button from './Components/Button/Button';
 
+import axios from 'axios';
+
 const App = () => {
   const [usersState, updateUsers] = useState({ users: [], selectedUsersId: [] });
 
   const getUserHandler = () => {
-    fetch('https://randomuser.me/api')
-      .then(response => response.json())
-      .then(data => {
+    axios
+      .get('https://randomuser.me/api')
+      .then(response => {
         const users = [...usersState.users];
-        users.push(data.results[0]);
+        users.push(response.data.results[0]);
         updateUsers({ users: users, selectedUsersId: usersState.selectedUsersId });
-      });
+      })
+      .catch(err => alert(err));
   };
 
   const selectUserHandler = e => {
@@ -33,7 +36,7 @@ const App = () => {
     let users = [...usersState.users];
     let ids = [...usersState.selectedUsersId];
 
-    if (ids.length == 0) {
+    if (ids.length === 0) {
       alert('Please select users you want to delete');
       return;
     }
@@ -58,7 +61,7 @@ const App = () => {
             <th>Username</th>
           </tr>
         </thead>
-        <Users users={usersState.users} click={selectUserHandler.bind(1)}></Users>
+        <Users users={usersState.users} click={selectUserHandler}></Users>
       </table>
     </div>
   );
