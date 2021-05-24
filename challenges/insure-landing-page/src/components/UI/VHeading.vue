@@ -24,7 +24,6 @@ export default {
   font-size: 5.2rem;
   font-family: var(--font-heading);
   letter-spacing: 3px;
-  max-width: 42rem;
   line-height: 5rem;
 }
 
