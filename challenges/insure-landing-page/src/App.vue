@@ -1,6 +1,4 @@
-<template>
-  <h1>App</h1>
-</template>
+<template> </template>
 
 <script>
 export default {
@@ -22,5 +20,9 @@ export default {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+div {
+  margin: 5rem;
 }
 </style>
