@@ -29,10 +29,22 @@ export default {
   border: 2px solid var(--very-light-gray);
   font-weight: bold;
   background: none;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-violet);
+  }
 }
 
 .button-dark {
   color: var(--very-dark-violet);
   border: 2px solid var(--very-dark-violet);
+
+  &:hover {
+    background-color: var(--very-dark-violet);
+    color: var(--very-light-gray);
+  }
 }
 </style>

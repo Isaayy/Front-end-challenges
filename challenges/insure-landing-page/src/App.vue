@@ -1,8 +1,17 @@
-<template> </template>
+<template>
+  <div class="container">
+    <TheHeader />
+  </div>
+</template>
 
 <script>
+import TheHeader from './components/layouts/TheHeader.vue';
+
 export default {
   name: 'App',
+  components: {
+    TheHeader,
+  },
 };
 </script>
 
@@ -22,7 +31,9 @@ html {
   scroll-behavior: smooth;
 }
 
-div {
-  margin: 5rem;
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  border: 2px solid gold;
 }
 </style>
