@@ -21,9 +21,10 @@ export default {
 <style lang="scss" scoped>
 .heading {
   color: var(--very-light-gray);
-  font-size: 5.2rem;
+  font-size: 5.4rem;
   font-family: var(--font-heading);
   letter-spacing: 3px;
+  max-width: 42rem;
   line-height: 5rem;
 }
 

@@ -35,7 +35,7 @@ html {
 }
 
 .container {
-  max-width: 144rem;
+  max-width: 112rem;
   margin: 0 auto;
 }
 </style>

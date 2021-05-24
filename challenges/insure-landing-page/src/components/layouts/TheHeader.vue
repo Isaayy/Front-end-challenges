@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  padding: 3rem 0;
+  padding: 2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
