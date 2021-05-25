@@ -3,12 +3,14 @@
   <TheLandingPage />
   <TheMainSection />
   <Banner />
+  <TheFooter />
 </template>
 
 <script>
 import TheHeader from './components/layouts/TheHeader.vue';
 import TheLandingPage from './components/layouts/TheLandingPage.vue';
 import TheMainSection from './components/layouts/TheMainSection.vue';
+import TheFooter from './components/layouts/TheFooter.vue';
 
 import Banner from './components/Banner.vue';
 
@@ -19,6 +21,7 @@ export default {
     TheLandingPage,
     TheMainSection,
     Banner,
+    TheFooter,
   },
 };
 </script>
