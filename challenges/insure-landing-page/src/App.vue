@@ -1,9 +1,8 @@
 <template>
-  <div class="container">
-    <TheHeader />
-  </div>
+  <TheHeader />
   <TheLandingPage />
   <TheMainSection />
+  <Banner />
 </template>
 
 <script>
@@ -11,12 +10,15 @@ import TheHeader from './components/layouts/TheHeader.vue';
 import TheLandingPage from './components/layouts/TheLandingPage.vue';
 import TheMainSection from './components/layouts/TheMainSection.vue';
 
+import Banner from './components/Banner.vue';
+
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheLandingPage,
     TheMainSection,
+    Banner,
   },
 };
 </script>

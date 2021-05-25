@@ -1,17 +1,19 @@
 <template>
-  <header class="header">
-    <div class="header__logo">
-      <img src="@/assets/images/logo.svg" alt="logo" />
-    </div>
-    <nav class="header__nav">
-      <ul>
-        <li><a href="#">How we work</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Account</a></li>
-        <li><Button color="dark">View plans</Button></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <header class="header">
+      <div class="header__logo">
+        <img src="@/assets/images/logo.svg" alt="logo" />
+      </div>
+      <nav class="header__nav">
+        <ul>
+          <li><a href="#">How we work</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Account</a></li>
+          <li><Button color="dark">View plans</Button></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 </template>
 
 <script>
