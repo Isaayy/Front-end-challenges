@@ -3,17 +3,20 @@
     <TheHeader />
   </div>
   <TheLandingPage />
+  <TheMainSection />
 </template>
 
 <script>
 import TheHeader from './components/layouts/TheHeader.vue';
 import TheLandingPage from './components/layouts/TheLandingPage.vue';
+import TheMainSection from './components/layouts/TheMainSection.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheLandingPage,
+    TheMainSection,
   },
 };
 </script>
@@ -37,5 +40,6 @@ html {
 .container {
   max-width: 112rem;
   margin: 0 auto;
+  position: relative;
 }
 </style>
