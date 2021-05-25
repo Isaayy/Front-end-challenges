@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .heading {
   color: var(--very-light-gray);
   font-size: 5.4rem;
@@ -26,6 +28,15 @@ export default {
   letter-spacing: 3px;
   max-width: 42rem;
   line-height: 5rem;
+
+  @include respond(tab-big) {
+    text-align: center;
+    max-width: none;
+  }
+
+  @include respond(mobile) {
+    font-size: 4rem;
+  }
 }
 
 .heading-dark {

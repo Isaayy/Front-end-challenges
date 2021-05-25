@@ -81,10 +81,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .footer {
-  padding: 5rem;
-  background-color: var(--very-light-gray);
-  background: url('../../assets/images/bg-pattern-footer-desktop.svg') left center no-repeat;
+  padding: 5rem 0;
+  background: url('../../assets/images/bg-pattern-footer-desktop.svg') left top no-repeat
+    var(--very-light-gray);
+
+  @include respond(tab-small) {
+    background-image: url('../../assets/images/bg-pattern-footer-mobile.svg');
+    padding: 8rem 0;
+  }
 
   .container {
     display: grid;
@@ -92,12 +99,22 @@ export default {
     grid-template-rows: min-content max-content;
     gap: 4rem;
     align-items: center;
+
+    @include respond(tab-small) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      justify-items: center;
+    }
   }
 
   &__socials {
     display: flex;
     gap: 1.5rem;
     justify-self: end;
+
+    @include respond(tab-small) {
+      justify-self: center;
+    }
 
     svg:hover {
       cursor: pointer;
@@ -113,9 +130,18 @@ export default {
     border-top: 1px solid var(--dark-grayish-violet);
 
     grid-column: 1/3;
+    justify-self: stretch;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3.5rem;
+
+    @include respond(tab-small) {
+      justify-items: center;
+      grid-column: 1/2;
+      padding-top: 3rem;
+      text-align: center;
+    }
   }
 
   &__column {

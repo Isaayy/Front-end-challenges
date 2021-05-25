@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .header {
   padding: 2rem 0;
   display: flex;
@@ -30,6 +32,10 @@ export default {
   justify-content: space-between;
 
   &__nav ul {
+    @include respond(tab-small) {
+      display: none;
+    }
+
     display: flex;
     gap: 3rem;
     list-style: none;

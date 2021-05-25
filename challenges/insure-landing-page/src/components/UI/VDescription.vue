@@ -19,10 +19,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .desc {
   font-size: 1.6rem;
   font-family: var(--font-body);
   color: var(--very-light-gray);
+
+  @include respond(tab-big) {
+    text-align: center;
+  }
 }
 
 .desc-dark {

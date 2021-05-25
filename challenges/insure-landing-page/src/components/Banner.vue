@@ -14,11 +14,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .banner {
   padding: 8rem;
   margin-bottom: 15rem;
 
-  background: url('../assets/images/bg-pattern-how-we-work-desktop.svg') right center no-repeat;
+  background: url('../assets/images/bg-pattern-how-we-work-desktop.svg') right top no-repeat;
   background-color: var(--dark-violet);
 
   display: flex;
@@ -26,6 +28,12 @@ export default {
   align-items: center;
 
   position: relative;
+
+  @include respond(tab-big) {
+    background-image: url('../assets/images/bg-pattern-how-we-work-mobile.svg');
+    flex-direction: column;
+    gap: 4.5rem;
+  }
 
   h1 {
     max-width: 53rem;

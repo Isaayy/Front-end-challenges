@@ -46,5 +46,6 @@ html {
   max-width: 112rem;
   margin: 0 auto;
   position: relative;
+  padding: 0 3rem;
 }
 </style>

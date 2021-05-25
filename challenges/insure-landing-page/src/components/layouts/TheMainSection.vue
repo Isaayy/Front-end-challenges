@@ -36,10 +36,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/mixins.scss';
+
 .work {
   margin-top: 40rem;
   margin-bottom: 15rem;
   position: relative;
+
+  @include respond(tab-big) {
+    margin-top: 15rem;
+  }
 
   .container::before {
     content: '';
@@ -48,6 +54,11 @@ export default {
     height: 2px;
     position: absolute;
     top: -3rem;
+
+    @include respond(tab-big) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__cards {
@@ -56,6 +67,10 @@ export default {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5rem;
+
+    @include respond(tab-small) {
+      grid-template-columns: 1fr;
+    }
   }
 }
 </style>
