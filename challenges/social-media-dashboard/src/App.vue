@@ -1,11 +1,13 @@
 <template>
-  <h1>app</h1>
+  <Main />
 </template>
 
 <script>
+import Main from './components/Main.vue';
+
 export default {
   name: 'App',
-  components: {},
+  components: { Main },
 };
 </script>
 
@@ -24,6 +26,5 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   font-family: 'Inter', sans-serif;
-  font-size: 1.4rem;
 }
 </style>
