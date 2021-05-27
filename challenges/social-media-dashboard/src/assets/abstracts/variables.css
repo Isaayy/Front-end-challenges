@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  /* Primary colors */
+  --lime-green: hsl(163, 72%, 41%);
+  --Bright-red: hsl(356, 69%, 56%);
+
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient (hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youTube: hsl(348, 97%, 39%);
+
+  /* Dark theme neutral */
+  --very-dark-blue: hsl(230, 17%, 14%); /* BG */
+  --very-dark-blue: hsl(232, 19%, 15%); /* Top BG Pattern */
+  --dark-desaturated-blue: hsl(228, 28%, 20%); /* Card BG */
+  --desaturated-blue: hsl(228, 34%, 66%); /* Text */
+  --white: hsl(0, 0%, 100%); /* Text */
+
+  --white: hsl(0, 0%, 100%); /* BG */
+  --very-pale-blue: hsl(225, 100%, 98%); /* Top BG Pattern */
+  --light-grayish-blue: hsl(227, 47%, 96%); /* Card BG */
+  --dark-grayish-blue: hsl(228, 12%, 44%); /* Text */
+  --very-dark-blue: hsl(230, 17%, 14%); /* Text */
+}
